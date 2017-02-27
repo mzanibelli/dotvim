@@ -1,2 +1,5 @@
-let b:autocompile=1
+" Options
 setlocal makeprg=ruby\ -c\ %
+
+" Variables
+let b:autocompile=1
