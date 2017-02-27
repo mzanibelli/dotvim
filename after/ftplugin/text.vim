@@ -1,1 +1,2 @@
+" Init
 call text#mode()
