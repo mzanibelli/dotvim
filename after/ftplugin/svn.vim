@@ -1,3 +1,3 @@
 call sessions#disable()
 call text#mode()
-execute "normal! gg"
+let b:norestore=1
