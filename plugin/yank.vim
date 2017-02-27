@@ -1,3 +1,4 @@
+" Mappings
 nnoremap <silent> <expr> YY yank#incmap("line")
 nnoremap <silent> <expr> Y yank#incmap("operator")
 vnoremap <silent> <expr> Y yank#incmap("visual")
@@ -10,6 +11,7 @@ vnoremap <Leader>p "+p
 nnoremap <Leader>P "+P
 vnoremap <Leader>P "+P
 
+" Autocommands
 augroup YANK
     autocmd!
     autocmd InsertLeave * set nopaste

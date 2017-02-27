@@ -1,3 +1,4 @@
+" Mappings
 vnoremap $ g_
 nnoremap gV `[V`]
 vnoremap <silent> D :<C-U>call visual#duplicate()<CR>

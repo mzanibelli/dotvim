@@ -1,3 +1,4 @@
+" Autocommands
 augroup VIMRC
     autocmd!
     autocmd BufWritePost $MYVIMRC source $MYVIMRC | set ft=vim | execute "normal! zv"

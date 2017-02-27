@@ -1,9 +1,12 @@
+" Mappings
 nnoremap <silent> <Leader>f :<C-U>echo expand('%:p')<CR>
 
+" Init
 silent! call mkdir(&undodir, "p")
 silent! call mkdir(&backupdir, "p")
 silent! call mkdir(&directory, "p")
 
+" Autocommands
 augroup FILE
     autocmd!
     autocmd BufFilePost * filetype detect

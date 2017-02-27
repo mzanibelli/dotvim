@@ -1,3 +1,4 @@
+" Init
 call cli#override("grep", "Grep")
 call cli#override("h", "Help")
 call cli#override("help", "Help")

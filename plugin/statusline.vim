@@ -1,3 +1,4 @@
+" Options
 set statusline=(%n)
 set statusline+=\ %t
 set statusline+=\ %{file#size()}

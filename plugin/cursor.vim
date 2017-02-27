@@ -1,3 +1,4 @@
+" Init
 if &term =~# '^screen'
     execute "set <xUp>=\e[1;*A"
     execute "set <xDown>=\e[1;*B"

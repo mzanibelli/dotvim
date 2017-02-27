@@ -1,3 +1,4 @@
+" Mappings
 nnoremap g; g;zvzz
 nnoremap g, g,zvzz
 noremap gj j

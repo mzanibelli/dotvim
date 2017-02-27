@@ -1,3 +1,4 @@
+" Mappings
 nnoremap <Leader>* :<C-U>noh<CR>/<C-R>/\<BAR>
 nnoremap <Leader>/ :ilist //<Left>
 nnoremap <expr> <Leader>: search#replace(0)

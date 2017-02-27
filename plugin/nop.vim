@@ -1,3 +1,4 @@
+" Mappings
 map      <ScrollWheelUp>      <NOP>
 map      <S-ScrollWheelUp>    <NOP>
 map      <C-ScrollWheelUp>    <NOP>

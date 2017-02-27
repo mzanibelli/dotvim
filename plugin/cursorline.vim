@@ -1,3 +1,4 @@
+" Autocommands
 augroup CURSORLINE
     autocmd!
     autocmd BufEnter,WinEnter * setlocal cursorline

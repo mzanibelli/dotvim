@@ -1,3 +1,4 @@
+" Mappings
 inoremap {<CR> {<CR><BS>}<Esc>O
 inoremap ["" [""]<Left><Left>
 inoremap ['' ['']<Left><Left>

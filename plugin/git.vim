@@ -1,3 +1,4 @@
+" Commands
 command! -nargs=* GitDiff call git#diff()
 command! -nargs=* GitLog call git#log()
 command! -nargs=0 GitBlame call git#blame()

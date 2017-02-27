@@ -1,5 +1,7 @@
+" Commands
 command! -nargs=* -complete=command PreserveView call windows#preserve(<q-args>)
 
+" Mappings
 nnoremap <Leader>v <C-W>v
 nnoremap <Leader>s <C-W>s
 nnoremap <Leader>o <C-W>o
@@ -16,6 +18,7 @@ vnoremap <C-L> <C-W>l
 vnoremap <C-K> <C-W>k
 vnoremap <C-J> <C-W>j
 
+" Autocommands
 augroup WINDOWS
     autocmd!
     autocmd VimResized * wincmd =
