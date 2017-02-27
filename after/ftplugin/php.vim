@@ -15,11 +15,5 @@ inoremap <buffer> <silent> <expr> , default#mapdouble(',', "\<C-H> => ")
 nnoremap <buffer> <silent> <Leader>x :<C-U>call cli#LaunchScript('php %')<CR>
 vnoremap <buffer> <silent> <Leader>e :<C-U>call php#extract()<CR>
 
-" Variables
-let g:PHP_autoformatcomment=1
-let g:PHP_outdentphpescape=0
-let g:PHP_removeCRwhenUnix=1
-let g:PHP_vintage_case_default_indent=1
-
 " Options
 setlocal foldenable
