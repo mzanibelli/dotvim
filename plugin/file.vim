@@ -1,6 +1,3 @@
-command! -buffer -nargs=0 Format call format#format()
-command! -nargs=0 FixFormat silent! call format#fix()
-
 nnoremap <silent> <Leader>f :<C-U>echo expand('%:p')<CR>
 
 silent! call mkdir(&undodir, "p")

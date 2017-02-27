@@ -9,3 +9,8 @@ nnoremap <Leader>p "+p
 vnoremap <Leader>p "+p
 nnoremap <Leader>P "+P
 vnoremap <Leader>P "+P
+
+augroup YANK
+    autocmd!
+    autocmd InsertLeave * set nopaste
+augroup END
