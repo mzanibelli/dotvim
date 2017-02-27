@@ -1,0 +1,10 @@
+command! -nargs=0 NextConflict normal! /\v^[<>=]{4,7}<CR>
+command! -nargs=0 PrevConflict normal! ?\v^[<>=]{4,7}<CR>
+
+nnoremap <silent> <Leader>d :<C-U>call diff#toggle()<CR>
+
+augroup DIFF
+    autocmd!
+    autocmd BufWritePost * if &diff | diffupdate | endif
+    autocmd FilterWritePost * if &diff | setlocal wrap | endif
+augroup END
