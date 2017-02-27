@@ -1,4 +1,1 @@
-augroup PASS
-    autocmd!
-    autocmd BufEnter /dev/shm/pass* setlocal filetype=pass
-augroup END
+autocmd BufNewFile,BufRead /dev/shm/pass* setlocal filetype=pass

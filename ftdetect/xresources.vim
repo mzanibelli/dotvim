@@ -1,4 +1,1 @@
-augroup XRESOURCES
-    autocmd!
-    autocmd BufEnter .Xresources setlocal filetype=xresources
-augroup END
+autocmd BufNewFile,BufRead .Xresources setlocal filetype=xresources
