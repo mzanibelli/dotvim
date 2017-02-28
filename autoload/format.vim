@@ -32,3 +32,11 @@ endfunction
 function! format#trim()
     call windows#preserve('%s/\s\+$//e')
 endfunction
+
+function! format#forceoptions()
+    setlocal matchpairs-=<:>
+    setlocal formatoptions=crqj
+    if exists("b:textformat") && b:textformat == 1
+        setlocal formatoptions+=tn
+    endif
+endfunction
