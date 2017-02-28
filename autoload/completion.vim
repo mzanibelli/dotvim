@@ -2,7 +2,7 @@ function! completion#complete(reverse)
     if pumvisible()
         return a:reverse ? "\<C-P>" : "\<C-N>"
     elseif default#getchar(1) =~# '\K' || completion#method()
-        if a:reverse && completion#hasomni()
+        if a:reverse && completion#hasdynamic()
             return completion#dynamic(0)
         endif
         return "\<C-P>"
@@ -10,10 +10,13 @@ function! completion#complete(reverse)
     return "\<Tab>"
 endfunction
 
+function completion#type()
+    return exists("b:completiontype") ? b:completiontype : "\<C-X>\<C-O>"
+endfunction
+
 function! completion#dynamic(attempt)
     if !a:attempt
-        let l:type = exists("b:completiontype") ? b:completiontype : "\<C-X>\<C-O>"
-        return l:type."\<C-R>=completion#dynamic(1)\<CR>"
+        return completion#type()."\<C-R>=completion#dynamic(1)\<CR>"
     elseif !pumvisible()
         call feedkeys("\<C-E>\<C-P>", "n")
     endif
@@ -30,6 +33,11 @@ function! completion#method()
     return default#getchar(2).default#getchar(1) =~# '\(->\|::\)' || default#getchar(1) ==# '.'
 endfunction
 
-function! completion#hasomni()
-    return strlen(&omnifunc) > 0 && !syntax#commentorstring()
+function! completion#hasdynamic()
+    if completion#type() ==# "\<C-X>\<C-O>"
+        return strlen(&omnifunc) > 0 && !syntax#commentorstring()
+    elseif completion#type() ==# "\<C-X>S"
+        return &spell
+    endif
+    return 1
 endfunction
