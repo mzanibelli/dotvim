@@ -1,2 +1,0 @@
-" Options
-setlocal ft=sh

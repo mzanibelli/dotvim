@@ -12,7 +12,8 @@ endfunction
 
 function! completion#dynamic(attempt)
     if !a:attempt
-        return "\<C-X>\<C-O>\<C-R>=completion#dynamic(1)\<CR>"
+        let l:type = exists("b:completiontype") ? b:completiontype : "\<C-X>\<C-O>"
+        return l:type."\<C-R>=completion#dynamic(1)\<CR>"
     elseif !pumvisible()
         call feedkeys("\<C-E>\<C-P>", "n")
     endif

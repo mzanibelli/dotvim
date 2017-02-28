@@ -7,3 +7,6 @@ setlocal foldenable
 setlocal foldlevel=0
 setlocal foldmethod=marker
 setlocal foldnestmax=1
+
+" Variables
+let b:completiontype="\<C-X>\<C-V>"

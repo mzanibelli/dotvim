@@ -1,1 +1,1 @@
-autocmd BufNewFile,BufRead /tmp/svn-*,git-changelist.tmp setlocal filetype=vcs
+autocmd BufNewFile,BufRead /tmp/svn-changelist.tmp,/tmp/git-changelist.tmp setlocal filetype=vcs
