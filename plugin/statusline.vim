@@ -14,5 +14,5 @@ set statusline+=[%{&spelllang}]
 set statusline+=%r
 set statusline+=%m
 set statusline+=%{format#alerts(1)?'[!]':''}
-set statusline+=%{exists('b:large_file')?'[xxl]':''}
+set statusline+=%{exists('b:largefile')?'[xxl]':''}
 set statusline+=%<

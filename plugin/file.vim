@@ -12,5 +12,5 @@ augroup FILE
     autocmd BufFilePost * filetype detect
     autocmd BufWritePre * call file#mkdir(expand("<afile>"), +expand("<abuf>"))
     autocmd BufWritePre * call file#backupext()
-    autocmd CursorHold,BufWritePost * unlet! b:format
+    autocmd CursorHold,BufWritePost * unlet! b:wrongformat
 augroup END

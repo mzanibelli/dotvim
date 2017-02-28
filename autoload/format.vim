@@ -6,19 +6,19 @@ function! format#format()
 endfunction
 
 function! format#alerts(cache)
-    if exists("b:large_file")
+    if exists("b:largefile")
         return 0
     endif
     if !a:cache
-        unlet! b:format
+        unlet! b:wrongformat
     endif
-    if !exists("b:format")
+    if !exists("b:wrongformat")
         let l:trail = search('\s\+$', 'nw') != 0
         let l:tabs = search('^\t', 'nw') != 0
         let l:spaces = search('^ ', 'nw') != 0
-        let b:format = l:trail || (l:tabs && l:spaces) || (&et && l:tabs) || (!&et && l:spaces)
+        let b:wrongformat = l:trail || (l:tabs && l:spaces) || (&et && l:tabs) || (!&et && l:spaces)
     endif
-    return b:format
+    return b:wrongformat
 endfunction
 
 function! format#fix()

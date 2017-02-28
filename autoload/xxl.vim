@@ -8,6 +8,6 @@ function! xxl#init(filename)
         execute "autocmd XXL BufUnload ".a:filename." autocmd! XXL * ".a:filename
         setlocal noswapfile
         setlocal bufhidden=unload
-        let b:large_file = 1
+        let b:largefile = 1
     endif
 endfunction
