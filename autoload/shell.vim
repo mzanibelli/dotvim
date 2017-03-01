@@ -8,7 +8,6 @@ function! shell#exec(command, null)
 endfunction
 
 function! shell#run(command)
-    update
     call suspend#stdout2shell()
     execute printf("!clear;%s", a:command)
     call suspend#stdout2vim()
