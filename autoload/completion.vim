@@ -36,7 +36,7 @@ endfunction
 function! completion#hasdynamic()
     if completion#type() ==# "\<C-X>\<C-O>"
         return strlen(&omnifunc) > 0 && !syntax#commentorstring()
-    elseif completion#type() ==# "\<C-X>S"
+    elseif completion#type() ==# "\<C-X>\<C-K>"
         return &spell
     endif
     return 1
