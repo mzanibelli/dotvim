@@ -70,7 +70,7 @@ set nomodeline
 set nomore
 set nopaste
 set noshowcmd
-set noshowmode
+set showmode
 set nospell
 set noswapfile
 set notimeout
