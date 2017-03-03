@@ -43,6 +43,7 @@ set foldminlines=0
 set foldnestmax=3
 set foldopen=search,insert,quickfix,tag,undo
 set formatoptions=cqrj
+set guicursor=a:block-Cursor
 set guifont=Source\ Code\ Pro\ Regular\ 13
 set guioptions=i
 set hidden
