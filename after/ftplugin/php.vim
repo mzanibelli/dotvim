@@ -20,3 +20,4 @@ setlocal foldenable
 
 " Variables
 let b:commentprefix='//'
+let b:headerstring='#!/usr/bin/php'

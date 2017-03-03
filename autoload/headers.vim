@@ -1,14 +1,6 @@
 function! headers#write()
-    if &ft ==# "yaml"
-        let l:header = '---'
-    elseif &ft ==# "php"
-        let l:header = '#!/usr/bin/php'
-    elseif &ft ==# "ruby"
-        let l:header = '#!/usr/bin/ruby'
-    elseif &ft ==# "python"
-        let l:header = '#!/usr/bin/python2'
-    elseif &ft ==# "sh"
-        let l:header = '#!/bin/bash'
+    if exists("b:headerstring")
+        let l:header = b:headerstring
     else
         let l:header = '#!/bin/'.&ft
     endif
