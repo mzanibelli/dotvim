@@ -16,6 +16,7 @@ set breakindent
 set breakindentopt=shift:2
 set clipboard=
 set cmdheight=1
+set cmdwinheight=30
 set complete=.,w,b,u
 set completeopt=menu
 set concealcursor=nvic
