@@ -31,15 +31,8 @@ function! comment#commented(first, last)
 endfunction
 
 function! comment#prefix()
-     if &ft ==# "vim"
-         return '"'
-     elseif &ft ==# "sql"
-         return '--'
-     elseif &ft ==# "lisp"
-         return ';'
-     elseif &ft ==# "c" || &ft ==# "cpp"
-             \ || &ft ==# "php" || &ft ==# "java"
-         return '//'
-     endif
-     return '#'
+    if exists("b:commentprefix")
+        return b:commentprefix
+    endif
+    return '#'
 endfunction

@@ -17,3 +17,6 @@ vnoremap <buffer> <silent> <Leader>e :<C-U>call php#extract()<CR>
 
 " Options
 setlocal foldenable
+
+" Variables
+let b:commentprefix='//'

@@ -1,0 +1,2 @@
+" Variables
+let b:commentprefix='//'
