@@ -8,17 +8,17 @@ endfunction
 
 function! fold#toggleall()
     if &foldenable
-        normal zi
+        normal! zi
     else
-        normal zX
+        normal! zX
     endif
 endfunction
 
 function! fold#toggle()
     if &foldenable
-        silent! normal za
+        normal! zA
     else
-        normal zX
+        normal! zX
     endif
 endfunction
 
