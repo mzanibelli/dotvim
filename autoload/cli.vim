@@ -10,9 +10,8 @@ function! cli#stab()
         return "\<CR>?\<C-R>/\<CR>/\<C-R>/"
     elseif wildmenumode()
         return "\<S-Tab>"
-    else
-        return "\<C-\>esplit(getcmdline(), ' ')[0]\<CR>\<C-E>\<Space>"
     endif
+    return "\<C-\>esplit(getcmdline(), ' ')[0]\<CR>\<C-E>\<Space>"
 endfunction
 
 function! cli#cr()
@@ -27,7 +26,6 @@ function! cli#cr()
         return "\<CR>:" . l:cmdline[0] . "j  " . split(l:cmdline, " ")[1] . "\<S-Left>\<Left>"
     elseif l:cmdline =~# '\v\C^undol%[ist]'
         return "\<CR>:undo "
-    else
-        return "\<C-]>\<CR>"
     endif
+    return "\<C-]>\<CR>"
 endfunction
