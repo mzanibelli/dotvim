@@ -14,7 +14,8 @@ function! file#mkdir(file, buf)
     let l:dir = fnamemodify(a:file, ':h')
     if empty(getbufvar(a:buf, '&buftype')) && a:file !~# '\v^\w+\:\/'
         if !isdirectory(l:dir)
-            if confirm("Directory '" . l:dir . "' doesn't exist. Create it ?", "&Yes\n&No") == 1
+            echom "Directory '".l:dir."' doesn't exist"
+            if confirm("Create it ?", "&Yes\n&No") == 1
                 try
                     call mkdir(l:dir, "p")
                 catch

@@ -30,7 +30,8 @@ endfunction
 
 function! svn#revert()
     if git#tracked(expand("%"))
-        if confirm("Revert file ?", "&Yes\n&No") == 1
+        echom "You are about to revert ".expand("%")
+        if confirm("Continue ?", "&Yes\n&No") == 1
             call shell#exec("svn revert %", 0)
         endif
     endif

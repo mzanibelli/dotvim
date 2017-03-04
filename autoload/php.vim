@@ -23,9 +23,12 @@ function! php#extract()
     execute "normal! O$".l:name." = "
     execute "normal! pA;"
     redraw!
-    if confirm("Replace all matches ?", "&Yes\n&No") == 1
+    echom "Replace ".@"." with $".l:name
+    if confirm("Continue ?", "&Yes\n&No") == 1
         let l:next_line = line(".") + 2
-        execute l:next_line.",$sno/".@"."/$".l:name."/gc"
+        if l:next_line <= line("$")
+            execute l:next_line.",$sno/".@"."/$".l:name."/gc"
+        endif
     endif
 endfunction
 
