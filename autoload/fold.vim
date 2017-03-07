@@ -16,7 +16,7 @@ endfunction
 
 function! fold#toggle()
     if &foldenable
-        normal! zA
+        silent! normal! zA
     else
         normal! zX
     endif
