@@ -8,10 +8,6 @@ command! -nargs=0 Revert call source#exec("revert")
 " Mappings
 nnoremap <silent> <C-P> :<C-U>call source#move(0)<CR>
 nnoremap <silent> <C-N> :<C-U>call source#move(1)<CR>
-nnoremap <silent> <Leader>? :<C-U>call source#exec("diff")<CR>
-nnoremap <silent> <Leader>+ :<C-U>call source#exec("log")<CR>
-nnoremap <silent> <Leader>! :<C-U>call source#exec("blame")<CR>
-nnoremap <silent> <Leader>$ :<C-U>call source#exec("revert")<CR>
 
 " Init
 silent call source#root()
