@@ -36,7 +36,7 @@ function! svn#build()
 endfunction
 
 function! svn#send()
-    call shell#exec("svn commit --targets ".s:changelist, 0)
+    call shell#run("svn commit --targets ".s:changelist)
 endfunction
 
 function! svn#commit()

@@ -35,7 +35,7 @@ function! git#build()
 endfunction
 
 function! git#send()
-    call shell#exec("cat ".s:changelist." \| xargs -d '\\n' git add -- && git commit", 0)
+    call shell#run("cat ".s:changelist." \| xargs -d '\\n' git add -- && git commit")
 endfunction
 
 function! git#commit()
