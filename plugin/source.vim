@@ -1,5 +1,4 @@
 " Commands
-command! -buffer -nargs=0 Functions call qf#qfdo('call source#functions()')
 command! -nargs=0 Diff call source#exec("diff")
 command! -nargs=0 Log call source#exec("log")
 command! -nargs=0 Blame call source#exec("blame")
@@ -13,4 +12,5 @@ nnoremap <silent> <C-P> :<C-U>call source#move(0)<CR>
 nnoremap <silent> <C-N> :<C-U>call source#move(1)<CR>
 
 " Init
-silent call source#root()
+call source#init()
+doautocmd User SourceDetectPost

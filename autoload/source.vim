@@ -1,13 +1,7 @@
 let s:source_types = ["git","svn"]
 
-function! source#root()
-    call source#init()
-    call cscope#init()
-    call default#init()
-endfunction
-
 function! source#exec(command)
-    if exists("g:sourcetype") && g:sourcetype !=# ""
+    if exists("g:sourcetype")
         let l:file = expand("%")
         if l:file !=# "" && eval(g:sourcetype."#tracked('".l:file."')") == 1
             execute "call ".g:sourcetype."#".a:command."()"
@@ -49,8 +43,4 @@ function! source#move(way)
             echom "No errors"
         endtry
     endif
-endfunction
-
-function! source#functions()
-     call search#ilist2qf('/\v\C<function>/')
 endfunction
