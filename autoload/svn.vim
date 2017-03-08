@@ -1,14 +1,11 @@
 let s:changelist = "/tmp/svn-changelist.tmp"
 
-function! svn#diff(...)
-    let l:args = a:0 > 0 ? a:1 ==# "" ? "" : shellescape(a:1, 1) : ""
-    call shell#exec("svn diff ".l:args." %", 0)
+function! svn#diff()
+    call shell#exec("svn diff %", 0)
 endfunction
 
-function! svn#log(...)
-    let l:default = "-l 10"
-    let l:args = a:0 > 0 ? a:1 ==# "" ? l:default : shellescape(a:1, 1) : l:default
-    call shell#exec("svn log ".l:args." % | less", 0)
+function! svn#log()
+    call shell#exec("svn log -l 10 % | less", 0)
 endfunction
 
 function! svn#blame()
@@ -58,4 +55,3 @@ function! svn#tracked(file)
     endif
     return 1
 endfunction
-

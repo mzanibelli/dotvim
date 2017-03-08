@@ -1,13 +1,11 @@
 let s:changelist = "/tmp/git-changelist.tmp"
 
-function! git#diff(...)
-    let l:args = a:0 > 0 ? a:1 ==# "" ? "" : shellescape(a:1, 1) : ""
-    call shell#exec("git difftool ".l:args." -- %", 0)
+function! git#diff()
+    call shell#exec("git difftool -- %", 0)
 endfunction
 
-function! git#log(...)
-    let l:args = a:0 > 0 ? a:1 ==# "" ? "" : shellescape(a:1, 1) : ""
-    call shell#exec("git log ".l:args." -- %", 0)
+function! git#log()
+    call shell#exec("git log --oneline --graph -- %", 0)
 endfunction
 
 function! git#blame()

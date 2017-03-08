@@ -1,7 +1,7 @@
 " Commands
 command! -buffer -nargs=0 Functions call qf#qfdo('call source#functions()')
-command! -nargs=* Diff call source#exec("diff")
-command! -nargs=* Log call source#exec("log")
+command! -nargs=0 Diff call source#exec("diff")
+command! -nargs=0 Log call source#exec("log")
 command! -nargs=0 Blame call source#exec("blame")
 command! -nargs=0 Revert call source#exec("revert")
 command! -nargs=0 Commit call source#exec("commit")
