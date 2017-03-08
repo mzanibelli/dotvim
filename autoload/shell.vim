@@ -24,6 +24,7 @@ function! shell#bgstart(command)
 endfunction
 
 function! shell#bgend(channel)
+    call delete(g:bgoutput)
     unlet g:bgoutput
     redrawstatus!
 endfunction

@@ -87,6 +87,7 @@ set scrolloff=5
 set selectmode=
 set sessionoptions=blank,buffers,winsize
 set shell=bash
+set shellcmdflag=-c
 set shiftwidth=4
 set shortmess=aoOTIcsAF
 set showtabline=0

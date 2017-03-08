@@ -1,18 +1,32 @@
 function! find#find(filename)
     silent call qf#cclear()
     if a:filename =~# '\v^(\*|\w|-|\.|/| )+$'
-        call qf#cload("call find#find2qf('".a:filename."')")
-        call qf#cfirst(1)
+        call find#bgstart(a:filename)
     endif
 endfunction
 
-function! find#find2qf(filename)
-  let l:results = tempname()
-  let l:filename = shellescape(printf("*%s*", a:filename))
-  execute '!find . -type f -ipath '.l:filename.' -not -path "*/\.*" 2>/dev/null > '.l:results
-  let l:old_errfmt = &errorformat
-  set errorformat=%f
-  execute "cgetfile ".l:results
-  call delete(l:results)
-  let &errorformat = l:old_errfmt
+function! find#bgstart(filename)
+    if !exists("g:bgoutput")
+        let g:bgoutput = tempname()
+        let l:filename = printf("*%s*", a:filename)
+        let l:find = "find ".shellescape(getcwd())." -type f -ipath ".shellescape(l:filename)
+        let l:command = [&shell, &shellcmdflag, l:find]
+        call job_start(l:command, {'close_cb': 'find#bgend', 'out_io': 'file', 'out_name': g:bgoutput})
+        redrawstatus!
+    endif
+endfunction
+
+function! find#bgend(channel)
+    call find#qf()
+    call delete(g:bgoutput)
+    unlet g:bgoutput
+    redrawstatus!
+endfunction
+
+function! find#qf()
+    let l:old_errfmt = &errorformat
+    set errorformat=%f
+    call qf#cload("cgetfile ".g:bgoutput)
+    call qf#cfirst(1)
+    let &errorformat = l:old_errfmt
 endfunction
