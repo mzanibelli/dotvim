@@ -1,3 +1,5 @@
+let s:changelist = "/tmp/git-changelist.tmp"
+
 function! git#diff(...)
     let l:args = a:0 > 0 ? a:1 ==# "" ? "" : shellescape(a:1, 1) : ""
     call shell#exec("git difftool ".l:args." -- %", 0)
@@ -28,21 +30,17 @@ function! git#revert()
     endif
 endfunction
 
-function! git#add()
-    call shell#exec("git add -- %", 1)
-endfunction
-
-function! git#commit(...)
-    let l:args = a:0 > 0 ? a:1 ==# "" ? "" : shellescape(a:1, 1) : ""
-    call shell#exec("git commit ".l:args, 0)
-endfunction
-
 function! git#build()
-    call shell#exec("git ls-files --deleted --modified --others --exclude-standard > /tmp/git-changelist.tmp && $EDITOR /tmp/git-changelist.tmp", 0)
+    call shell#exec("git ls-files --deleted --modified --others --exclude-standard > ".s:changelist." && $EDITOR ".s:changelist, 0)
 endfunction
 
 function! git#send()
-    call shell#exec("cat /tmp/git-changelist.tmp \| xargs -d '\\n' git add -- && git commit", 0)
+    call shell#exec("cat ".s:changelist." \| xargs -d '\\n' git add -- && git commit", 0)
+endfunction
+
+function! git#commit()
+    call git#build()
+    call git#send()
 endfunction
 
 function! git#update()
@@ -55,7 +53,6 @@ endfunction
 
 function! git#tracked(file)
     if shell#exec("git ls-files --error-unmatch -- ".fnameescape(a:file), 1) == 0
-        echom "Not a Git repository"
         return 0
     endif
     return 1

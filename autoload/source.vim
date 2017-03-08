@@ -1,36 +1,36 @@
 let s:source_types = ["git","svn"]
 
 function! source#root()
-    if source#gettype() !=# ""
-        echom "Moved to ".getcwd()
-    endif
+    call source#init()
     call cscope#init()
     call default#init()
 endfunction
 
 function! source#exec(command)
     if exists("g:sourcetype") && g:sourcetype !=# ""
-        if eval(g:sourcetype."#tracked('".expand("%")."')")
+        let l:file = expand("%")
+        if l:file !=# "" && eval(g:sourcetype."#tracked('".l:file."')") == 1
             execute "call ".g:sourcetype."#".a:command."()"
+            return
         endif
     endif
+    echom "VCS control not available"
 endfunction
 
-function! source#gettype()
+function! source#init()
     let l:oldcwd = getcwd()
     let l:path = l:oldcwd
     while l:path !=# "/"
         for type in s:source_types
             if isdirectory(l:path."/.".type)
                 let g:sourcetype = type
-                return type
+                return
             endif
         endfor
         execute "cd ".fnameescape(l:path)."/.."
         let l:path = getcwd()
     endwhile
     execute "cd ".fnameescape(l:oldcwd)
-    return ""
 endfunction
 
 function! source#move(way)

@@ -1,3 +1,5 @@
+let s:changelist = "/tmp/svn-changelist.tmp"
+
 function! svn#diff(...)
     let l:args = a:0 > 0 ? a:1 ==# "" ? "" : shellescape(a:1, 1) : ""
     call shell#exec("svn diff ".l:args." %", 0)
@@ -29,21 +31,17 @@ function! svn#revert()
     endif
 endfunction
 
-function! svn#add()
-    call shell#exec("svn add --force %", 1)
-endfunction
-
-function! svn#commit(...)
-    let l:args = a:0 > 0 ? a:1 ==# "" ? "" : shellescape(a:1, 1) : ""
-    call shell#exec("svn commit ".l:args, 0)
-endfunction
-
 function! svn#build()
-    call shell#exec("svn diff --summarize | cut -c 9- > /tmp/svn-changelist.tmp && $EDITOR /tmp/svn-changelist.tmp", 0)
+    call shell#exec("svn diff --summarize \| cut -c 9- > ".s:changelist." && $EDITOR ".s:changelist, 0)
 endfunction
 
 function! svn#send()
-    call shell#exec("svn commit --targets /tmp/svn-changelist.tmp", 0)
+    call shell#exec("svn commit --targets ".s:changelist, 0)
+endfunction
+
+function! svn#commit()
+    call svn#build()
+    call svn#send()
 endfunction
 
 function svn#update()
@@ -56,7 +54,6 @@ endfunction
 
 function! svn#tracked(file)
     if shell#exec("svn info ".fnameescape(a:file), 1) == 0
-        echom "Not an SVN repository"
         return 0
     endif
     return 1
