@@ -12,7 +12,6 @@ function! shell#run(command)
     execute printf("!clear;%s", a:command)
     call suspend#stdout2vim()
     redraw!
-    echom v:shell_error == 0 ? "Execution successful" : "An error occurred"
     return v:shell_error == 0
 endfunction
 

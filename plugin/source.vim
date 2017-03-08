@@ -3,9 +3,9 @@ command! -nargs=0 Diff call source#exec("diff")
 command! -nargs=0 Log call source#exec("log")
 command! -nargs=0 Blame call source#exec("blame")
 command! -nargs=0 Revert call source#exec("revert")
-command! -nargs=0 Commit call source#exec("commit")
-command! -nargs=0 Update call source#exec("update")
-command! -nargs=0 Status call source#exec("status")
+command! -nargs=0 Commit call source#exec("_commit")
+command! -nargs=0 Update call source#exec("_update")
+command! -nargs=0 Status call source#exec("_status")
 
 " Mappings
 nnoremap <silent> <C-P> :<C-U>call source#move(0)<CR>
