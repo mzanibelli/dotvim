@@ -6,6 +6,10 @@ command! -nargs=0 Blame call source#exec("blame")
 command! -nargs=0 Revert call source#exec("revert")
 command! -nargs=0 Add call source#exec("add")
 command! -nargs=* Commit call source#exec("commit")
+command! -nargs=0 Build call source#exec("build")
+command! -nargs=0 Send call source#exec("send")
+command! -nargs=0 Update call source#exec("update")
+command! -nargs=0 Status call source#exec("status")
 
 " Mappings
 nnoremap <silent> <C-P> :<C-U>call source#move(0)<CR>

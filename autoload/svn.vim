@@ -38,6 +38,22 @@ function! svn#commit(...)
     call shell#exec("svn commit ".l:args, 0)
 endfunction
 
+function! svn#build()
+    call shell#exec("svn diff --summarize | cut -c 9- > /tmp/svn-changelist.tmp && $EDITOR /tmp/svn-changelist.tmp", 0)
+endfunction
+
+function! svn#send()
+    call shell#exec("svn commit --targets /tmp/svn-changelist.tmp", 0)
+endfunction
+
+function svn#update()
+    call shell#run("svn update")
+endfunction
+
+function svn#status()
+    call shell#run("svn status")
+endfunction
+
 function! svn#tracked(file)
     if shell#exec("svn info ".fnameescape(a:file), 1) == 0
         echom "Not an SVN repository"
