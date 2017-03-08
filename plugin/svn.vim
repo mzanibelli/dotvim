@@ -1,10 +1,3 @@
-" Mappings
-command! -nargs=* SVNDiff call svn#diff(<q-args>)
-command! -nargs=* SVNLog call svn#log(<q-args>)
-command! -nargs=0 SVNBlame call svn#blame()
-command! -nargs=0 SVNRevert call svn#revert()
-command! -nargs=0 SVNRoot call source#root("svn")
-
 " Autocommands
 augroup SVN
     autocmd!

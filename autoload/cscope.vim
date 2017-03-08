@@ -1,3 +1,11 @@
+function! cscope#init()
+    if filereadable("./cscope.out")
+        set nocsverb
+        cs add cscope.out
+        set csverb
+    endif
+endfunction
+
 function! cscope#go(char)
     let l:search = expand("<cword>")
     if !cscope_connection() || l:search ==# ""

@@ -1,27 +1,36 @@
-function! source#root(type)
-    let l:oldcwd = getcwd()
-    let l:path = "."
-    let l:folder = ".".a:type
-    while !isdirectory(l:folder)
-        if l:path ==# "/"
-            execute "cd ".fnameescape(l:oldcwd)
-            echom "Root not found"
-            return
+let s:source_types = ["git","svn"]
+
+function! source#root()
+    if source#gettype() !=# ""
+        echom "Moved to ".getcwd()
+    endif
+    call cscope#init()
+    call default#init()
+endfunction
+
+function! source#exec(command)
+    if exists("g:sourcetype") && g:sourcetype !=# ""
+        if eval(g:sourcetype."#tracked('".expand("%")."')")
+            execute "call ".g:sourcetype."#".a:command."()"
         endif
+    endif
+endfunction
+
+function! source#gettype()
+    let l:oldcwd = getcwd()
+    let l:path = l:oldcwd
+    while l:path !=# "/"
+        for type in s:source_types
+            if isdirectory(l:path."/.".type)
+                let g:sourcetype = type
+                return type
+            endif
+        endfor
         execute "cd ".fnameescape(l:path)."/.."
         let l:path = getcwd()
-        let l:folder = l:path."/.".a:type
     endwhile
-    execute "call ".a:type."#mappings()"
-    if filereadable("./cscope.out")
-        set nocsverb
-        cs add cscope.out
-        set csverb
-    endif
-    if filereadable("./vimrc.local")
-        source ./vimrc.local
-    endif
-    echom "Moved to ".getcwd()
+    execute "cd ".fnameescape(l:oldcwd)
+    return ""
 endfunction
 
 function! source#move(way)

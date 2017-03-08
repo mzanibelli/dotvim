@@ -1,3 +1,9 @@
+function! default#init()
+    if filereadable("./vimrc.local")
+        source ./vimrc.local
+    endif
+endfunction
+
 function! default#units()
     let l:units = 1
     if executable("nproc")
