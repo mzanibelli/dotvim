@@ -29,6 +29,15 @@ function! svn#revert()
     endif
 endfunction
 
+function! svn#add()
+    call shell#exec("svn add --force %", 1)
+endfunction
+
+function! svn#commit(...)
+    let l:args = a:0 > 0 ? a:1 ==# "" ? "" : shellescape(a:1, 1) : ""
+    call shell#exec("svn commit ".l:args, 0)
+endfunction
+
 function! svn#tracked(file)
     if shell#exec("svn info ".fnameescape(a:file), 1) == 0
         echom "Not an SVN repository"

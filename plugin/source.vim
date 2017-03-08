@@ -4,6 +4,8 @@ command! -nargs=* Diff call source#exec("diff")
 command! -nargs=* Log call source#exec("log")
 command! -nargs=0 Blame call source#exec("blame")
 command! -nargs=0 Revert call source#exec("revert")
+command! -nargs=0 Add call source#exec("add")
+command! -nargs=* Commit call source#exec("commit")
 
 " Mappings
 nnoremap <silent> <C-P> :<C-U>call source#move(0)<CR>

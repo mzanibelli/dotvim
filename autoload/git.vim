@@ -28,6 +28,15 @@ function! git#revert()
     endif
 endfunction
 
+function! git#add()
+    call shell#exec("git add -- %", 1)
+endfunction
+
+function! git#commit(...)
+    let l:args = a:0 > 0 ? a:1 ==# "" ? "" : shellescape(a:1, 1) : ""
+    call shell#exec("git commit ".l:args, 0)
+endfunction
+
 function! git#tracked(file)
     if shell#exec("git ls-files --error-unmatch -- ".fnameescape(a:file), 1) == 0
         echom "Not a Git repository"
