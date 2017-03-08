@@ -24,7 +24,8 @@ endfunction
 function! git#revert()
     echom "You are about to revert ".expand("%")
     if confirm("Continue ?", "&Yes\n&No") == 1
-        call shell#exec("git checkout -- %", 0)
+        call shell#exec("git checkout -- %", 1)
+        checktime
     endif
 endfunction
 
@@ -33,7 +34,7 @@ function! git#build()
 endfunction
 
 function! git#send()
-    call shell#run("cat ".s:changelist." \| xargs -d '\\n' git add -- && git commit")
+    call shell#exec("cat ".s:changelist." \| xargs -d '\\n' git add -- && git commit", 0)
 endfunction
 
 function! git#commit()
@@ -42,7 +43,8 @@ function! git#commit()
 endfunction
 
 function! git#update()
-    call shell#run("git pull")
+    call shell#bgstart("git pull")
+    checktime
 endfunction
 
 function! git#status()

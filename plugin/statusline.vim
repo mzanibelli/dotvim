@@ -15,4 +15,5 @@ set statusline+=%r
 set statusline+=%m
 set statusline+=%{format#alerts(1)?'[!]':''}
 set statusline+=%{exists('b:largefile')?'[xxl]':''}
+set statusline+=%{exists('g:bgoutput')?'[...]':''}
 set statusline+=%<

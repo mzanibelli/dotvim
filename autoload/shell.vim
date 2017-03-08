@@ -15,3 +15,16 @@ function! shell#run(command)
     echom v:shell_error == 0 ? "Execution successful" : "An error occurred"
     return v:shell_error == 0
 endfunction
+
+function! shell#bgstart(command)
+    if !exists("g:bgoutput")
+        let g:bgoutput = tempname()
+        call job_start(a:command, {'close_cb': 'shell#bgend', 'out_io': 'file', 'out_name': g:bgoutput})
+        redrawstatus!
+    endif
+endfunction
+
+function! shell#bgend(channel)
+    unlet g:bgoutput
+    redrawstatus!
+endfunction

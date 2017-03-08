@@ -24,7 +24,8 @@ endfunction
 function! svn#revert()
     echom "You are about to revert ".expand("%")
     if confirm("Continue ?", "&Yes\n&No") == 1
-        call shell#exec("svn revert %", 0)
+        call shell#exec("svn revert %", 1)
+        checktime
     endif
 endfunction
 
@@ -33,7 +34,7 @@ function! svn#build()
 endfunction
 
 function! svn#send()
-    call shell#run("svn commit --targets ".s:changelist)
+    call shell#exec("svn commit --targets ".s:changelist, 0)
 endfunction
 
 function! svn#commit()
@@ -42,7 +43,8 @@ function! svn#commit()
 endfunction
 
 function svn#update()
-    call shell#run("svn update")
+    call shell#bgstart("svn update")
+    checktime
 endfunction
 
 function svn#status()
