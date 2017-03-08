@@ -74,7 +74,6 @@ set nopaste
 set noshowcmd
 set showmode
 set nospell
-set noswapfile
 set notimeout
 set nowrap
 set nowritebackup
