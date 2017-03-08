@@ -1,3 +1,3 @@
 " Commands
-command! -nargs=0 HexOn %!xxd
-command! -nargs=0 HexOff %!xxd -r
+command! -nargs=0 HexOn silent! %!xxd
+command! -nargs=0 HexOff silent! %!xxd -r
