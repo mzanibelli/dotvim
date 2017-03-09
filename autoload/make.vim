@@ -13,9 +13,24 @@ function! make#command()
 endfunction
 
 function! make#qf(channel)
-    call qf#lload("lgetfile ".g:bgoutput)
+    let l:i = 1
+    let l:content = []
+    let l:buffer = bufnr("%")
+    silent call qf#lclear()
+    execute "sign unplace * buffer=".l:buffer
+    execute "lgetfile ".g:bgoutput
+    for err in getloclist(winnr())
+        if err.valid
+            let l:num = err.lnum > line("$") ? line(".") : err.lnum
+            let err.bufnr = bufnr("%")
+            let err.lnum = l:num
+            execute "sign place ".l:i." line=".l:num." name=MakeprgError buffer=".l:buffer
+            call add(l:content, err)
+            let l:i += 1
+        endif
+    endfor
+    call setloclist(winnr(), l:content)
     call async#end()
-    silent! ll1
 endfunction
 
 function! make#getfile()

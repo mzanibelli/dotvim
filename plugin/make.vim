@@ -7,5 +7,8 @@ nnoremap <silent> <Leader>w :<C-U>call make#make()<CR>
 " Autocommands
 augroup MAKE
     autocmd!
-    autocmd BufWritePost * silent call make#auto()
+    autocmd BufReadPost,BufWritePost,TextChanged,TextChangedI * silent call make#auto()
 augroup END
+
+" Init
+sign define MakeprgError text=>> texthl=Normal

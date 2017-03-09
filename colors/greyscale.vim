@@ -21,6 +21,10 @@ highlight CursorLineNr ctermfg=255 cterm=bold guifg=#eeeeee gui=bold
 highlight Debug ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
 highlight Define ctermfg=255 ctermbg=none cterm=bold guifg=#eeeeee guibg=NONE gui=bold
 highlight Delimiter ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
+highlight DiffAdd ctermbg=none ctermfg=Green guibg=NONE guifg=Green
+highlight DiffChange ctermbg=none ctermfg=White guibg=NONE guifg=White
+highlight DiffDelete ctermbg=none ctermfg=Red guibg=NONE guifg=Red
+highlight DiffText ctermbg=none ctermfg=Yellow guibg=NONE guifg=Yellow
 highlight Directory ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
 highlight Error ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
 highlight ErrorMsg ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
@@ -52,6 +56,7 @@ highlight PreProc cterm=bold ctermfg=255 ctermbg=none gui=bold guifg=#eeeeee gui
 highlight Question ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
 highlight Repeat ctermfg=255 ctermbg=none cterm=bold guifg=#eeeeee guibg=NONE gui=bold
 highlight Search ctermfg=none ctermbg=none cterm=underline guifg=NONE guibg=NONE gui=underline
+highlight SignColumn ctermfg=255 ctermbg=none guifg=#eeeeee guibg=#000000
 highlight Special ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
 highlight SpecialChar ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
 highlight SpecialComment ctermfg=240 ctermbg=none guifg=#585858 guibg=NONE
@@ -76,10 +81,6 @@ highlight Visual ctermfg=16 ctermbg=255 guifg=#000000 guibg=#eeeeee
 highlight VisualNOS ctermfg=16 ctermbg=255 guifg=#000000 guibg=#eeeeee
 highlight WarningMsg ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
 highlight WildMenu ctermfg=255 ctermbg=16 cterm=bold guifg=#eeeeee guibg=#000000 gui=bold
-highlight qfLineNr ctermfg=255 guifg=#eeeeee
-highlight qfFileName cterm=bold gui=bold
 highlight phpMemberSelector ctermfg=255 ctermbg=none cterm=none guifg=#eeeeee guibg=NONE gui=NONE
-highlight DiffAdd ctermbg=none ctermfg=Green guibg=NONE guifg=Green
-highlight DiffChange ctermbg=none ctermfg=White guibg=NONE guifg=White
-highlight DiffDelete ctermbg=none ctermfg=Red guibg=NONE guifg=Red
-highlight DiffText ctermbg=none ctermfg=Yellow guibg=NONE guifg=Yellow
+highlight qfFileName cterm=bold gui=bold
+highlight qfLineNr ctermfg=255 guifg=#eeeeee
