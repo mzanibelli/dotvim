@@ -15,16 +15,6 @@ function! shell#run(command)
     return v:shell_error == 0
 endfunction
 
-function! shell#bgstart(command)
-    if !exists("g:bgoutput")
-        let g:bgoutput = tempname()
-        call job_start(a:command, {'close_cb': 'shell#bgend', 'out_io': 'file', 'out_name': g:bgoutput})
-        redrawstatus!
-    endif
-endfunction
-
-function! shell#bgend(channel)
-    call delete(g:bgoutput)
-    unlet g:bgoutput
-    redrawstatus!
+function! shell#background(command)
+    call async#start(a:command, 'async#end')
 endfunction

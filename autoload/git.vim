@@ -43,7 +43,7 @@ function! git#commit()
 endfunction
 
 function! git#update()
-    call shell#bgstart("git pull")
+    call shell#background("git pull")
     checktime
 endfunction
 

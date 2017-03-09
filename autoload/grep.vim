@@ -12,19 +12,20 @@ function! grep#opfunc(type)
 endfunction
 
 function! grep#grep(args)
-    let l:suffix = executable("rg") ? "" : " -R ."
-    call qf#cload("grep! -F ".shellescape(a:args, 1).l:suffix)
+    call async#start(grep#command(a:args), 'grep#qf')
 endfunction
 
-function! grep#infile(visual)
-    if a:visual && visualmode() !=# "^V"
-        let l:search = search#escape(visual#gettext())
-    elseif a:visual
-        return
-    else
-        let l:search = "\\<".expand("<cword>")."\\>"
-    endif
-    call qf#cload("silent! vimgrep /".l:search."/ %")
+function! grep#qf(channel)
+    let l:old_errfmt = &errorformat
+    let &errorformat = &grepformat
+    call qf#cload("cgetfile ".g:bgoutput)
+    let &errorformat = l:old_errfmt
+    call async#end()
+endfunction
+
+function! grep#command(args)
+    let l:suffix = executable("rg") ? "" : " -R"
+    return &grepprg." -F ".shellescape(a:args).l:suffix." ".getcwd()
 endfunction
 
 function! grep#configure()
@@ -35,7 +36,7 @@ function! grep#configure()
         let &grepprg="ag --nogroup --nocolor --vimgrep --skip-vcs-ignores --workers ".default#units()
         set grepformat=%f:%l:%c:%m,%f:%l:%m
     else
-        set grepprg=grep\ --exclude-dir={.svn,.git}\ --exclude={cscope.out,tags}\ --color=never\ -n\ $*\ /dev/null
+        let &grepprg="grep --exclude-dir={.svn,.git} --exclude={cscope.out,tags} --color=never -n"
         set grepformat=%f:%l:%m,%f:%l%m,%f\ \ %l%m
     endif
 endfunction

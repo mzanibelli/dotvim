@@ -6,21 +6,14 @@ function! find#find(filename)
 endfunction
 
 function! find#bgstart(filename)
-    if !exists("g:bgoutput")
-        let g:bgoutput = tempname()
-        let l:filename = printf("*%s*", a:filename)
-        let l:find = "find ".shellescape(getcwd())." -type f -ipath ".shellescape(l:filename)
-        let l:command = [&shell, &shellcmdflag, l:find]
-        call job_start(l:command, {'close_cb': 'find#bgend', 'out_io': 'file', 'out_name': g:bgoutput})
-        redrawstatus!
-    endif
+    let l:filename = printf("*%s*", a:filename)
+    let l:command = "find ".shellescape(getcwd())." -type f -ipath ".shellescape(l:filename)
+    call async#start(l:command, 'find#bgend')
 endfunction
 
 function! find#bgend(channel)
     call find#qf()
-    call delete(g:bgoutput)
-    unlet g:bgoutput
-    redrawstatus!
+    call async#end()
 endfunction
 
 function! find#qf()
