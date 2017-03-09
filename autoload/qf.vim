@@ -16,7 +16,6 @@ function! qf#cload(command)
     silent execute a:command
     call setqflist(filter(copy(getqflist()), "v:val.valid == 1"))
     botright cwindow
-    call qf#cfirst()
     redraw!
 endfunction
 
@@ -38,7 +37,6 @@ function! qf#lload(command)
     silent execute a:command
     call setloclist(winnr(), filter(copy(getloclist(winnr())), "v:val.valid == 1"))
     lwindow
-    call qf#lfirst()
     redraw!
 endfunction
 

@@ -1,7 +1,8 @@
 function! find#find(filename)
-    silent call qf#cclear()
     if a:filename =~# '\v^(\*|\w|-|\.|/| )+$'
         call find#bgstart(a:filename)
+    else
+        echom "Invalid file pattern"
     endif
 endfunction
 
@@ -20,5 +21,6 @@ function! find#qf()
     let l:old_errfmt = &errorformat
     set errorformat=%f
     call qf#cload("cgetfile ".g:bgoutput)
+    call qf#cfirst()
     let &errorformat = l:old_errfmt
 endfunction
