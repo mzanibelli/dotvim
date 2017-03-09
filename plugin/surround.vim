@@ -16,5 +16,5 @@ vnoremap s{ <Esc>`>a}<Esc>`<i{<Esc>
 vnoremap s} <Esc>`>a}<Esc>`<i{<Esc>
 vnoremap s< <Esc>`>a><Esc>`<i<<Esc>
 vnoremap s` <Esc>`>a`<Esc>`<i`<Esc>
-nnoremap <silent> <Leader>" :<C-U>windows#preserve s/'/"/g<CR>
-nnoremap <silent> <Leader>' :<C-U>windows#preserve s/"/'/g<CR>
+nnoremap <silent> <Leader>" :<C-U>Preserve s/'/"/g<CR>
+nnoremap <silent> <Leader>' :<C-U>Preserve s/"/'/g<CR>
