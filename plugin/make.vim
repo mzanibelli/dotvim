@@ -7,5 +7,5 @@ nnoremap <silent> <Leader>w :<C-U>call make#make()<CR>
 " Autocommands
 augroup MAKE
     autocmd!
-    autocmd BufWritePost * if exists("b:autocompile") && b:autocompile == 1 | call make#make() | endif
+    autocmd BufWritePost * silent call make#auto()
 augroup END
