@@ -20,6 +20,6 @@ endfunction
 
 function! make#getfile()
     let l:file = tempname()
-    execute "noautocmd saveas ".l:file
+    execute "noautocmd write ".l:file
     return l:file
 endfunction
