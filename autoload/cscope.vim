@@ -14,7 +14,6 @@ function! cscope#go(char)
     endif
     try
         call qf#cload("cs find ".a:char." ".l:search)
-        call qf#cfirst()
         if a:char ==# "s"
             echom "Found '".l:search."' symbol"
         elseif a:char ==# "g"

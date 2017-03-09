@@ -20,6 +20,5 @@ function! find#qf()
     let l:old_errfmt = &errorformat
     set errorformat=%f
     call qf#cload("cgetfile ".g:bgoutput)
-    call qf#cfirst(1)
     let &errorformat = l:old_errfmt
 endfunction
