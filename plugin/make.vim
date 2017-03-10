@@ -7,7 +7,7 @@ nnoremap <silent> <Leader>w :<C-U>call make#make()<CR>
 " Autocommands
 augroup MAKE
     autocmd!
-    autocmd BufReadPost,BufWritePost * silent call make#auto(0)
+    autocmd BufWritePost * silent call make#auto(0)
     autocmd CursorHold * silent call make#auto(1)
 augroup END
 
