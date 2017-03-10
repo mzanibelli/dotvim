@@ -14,7 +14,7 @@ function! make#make()
 endfunction
 
 function! make#command()
-    return substitute(&makeprg, "%", make#getfile(), "")." 2>&1"
+    return substitute(&makeprg, "%", make#copy(), "")." 2>&1"
 endfunction
 
 function! make#qf(channel)
@@ -34,6 +34,7 @@ function! make#qf(channel)
         endif
     endfor
     call make#setloclist(l:content)
+    call delete(b:makeprgcopy)
     call async#end()
 endfunction
 
@@ -45,8 +46,8 @@ function make#setloclist(content)
     endif
 endfunction
 
-function! make#getfile()
-    let l:file = tempname()
-    execute "noautocmd write ".l:file
-    return l:file
+function! make#copy()
+    let b:makeprgcopy = tempname()
+    execute "noautocmd write ".b:makeprgcopy
+    return b:makeprgcopy
 endfunction
