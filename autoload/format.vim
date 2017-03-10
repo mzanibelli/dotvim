@@ -1,7 +1,14 @@
+function! format#auto()
+    if exists("b:autofixformat") && b:autofixformat == 1
+        call format#fix()
+    endif
+    if exists("b:autoformat") && b:autoformat == 1
+        call windows#preserve('normal! gggqG')
+    endif
+endfunction
+
 function! format#format()
-    set ff=unix
-    %retab!
-    call format#trim()
+    call format#fix()
     call windows#preserve('%s/\n\{2,\}/\r\r/g')
 endfunction
 
@@ -13,18 +20,20 @@ function! format#alerts(cache)
         unlet! b:wrongformat
     endif
     if !exists("b:wrongformat")
+        let l:type = &ff !=# "unix"
         let l:trail = search('\s\+$', 'nw') != 0
         let l:tabs = search('^\t', 'nw') != 0
         let l:spaces = search('^ ', 'nw') != 0
-        let b:wrongformat = l:trail || (l:tabs && l:spaces) || (&et && l:tabs) || (!&et && l:spaces)
+        let b:wrongformat = l:type || l:trail || (l:tabs && l:spaces) || (&et && l:tabs) || (!&et && l:spaces)
     endif
     return b:wrongformat
 endfunction
 
 function! format#fix()
     if format#alerts(0)
-        call format#trim()
+        setlocal ff=unix
         call windows#preserve("%retab!")
+        call format#trim()
     endif
 endfunction
 

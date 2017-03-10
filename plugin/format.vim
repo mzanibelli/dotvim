@@ -5,6 +5,6 @@ command! -nargs=0 Fix silent! call format#fix()
 " Autocommands
 augroup FORMAT
     autocmd!
-    autocmd BufWritePre * if exists("b:autoformat") && b:autoformat == 1 | call windows#preserve('normal! gggqG') | endif
+    autocmd BufWritePre * call format#auto()
     autocmd FileType * call format#forceoptions()
 augroup END
