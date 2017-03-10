@@ -19,7 +19,7 @@ function! file#mkdir(file, buf)
                 try
                     call mkdir(l:dir, "p")
                 catch
-                    echoerr "Can't create '" . l:dir . "'"
+                    echom "Can't create '".l:dir."'"
                 endtry
             endif
         endif
