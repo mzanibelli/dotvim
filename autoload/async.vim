@@ -8,7 +8,6 @@ function! async#start(command, callback)
 endfunction
 
 function! async#end()
-    call delete(g:bgoutput)
     unlet g:bgoutput
     redrawstatus!
 endfunction
