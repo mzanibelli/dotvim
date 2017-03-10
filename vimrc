@@ -10,7 +10,7 @@ set autoread
 set backspace=indent,eol,start
 set backup
 set backupcopy=auto
-set backupdir=$HOME/.vim/backup
+set backupdir=/tmp/vim/backup
 set belloff=all
 set breakindent
 set breakindentopt=shift:2
@@ -27,7 +27,7 @@ set cscopequickfix=s-,c-,d-,i-,t-,e-,a-,g-
 set cscopetagorder=0
 set diffexpr=
 set diffopt=iwhite,filler,vertical
-set directory=$HOME/.vim/swap//
+set directory=/tmp/vim/swap//
 set encoding=utf-8
 set endofline
 set equalalways
@@ -118,7 +118,7 @@ set title
 set ttimeout
 set ttimeoutlen=5
 set ttyfast
-set undodir=$HOME/.vim/undo//
+set undodir=/tmp/vim/undo//
 set undofile
 set undolevels=5000
 set updatecount=10

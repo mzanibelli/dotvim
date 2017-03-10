@@ -1,5 +1,5 @@
 function! sessions#make()
-    let l:dir = fnameescape($HOME."/.vim/session".getcwd())
+    let l:dir = fnameescape("/tmp/vim/session".getcwd())
     let l:file = l:dir.'/session.vim'
     silent! call mkdir(l:dir, "p")
     cclose
@@ -8,7 +8,7 @@ function! sessions#make()
 endfunction
 
 function! sessions#load()
-    let l:file = fnameescape($HOME."/.vim/session".getcwd()."/session.vim")
+    let l:file = fnameescape("/tmp/vim/session".getcwd()."/session.vim")
     if (filereadable(l:file))
         let l:old_swap = &swapfile
         set noswapfile
