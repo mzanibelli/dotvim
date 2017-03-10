@@ -1,6 +1,6 @@
 function! xml#minify()
     call windows#preserve('%s/\s\+$//e')
-    normal! ggVGJ
+    call windows#preserve("normal! ggVGJ")
     call windows#preserve('%s/>\s\+</></e')
     call windows#preserve('%s/\n//e')
 endfunction
