@@ -25,7 +25,6 @@ function! format#fix()
     if format#alerts(0)
         call format#trim()
         call windows#preserve("%retab!")
-        update
     endif
 endfunction
 
