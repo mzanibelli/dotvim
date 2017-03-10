@@ -34,7 +34,7 @@ function! make#qf(channel)
         endif
     endfor
     call make#setloclist(l:content)
-    call delete(b:makeprgcopy)
+    call delete(b:makecopy)
     call async#end()
 endfunction
 
@@ -47,7 +47,7 @@ function make#setloclist(content)
 endfunction
 
 function! make#copy()
-    let b:makeprgcopy = tempname()
-    execute "noautocmd write ".b:makeprgcopy
-    return b:makeprgcopy
+    let b:makecopy = tempname()
+    execute "noautocmd write ".b:makecopy
+    return b:makecopy
 endfunction
