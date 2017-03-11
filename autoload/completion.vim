@@ -10,7 +10,7 @@ function! completion#complete(reverse)
     return "\<Tab>"
 endfunction
 
-function completion#type()
+function! completion#type()
     return exists("b:completiontype") ? b:completiontype : "\<C-X>\<C-O>"
 endfunction
 
