@@ -1,5 +1,5 @@
 " Mappings
-nnoremap <buffer> <Esc> :<C-U>b#<CR>
+nnoremap <silent> <buffer> <Esc> :<C-U>call help#back()<CR>
 nnoremap <silent> <buffer> gt :<C-U>Help <C-R><C-W><CR>
 
 " Init

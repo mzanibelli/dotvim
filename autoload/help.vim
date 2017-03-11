@@ -9,3 +9,11 @@ function! help#help(topic)
         echom "Help not found"
     endtry
 endfunction
+
+function! help#back()
+    if expand("#") !=# ""
+        buffer #
+    else
+        quit
+    endif
+endfunction
