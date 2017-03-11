@@ -42,12 +42,12 @@ function! svn#commit()
     call svn#send()
 endfunction
 
-function svn#update()
+function! svn#update()
     call shell#background("svn update")
     checktime
 endfunction
 
-function svn#status()
+function! svn#status()
     call shell#run("svn status")
 endfunction
 
