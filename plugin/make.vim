@@ -9,8 +9,8 @@ augroup MAKE
     autocmd!
     autocmd BufWritePost * silent call make#auto(0)
     autocmd CursorHold * silent call make#auto(1)
-    autocmd TextChanged,TextChangedI * let b:textchanged = 1
-    autocmd BufLeave * let b:textchanged = 0
+    autocmd BufEnter * let b:textchanged = b:changedtick
+    autocmd BufLeave * unlet b:textchanged
 augroup END
 
 " Init
