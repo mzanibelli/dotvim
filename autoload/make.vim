@@ -1,11 +1,7 @@
-function! make#auto(async)
+function! make#auto()
     if exists("b:autocompile") && b:autocompile == 1
-        if a:async
-            if exists("b:textchanged") && b:textchanged < b:changedtick
-                call async#start(make#command(), 'make#qf')
-            endif
-        else
-            call make#make()
+        if exists("b:textchanged") && b:textchanged < b:changedtick
+            call async#start(make#command(), 'make#qf')
         endif
     endif
 endfunction
