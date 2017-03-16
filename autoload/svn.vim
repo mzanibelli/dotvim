@@ -43,7 +43,7 @@ function! svn#commit()
 endfunction
 
 function! svn#update()
-    call shell#background("svn update")
+    call shell#run("svn update")
     checktime
 endfunction
 
