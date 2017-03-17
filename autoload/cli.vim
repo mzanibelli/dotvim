@@ -23,9 +23,20 @@ function! cli#cr()
     elseif l:cmdline =~# '\C^marks'
         return "\<CR>:normal! `"
     elseif l:cmdline =~# '\v\C^(dli%[st]|il%[ist])'
-        return "\<CR>:" . l:cmdline[0] . "j  " . split(l:cmdline, " ")[1] . "\<S-Left>\<Left>"
+        return cli#listpostcmd(l:cmdline)
     elseif l:cmdline =~# '\v\C^undol%[ist]'
         return "\<CR>:undo "
     endif
     return "\<C-]>\<CR>"
+endfunction
+
+function! cli#listpostcmd(cmdline)
+    let l:search = matchstr(a:cmdline, '/.*/')
+    let l:result = "\<CR>:" . a:cmdline[0] . "jump  " . l:search
+    let l:i = 0
+    while l:i <= strlen(l:search)
+        let l:result .= "\<Left>"
+        let l:i += 1
+    endwhile
+    return l:result
 endfunction
