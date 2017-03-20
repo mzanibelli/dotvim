@@ -15,19 +15,18 @@ function! php#format()
 endfunction
 
 function! php#extract()
-    if visualmode() !=# "v"
-        return
-    endif
-    let l:name = input("Variable name : ")
-    execute "normal! gvc$".l:name
-    execute "normal! O$".l:name." = "
-    execute "normal! pA;"
-    redraw!
-    echom "Replace ".@"." with $".l:name
-    if confirm("Continue ?", "&Yes\n&No") == 1
-        let l:next_line = line(".") + 2
-        if l:next_line <= line("$")
-            execute l:next_line.",$sno/".@"."/$".l:name."/gc"
+    if visualmode() ==# "v"
+        let l:name = input("Variable name : ")
+        execute "normal! gvc$".l:name
+        execute "normal! O$".l:name." = "
+        execute "normal! pA;"
+        redraw!
+        echom "Replace ".@"." with $".l:name
+        if confirm("Continue ?", "&Yes\n&No") == 1
+            let l:next_line = line(".") + 2
+            if l:next_line <= line("$")
+                execute l:next_line.",$sno/".@"."/$".l:name."/gc"
+            endif
         endif
     endif
 endfunction
