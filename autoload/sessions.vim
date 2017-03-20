@@ -10,10 +10,7 @@ endfunction
 function! sessions#load()
     let l:file = fnameescape("/tmp/vim/session".getcwd()."/session.vim")
     if (filereadable(l:file))
-        let l:old_swap = &swapfile
-        set noswapfile
-        silent! execute 'source '.l:file
-        let &swapfile = l:old_swap
+        silent! call default#save('swapfile', 0, printf("source %s", l:file))
     else
         echom "No session loaded"
     endif

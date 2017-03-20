@@ -34,10 +34,7 @@ function! fold#method(line)
 endfunction
 
 function! fold#bypass(command)
-    let l:old_fold = &foldenable
-    set nofoldenable
-    execute a:command
-    let &foldenable = l:old_fold
+    call default#save('foldenable', 0, a:command)
     if foldclosed('.') != -1
         normal! zA
     endif

@@ -16,10 +16,8 @@ function! grep#grep(args)
 endfunction
 
 function! grep#qf(channel)
-    let l:old_errfmt = &errorformat
-    let &errorformat = &grepformat
-    call qf#cload("cgetfile ".g:bgoutput)
-    let &errorformat = l:old_errfmt
+    let l:command = printf('call qf#cload("cgetfile %s")', g:bgoutput)
+    call default#save('errorformat', shellescape(&grepformat), l:command)
     call async#end()
 endfunction
 

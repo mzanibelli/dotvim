@@ -1,8 +1,5 @@
 function! spell#correct()
-    let l:last_spell = &spell
-    set spell
-    normal! [s1z=`]
-    let &spell = l:last_spell
+    call default#save('spell', 1, 'normal! [s1z=`]')
 endfunction
 
 function! spell#switch()

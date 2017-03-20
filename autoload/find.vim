@@ -18,9 +18,7 @@ function! find#bgend(channel)
 endfunction
 
 function! find#qf()
-    let l:old_errfmt = &errorformat
-    set errorformat=%f
-    call qf#cload("cgetfile ".g:bgoutput)
+    let l:command = printf('call qf#cload("cgetfile %s")', g:bgoutput)
+    call default#save('errorformat', shellescape('%f'), l:command)
     call qf#cfirst()
-    let &errorformat = l:old_errfmt
 endfunction
