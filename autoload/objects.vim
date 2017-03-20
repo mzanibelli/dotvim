@@ -1,3 +1,5 @@
+let s:aliases = {'b': '(','B': '{'}
+
 function! objects#append(type)
     call feedkeys("`]a", 'n')
 endfunction
@@ -7,13 +9,7 @@ function! objects#prepend(type)
 endfunction
 
 function! objects#nextobject(motion, dir)
-    let l:char = nr2char(getchar())
-    if l:char ==# "b"
-        let l:char = "("
-    elseif l:char ==# "B"
-        let l:char = "{"
-    elseif l:char ==# "d"
-        let l:char = "["
-    endif
+    let l:input = nr2char(getchar())
+    let l:char = get(s:aliases, l:input, l:input)
     execute "normal! ".a:dir.l:char."v".a:motion.l:char
 endfunction
