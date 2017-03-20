@@ -4,8 +4,8 @@ command! -nargs=* Fgrep call grep#grep(<q-args>, 'fixed')
 command! -nargs=* Egrep call grep#grep(<q-args>, 'regex')
 
 " Mappings
-nnoremap <silent> <Leader>g :<C-U>set operatorfunc=grep#opfunc<CR>g@
-vnoremap <silent> <Leader>g :<C-U>call grep#opfunc(visualmode())<CR>
+nnoremap <Leader>g :<C-U>Grep<Space>
+vnoremap <silent> <Leader>g :<C-U>Grep <C-R>=visual#gettext()<CR><CR>
 
 " Init
 call grep#configure()

@@ -1,19 +1,3 @@
-let s:markers = {'v': '`<v`>','char': '`[v`]'}
-
-function! grep#getval(type)
-    let l:reg = @@
-    execute printf('normal! %sy', s:markers[a:type])
-    let l:result = @@
-    let @@ = l:reg
-    return l:result
-endfunction
-
-function! grep#opfunc(type)
-    if a:type ==# "v" || a:type ==# "char"
-        call grep#grep(grep#getval(a:type), 'fixed')
-    endif
-endfunction
-
 function! grep#grep(args, type)
     call async#start(grep#command(a:args, a:type), 'grep#qf')
 endfunction
