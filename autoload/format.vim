@@ -1,7 +1,4 @@
 function! format#auto()
-    if exists("b:autofixformat") && b:autofixformat == 1
-        call format#fix()
-    endif
     if exists("b:autoformat") && b:autoformat == 1
         call windows#preserve('normal! gggqG')
     endif
