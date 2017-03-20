@@ -48,3 +48,7 @@ function! format#forceoptions()
         setlocal formatoptions+=tn
     endif
 endfunction
+
+function! format#reindent()
+    call windows#preserve("normal! gg=G")
+endfunction
