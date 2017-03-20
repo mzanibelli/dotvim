@@ -1,7 +1,4 @@
 function! html#entities(line1, line2)
-    if &ft !=# "html"
-        return
-    endif
     let l:range = a:line1 . ',' . a:line2
     call windows#preserve(l:range.'sno/&/&amp;/eg')
     call windows#preserve(l:range.'sno/À/&Agrave;/eg')
