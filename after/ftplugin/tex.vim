@@ -1,5 +1,5 @@
-" Init
-call surround#lightweight()
-
 " Options
 setlocal spell
+
+" Variables
+let b:autoclose = ['quote']

@@ -11,3 +11,4 @@ setlocal foldnestmax=1
 " Variables
 let b:completiontype="\<C-X>\<C-V>"
 let b:commentprefix='"'
+let b:autoclose = ['quote', 'square']
