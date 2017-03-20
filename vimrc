@@ -25,6 +25,7 @@ set cpoptions=BceFs
 set cryptmethod=blowfish2
 set cscopequickfix=s-,c-,d-,i-,t-,e-,a-,g-
 set cscopetagorder=0
+set cscopeverbose
 set diffexpr=
 set diffopt=iwhite,filler,vertical
 set directory=/tmp/vim/swap//

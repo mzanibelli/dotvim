@@ -1,56 +1,47 @@
+let s:messages = {
+            \ 'd': "Found functions called by '%s' function",
+            \ 'c': "Found functions calling '%s' function",
+            \ 't': "Found '%s' text string",
+            \ 'e': "Found '%s' egrep pattern",
+            \ 'f': "Found '%s' file",
+            \ 'i': "Found files including '%s' file",
+            \ 'a': "Found places where '%s' symbol is assigned a value",
+            \ 's': "Found '%s' symbol",
+            \ 'g': "Found '%s' definition"
+        \}
+
+let s:menu = "s : Find symbol\n"
+            \ ."g : Find definition\n"
+            \ ."d : Find functions called by this function\n"
+            \ ."c : Find functions calling this function\n"
+            \ ."t : Find text string\n"
+            \ ."e : Find egrep pattern\n"
+            \ ."f : Find file\n"
+            \ ."i : Find files including file\n"
+            \ ."a : Find places where symbol is assigned a value"
+
 function! cscope#init()
     if filereadable("./cscope.out")
-        set nocsverb
-        cs add cscope.out
-        set csverb
+        call default#save('cscopeverbose', 0, 'cs add cscope.out')
     endif
 endfunction
 
 function! cscope#go(char)
     let l:search = expand("<cword>")
-    if !cscope_connection() || l:search ==# ""
-        echom "Can't query cscope"
-        return
+    if cscope_connection() && l:search !=# ""
+        try
+            call qf#cload("cs find ".a:char." ".l:search)
+            call qf#cfirst()
+            echom printf(s:messages[a:char], l:search)
+        catch
+            echom "Scope not found"
+        endtry
     endif
-    try
-        call qf#cload("cs find ".a:char." ".l:search)
-        call qf#cfirst()
-        if a:char ==# "s"
-            echom "Found '".l:search."' symbol"
-        elseif a:char ==# "g"
-            echom "Found '".l:search."' definition"
-        elseif a:char ==# "d"
-            echom "Found functions called by '".l:search."' function"
-        elseif a:char ==# "c"
-            echom "Found functions calling '".l:search."' function"
-        elseif a:char ==# "t"
-            echom "Found '".l:search."' text string"
-        elseif a:char ==# "e"
-            echom "Found '".l:search."' egrep pattern"
-        elseif a:char ==# "f"
-            echom "Found '".l:search."' file"
-        elseif a:char ==# "i"
-            echom "Found files including '".l:search."' file"
-        elseif a:char ==# "a"
-            echom "Found places where '".l:search."' symbol is assigned a value"
-        endif
-    catch
-        echom "Scope not found"
-    endtry
 endfunction
 
 function! cscope#menu()
     let l:search = expand("<cword>")
-    if l:search ==# ""
-        return
+    if l:search !=# ""
+        echo s:menu
     endif
-    echo "s : Find '".l:search."' symbol\n"
-                \."g : Find '".l:search."' definition\n"
-                \."d : Find functions called by '".l:search."' function\n"
-                \."c : Find functions calling '".l:search."' function\n"
-                \."t : Find '".l:search."' text string\n"
-                \."e : Find '".l:search."' egrep pattern\n"
-                \."f : Find '".l:search."' file\n"
-                \."i : Find files including '".l:search."' file\n"
-                \."a : Find places where '".l:search."' symbol is assigned a value"
 endfunction
