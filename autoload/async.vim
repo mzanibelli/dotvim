@@ -8,7 +8,7 @@ function! async#start(command, callback)
 endfunction
 
 function! async#end()
-    doautocmd User AsyncPost
+    silent doautocmd User AsyncPost
     autocmd! User AsyncPost
     call delete(g:bgoutput)
     unlet g:bgoutput
