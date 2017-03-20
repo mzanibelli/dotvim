@@ -1,3 +1,5 @@
+let s:markers = {'char': '`[v`]','line': "'[V']"}
+
 function! yank#incmap(type)
     if a:type ==# "line"
         return  ":\<C-U>call yank#incrange('".v:register."')\<CR>"
@@ -8,18 +10,19 @@ function! yank#incmap(type)
     endif
 endfunction
 
+function! yank#getreg(reg)
+    return {"content": getreg(a:reg), "type": getregtype(a:reg)}
+endfunction
+
+function! yank#setreg(reg, val)
+    call setreg(a:reg, a:val["content"], a:val["type"])
+endfunction
+
 function! yank#regappend(input, register)
-    let l:reg = getreg(a:register)
-    let l:type = getregtype(a:register)
-    let l:reg .= a:input
-    call setreg(a:register, l:reg, l:type)
-    let l:count = len(split(a:input, '\n'))
-    let l:total = len(split(l:reg, '\n'))
-    if l:count > 1
-        echom printf("%d lines added to register %s (%d total)", l:count, a:register, l:total)
-    elseif a:input =~# "\\n$"
-        echom printf("%d line added to register %s (%d total)", l:count, a:register, l:total)
-    endif
+    let l:reg = yank#getreg(a:register)
+    let l:reg["content"] .= a:input
+    call yank#setreg(a:register, l:reg)
+    echom printf("%s lines in register %s", len(split(l:reg["content"], '\n')), a:register)
 endfunction
 
 function! yank#incvisual(register)
@@ -31,16 +34,11 @@ function! yank#incrange(register) range
 endfunction
 
 function! yank#opfunc(type)
-    let l:reg = getreg(v:register)
-    let l:type = getregtype(v:register)
-    if a:type ==# "char"
-        execute "normal! `[v`]\"".v:register."y"
-    elseif a:type ==# "line"
-        execute "normal! '[V']\"".v:register."y"
-    else
-        return
+    if a:type ==# "char" || a:type ==# "line"
+        let l:reg = yank#getreg(v:register)
+        execute printf("normal! %s\"%sy", s:markers[a:type], v:register)
+        let l:target = getreg(v:register)
+        call yank#setreg(v:register, l:reg)
+        call yank#regappend(l:target, v:register)
     endif
-    let l:target = getreg(v:register)
-    call setreg(v:register, l:reg, l:type)
-    call yank#regappend(l:target, v:register)
 endfunction
