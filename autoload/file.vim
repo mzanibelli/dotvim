@@ -1,13 +1,9 @@
 function! file#size()
     let l:bytes = getfsize(expand("%:p"))
-    if l:bytes <= 0
-        return "0B"
-    endif
     if l:bytes < 1024
-        return l:bytes."B"
+        return printf('%sB', l:bytes <= 0 ? 0 : l:bytes)
     endif
-    let l:kilobytes = l:bytes / 1024
-    return l:kilobytes . "KB"
+    return printf('%sKB', l:bytes / 1024)
 endfunction
 
 function! file#mkdir(file, buf)
