@@ -13,6 +13,7 @@ endfunction
 
 function! make#command()
     let l:output = make#copy()
+    execute printf("autocmd User AsyncPost silent! call delete('%s')", l:output)
     return substitute(&makeprg, "%", l:output, "")." 2>&1"
 endfunction
 
