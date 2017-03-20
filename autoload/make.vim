@@ -7,6 +7,7 @@ function! make#auto()
 endfunction
 
 function! make#make()
+    call make#unplace()
     call qf#lload("lmake")
     silent! ll1
 endfunction
@@ -17,20 +18,25 @@ function! make#command()
     return substitute(&makeprg, "%", l:output, "")." 2>&1"
 endfunction
 
+function! make#unplace()
+    execute "sign unplace * buffer=".bufnr("%")
+endfunction
+
+function! make#place(err, i)
+    let l:err = a:err
+    let l:err.lnum = a:err.lnum > line("$") ? line(".") : a:err.lnum
+    let l:err.bufnr = bufnr("%")
+    execute "sign place ".a:i." line=".l:err.lnum." name=MakeprgError buffer=".l:err.bufnr
+    return l:err
+endfunction
+
 function! make#qf(channel)
-    let l:i = 0
     let l:content = []
-    let l:buffer = bufnr("%")
-    execute "sign unplace * buffer=".l:buffer
+    call make#unplace()
     execute "lgetfile ".g:bgoutput
     for err in getloclist(winnr())
         if err.valid
-            let l:num = err.lnum > line("$") ? line(".") : err.lnum
-            let err.bufnr = bufnr("%")
-            let err.lnum = l:num
-            execute "sign place ".(l:i + 1)." line=".l:num." name=MakeprgError buffer=".l:buffer
-            call add(l:content, err)
-            let l:i += 1
+            call add(l:content, make#place(err, len(l:content) + 1))
         endif
     endfor
     call make#setloclist(l:content)
