@@ -19,7 +19,7 @@ function! grep#grep(args, type)
 endfunction
 
 function! grep#command(args, type)
-    return join(&grepprg, g:grepmodes[a:type], shellescape(a:args), getcwd())
+    return join([&grepprg, g:grepmodes[a:type], shellescape(a:args), getcwd()])
 endfunction
 
 function! grep#qf(channel)
