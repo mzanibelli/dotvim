@@ -13,28 +13,23 @@ function! format#format()
 endfunction
 
 function! format#alerts(cache)
-    if exists("b:largefile")
-        return 0
+    if !exists("b:largefile")
+        if !exists("b:wrongformat") || !a:cache
+            let l:type = &ff !=# "unix"
+            let l:trail = search('\s\+$', 'nw') != 0
+            let l:tabs = search('^\t', 'nw') != 0
+            let l:spaces = search('^ ', 'nw') != 0
+            let b:wrongformat = l:type || l:trail || (l:tabs && l:spaces) || (&et && l:tabs) || (!&et && l:spaces)
+        endif
+        return b:wrongformat
     endif
-    if !a:cache
-        unlet! b:wrongformat
-    endif
-    if !exists("b:wrongformat")
-        let l:type = &ff !=# "unix"
-        let l:trail = search('\s\+$', 'nw') != 0
-        let l:tabs = search('^\t', 'nw') != 0
-        let l:spaces = search('^ ', 'nw') != 0
-        let b:wrongformat = l:type || l:trail || (l:tabs && l:spaces) || (&et && l:tabs) || (!&et && l:spaces)
-    endif
-    return b:wrongformat
+    return 0
 endfunction
 
 function! format#fix()
-    if format#alerts(0)
-        setlocal ff=unix
-        call windows#preserve("%retab!")
-        call format#trim()
-    endif
+    setlocal ff=unix
+    call windows#preserve("%retab!")
+    call format#trim()
 endfunction
 
 function! format#trim()
