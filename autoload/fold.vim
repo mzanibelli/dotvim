@@ -38,4 +38,7 @@ function! fold#bypass(command)
     set nofoldenable
     execute a:command
     let &foldenable = l:old_fold
+    if foldclosed('.') != -1
+        normal! zA
+    endif
 endfunction
