@@ -23,13 +23,13 @@ function! scp#isremote()
 endfunction
 
 function! scp#editremote()
-    if exists("g:mirror") && !scp#isremote()
+    if !empty(expand("%")) && exists("g:mirror") && !scp#isremote()
         execute printf("edit %s", scp#getmirrorfile())
     endif
 endfunction
 
 function! scp#editlocal()
-    if exists("g:mirror") && scp#isremote()
+    if !empty(expand("%")) && exists("g:mirror") && scp#isremote()
         execute printf("edit %s", scp#getlocalfile())
     endif
 endfunction
@@ -39,7 +39,7 @@ function! scp#setremote(remote)
 endfunction
 
 function! scp#statusline()
-    if exists("g:mirror") && expand("%") !=# ""
+    if exists("g:mirror") && !empty(expand("%"))
         return scp#isremote() ? '[remote]' : '[local]'
     endif
     return ''
