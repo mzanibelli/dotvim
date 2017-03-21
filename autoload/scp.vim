@@ -1,10 +1,6 @@
-function! scp#getserver()
-    return printf("scp://%s/", g:mirror)
-endfunction
-
 function! scp#getrelativepath()
     if scp#isremote()
-        return substitute(expand("%"), '^'.scp#getserver(), '', '')
+        return substitute(expand("%"), printf('^%s/', g:mirror), '', '')
     else
         return fnamemodify(expand("%"), ":.")
     endif
@@ -14,15 +10,19 @@ function! scp#getlocalfile()
     return printf("%s/%s", getcwd(), scp#getrelativepath())
 endfunction
 
-function scp#getmirrorfile()
-    return printf("%s%s", scp#getserver(), scp#getrelativepath())
+function! scp#getmirrorfile()
+    return printf("%s/%s", g:mirror, scp#getrelativepath())
 endfunction
 
-function scp#isremote()
-    return expand("%") =~# '\v^scp://'
+function! scp#getprotocol()
+    return matchstr(g:mirror, '^\zs\w\{3,5}\ze://')
 endfunction
 
-function! scp#editmirror()
+function! scp#isremote()
+    return expand("%") =~# printf('\v^%s://', scp#getprotocol())
+endfunction
+
+function! scp#editremote()
     if exists("g:mirror") && !scp#isremote()
         execute printf("edit %s", scp#getmirrorfile())
     endif
@@ -34,6 +34,13 @@ function! scp#editlocal()
     endif
 endfunction
 
-function scp#setremote(remote)
+function! scp#setremote(remote)
     let g:mirror = a:remote
+endfunction
+
+function! scp#statusline()
+    if exists("g:mirror") && expand("%") !=# ""
+        return scp#isremote() ? '[remote]' : '[local]'
+    endif
+    return ''
 endfunction
