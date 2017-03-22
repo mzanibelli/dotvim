@@ -12,7 +12,6 @@ set cpo&vim
 command! -nargs=0 BufferKill call buffers#killall()
 
 " Mappings
-nnoremap <silent> <Leader>; :<C-U>checktime<CR>
 nnoremap <silent> gb :bn<CR>
 nnoremap <silent> gB :bp<CR>
 nmap <Leader>l :<C-U>ls<CR>
