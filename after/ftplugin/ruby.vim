@@ -1,4 +1,4 @@
-" Init
+" Compiler
 compiler ruby
 
 " Mappings

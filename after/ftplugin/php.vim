@@ -1,5 +1,7 @@
-" Init
+" Compiler
 compiler php
+
+" Init
 call cpp#funcsnippets()
 call default#snippet("elog", "error_log(print_r(%, true));")
 call default#snippet("vdump", "var_dump(%);")
