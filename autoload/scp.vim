@@ -39,7 +39,11 @@ function! scp#remote(command)
 endfunction
 
 function! scp#setremote(remote)
-    let g:mirror = a:remote
+    if empty(a:remote)
+        unlet! g:mirror
+    else
+        let g:mirror = a:remote
+    endif
 endfunction
 
 function! scp#statusline()
