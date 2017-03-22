@@ -1,5 +1,5 @@
 function! scp#on()
-    return exists("g:mirror") && !empty(expand("%"))
+    return exists("g:mirror") && !empty(expand("%")) && &modifiable
 endfunction
 
 function! scp#getprotocol()
