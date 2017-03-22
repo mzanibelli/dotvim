@@ -7,3 +7,4 @@ let g:netrw_silent=1
 let g:netrw_use_errorwindow=0
 let g:netrw_browse_split=0
 let g:netrw_browsex_viewer= "xdg-open"
+let g:netrw_ftp_cmd="ftp -p"
