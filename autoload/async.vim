@@ -7,7 +7,7 @@ function! async#start(command, callback)
     endif
 endfunction
 
-function! async#end()
+function! async#end(channel)
     silent doautocmd User AsyncPost
     autocmd! User AsyncPost
     call delete(g:bgoutput)

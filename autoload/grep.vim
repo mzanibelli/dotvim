@@ -9,7 +9,7 @@ endfunction
 function! grep#qf(channel)
     let l:command = printf('call qf#cload("cgetfile %s")', g:bgoutput)
     call default#save('errorformat', shellescape(&grepformat), l:command)
-    call async#end()
+    call async#end(channel)
 endfunction
 
 function! grep#configure()
