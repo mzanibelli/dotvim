@@ -11,6 +11,8 @@ function! php#format()
     call windows#preserve('%s/\<foreach(/foreach (/g')
     call windows#preserve('%s/\<else{/else {/g')
     call windows#preserve('%s/}else/} else/g')
+    call windows#preserve('%s/\<catch{/catch {/g')
+    call windows#preserve('%s/}catch/} catch/g')
     call windows#preserve('%s/\v[^ ]\zs\=\>\ze[^ ]/ => /g')
 endfunction
 
