@@ -10,8 +10,8 @@ set cpo&vim
 
 " Variables
 let b:norestore = 1
-let b:textformat=1
-let b:completiontype="\<C-X>\<C-K>"
+let b:textformat = 1
+let b:completiontype = "\<C-X>\<C-K>"
 let b:autoclose = ['quote']
 let b:nosession = 1
 

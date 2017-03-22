@@ -9,8 +9,8 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 " Variables
-let b:textformat=1
-let b:completiontype="\<C-X>\<C-K>"
+let b:textformat = 1
+let b:completiontype = "\<C-X>\<C-K>"
 let b:autoclose = ['quote']
 
 " Options
