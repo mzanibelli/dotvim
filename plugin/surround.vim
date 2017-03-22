@@ -1,8 +1,8 @@
 " Plugin
-if exists('g:loaded_local_surround')
+if exists('g:loaded_local_plugin_surround')
   finish
 endif
-let g:loaded_local_surround = 1
+let g:loaded_local_plugin_surround = 1
 
 " Force incompatibility
 let s:save_cpo = &cpo

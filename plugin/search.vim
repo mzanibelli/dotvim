@@ -1,8 +1,8 @@
 " Plugin
-if exists('g:loaded_local_search')
+if exists('g:loaded_local_plugin_search')
   finish
 endif
-let g:loaded_local_search = 1
+let g:loaded_local_plugin_search = 1
 
 " Force incompatibility
 let s:save_cpo = &cpo

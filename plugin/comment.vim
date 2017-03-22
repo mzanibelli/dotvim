@@ -1,8 +1,8 @@
 " Plugin
-if exists('g:loaded_local_comment')
+if exists('g:loaded_local_plugin_comment')
   finish
 endif
-let g:loaded_local_comment = 1
+let g:loaded_local_plugin_comment = 1
 
 " Force incompatibility
 let s:save_cpo = &cpo

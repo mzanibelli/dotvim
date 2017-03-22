@@ -1,8 +1,8 @@
 " Plugin
-if exists('g:loaded_local_format')
+if exists('g:loaded_local_plugin_format')
   finish
 endif
-let g:loaded_local_format = 1
+let g:loaded_local_plugin_format = 1
 
 " Force incompatibility
 let s:save_cpo = &cpo

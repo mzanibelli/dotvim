@@ -1,8 +1,8 @@
 " Plugin
-if exists('g:loaded_local_cursor')
+if exists('g:loaded_local_plugin_cursor')
   finish
 endif
-let g:loaded_local_cursor = 1
+let g:loaded_local_plugin_cursor = 1
 
 " Force incompatibility
 let s:save_cpo = &cpo

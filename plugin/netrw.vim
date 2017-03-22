@@ -1,8 +1,8 @@
 " Plugin
-if exists('g:loaded_local_netrw')
+if exists('g:loaded_local_plugin_netrw')
   finish
 endif
-let g:loaded_local_netrw = 1
+let g:loaded_local_plugin_netrw = 1
 
 " Force incompatibility
 let s:save_cpo = &cpo

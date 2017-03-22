@@ -1,8 +1,8 @@
 " Plugin
-if exists('g:loaded_local_scp')
+if exists('g:loaded_local_plugin_scp')
   finish
 endif
-let g:loaded_local_scp = 1
+let g:loaded_local_plugin_scp = 1
 
 " Force incompatibility
 let s:save_cpo = &cpo

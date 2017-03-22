@@ -1,8 +1,8 @@
 " Plugin
-if exists('g:loaded_local_ctags')
+if exists('g:loaded_local_plugin_ctags')
   finish
 endif
-let g:loaded_local_ctags = 1
+let g:loaded_local_plugin_ctags = 1
 
 " Force incompatibility
 let s:save_cpo = &cpo

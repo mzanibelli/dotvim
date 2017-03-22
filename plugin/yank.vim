@@ -1,8 +1,8 @@
 " Plugin
-if exists('g:loaded_local_yank')
+if exists('g:loaded_local_plugin_yank')
   finish
 endif
-let g:loaded_local_yank = 1
+let g:loaded_local_plugin_yank = 1
 
 " Force incompatibility
 let s:save_cpo = &cpo

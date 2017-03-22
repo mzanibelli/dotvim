@@ -1,8 +1,8 @@
 " Plugin
-if exists('g:loaded_local_svn')
+if exists('g:loaded_local_plugin_svn')
   finish
 endif
-let g:loaded_local_svn = 1
+let g:loaded_local_plugin_svn = 1
 
 " Force incompatibility
 let s:save_cpo = &cpo

@@ -1,8 +1,8 @@
 " Plugin
-if exists('g:loaded_local_vimrc')
+if exists('g:loaded_local_plugin_vimrc')
   finish
 endif
-let g:loaded_local_vimrc = 1
+let g:loaded_local_plugin_vimrc = 1
 
 " Force incompatibility
 let s:save_cpo = &cpo

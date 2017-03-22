@@ -1,8 +1,8 @@
 " Plugin
-if exists('g:loaded_local_conceal')
+if exists('g:loaded_local_plugin_conceal')
   finish
 endif
-let g:loaded_local_conceal = 1
+let g:loaded_local_plugin_conceal = 1
 
 " Force incompatibility
 let s:save_cpo = &cpo
