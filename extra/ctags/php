@@ -1,0 +1,6 @@
+#!/bin/bash
+find $PWD -name "*.php" -print > /tmp/phpfiles
+cat /tmp/phpfiles | ctags --PHP-kinds=cdf --languages=PHP --totals=no --exclude=".git" --exclude=".svn" --tag-relative --recurse --fields=+ia --append
+cscope -b -i /tmp/phpfiles 2>/dev/null
+rm -f /tmp/phpfiles
+exit 0

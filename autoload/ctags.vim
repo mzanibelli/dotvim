@@ -9,9 +9,18 @@ function! ctags#go(...)
     endtry
 endfunction
 
-function! ctags#generate()
+function! ctags#command()
     if exists("b:ctagscommand")
-        let l:command = printf("%s -f %s/tags", b:ctagscommand, shellescape(getcwd()))
-        call async#start(l:command, "async#end")
+        return b:ctagscommand
+    else
+        let l:file = fnamemodify(expand(resolve($MYVIMRC)), ":h")."/extra/ctags/".&ft
+        if file_readable(l:file)
+            return l:file
+        endif
     endif
+    return 'ctags'
+endfunction
+
+function! ctags#generate()
+    call async#start(ctags#command(), "async#end")
 endfunction

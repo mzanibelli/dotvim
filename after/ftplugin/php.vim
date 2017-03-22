@@ -35,8 +35,6 @@ let b:commentprefix = '//'
 let b:headerstring = '#!/usr/bin/php'
 let b:autoclose = ['curly', 'square', 'quote']
 let b:autocompile = 1
-let b:ctagscommand = "ctags --exclude='.git' --exclude='.svn' --totals=no --tag-relative --recurse --fields=+ia --append --PHP-kinds=cdf --languages=PHP"
-
 
 " Restore compatibility
 let &cpo = s:save_cpo
