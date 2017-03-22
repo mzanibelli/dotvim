@@ -11,11 +11,6 @@ set cpo&vim
 " Compiler
 compiler php
 
-" Init
-call cpp#funcsnippets()
-call default#snippet("elog", "error_log(print_r(%, true));")
-call default#snippet("vdump", "var_dump(%);")
-
 " Commands
 command! -buffer -nargs=0 Format call php#format()
 command! -buffer -nargs=0 Functions call qf#cload('call php#functions()')
@@ -35,6 +30,8 @@ let b:commentprefix = '//'
 let b:headerstring = '#!/usr/bin/php'
 let b:autoclose = ['curly', 'square', 'quote']
 let b:autocompile = 1
+let b:funcsnippets = 1
+let b:ftsnippets = {"elog": "error_log(print_r(%, true));", "vdump": "var_dump(%);"}
 
 " Restore compatibility
 let &cpo = s:save_cpo

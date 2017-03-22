@@ -8,9 +8,6 @@ let b:loaded_local_ftplugin_javascript = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
-" Init
-call default#snippet("clog", "console.log(%);")
-
 " Options
 setlocal foldmarker={,}
 setlocal foldmethod=marker
@@ -19,6 +16,7 @@ setlocal foldmethod=marker
 let b:commentprefix = '//'
 let b:autoclose = ['curly', 'square', 'quote']
 let b:autocompile = 1
+let b:ftsnippets = {"clog": "console.log(%);"}
 
 " Restore compatibility
 let &cpo = s:save_cpo

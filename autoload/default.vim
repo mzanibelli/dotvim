@@ -6,10 +6,6 @@ function! default#units()
     return l:units
 endfunction
 
-function! default#snippet(abb, exp)
-    execute 'inoreabbrev <buffer> <silent> '.a:abb.' '.a:exp.'<Esc>F%s<C-O>:call getchar()<CR>'
-endfunction
-
 function! default#getchar(offset)
     return strcharpart(getline('.'), virtcol('.') - (1 + a:offset), 1)
 endfunction
