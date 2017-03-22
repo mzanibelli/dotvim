@@ -9,7 +9,14 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 " Variables
-let b:textmode = 1
+let b:textformat=1
+let b:completiontype="\<C-X>\<C-K>"
+let b:autoclose = ['quote']
+
+" Options
+setlocal nonumber
+setlocal textwidth=60
+setlocal spell
 
 " Restore compatibility
 let &cpo = s:save_cpo

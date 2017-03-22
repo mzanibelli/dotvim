@@ -8,9 +8,16 @@ let b:loaded_local_ftplugin_svn = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
+" Options
+setlocal nonumber
+setlocal textwidth=60
+setlocal spell
+
 " Variables
 let b:norestore = 1
-let b:textmode = 1
+let b:textformat=1
+let b:completiontype="\<C-X>\<C-K>"
+let b:autoclose = ['quote']
 let b:nosession = 1
 
 " Restore compatibility

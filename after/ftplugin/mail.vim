@@ -11,9 +11,14 @@ set cpo&vim
 " Options
 setlocal formatoptions+=w
 setlocal spelllang=fr
+setlocal nonumber
+setlocal textwidth=60
+setlocal spell
 
 " Variables
-let b:textmode = 1
+let b:textformat=1
+let b:completiontype="\<C-X>\<C-K>"
+let b:autoclose = ['quote']
 let b:nosession = 1
 
 " Restore compatibility
