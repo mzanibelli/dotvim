@@ -1,6 +1,6 @@
 " Plugin
 if exists('g:loaded_local_plugin_spell')
-  finish
+    finish
 endif
 let g:loaded_local_plugin_spell = 1
 

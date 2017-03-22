@@ -1,6 +1,6 @@
 " Plugin
 if exists('g:loaded_local_plugin_headers')
-  finish
+    finish
 endif
 let g:loaded_local_plugin_headers = 1
 

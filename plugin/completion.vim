@@ -1,6 +1,6 @@
 " Plugin
 if exists('g:loaded_local_plugin_completion')
-  finish
+    finish
 endif
 let g:loaded_local_plugin_completion = 1
 

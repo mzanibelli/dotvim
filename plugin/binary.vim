@@ -1,6 +1,6 @@
 " Plugin
 if exists('g:loaded_local_plugin_binary')
-  finish
+    finish
 endif
 let g:loaded_local_plugin_binary = 1
 

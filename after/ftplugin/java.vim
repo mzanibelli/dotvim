@@ -1,6 +1,6 @@
 " Ftplugin
 if exists('b:loaded_local_ftplugin_java')
-  finish
+    finish
 endif
 let b:loaded_local_ftplugin_java = 1
 

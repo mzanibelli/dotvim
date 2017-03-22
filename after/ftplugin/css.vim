@@ -1,6 +1,6 @@
 " Ftplugin
 if exists('b:loaded_local_ftplugin_css')
-  finish
+    finish
 endif
 let b:loaded_local_ftplugin_css = 1
 

@@ -1,6 +1,6 @@
 " Plugin
 if exists('g:loaded_local_plugin_ctags')
-  finish
+    finish
 endif
 let g:loaded_local_plugin_ctags = 1
 

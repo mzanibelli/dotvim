@@ -1,6 +1,6 @@
 " Ftplugin
 if exists('b:loaded_local_ftplugin_ruby')
-  finish
+    finish
 endif
 let b:loaded_local_ftplugin_ruby = 1
 
