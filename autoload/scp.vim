@@ -1,5 +1,17 @@
-function! scp#getrelativepath()
-    if scp#isremote()
+function! scp#on()
+    return exists("g:mirror") && !empty(expand("%"))
+endfunction
+
+function! scp#getprotocol()
+    return matchstr(g:mirror, '^\zs\w\{3,5}\ze://')
+endfunction
+
+function! scp#context(file)
+    return return scp#on() && !scp#is{a:file}()
+endfunction
+
+function! scp#getrelativepath(file)
+    if a:file == 'remote'
         return substitute(expand("%"), printf('^%s/', g:mirror), '', '')
     else
         return fnamemodify(expand("%"), ":.")
@@ -7,38 +19,22 @@ function! scp#getrelativepath()
 endfunction
 
 function! scp#getlocalfile()
-    return printf("%s/%s", getcwd(), scp#getrelativepath())
+    return printf("%s/%s", getcwd(), scp#getrelativepath('local'))
 endfunction
 
 function! scp#getremotefile()
-    return printf("%s/%s", g:mirror, scp#getrelativepath())
-endfunction
-
-function! scp#getprotocol()
-    return matchstr(g:mirror, '^\zs\w\{3,5}\ze://')
+    return printf("%s/%s", g:mirror, scp#getrelativepath('remote'))
 endfunction
 
 function! scp#isremote()
-    return expand("%") =~# printf('\v^%s://', scp#getprotocol())
+    return scp#on() && expand("%") =~# printf('\v^%s://', scp#getprotocol())
 endfunction
 
-function! scp#do(command, remote)
-    if !empty(expand("%")) && exists("g:mirror")
-        if eval(printf("%sscp#isremote()", a:remote ? '' : '!'))
-            execute a:command
-        endif
-    endif
+function! scp#islocal()
+    return !scp#isremote()
 endfunction
 
-function! scp#local(command)
-    call scp#do(a:command, 0)
-endfunction
-
-function! scp#remote(command)
-    call scp#do(a:command, 1)
-endfunction
-
-function! scp#setremote(remote)
+function! scp#reset(remote)
     if empty(a:remote)
         unlet! g:mirror
     else
@@ -47,26 +43,24 @@ function! scp#setremote(remote)
 endfunction
 
 function! scp#statusline()
-    if exists("g:mirror") && !empty(expand("%"))
+    if scp#on()
         return scp#isremote() ? '[remote]' : '[local]'
     endif
     return ''
 endfunction
 
-function! scp#editremote()
-    call scp#local(printf("edit %s", scp#getremotefile()))
+function! scp#edit(file)
+    if scp#context(a:file)
+            execute printf("edit %s", scp#get{a:file}file())
+        endif
+    endif
 endfunction
 
-function! scp#editlocal()
-    call scp#remote(printf("edit %s", scp#getlocalfile()))
-endfunction
-
-function! scp#sync()
-    if !empty(expand("%")) && exists("g:mirror")
-        let l:file = scp#isremote() ? 'local' : 'remote'
-        echom printf("You are about to override the %s file", l:file)
+function! scp#sync(file)
+    if scp#context(a:file)
+        echom printf("You are about to override %s", expand("%"))
         if confirm("Continue ?", "&Yes\n&No") == 1
-            let l:filename = eval(printf("scp#get%sfile()", l:file))
+            let l:filename = scp#get{a:file}file()
             silent! execute printf("bwipeout! %s", l:filename)
             silent! execute printf("write! %s", l:filename)
         endif

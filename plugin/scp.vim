@@ -9,10 +9,11 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 " Commands
-command! -nargs=0 Remote call scp#editremote()
-command! -nargs=0 Local call scp#editlocal()
-command! -nargs=0 Sync call scp#sync()
-command! -nargs=* Mirror call scp#setremote(<q-args>)
+command! -nargs=0 RemoteEdit call scp#edit('remote')
+command! -nargs=0 LocalEdit call scp#editlocal('local')
+command! -nargs=0 RemoteSync call scp#sync('remote')
+command! -nargs=0 LocalSync call scp#sync('remote')
+command! -nargs=* Mirror call scp#reset(<q-args>)
 
 " Restore compatibility
 let &cpo = s:save_cpo
