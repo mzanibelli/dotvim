@@ -1,3 +1,13 @@
+" Plugin
+if exists('g:loaded_local_grep')
+  finish
+endif
+let g:loaded_local_grep = 1
+
+" Force incompatibility
+let s:save_cpo = &cpo
+set cpo&vim
+
 " Commands
 command! -nargs=* Grep call grep#grep(<q-args>, 'fixed')
 command! -nargs=* Fgrep call grep#grep(<q-args>, 'fixed')
@@ -9,3 +19,7 @@ vnoremap <silent> <Leader>g :<C-U>Grep <C-R>=visual#gettext()<CR><CR>
 
 " Init
 call grep#configure()
+
+" Restore compatibility
+let &cpo = s:save_cpo
+unlet s:save_cpo

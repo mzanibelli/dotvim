@@ -1,3 +1,13 @@
+" Plugin
+if exists('g:loaded_local_statusline')
+  finish
+endif
+let g:loaded_local_statusline = 1
+
+" Force incompatibility
+let s:save_cpo = &cpo
+set cpo&vim
+
 " Options
 set statusline=(%n)
 set statusline+=\ %t
@@ -18,3 +28,7 @@ set statusline+=%{exists('b:largefile')?'[xxl]':''}
 set statusline+=%{exists('g:bgoutput')?'[*]':''}
 set statusline+=%{scp#statusline()}
 set statusline+=%<
+
+" Restore compatibility
+let &cpo = s:save_cpo
+unlet s:save_cpo

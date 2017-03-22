@@ -1,3 +1,13 @@
+" Plugin
+if exists('g:loaded_local_search')
+  finish
+endif
+let g:loaded_local_search = 1
+
+" Force incompatibility
+let s:save_cpo = &cpo
+set cpo&vim
+
 " Mappings
 nnoremap <Leader>* :<C-U>noh<CR>/<C-R>/\<BAR>
 nnoremap <Leader>/ :ilist //<Left>
@@ -14,3 +24,7 @@ nnoremap n nzvzz
 nnoremap N Nzvzz
 vnoremap <silent> * :<C-U>call search#selection()<CR>//<CR><C-O>:set hlsearch<CR>
 vnoremap <silent> # :<C-U>call search#selection()<CR>??<CR><C-O>:set hlsearch<CR>
+
+" Restore compatibility
+let &cpo = s:save_cpo
+unlet s:save_cpo

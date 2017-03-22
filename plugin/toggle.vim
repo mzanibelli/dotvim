@@ -1,3 +1,13 @@
+" Plugin
+if exists('g:loaded_local_toggle')
+  finish
+endif
+let g:loaded_local_toggle = 1
+
+" Force incompatibility
+let s:save_cpo = &cpo
+set cpo&vim
+
 " Options
 set pastetoggle=<F9>
 
@@ -11,3 +21,7 @@ call toggle#map("<F5>", "ignorecase")
 call toggle#map("<F6>", "wrap")
 call toggle#map("<F7>", "list")
 call toggle#map("<F8>", "number")
+
+" Restore compatibility
+let &cpo = s:save_cpo
+unlet s:save_cpo

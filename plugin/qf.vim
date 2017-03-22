@@ -1,3 +1,13 @@
+" Plugin
+if exists('g:loaded_local_qf')
+  finish
+endif
+let g:loaded_local_qf = 1
+
+" Force incompatibility
+let s:save_cpo = &cpo
+set cpo&vim
+
 " Mappings
 nnoremap <silent> Q :<C-U>call qf#cclear()<CR>
 nnoremap <silent> L :<C-U>call qf#lclear()<CR>
@@ -7,3 +17,7 @@ augroup QF
     autocmd!
     autocmd QuitPre * if &ft != 'qf' | silent call qf#lclear() | endif
 augroup END
+
+" Restore compatibility
+let &cpo = s:save_cpo
+unlet s:save_cpo

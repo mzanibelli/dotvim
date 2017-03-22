@@ -1,3 +1,13 @@
+" Plugin
+if exists('g:loaded_local_objects')
+  finish
+endif
+let g:loaded_local_objects = 1
+
+" Force incompatibility
+let s:save_cpo = &cpo
+set cpo&vim
+
 " Mappings
 nnoremap <silent> <Leader>a :set opfunc=objects#append<CR>g@
 nnoremap <silent> <Leader>i :set opfunc=objects#prepend<CR>g@
@@ -13,3 +23,7 @@ for motion in [ 'i', 'a' ]
         execute 'vnoremap <silent> '.motion.(direction ==# 'f' ? 'n' : 'l').' :<C-U>call objects#nextobject("'.motion.'", "'.direction.'")<CR>'
     endfor
 endfor
+
+" Restore compatibility
+let &cpo = s:save_cpo
+unlet s:save_cpo

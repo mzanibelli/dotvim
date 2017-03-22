@@ -1,3 +1,13 @@
+" Plugin
+if exists('g:loaded_local_visual')
+  finish
+endif
+let g:loaded_local_visual = 1
+
+" Force incompatibility
+let s:save_cpo = &cpo
+set cpo&vim
+
 " Mappings
 vnoremap $ g_
 nnoremap gV `[V`]
@@ -10,3 +20,7 @@ vnoremap > >gv
 vnoremap = =gv
 inoremap <silent> <C-Y> <C-R><C-R>=visual#copy('up')<CR>
 inoremap <silent> <C-E> <C-R><C-R>=visual#copy('down')<CR>
+
+" Restore compatibility
+let &cpo = s:save_cpo
+unlet s:save_cpo

@@ -1,3 +1,13 @@
+" Plugin
+if exists('g:loaded_local_windows')
+  finish
+endif
+let g:loaded_local_windows = 1
+
+" Force incompatibility
+let s:save_cpo = &cpo
+set cpo&vim
+
 " Commands
 command! -nargs=* -complete=command PreserveView call windows#preserve(<q-args>)
 
@@ -23,3 +33,7 @@ augroup WINDOWS
     autocmd!
     autocmd VimResized * wincmd =
 augroup END
+
+" Restore compatibility
+let &cpo = s:save_cpo
+unlet s:save_cpo

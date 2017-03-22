@@ -1,3 +1,13 @@
+" Plugin
+if exists('g:loaded_local_nop')
+  finish
+endif
+let g:loaded_local_nop = 1
+
+" Force incompatibility
+let s:save_cpo = &cpo
+set cpo&vim
+
 " Mappings
 map      <ScrollWheelUp>      <NOP>
 map      <S-ScrollWheelUp>    <NOP>
@@ -53,3 +63,7 @@ nnoremap gh                   <NOP>
 nnoremap gH                   <NOP>
 nnoremap g<C-H>               <NOP>
 vnoremap <C-G>                <NOP>
+
+" Restore compatibility
+let &cpo = s:save_cpo
+unlet s:save_cpo

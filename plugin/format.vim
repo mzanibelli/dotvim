@@ -1,3 +1,13 @@
+" Plugin
+if exists('g:loaded_local_format')
+  finish
+endif
+let g:loaded_local_format = 1
+
+" Force incompatibility
+let s:save_cpo = &cpo
+set cpo&vim
+
 " Commands
 command! -buffer -nargs=0 Format call format#format()
 command! -nargs=0 Fix silent! call format#fix()
@@ -9,3 +19,7 @@ augroup FORMAT
     autocmd BufWritePre * call format#auto()
     autocmd FileType * call format#forceoptions()
 augroup END
+
+" Restore compatibility
+let &cpo = s:save_cpo
+unlet s:save_cpo

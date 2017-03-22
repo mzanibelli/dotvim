@@ -1,3 +1,13 @@
+" Plugin
+if exists('g:loaded_local_buffers')
+  finish
+endif
+let g:loaded_local_buffers = 1
+
+" Force incompatibility
+let s:save_cpo = &cpo
+set cpo&vim
+
 " Commands
 command! -nargs=0 BufferKill call buffers#killall()
 
@@ -18,3 +28,7 @@ augroup BUFFERS
     autocmd StdinReadPost * setlocal buftype=nofile
     autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * silent! checktime
 augroup END
+
+" Restore compatibility
+let &cpo = s:save_cpo
+unlet s:save_cpo
