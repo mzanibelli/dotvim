@@ -5,6 +5,7 @@ syntax on
 colorscheme greyscale
 let mapleader="\<Space>"
 let &showbreak='› '
+
 set autoindent
 set autoread
 set backspace=indent,eol,start
@@ -137,3 +138,31 @@ set wildmode=longest:full,full
 set winminheight=0
 set winminwidth=0
 set wrapscan
+
+let g:html_indent_script1="inc"
+let g:html_indent_style1="inc"
+
+let g:netrw_liststyle=3
+let g:netrw_banner=0
+let g:netrw_preview=1
+let g:netrw_alto=1
+let g:netrw_silent=1
+let g:netrw_use_errorwindow=0
+let g:netrw_browse_split=0
+let g:netrw_browsex_viewer= "xdg-open"
+let g:netrw_ftp_cmd="ftp -p"
+
+let g:PHP_autoformatcomment=1
+let g:PHP_outdentphpescape=0
+let g:PHP_removeCRwhenUnix=1
+let g:PHP_vintage_case_default_indent=1
+
+let g:python_highlight_all=1
+let g:python_recommended_style=0
+
+let g:ruby_no_expensive=1
+let g:ruby_operators=1
+let g:ruby_space_errors=0
+let g:rubycomplete_buffer_loading=1
+let g:rubycomplete_classes_in_global=1
+let g:rubycomplete_rails=1
