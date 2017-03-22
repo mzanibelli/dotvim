@@ -11,11 +11,6 @@ set cpo&vim
 " Mappings
 nnoremap <silent> <Leader>f :<C-U>echo expand('%:p')<CR>
 
-" Init
-silent! call mkdir(&undodir, "p")
-silent! call mkdir(&backupdir, "p")
-silent! call mkdir(&directory, "p")
-
 " Autocommands
 augroup FILE
     autocmd!
@@ -23,6 +18,9 @@ augroup FILE
     autocmd BufWritePre * call file#mkdir(expand("<afile>"), +expand("<abuf>"))
     autocmd BufWritePre * call file#backupext()
     autocmd CursorHold,BufWritePost * unlet! b:wrongformat
+    autocmd VimEnter * silent! call mkdir(&undodir, "p")
+    autocmd VimEnter * silent! call mkdir(&backupdir, "p")
+    autocmd VimEnter * silent! call mkdir(&directory, "p")
 augroup END
 
 " Restore compatibility

@@ -8,10 +8,6 @@ let b:loaded_local_ftplugin_vcs = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
-" Init
-call windows#preserve("%sort")
-call windows#preserve("%!uniq")
-
 " Variables
 let b:norestore = 1
 let b:completiontype = "\<C-X>\<C-F>"

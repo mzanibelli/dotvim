@@ -30,7 +30,7 @@ function! git#revert()
 endfunction
 
 function! git#build()
-    call shell#exec("git ls-files --deleted --modified --others --exclude-standard > ".s:changelist." && $EDITOR ".s:changelist, 0)
+    call shell#exec("git ls-files --deleted --modified --others --exclude-standard | sort | uniq > ".s:changelist." && $EDITOR ".s:changelist, 0)
 endfunction
 
 function! git#send()

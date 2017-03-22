@@ -30,7 +30,7 @@ function! svn#revert()
 endfunction
 
 function! svn#build()
-    call shell#exec("svn diff --summarize \| cut -c 9- > ".s:changelist." && $EDITOR ".s:changelist, 0)
+    call shell#exec("svn diff --summarize \| cut -c 9- | sort | uniq > ".s:changelist." && $EDITOR ".s:changelist, 0)
 endfunction
 
 function! svn#send()

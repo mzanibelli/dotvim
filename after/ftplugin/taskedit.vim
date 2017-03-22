@@ -8,9 +8,6 @@ let b:loaded_local_ftplugin_taskedit = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
-" Init
-execute "normal! /Description\<CR>W"
-
 " Variables
 let b:norestore = 1
 let b:nosession = 1

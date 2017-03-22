@@ -9,7 +9,7 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 " Autocommands
-augroup TOGGLE
+augroup OVERRIDE
     autocmd!
     autocmd VimEnter * call cli#override("h", "Help")
     autocmd VimEnter * call cli#override("help", "Help")
