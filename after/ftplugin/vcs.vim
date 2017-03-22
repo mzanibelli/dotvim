@@ -14,8 +14,8 @@ call windows#preserve("%sort")
 call windows#preserve("%!uniq")
 
 " Variables
-let b:norestore=1
-let b:completiontype="\<C-X>\<C-F>"
+let b:norestore = 1
+let b:completiontype = "\<C-X>\<C-F>"
 
 " Restore compatibility
 let &cpo = s:save_cpo

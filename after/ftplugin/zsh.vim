@@ -9,7 +9,7 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 " Variables
-let b:headerstring='#!/bin/zsh'
+let b:headerstring = '#!/bin/zsh'
 let b:autoclose = ['quote', 'shell']
 
 " Mappings

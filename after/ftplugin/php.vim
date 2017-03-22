@@ -31,10 +31,10 @@ vnoremap <buffer> <silent> <Leader>e :<C-U>call php#extract()<CR>
 setlocal foldenable
 
 " Variables
-let b:commentprefix='//'
-let b:headerstring='#!/usr/bin/php'
+let b:commentprefix = '//'
+let b:headerstring = '#!/usr/bin/php'
 let b:autoclose = ['curly', 'square', 'quote']
-let b:autocompile=1
+let b:autocompile = 1
 
 " Restore compatibility
 let &cpo = s:save_cpo
