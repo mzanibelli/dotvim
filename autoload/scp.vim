@@ -7,7 +7,7 @@ function! scp#getprotocol()
 endfunction
 
 function! scp#context(file)
-    return return scp#on() && !scp#is{a:file}()
+    return scp#on() && !scp#is{a:file}()
 endfunction
 
 function! scp#getrelativepath(file)
@@ -51,8 +51,7 @@ endfunction
 
 function! scp#edit(file)
     if scp#context(a:file)
-            execute printf("edit %s", scp#get{a:file}file())
-        endif
+        execute printf("edit %s", scp#get{a:file}file())
     endif
 endfunction
 

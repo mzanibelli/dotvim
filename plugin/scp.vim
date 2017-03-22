@@ -10,7 +10,7 @@ set cpo&vim
 
 " Commands
 command! -nargs=0 RemoteEdit call scp#edit('remote')
-command! -nargs=0 LocalEdit call scp#editlocal('local')
+command! -nargs=0 LocalEdit call scp#edit('local')
 command! -nargs=0 RemoteSync call scp#sync('remote')
 command! -nargs=0 LocalSync call scp#sync('remote')
 command! -nargs=* Mirror call scp#reset(<q-args>)
