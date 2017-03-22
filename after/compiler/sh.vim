@@ -1,5 +1,8 @@
-" Variables
-let b:autocompile=1
+" Init
+if exists(":CompilerSet") != 2
+    command -nargs=* CompilerSet setlocal <args>
+endif
 
 " Options
-setlocal makeprg=shellcheck\ -f\ gcc\ %\ \\\|\ grep\ -F\ '\ error:\ '
+CompilerSet errorformat&
+CompilerSet makeprg=shellcheck\ -f\ gcc\ %\ \\\|\ grep\ -F\ '\ error:\ '

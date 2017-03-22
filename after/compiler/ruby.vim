@@ -1,5 +1,8 @@
-" Options
-setlocal makeprg=ruby\ -c\ %
+" Init
+if exists(":CompilerSet") != 2
+    command -nargs=* CompilerSet setlocal <args>
+endif
 
-" Variables
-let b:autocompile=1
+" Options
+CompilerSet errorformat&
+CompilerSet makeprg=ruby\ -c\ %

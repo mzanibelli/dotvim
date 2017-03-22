@@ -1,6 +1,8 @@
-" Options
-setlocal makeprg=gofmt\ -e\ %
+" Init
+if exists(":CompilerSet") != 2
+    command -nargs=* CompilerSet setlocal <args>
+endif
 
-" Variables
-let b:autocompile=1
-let b:autoformat=1
+" Options
+CompilerSet errorformat&
+CompilerSet makeprg=gofmt\ -e\ %
