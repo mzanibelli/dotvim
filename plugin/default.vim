@@ -9,7 +9,7 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 " Mappings
-nnoremap <S-S> :<C-U>w<CR>
+nnoremap <Leader>w :<C-U>w<CR>
 
 " Restore compatibility
 let &cpo = s:save_cpo
