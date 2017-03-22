@@ -17,8 +17,11 @@ command! -nargs=* Egrep call grep#grep(<q-args>, 'regex')
 nnoremap <Leader>g :<C-U>Grep<Space>
 vnoremap <silent> <Leader>g :<C-U>Grep <C-R>=visual#gettext()<CR><CR>
 
-" Init
-call grep#configure()
+" Autocommands
+augroup GREP
+    autocmd!
+    autocmd VimEnter * call grep#configure()
+augroup END
 
 " Restore compatibility
 let &cpo = s:save_cpo

@@ -21,9 +21,11 @@ command! -nargs=0 Status call source#exec("_status")
 nnoremap <silent> <C-P> :<C-U>call source#move(0)<CR>
 nnoremap <silent> <C-N> :<C-U>call source#move(1)<CR>
 
-" Init
-call source#init()
-doautocmd User SourceDetectPost
+" Autocommands
+augroup SOURCE
+    autocmd!
+    autocmd VimEnter * call source#init()
+augroup END
 
 " Restore compatibility
 let &cpo = s:save_cpo
