@@ -16,5 +16,5 @@ function! find#qf(channel)
     let l:command = printf('call qf#cload("cgetfile %s")', g:bgoutput)
     call default#save('errorformat', shellescape('%f'), l:command)
     call qf#cfirst()
-    call async#end(channel)
+    call async#end(a:channel)
 endfunction

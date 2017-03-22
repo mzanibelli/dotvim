@@ -40,7 +40,7 @@ function! make#qf(channel)
         endif
     endfor
     call make#setloclist(l:content)
-    call async#end(channel)
+    call async#end(a:channel)
 endfunction
 
 function! make#setloclist(content)
