@@ -8,3 +8,10 @@ function! ctags#go(...)
         echom "Tag '".l:tag."' not found"
     endtry
 endfunction
+
+function! ctags#generate()
+    if exists("b:ctagscommand")
+        let l:command = printf("%s -f %s/tags", b:ctagscommand, shellescape(getcwd()))
+        call async#start(l:command, "async#end")
+    endif
+endfunction
