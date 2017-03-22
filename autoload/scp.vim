@@ -10,8 +10,8 @@ function! scp#context(file)
     return scp#on() && !scp#is{a:file}()
 endfunction
 
-function! scp#getrelativepath(file)
-    if a:file == 'remote'
+function! scp#getrelativepath()
+    if scp#isremote()
         return substitute(expand("%"), printf('^%s/', g:mirror), '', '')
     else
         return fnamemodify(expand("%"), ":.")
@@ -19,11 +19,11 @@ function! scp#getrelativepath(file)
 endfunction
 
 function! scp#getlocalfile()
-    return printf("%s/%s", getcwd(), scp#getrelativepath('local'))
+    return printf("%s/%s", getcwd(), scp#getrelativepath())
 endfunction
 
 function! scp#getremotefile()
-    return printf("%s/%s", g:mirror, scp#getrelativepath('remote'))
+    return printf("%s/%s", g:mirror, scp#getrelativepath())
 endfunction
 
 function! scp#isremote()
