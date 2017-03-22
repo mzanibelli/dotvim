@@ -8,12 +8,6 @@ let g:loaded_local_plugin_default = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
-" Autocommands
-augroup DEFAULT
-    autocmd!
-    autocmd User SourceDetectPost call default#init()
-augroup END
-
 " Mappings
 nnoremap <S-S> :<C-U>w<CR>
 

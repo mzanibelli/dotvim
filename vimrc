@@ -33,6 +33,7 @@ set encoding=utf-8
 set endofline
 set equalalways
 set expandtab
+set exrc
 set fileencoding=utf-8
 set fileencodings=utf-8
 set fileformats=unix,dos,mac
