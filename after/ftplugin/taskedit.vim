@@ -9,11 +9,11 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 " Init
-call sessions#disable()
 execute "normal! /Description\<CR>W"
 
 " Variables
 let b:norestore = 1
+let b:nosession = 1
 
 " Restore compatibility
 let &cpo = s:save_cpo

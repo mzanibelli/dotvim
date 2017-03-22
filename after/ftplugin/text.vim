@@ -8,8 +8,8 @@ let b:loaded_local_ftplugin_text = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
-" Init
-call text#mode()
+" Variables
+let b:textmode = 1
 
 " Restore compatibility
 let &cpo = s:save_cpo

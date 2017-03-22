@@ -8,12 +8,10 @@ let b:loaded_local_ftplugin_svn = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
-" Init
-call sessions#disable()
-call text#mode()
-
 " Variables
 let b:norestore = 1
+let b:textmode = 1
+let b:nosession = 1
 
 " Restore compatibility
 let &cpo = s:save_cpo
