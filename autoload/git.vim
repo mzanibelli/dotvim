@@ -48,7 +48,7 @@ function! git#update()
 endfunction
 
 function! git#status()
-    call shell#run("git status")
+    call shell#exec("git status | less", 0)
 endfunction
 
 function! git#tracked(file)

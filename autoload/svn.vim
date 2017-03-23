@@ -48,7 +48,7 @@ function! svn#update()
 endfunction
 
 function! svn#status()
-    call shell#run("svn status")
+    call shell#exec("svn status | less", 0)
 endfunction
 
 function! svn#tracked(file)
