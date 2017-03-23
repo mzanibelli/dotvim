@@ -13,7 +13,7 @@ function! ctags#command()
     if exists("b:ctagscommand")
         return b:ctagscommand
     else
-        let l:file = fnamemodify(expand(resolve($MYVIMRC)), ":h")."/extra/ctags/".&ft
+        let l:file = default#extra()."/ctags/".&ft
         if file_readable(l:file)
             return l:file
         endif

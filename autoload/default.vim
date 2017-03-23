@@ -23,3 +23,7 @@ function! default#save(option, value, command)
     execute a:command
     execute "let &".a:option." = l:value"
 endfunction
+
+function! default#extra()
+    return fnamemodify(expand(resolve($MYVIMRC)), ":h")."/extra"
+endfunction
