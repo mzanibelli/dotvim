@@ -9,7 +9,7 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 " Mappings
-nnoremap <Leader>w :<C-U>w<CR>
+nnoremap <S-S> :<C-U>w<CR>
 
 " Autocommands
 augroup DEFAULT

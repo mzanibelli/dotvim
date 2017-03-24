@@ -19,6 +19,7 @@ nnoremap <Leader>c <C-W>c
 nnoremap <Leader>= <C-W>=
 nnoremap <Leader>_ <C-W>_
 nnoremap <Leader>- <C-W>\|
+nnoremap <Leader>w <C-W>x
 nnoremap <C-H> <C-W>h
 nnoremap <C-L> <C-W>l
 nnoremap <C-K> <C-W>k
