@@ -1,5 +1,3 @@
-let s:changelist = "/tmp/git-changelist.tmp"
-
 function! git#diff()
     call shell#exec("git difftool -- %", 0)
 endfunction
@@ -30,11 +28,11 @@ function! git#revert()
 endfunction
 
 function! git#build()
-    call shell#exec("git ls-files --deleted --modified --others --exclude-standard | sort | uniq > ".s:changelist." && $EDITOR ".s:changelist, 0)
+    call shell#exec("git ls-files --deleted --modified --others --exclude-standard | sort | uniq > $GIT_CHANGELIST && $EDITOR $GIT_CHANGELIST", 0)
 endfunction
 
 function! git#send()
-    call shell#exec("cat ".s:changelist." \| xargs -d '\\n' git add -- && git commit", 0)
+    call shell#exec("cat $GIT_CHANGELIST \| xargs -d '\\n' git add -- && git commit", 0)
 endfunction
 
 function! git#commit()

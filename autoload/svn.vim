@@ -1,5 +1,3 @@
-let s:changelist = "/tmp/svn-changelist.tmp"
-
 function! svn#diff()
     call shell#exec("svn diff %", 0)
 endfunction
@@ -30,11 +28,11 @@ function! svn#revert()
 endfunction
 
 function! svn#build()
-    call shell#exec("svn diff --summarize \| cut -c 9- | sort | uniq > ".s:changelist." && $EDITOR ".s:changelist, 0)
+    call shell#exec("svn diff --summarize \| cut -c 9- | sort | uniq > $SVN_CHANGELIST && $EDITOR $SVN_CHANGELIST", 0)
 endfunction
 
 function! svn#send()
-    call shell#exec("svn commit --targets ".s:changelist, 0)
+    call shell#exec("svn commit --targets $SVN_CHANGELIST", 0)
 endfunction
 
 function! svn#commit()

@@ -20,6 +20,7 @@ augroup FILE
     autocmd VimEnter * silent! call mkdir(&undodir, "p")
     autocmd VimEnter * silent! call mkdir(&backupdir, "p")
     autocmd VimEnter * silent! call mkdir(&directory, "p")
+    autocmd VimEnter * silent! call mkdir($TMPDIR, "p")
 augroup END
 
 " Restore compatibility

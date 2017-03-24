@@ -1,6 +1,6 @@
 function! sessions#make()
     if !exists("b:nosession") || b:nosession == 0
-        let l:dir = fnameescape("/tmp/vim/session".getcwd())
+        let l:dir = fnameescape($HOME."/.vim/session".getcwd())
         let l:file = l:dir.'/session.vim'
         silent! call mkdir(l:dir, "p")
         cclose
@@ -11,7 +11,7 @@ endfunction
 
 function! sessions#load()
     if !exists("b:nosession") || b:nosession == 0
-        let l:file = fnameescape("/tmp/vim/session".getcwd()."/session.vim")
+        let l:file = fnameescape($HOME."/.vim/session".getcwd()."/session.vim")
         if (filereadable(l:file))
             silent! call default#save('swapfile', 0, printf("source %s", l:file))
         endif

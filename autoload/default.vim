@@ -27,3 +27,12 @@ endfunction
 function! default#extra()
     return fnamemodify(expand(resolve($MYVIMRC)), ":h")."/extra"
 endfunction
+
+function! default#tempname()
+    let l:file = tempname()
+    let l:dir = fnamemodify(l:file, ":h")
+    if !isdirectory(l:dir)
+        call mkdir(l:dir, "p")
+    endif
+    return l:file
+endfunction

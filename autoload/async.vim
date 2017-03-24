@@ -1,6 +1,6 @@
 function! async#start(command, callback)
     if !exists("g:bgoutput")
-        let g:bgoutput = tempname()
+        let g:bgoutput = default#tempname()
         let l:command = [&shell, &shellcmdflag, a:command]
         call job_start(l:command, {'close_cb': a:callback, 'out_io': 'file', 'out_name': g:bgoutput})
         redrawstatus!

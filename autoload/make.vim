@@ -14,7 +14,7 @@ endfunction
 
 function! make#command()
     let l:output = make#copy()
-    execute printf("autocmd User AsyncPost silent! call delete('%s')", l:output)
+    execute printf("autocmd User AsyncPost call delete('%s')", l:output)
     return substitute(&makeprg, "%", l:output, "")." 2>&1"
 endfunction
 
@@ -52,7 +52,7 @@ function! make#setloclist(content)
 endfunction
 
 function! make#copy()
-    let l:file = tempname()
+    let l:file = default#tempname()
     call writefile(getline(1, "$"), l:file)
     return l:file
 endfunction

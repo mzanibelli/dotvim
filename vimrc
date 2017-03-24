@@ -5,13 +5,14 @@ syntax on
 colorscheme greyscale
 let mapleader="\<Space>"
 let &showbreak='› '
+let $TMPDIR=$HOME."/.vim/tmp"
 
 set autoindent
 set autoread
 set backspace=indent,eol,start
 set backup
 set backupcopy=auto
-set backupdir=/tmp/vim/backup
+set backupdir=$HOME/.vim/backup
 set belloff=all
 set breakindent
 set breakindentopt=shift:2
@@ -29,7 +30,7 @@ set cscopetagorder=0
 set cscopeverbose
 set diffexpr=
 set diffopt=iwhite,filler,vertical
-set directory=/tmp/vim/swap//
+set directory=$HOME/.vim/swap//
 set encoding=utf-8
 set endofline
 set equalalways
@@ -88,7 +89,7 @@ set report=0
 set scrolloff=5
 set selectmode=
 set sessionoptions=blank,buffers,winsize
-set shell=bash
+set shell=/bin/bash
 set shellcmdflag=-c
 set shiftwidth=4
 set shortmess=aoOTIcsAF
@@ -121,7 +122,7 @@ set title
 set ttimeout
 set ttimeoutlen=5
 set ttyfast
-set undodir=/tmp/vim/undo//
+set undodir=$HOME/.vim/undo//
 set undofile
 set undolevels=5000
 set updatecount=10
