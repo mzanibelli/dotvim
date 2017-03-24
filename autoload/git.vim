@@ -48,7 +48,7 @@ function! git#update()
 endfunction
 
 function! git#status()
-    call shell#exec("git status | less", 0)
+    call shell#exec("git --paginate status", 0)
 endfunction
 
 function! git#tracked(file)
