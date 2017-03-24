@@ -8,6 +8,9 @@ let b:loaded_local_ftplugin_svn = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
+" Commands
+command! -nargs=0 Abort execute "normal! ggdG:\<C-U>x\<CR>"
+
 " Options
 setlocal nonumber
 setlocal textwidth=60
