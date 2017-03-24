@@ -18,6 +18,7 @@ function! source#init()
         for type in s:source_types
             if isdirectory(l:path."/.".type)
                 let g:sourcetype = type
+                doautocmd User SourceDetectPost
                 return
             endif
         endfor

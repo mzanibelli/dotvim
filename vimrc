@@ -34,7 +34,6 @@ set encoding=utf-8
 set endofline
 set equalalways
 set expandtab
-set exrc
 set fileencoding=utf-8
 set fileencodings=utf-8
 set fileformats=unix,dos,mac
@@ -66,6 +65,7 @@ set noautowriteall
 set nobomb
 set noconfirm
 set noerrorbells
+set noexrc
 set nofoldenable
 set nogdefault
 set noignorecase
@@ -75,7 +75,6 @@ set nomodeline
 set nomore
 set nopaste
 set noshowcmd
-set showmode
 set nospell
 set notimeout
 set nowrap
@@ -93,6 +92,7 @@ set shell=bash
 set shellcmdflag=-c
 set shiftwidth=4
 set shortmess=aoOTIcsAF
+set showmode
 set showtabline=0
 set sidescrolloff=10
 set smartindent

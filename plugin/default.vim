@@ -11,6 +11,12 @@ set cpo&vim
 " Mappings
 nnoremap <Leader>w :<C-U>w<CR>
 
+" Autocommands
+augroup DEFAULT
+    autocmd!
+    autocmd User SourceDetectPost if filereadable('.vimrc') | source .vimrc | endif
+augroup END
+
 " Restore compatibility
 let &cpo = s:save_cpo
 unlet s:save_cpo
