@@ -14,6 +14,7 @@ nnoremap <buffer> <silent> <Leader><Leader> :<C-U>call qf#quick()<CR>
 
 " Options
 setlocal statusline=%f\ %L\ lines
+setlocal nowrap
 
 " Restore compatibility
 let &cpo = s:save_cpo
