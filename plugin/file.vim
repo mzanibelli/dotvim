@@ -17,7 +17,6 @@ augroup FILE
     autocmd BufFilePost * filetype detect
     autocmd BufWritePre * call file#mkdir(expand("<afile>"), +expand("<abuf>"))
     autocmd BufWritePre * call file#backupext()
-    autocmd CursorHold,BufWritePost * unlet! b:wrongformat
     autocmd VimEnter * silent! call mkdir(&undodir, "p")
     autocmd VimEnter * silent! call mkdir(&backupdir, "p")
     autocmd VimEnter * silent! call mkdir(&directory, "p")

@@ -10,7 +10,7 @@ function! format#format()
 endfunction
 
 function! format#alerts(cache)
-    if !exists("b:largefile")
+    if &modifiable && !exists("b:largefile")
         if !exists("b:wrongformat") || !a:cache
             let l:type = &ff !=# "unix"
             let l:trail = search('\s\+$', 'nw') != 0

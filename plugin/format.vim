@@ -18,6 +18,7 @@ augroup FORMAT
     autocmd!
     autocmd BufWritePre * call format#auto()
     autocmd FileType * call format#forceoptions()
+    autocmd CursorHold,BufWritePost * unlet! b:wrongformat
 augroup END
 
 " Restore compatibility
