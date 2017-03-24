@@ -1,8 +1,8 @@
 function! find#find(filename)
-    if a:filename =~# '\v^(\*|\w|-|\.|/| )+$'
+    if filereadable(a:filename)
+        execute "edit ".a:filename
+    elseif a:filename =~# '\v^(\*|\w|-|\.|/| )+$'
         call find#bgstart(a:filename)
-    else
-        echom "Invalid file pattern"
     endif
 endfunction
 

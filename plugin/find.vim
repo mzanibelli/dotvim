@@ -9,7 +9,7 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 " Commands
-command! -nargs=* Find call find#find(<q-args>)
+command! -nargs=* -complete=file Find call find#find(<q-args>)
 
 " Mappings
 nnoremap <Leader>e :<C-U>Find<Space>
