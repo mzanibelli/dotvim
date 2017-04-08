@@ -13,7 +13,6 @@ command! -nargs=* -complete=file Find call find#find(<q-args>)
 
 " Mappings
 nnoremap <Leader>e :<C-U>Find<Space>
-nnoremap <Leader>m :<C-U>browse oldfiles<CR>
 
 " Restore compatibility
 let &cpo = s:save_cpo
