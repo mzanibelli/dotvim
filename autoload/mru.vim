@@ -6,5 +6,7 @@ function! mru#list()
 endfunction
 
 function! mru#open()
-    execute 'edit '.getline(".")
+    let l:file = getline(".")
+    close
+    execute 'edit '.l:file
 endfunction
