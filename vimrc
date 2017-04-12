@@ -75,6 +75,7 @@ set noconfirm
 set noerrorbells
 set noexrc
 set nofoldenable
+set nofsync
 set nogdefault
 set noignorecase
 set nojoinspaces
@@ -92,6 +93,7 @@ set number
 set path=.,**
 set previewheight=12
 set pumheight=10
+set regexpengine=1
 set report=0
 set scrolloff=5
 set selectmode=
@@ -114,6 +116,7 @@ set splitright
 set startofline
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.png,.jpg
 set swapfile
+set swapsync=
 set switchbuf=useopen
 set synmaxcol=800
 set t_Co=256
