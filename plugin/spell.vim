@@ -1,5 +1,5 @@
 " Plugin
-if exists('g:loaded_local_plugin_spell') || !has("spell")
+if exists('g:loaded_local_plugin_spell')
     finish
 endif
 let g:loaded_local_plugin_spell = 1

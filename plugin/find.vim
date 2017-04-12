@@ -1,5 +1,5 @@
 " Plugin
-if exists('g:loaded_local_plugin_find') || v:version < 800
+if exists('g:loaded_local_plugin_find')
     finish
 endif
 let g:loaded_local_plugin_find = 1

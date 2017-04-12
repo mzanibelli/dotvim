@@ -1,5 +1,5 @@
 " Plugin
-if exists('g:loaded_local_plugin_overrides') || v:version < 800
+if exists('g:loaded_local_plugin_overrides')
     finish
 endif
 let g:loaded_local_plugin_overrides = 1
