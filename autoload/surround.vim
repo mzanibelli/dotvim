@@ -7,7 +7,7 @@ function! surround#autoclose()
             inoremap <buffer> ["" [""]<Left><Left>
             inoremap <buffer> ['' ['']<Left><Left>
         endif
-        if index(b:autoclose, 'quote') >= 0 && v:version >= 800
+        if index(b:autoclose, 'quote') >= 0
             inoremap <buffer> <expr> " default#mapdouble('"', "\"\<Left>")
             inoremap <buffer> <expr> ' default#mapdouble("'", "'\<Left>")
         endif
