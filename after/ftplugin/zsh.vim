@@ -13,7 +13,9 @@ let b:headerstring = '#!/bin/zsh'
 let b:autoclose = ['quote', 'shell']
 
 " Mappings
-nnoremap <buffer> <silent> <Leader>x :<C-U>call shell#run('zsh %')<CR>
+if executable("zsh")
+    nnoremap <buffer> <silent> <Leader>x :<C-U>call shell#run('zsh %')<CR>
+endif
 
 " Restore compatibility
 let &cpo = s:save_cpo

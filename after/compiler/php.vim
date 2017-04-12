@@ -1,1 +1,3 @@
-setlocal makeprg=php\ -l\ %
+if executable("php")
+    setlocal makeprg=php\ -l\ %
+endif

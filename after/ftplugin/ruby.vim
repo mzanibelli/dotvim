@@ -12,7 +12,9 @@ set cpo&vim
 compiler ruby
 
 " Mappings
-nnoremap <buffer> <silent> <Leader>x :<C-U>call shell#run('ruby %')<CR>
+if executable("ruby")
+    nnoremap <buffer> <silent> <Leader>x :<C-U>call shell#run('ruby %')<CR>
+endif
 
 " Variables
 let b:headerstring = '#!/usr/bin/ruby'

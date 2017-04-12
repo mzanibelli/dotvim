@@ -1,5 +1,5 @@
 " Plugin
-if exists('g:loaded_local_plugin_binary')
+if exists('g:loaded_local_plugin_binary') || !executable("xxd")
     finish
 endif
 let g:loaded_local_plugin_binary = 1

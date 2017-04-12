@@ -39,7 +39,7 @@ set encoding=utf-8
 set endofline
 set equalalways
 set expandtab
-set fileencoding=utf-9
+set fileencoding=utf-8
 set fileencodings=utf-8
 set fileformats=unix,dos,mac
 set fillchars=
@@ -61,10 +61,9 @@ set incsearch
 set laststatus=2
 set lazyredraw
 set linebreak
+set listchars=tab:▸\ ,eol:¬,extends:»,precedes:«,nbsp:○
 if has("patch-7.4.710")
-    set listchars=tab:▸\ ,eol:¬,space:·,extends:»,precedes:«,nbsp:○
-else
-    set listchars=tab:▸\ ,eol:¬,extends:»,precedes:«,nbsp:○
+    set listchars+=space:·
 endif
 set magic
 set menuitems=10

@@ -1,1 +1,3 @@
-setlocal makeprg=gofmt\ -e\ %
+if executable("gofmt")
+    setlocal makeprg=gofmt\ -e\ %
+endif

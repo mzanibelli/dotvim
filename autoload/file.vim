@@ -30,7 +30,7 @@ function! file#mrulist()
     if @% == ""
         setlocal nomodified readonly buftype=nofile nowrap nonumber winfixheight bufhidden=wipe
         0put =v:oldfiles
-        nnoremap <silent> <buffer> <CR> :call file#mruopen()<CR>
+        nnoremap <silent> <buffer> <CR> :<C-U>call file#mruopen()<CR>
     endif
 endfunction
 

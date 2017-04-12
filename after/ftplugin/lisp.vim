@@ -9,7 +9,9 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 " Mappings
-nnoremap <buffer> <silent> <Leader>x :<C-U>call shell#run("clisp %")<CR>
+if executable("clisp")
+    nnoremap <buffer> <silent> <Leader>x :<C-U>call shell#run("clisp %")<CR>
+endif
 
 " Options
 setlocal tabstop=2

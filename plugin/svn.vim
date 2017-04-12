@@ -1,5 +1,5 @@
 " Plugin
-if exists('g:loaded_local_plugin_svn')
+if exists('g:loaded_local_plugin_svn') || !executable("svn")
     finish
 endif
 let g:loaded_local_plugin_svn = 1

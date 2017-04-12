@@ -9,7 +9,9 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 " Mappings
-nnoremap <buffer> <silent> <Leader>x :<C-U>call shell#run('xrdb %')<CR>
+if executable("xrdb")
+    nnoremap <buffer> <silent> <Leader>x :<C-U>call shell#run('xrdb %')<CR>
+endif
 
 " Restore compatibility
 let &cpo = s:save_cpo

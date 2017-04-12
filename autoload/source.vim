@@ -1,7 +1,7 @@
 let s:source_types = ["git","svn"]
 
 function! source#exec(command)
-    if exists("g:sourcetype")
+    if exists("g:sourcetype") && executable(g:sourcetype)
         let l:file = expand("%")
         if a:command =~# '\v^_' || (l:file !=# "" && eval(g:sourcetype."#tracked('".l:file."')") == 1)
             execute "call ".g:sourcetype."#".substitute(a:command, '_', '', '')."()"

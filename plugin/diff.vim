@@ -1,5 +1,5 @@
 " Plugin
-if exists('g:loaded_local_plugin_diff')
+if exists('g:loaded_local_plugin_diff') || !has("diff")
     finish
 endif
 let g:loaded_local_plugin_diff = 1
