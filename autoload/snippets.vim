@@ -5,7 +5,6 @@ let s:matches = {
         \ "pri" : "private ",
         \ "pro" : "protected ",
         \ "sta" : "static ",
-        \ "" : "",
     \}
 
 function! snippets#snippet(abb, exp)
@@ -16,7 +15,7 @@ function! snippets#functions()
     for a in [ "abs", "fin", "" ]
         for v in [ "pub", "pri", "pro" ]
             for s in [ "sta", "" ]
-                call snippets#snippet(a.v.s."func", s:matches[a].s:matches[v].s:matches[s]."function %()")
+                call snippets#snippet(a.v.s."func", s:matches[a].s:matches[v].get(s:matches, s, "")."function %()")
             endfor
         endfor
     endfor

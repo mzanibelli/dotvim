@@ -28,7 +28,7 @@ set conceallevel=3
 set cpoptions=BceFs
 set cryptmethod=blowfish2
 if has("cscope")
-    set cscopequickfix=s-,c-,d-,i-,t-,e-,a-,g-
+    silent! set cscopequickfix=s-,c-,d-,i-,t-,e-,a-,g-
     set cscopetagorder=0
     set cscopeverbose
 endif
