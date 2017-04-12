@@ -1,5 +1,5 @@
 " Plugin
-if exists('g:loaded_local_plugin_sessions') || !has("mksession")
+if exists('g:loaded_local_plugin_sessions')
     finish
 endif
 let g:loaded_local_plugin_sessions = 1

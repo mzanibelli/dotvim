@@ -1,5 +1,5 @@
 " Plugin
-if exists('g:loaded_local_plugin_windows') || !has("windows")
+if exists('g:loaded_local_plugin_windows')
     finish
 endif
 let g:loaded_local_plugin_windows = 1

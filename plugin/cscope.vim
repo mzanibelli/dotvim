@@ -1,5 +1,5 @@
 " Plugin
-if exists('g:loaded_local_plugin_cscope') || !executable("cscope") || !has("cscope")
+if exists('g:loaded_local_plugin_cscope') || !executable("cscope")
     finish
 endif
 let g:loaded_local_plugin_cscope = 1

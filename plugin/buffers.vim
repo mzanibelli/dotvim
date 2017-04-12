@@ -1,5 +1,5 @@
 " Plugin
-if exists('g:loaded_local_plugin_buffers') || !has("listcmds")
+if exists('g:loaded_local_plugin_buffers')
     finish
 endif
 let g:loaded_local_plugin_buffers = 1

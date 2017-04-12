@@ -1,5 +1,5 @@
 " Plugin
-if exists('g:loaded_local_plugin_conceal') || !has("syntax")
+if exists('g:loaded_local_plugin_conceal')
     finish
 endif
 let g:loaded_local_plugin_conceal = 1
