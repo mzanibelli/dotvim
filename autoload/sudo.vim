@@ -20,3 +20,18 @@ function! sudo#writecmd()
     execute (has('gui_running') ? '' : 'silent') 'write !env SUDO_EDITOR=tee VISUAL=tee sudo -e "%" >/dev/null'
     let &modified = v:shell_error
 endfunction
+
+function! sudo#write()
+    call sudo#setup(expand('%:p'))
+    write!
+endfunction
+
+function! sudo#edit()
+    let l:file = expand('%:p')
+    call sudo#setup(l:file)
+    if &modified
+        setlocal noreadonly
+    else
+        execute "edit ".l:file
+    endif
+endfunction
