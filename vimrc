@@ -57,8 +57,7 @@ silent! set incsearch
 silent! set laststatus=2
 silent! set lazyredraw
 silent! set linebreak
-silent! set listchars+=space:·
-silent! set listchars=tab:▸\ ,eol:¬,extends:»,precedes:«,nbsp:○
+silent! set listchars=tab:▸\ ,eol:¬,extends:»,precedes:«,nbsp:○,space:·
 silent! set magic
 silent! set menuitems=10
 silent! set mouse=
