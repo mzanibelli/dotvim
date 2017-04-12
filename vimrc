@@ -4,7 +4,6 @@ runtime! macros/matchit.vim
 syntax on
 colorscheme greyscale
 let mapleader="\<Space>"
-let &showbreak='› '
 let $TMPDIR=$HOME."/.vim/tmp"
 
 set autoindent
@@ -13,68 +12,26 @@ set backspace=indent,eol,start
 set backup
 set backupcopy=auto
 set backupdir=$HOME/.vim/backup
-if has("belloff")
-    set belloff=all
-endif
-set breakindent
-set breakindentopt=shift:2
-set clipboard=
 set cmdheight=1
 set cmdwinheight=30
 set complete=.,w,b,u
 set completeopt=menuone
-set concealcursor=nvic
-set conceallevel=3
-set cpoptions=BceFs
-set cryptmethod=blowfish2
-if has("cscope")
-    silent! set cscopequickfix=s-,c-,d-,i-,t-,e-,a-,g-
-    set cscopetagorder=0
-    set cscopeverbose
-endif
-set diffexpr=
-set diffopt=iwhite,filler,vertical
 set directory=$HOME/.vim/swap//
-set encoding=utf-8
 set endofline
-set equalalways
 set expandtab
-set fileencoding=utf-8
-set fileencodings=utf-8
 set fileformats=unix,dos,mac
 set fillchars=
-set foldclose=
-set foldexpr=fold#method(v:lnum)
-set foldlevel=1
-set foldmethod=expr
-set foldminlines=0
-set foldnestmax=3
-set foldopen=search,insert,quickfix,tag,undo
 set formatoptions=cqrj
-set guicursor=a:block-Cursor
-set guifont=Source\ Code\ Pro\ Regular\ 13
-set guioptions=i
 set hidden
 set history=1000
-set hlsearch
-set incsearch
-set laststatus=2
 set lazyredraw
-set linebreak
-set listchars=tab:▸\ ,eol:¬,extends:»,precedes:«,nbsp:○
-if has("patch-7.4.710")
-    set listchars+=space:·
-endif
 set magic
 set menuitems=10
-set mouse=
 set noautowrite
 set noautowriteall
-set nobomb
 set noconfirm
 set noerrorbells
 set noexrc
-set nofoldenable
 set nofsync
 set nogdefault
 set noignorecase
@@ -83,14 +40,11 @@ set nolist
 set nomodeline
 set nomore
 set nopaste
-set noshowcmd
-set nospell
 set notimeout
 set nowrap
 set nowritebackup
 set nrformats=
 set number
-set path=.,**
 set previewheight=12
 set pumheight=10
 set regexpengine=1
@@ -106,32 +60,19 @@ silent! set shortmess+=F
 set showmode
 set showtabline=0
 set sidescrolloff=10
-set smartindent
-set smarttab
 set softtabstop=4
-set spellcapcheck=
-set spelllang=en
-set splitbelow
-set splitright
 set startofline
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.png,.jpg
 set swapfile
 set swapsync=
 set switchbuf=useopen
-set synmaxcol=800
 set t_Co=256
 set t_ut=
 set t_vb=
 set tabstop=4
-set tagbsearch
-if has("tagcase")
-    set tagcase=followic
-endif
 set tagrelative
-set tags=./tags;/
 set termencoding=utf-8
 set textwidth=72
-set title
 set ttimeout
 set ttimeoutlen=5
 set ttyfast
@@ -141,7 +82,6 @@ set undolevels=5000
 set updatecount=10
 set updatetime=500
 set viewoptions=folds,options,cursor,slash,unix
-set viminfo='30,<50,s10,h
 set virtualedit=block
 set visualbell
 set warn
@@ -149,9 +89,138 @@ set wildignore=.svn,.git,tags,cscope.out
 set wildignorecase
 set wildmenu
 set wildmode=longest:full,full
-set winminheight=0
-set winminwidth=0
 set wrapscan
+
+if has("smartindent")
+    set smartindent
+    set smarttab
+endif
+
+if has("statusline")
+    set laststatus=2
+endif
+
+if has("belloff")
+    set belloff=all
+endif
+
+if has("linebreak")
+    let &showbreak='› '
+    set linebreak
+    set breakindent
+    set breakindentopt=shift:2
+endif
+
+if has("clipboard")
+    set clipboard=
+endif
+
+if has("conceal")
+    set concealcursor=nvic
+    set conceallevel=3
+endif
+
+if has("compatible")
+    set cpoptions=BceFs
+endif
+
+if has("cryptv")
+    set cryptmethod=blowfish2
+endif
+
+if has("cscope")
+    if has("quickfix")
+        silent! set cscopequickfix=s-,c-,d-,i-,t-,e-,a-,g-
+    endif
+    set cscopetagorder=0
+    set cscopeverbose
+endif
+
+if has("diff")
+    set diffexpr=
+    set diffopt=iwhite,filler,vertical
+endif
+
+if has("multi_byte")
+    set encoding=utf-8
+    set fileencoding=utf-8
+    set fileencodings=utf-8
+    set nobomb
+endif
+
+if has("folding")
+    set foldclose=
+    set foldexpr=fold#method(v:lnum)
+    set foldlevel=1
+    set foldmethod=expr
+    set foldminlines=0
+    set foldnestmax=3
+    set foldopen=search,insert,quickfix,tag,undo
+    set nofoldenable
+endif
+
+if has("gui")
+    set guicursor=a:block-Cursor
+    set guifont=Source\ Code\ Pro\ Regular\ 13
+    set guioptions=i
+endif
+
+if has("extra_search")
+    set hlsearch
+    set incsearch
+endif
+
+set listchars=tab:▸\ ,eol:¬,extends:»,precedes:«,nbsp:○
+if has("patch-7.4.710")
+    set listchars+=space:·
+endif
+
+if has("mouse")
+    set mouse=
+endif
+
+if has("showcmd")
+    set noshowcmd
+endif
+
+if has("spell")
+    set spellcapcheck=
+    set spelllang=en
+    set nospell
+endif
+
+if has("windows")
+    set splitbelow
+    set splitright
+    set winminheight=0
+    set winminwidth=0
+    set equalalways
+endif
+
+if has("syntax")
+    set synmaxcol=800
+endif
+
+if has("tag_binary")
+    set tagbsearch
+endif
+
+if has("tagcase")
+    set tagcase=followic
+endif
+
+if has("path_extra")
+    set path=.,**
+    set tags=./tags;/
+endif
+
+if has("title")
+    set title
+endif
+
+if has("viminfo")
+    set viminfo='30,<50,s10,h
+endif
 
 let g:html_indent_script1="inc"
 let g:html_indent_style1="inc"

@@ -1,5 +1,5 @@
 " Plugin
-if exists('g:loaded_local_plugin_visual')
+if exists('g:loaded_local_plugin_visual') || !has("visual")
     finish
 endif
 let g:loaded_local_plugin_visual = 1

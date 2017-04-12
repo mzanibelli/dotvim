@@ -1,5 +1,5 @@
 " Plugin
-if exists('g:loaded_local_plugin_fold')
+if exists('g:loaded_local_plugin_fold') || !has("folding")
     finish
 endif
 let g:loaded_local_plugin_fold = 1

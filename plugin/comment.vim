@@ -1,5 +1,5 @@
 " Plugin
-if exists('g:loaded_local_plugin_comment')
+if exists('g:loaded_local_plugin_comment') || !has("comments")
     finish
 endif
 let g:loaded_local_plugin_comment = 1
