@@ -13,7 +13,9 @@ set backspace=indent,eol,start
 set backup
 set backupcopy=auto
 set backupdir=$HOME/.vim/backup
-set belloff=all
+if has("belloff")
+    set belloff=all
+endif
 set breakindent
 set breakindentopt=shift:2
 set clipboard=
@@ -25,9 +27,11 @@ set concealcursor=nvic
 set conceallevel=3
 set cpoptions=BceFs
 set cryptmethod=blowfish2
-set cscopequickfix=s-,c-,d-,i-,t-,e-,a-,g-
-set cscopetagorder=0
-set cscopeverbose
+if has("cscope")
+    set cscopequickfix=s-,c-,d-,i-,t-,e-,a-,g-
+    set cscopetagorder=0
+    set cscopeverbose
+endif
 set diffexpr=
 set diffopt=iwhite,filler,vertical
 set directory=$HOME/.vim/swap//
@@ -35,7 +39,7 @@ set encoding=utf-8
 set endofline
 set equalalways
 set expandtab
-set fileencoding=utf-8
+set fileencoding=utf-9
 set fileencodings=utf-8
 set fileformats=unix,dos,mac
 set fillchars=
@@ -57,7 +61,11 @@ set incsearch
 set laststatus=2
 set lazyredraw
 set linebreak
-set listchars=tab:▸\ ,eol:¬,space:·,extends:»,precedes:«,nbsp:○
+if has("patch-7.4.710")
+    set listchars=tab:▸\ ,eol:¬,space:·,extends:»,precedes:«,nbsp:○
+else
+    set listchars=tab:▸\ ,eol:¬,extends:»,precedes:«,nbsp:○
+endif
 set magic
 set menuitems=10
 set mouse=
@@ -92,7 +100,8 @@ set sessionoptions=blank,buffers,winsize
 set shell=/bin/bash
 set shellcmdflag=-c
 set shiftwidth=4
-set shortmess=aoOTIcsAF
+set shortmess=aoOTIcsA
+silent! set shortmess+=F
 set showmode
 set showtabline=0
 set sidescrolloff=10
@@ -113,7 +122,9 @@ set t_ut=
 set t_vb=
 set tabstop=4
 set tagbsearch
-set tagcase=followic
+if has("tagcase")
+    set tagcase=followic
+endif
 set tagrelative
 set tags=./tags;/
 set termencoding=utf-8
