@@ -17,7 +17,7 @@ augroup OVERRIDE
     autocmd VimEnter * call cli#override("find", "Find")
     autocmd VimEnter * call cli#override("tag", "Tag")
     autocmd VimEnter * call cli#override("grep", "Grep")
-    autocmd VimEnter * call cli#override("w!!", "w !sudo tee % >/dev/null")
+    autocmd VimEnter * call cli#override("w!!", "SudoWrite")
     autocmd VimEnter * call cli#override("w$", "w")
     autocmd VimEnter * call cli#override("w<", "w")
     autocmd VimEnter * call cli#override("qw", "wq")
