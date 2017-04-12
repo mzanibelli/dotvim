@@ -18,7 +18,9 @@ command! -buffer -nargs=0 Functions call qf#cload('call php#functions()')
 " Mappings
 execute 'nnoremap <buffer> <silent> [[ :<C-U>let search = @/<CR>?' . escape(php#funcregex(), '|') . '?<CR>:let @/ = search<CR>'
 execute 'nnoremap <buffer> <silent> ]] :<C-U>let search = @/<CR>/' . escape(php#funcregex(), '|') . '/<CR>:let @/ = search<CR>'
-inoremap <buffer> <silent> <expr> , default#mapdouble(',', "\<C-H> => ")
+if v:version >= 800
+    inoremap <buffer> <silent> <expr> , default#mapdouble(',', "\<C-H> => ")
+endif
 vnoremap <buffer> <silent> <Leader>e :<C-U>call php#extract()<CR>
 if executable("php")
     nnoremap <buffer> <silent> <Leader>x :<C-U>call shell#run('php %')<CR>

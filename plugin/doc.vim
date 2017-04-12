@@ -1,5 +1,5 @@
 " Plugin
-if exists('g:loaded_local_plugin_doc')
+if exists('g:loaded_local_plugin_doc') || !executable("firefox")
     finish
 endif
 let g:loaded_local_plugin_doc = 1
