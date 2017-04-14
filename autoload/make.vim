@@ -45,7 +45,7 @@ endfunction
 
 function! make#setloclist(content)
     if len(a:content) == 0
-        silent call qf#lclear()
+        call qf#lclear()
     else
         call setloclist(winnr(), a:content)
     endif

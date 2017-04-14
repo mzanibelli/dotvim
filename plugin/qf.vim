@@ -15,7 +15,7 @@ nnoremap <silent> L :<C-U>call qf#lclear()<CR>
 " Autocommands
 augroup QF
     autocmd!
-    autocmd QuitPre * if &ft != 'qf' | silent call qf#lclear() | endif
+    autocmd QuitPre * if &ft != 'qf' | call qf#lclear() | endif
 augroup END
 
 " Restore compatibility

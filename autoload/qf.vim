@@ -1,18 +1,17 @@
 function! qf#cclear()
     cexpr []
     cclose
-    echom "Quickfix list cleared"
 endfunction
 
 function! qf#cfirst()
     if len(getqflist()) == 1
         cc! 1
-        silent call qf#cclear()
+        call qf#cclear()
     endif
 endfunction
 
 function! qf#cload(command)
-    silent call qf#cclear()
+    call qf#cclear()
     silent execute a:command
     call qf#cfilter()
     botright cwindow
@@ -26,18 +25,17 @@ endfunction
 function! qf#lclear()
     lexpr []
     lclose
-    echom "Location list cleared"
 endfunction
 
 function! qf#lfirst()
     if len(getloclist(winnr())) == 1
         ll! 1
-        silent call qf#lclear()
+        call qf#lclear()
     endif
 endfunction
 
 function! qf#lload(command)
-    silent call qf#lclear()
+    call qf#lclear()
     silent execute a:command
     call qf#lfilter()
     lwindow
@@ -51,7 +49,7 @@ endfunction
 function! qf#quick()
     let l:prefix = qf#type() == 2 ? "l" : "c"
     execute "normal! \<CR>"
-    execute "silent call qf#".l:prefix."clear()"
+    execute "call qf#".l:prefix."clear()"
 endfunction
 
 function! qf#type()
