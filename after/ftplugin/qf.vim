@@ -16,6 +16,9 @@ nnoremap <buffer> <silent> <Leader><Leader> :<C-U>call qf#quick()<CR>
 setlocal statusline=%f\ %L\ lines
 setlocal nowrap
 
+" Variables
+unlet b:undo_ftplugin
+
 " Restore compatibility
 let &cpo = s:save_cpo
 unlet s:save_cpo
