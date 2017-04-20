@@ -1,8 +1,8 @@
 " Ftplugin
-if exists('b:loaded_local_ftplugin_{fname}')
+if exists('b:loaded_local_ftplugin_{fnamet}')
     finish
 endif
-let b:loaded_local_ftplugin_{fname} = 1
+let b:loaded_local_ftplugin_{fnamet} = 1
 
 " Force incompatibility
 let s:save_cpo = &cpo

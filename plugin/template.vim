@@ -9,7 +9,7 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 " Commands
-command! -nargs=+ -complete=customlist,template#complete MkTemplate call template#make(<q-args>)
+command! -nargs=+ -complete=customlist,template#complete Template call template#make(<q-args>)
 
 " Restore compatibility
 let &cpo = s:save_cpo

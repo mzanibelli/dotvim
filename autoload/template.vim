@@ -1,5 +1,7 @@
 let s:vars = {
-            \ "fname": "fnamemodify(expand('%'), ':t:r')",
+            \ "fname": "expand('%')",
+            \ "fnamet": "fnamemodify(expand('%'), ':t')",
+            \ "fnametr": "fnamemodify(expand('%'), ':t:r')",
         \}
 
 function! template#make(input)
