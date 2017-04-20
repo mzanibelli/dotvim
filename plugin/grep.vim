@@ -14,7 +14,7 @@ command! -nargs=* Fgrep call grep#grep(<q-args>, 'fixed')
 command! -nargs=* Egrep call grep#grep(<q-args>, 'regex')
 
 " Mappings
-nnoremap <Leader>g :<C-U>Grep<Space>
+nnoremap <silent> <Leader>g :<C-U>Grep <C-R><C-W><CR>
 vnoremap <silent> <Leader>g :<C-U>Grep <C-R>=visual#gettext()<CR><CR>
 
 " Autocommands
