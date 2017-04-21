@@ -20,6 +20,7 @@ setlocal nowrap
 setlocal nonumber
 setlocal bufhidden=wipe
 setlocal statusline=[MRU]
+setlocal cursorline
 
 " Restore compatibility
 let &cpo = s:save_cpo
