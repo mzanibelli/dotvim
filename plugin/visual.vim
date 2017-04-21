@@ -20,6 +20,7 @@ vnoremap > >gv
 vnoremap = =gv
 inoremap <silent> <C-Y> <C-R><C-R>=visual#copy('up')<CR>
 inoremap <silent> <C-E> <C-R><C-R>=visual#copy('down')<CR>
+vnoremap <expr> <Tab> visual#function()
 
 " Restore compatibility
 let &cpo = s:save_cpo

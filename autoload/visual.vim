@@ -54,3 +54,13 @@ function! visual#copy(dir)
         return matchstr(getline(l:sourceline), l:pattern)
     endif
 endfunction
+
+function! visual#function()
+    let l:line = line(".")
+    if getline(l:line) =~# '\v\{\s*$'
+        return "$F{%"
+    elseif getline(l:line + 1) =~# '\v^\s*\{\s*$'
+        return "j^f{%"
+    endif
+    return ""
+endfunction
