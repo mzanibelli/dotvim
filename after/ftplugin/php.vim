@@ -34,6 +34,7 @@ let b:autoclose = ['curly', 'square', 'quote']
 let b:autocompile = 1
 let b:funcsnippets = 1
 let b:ftsnippets = {"elog": "error_log(print_r(%, true));", "vdump": "var_dump(%);"}
+let b:filemark = "P"
 
 " Restore compatibility
 let &cpo = s:save_cpo
