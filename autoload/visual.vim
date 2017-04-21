@@ -55,12 +55,19 @@ function! visual#copy(dir)
     endif
 endfunction
 
-function! visual#function()
+function! visual#function(way)
     let l:line = line(".")
-    if getline(l:line) =~# '\v\{\s*$'
-        return "$F{%"
-    elseif getline(l:line + 1) =~# '\v^\s*\{\s*$'
-        return "j^f{%"
+    if a:way == 1
+        if getline(l:line) =~# '\v\{\s*$'
+            return "$%"
+        elseif getline(l:line + 1) =~# '\v^\s*\{\s*$'
+            return "j^%"
+        endif
+    elseif a:way == 0
+        if getline(l:line) =~# '\v^\s*\}'
+            return "^%"
+        endif
+        return "k"
     endif
-    return ""
+    return "j"
 endfunction
