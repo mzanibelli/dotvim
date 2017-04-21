@@ -137,7 +137,7 @@ silent! set viminfo='30,<50,s10,h
 silent! set virtualedit=block
 silent! set visualbell
 silent! set warn
-silent! set wildignore=.svn,.git,tags,cscope.out
+silent! set wildignore=*/.svn/**/*,*/.git/**/*,*/.hg/**/*,tags,cscope.out,*%*
 silent! set wildignorecase
 silent! set wildmenu
 silent! set wildmode=longest:full,full

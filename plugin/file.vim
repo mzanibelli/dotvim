@@ -9,7 +9,7 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 " Mappings
-nnoremap <silent> <Leader>f :<C-U>echo expand('%:p')<CR>
+command -nargs=0 Path echo expand('%:p')
 
 " Autocommands
 augroup FILE
