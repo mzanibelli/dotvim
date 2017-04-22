@@ -9,7 +9,7 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 " Mappings
-nnoremap <silent> <Leader>m :call mru#list()<CR>
+nnoremap <silent> <Leader>m :<C-U>call mru#list()<CR>
 
 " Restore compatibility
 let &cpo = s:save_cpo

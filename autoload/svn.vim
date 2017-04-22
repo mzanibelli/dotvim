@@ -11,7 +11,7 @@ function! svn#blame()
     setlocal nowrap nofoldenable
     aboveleft 18vnew
     %!svn blame -x-w "#" | cut -c 1-18
-    setlocal nomodified readonly buftype=nofile nowrap nonumber winfixwidth bufhidden=wipe
+    setlocal nomodifiable nomodified readonly buftype=nofile nowrap nonumber winfixwidth bufhidden=wipe
     execute "normal! " . l:line . "gg"
     setlocal scrollbind
     wincmd p

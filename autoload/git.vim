@@ -11,7 +11,7 @@ function! git#blame()
     setlocal nowrap nofoldenable
     aboveleft 29vnew
     %!git blame -c "#" | awk 'BEGIN {FS="\t"}; {print $1," ",$2}' | sed 's/(//g'
-    setlocal nomodified readonly buftype=nofile nowrap nonumber winfixwidth bufhidden=wipe
+    setlocal nomodifiable nomodified readonly buftype=nofile nowrap nonumber winfixwidth bufhidden=wipe
     execute "normal! " . l:line . "gg"
     setlocal scrollbind
     wincmd p

@@ -13,12 +13,12 @@ nnoremap <silent> <buffer> <CR> :<C-U>call mru#open()<CR>
 nnoremap <silent> <buffer> <Esc> :<C-U>close<CR>
 
 " Options
+setlocal nomodifiable
 setlocal nomodified
 setlocal readonly
-setlocal buftype=nofile
+setlocal bufhidden=wipe
 setlocal nowrap
 setlocal nonumber
-setlocal bufhidden=wipe
 setlocal statusline=[MRU]
 setlocal cursorline
 setlocal winfixheight

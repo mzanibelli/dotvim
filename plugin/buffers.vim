@@ -21,7 +21,7 @@ augroup BUFFERS
     autocmd!
     autocmd StdinReadPost * setlocal buftype=nofile
     autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * silent! checktime
-    autocmd VimEnter * if bufname("%") == "" | set bufhidden=wipe | endif
+    autocmd VimEnter * if bufname("%") == "" | call mru#files() | endif
 augroup END
 
 " Restore compatibility

@@ -25,15 +25,3 @@ endfunction
 function! file#backupext()
     execute "set backupext=.".strftime("%Y%m%d%H%M%S")
 endfunction
-
-function! file#mrulist()
-    if @% == ""
-        setlocal nomodified readonly buftype=nofile nowrap nonumber winfixheight bufhidden=wipe
-        0put =v:oldfiles
-        nnoremap <silent> <buffer> <CR> :<C-U>call file#mruopen()<CR>
-    endif
-endfunction
-
-function! file#mruopen()
-    execute 'edit '.getline(".")
-endfunction

@@ -20,7 +20,7 @@ function! diff#diffdisk()
         vnew
         read #
         normal! ggdd
-        setlocal nomodified readonly buftype=nofile bufhidden=wipe
+        setlocal nomodifiable nomodified readonly buftype=nofile bufhidden=wipe
         let &ft = l:source_ft
         call diff#diffwin()
     endif
