@@ -10,6 +10,7 @@ set cpo&vim
 
 " Mappings
 nnoremap <S-S> :<C-U>update<CR>
+nnoremap <Leader>q :<C-U>quitall<CR>
 
 " Autocommands
 augroup DEFAULT
