@@ -10,7 +10,6 @@ set cpo&vim
 
 " Mappings
 nnoremap <buffer> <CR> <CR>zzzv
-nnoremap <silent> <buffer> <Esc> :<C-U>close<CR>
 nnoremap <buffer> <silent> <Leader><Leader> :<C-U>call qf#quick()<CR>
 
 " Options
