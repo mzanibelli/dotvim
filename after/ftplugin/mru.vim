@@ -10,7 +10,7 @@ set cpo&vim
 
 " Mappings
 nnoremap <silent> <buffer> <CR> :<C-U>call mru#open()<CR>
-nnoremap <silent> <buffer> <Esc> :<C-U>close<CR>
+nnoremap <silent> <buffer> <Esc> :<C-U>quit<CR>
 
 " Options
 setlocal nomodifiable
@@ -22,6 +22,7 @@ setlocal nonumber
 setlocal statusline=[MRU]
 setlocal cursorline
 setlocal winfixheight
+" setlocal buftype=nowrite
 
 " Restore compatibility
 let &cpo = s:save_cpo
