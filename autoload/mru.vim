@@ -6,7 +6,7 @@ endfunction
 
 function! mru#open()
     let l:file = getline(".")
-    if exists("b:mrusplit")
+    if exists("b:mrusplit") && b:mrusplit = 1
         close
     endif
     execute 'edit '.l:file
