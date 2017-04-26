@@ -28,7 +28,7 @@ function! svn#revert()
 endfunction
 
 function! svn#build()
-    call shell#exec("svn diff --summarize \| cut -c 9- | sort | uniq > $SVN_CHANGELIST && $EDITOR $SVN_CHANGELIST", 0)
+    call shell#exec("svn diff --summarize | cut -c 9- | sort | uniq > $SVN_CHANGELIST && $EDITOR $SVN_CHANGELIST", 0)
 endfunction
 
 function! svn#send()

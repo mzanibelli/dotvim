@@ -32,7 +32,7 @@ function! git#build()
 endfunction
 
 function! git#send()
-    call shell#exec("cat $GIT_CHANGELIST \| xargs -d '\\n' git add -- && git commit", 0)
+    call shell#exec("cat $GIT_CHANGELIST | xargs -d '\\n' git add -- && git commit", 0)
 endfunction
 
 function! git#commit()
@@ -41,8 +41,8 @@ function! git#commit()
 endfunction
 
 function! git#update()
+    autocmd User AsyncPost checktime
     call shell#background("git pull")
-    checktime
 endfunction
 
 function! git#status()
