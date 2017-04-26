@@ -10,7 +10,7 @@ set cpo&vim
 
 " Mappings
 nnoremap <silent> <buffer> <CR> :<C-U>call mru#open()<CR>
-nnoremap <silent> <buffer> <Esc> :<C-U>quit<CR>
+nnoremap <silent> <buffer> <Esc> :<C-U>close<CR>
 
 " Options
 setlocal nomodifiable
