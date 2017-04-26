@@ -15,6 +15,8 @@ noremap gj j
 noremap gk k
 noremap j gj
 noremap k gk
+nnoremap <Leader>d "_d
+vnoremap <Leader>d "_d
 
 " Restore compatibility
 let &cpo = s:save_cpo
