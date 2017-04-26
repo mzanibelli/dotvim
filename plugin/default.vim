@@ -9,7 +9,7 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 " Mappings
-nnoremap <S-S> :<C-U>update<CR>
+nnoremap <Leader>w :<C-U>update<CR>
 nnoremap <Leader>q :<C-U>quitall<CR>
 
 " Autocommands
