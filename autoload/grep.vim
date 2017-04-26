@@ -3,7 +3,7 @@ function! grep#grep(args, type)
 endfunction
 
 function! grep#command(args, type)
-    return join([&grepprg, g:grepmodes[a:type], shellescape(a:args), getcwd()])
+    return join([&grepprg, s:grepmodes[a:type], shellescape(a:args), getcwd()])
 endfunction
 
 function! grep#qf(channel)
@@ -16,14 +16,10 @@ function! grep#configure()
     if executable("rg")
         let &grepprg="rg --color=never --vimgrep --threads ".default#units()
         let &grepformat='%f:%l:%c:%m,%f:%l:%m'
-        let g:grepmodes = {'regex': '-e', 'fixed': '-F'}
-    elseif executable("ag")
-        let &grepprg="ag --nogroup --nocolor --vimgrep --skip-vcs-ignores --workers ".default#units()
-        let &grepformat='%f:%l:%c:%m,%f:%l:%m'
-        let g:grepmodes = {'regex': '', 'fixed': '-F'}
+        let s:grepmodes = {'regex': '-e', 'fixed': '-Fe'}
     else
         let &grepprg="grep --dereference-recursive --exclude-dir={.svn,.git} --exclude={cscope.out,tags} --color=never -n"
         let &grepformat='%f:%l:%m,%f:%l%m,%f  %l%m'
-        let g:grepmodes = {'regex': '-E', 'fixed': '-F'}
+        let s:grepmodes = {'regex': '-Ee', 'fixed': '-Fe'}
     endif
 endfunction
