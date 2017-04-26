@@ -9,7 +9,7 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 " Commands
-command! -nargs=0 Abort execute "normal! ggdG:\<C-U>x\<CR>"
+command! -buffer -nargs=0 Abort execute "normal! ggdG:\<C-U>x\<CR>"
 
 " Options
 setlocal nonumber
