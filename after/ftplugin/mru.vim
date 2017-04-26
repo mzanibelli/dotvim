@@ -22,7 +22,6 @@ setlocal nonumber
 setlocal statusline=[MRU]
 setlocal cursorline
 setlocal winfixheight
-" setlocal buftype=nowrite
 
 " Restore compatibility
 let &cpo = s:save_cpo
