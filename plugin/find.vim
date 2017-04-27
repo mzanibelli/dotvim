@@ -14,11 +14,11 @@ command! -nargs=* -complete=file Find call find#find(<q-args>)
 " Mappings
 nnoremap <Leader>e :<C-U>Find<Space>
 nnoremap <Leader>ff :<C-U>find<Space>
-nnoremap <Leader>fs :<C-U>splitfind<Space>
-nnoremap <Leader>fv :<C-U>vertical splitfind<Space>
+nnoremap <Leader>fs :<C-U>sfind<Space>
+nnoremap <Leader>fv :<C-U>vertical sfind<Space>
 nnoremap <Leader>fF :<C-U>find <C-R>=expand('%:h').'/'<CR>
-nnoremap <Leader>fS :<C-U>splitfind <C-R>=expand('%:h').'/'<CR>
-nnoremap <Leader>fV :<C-U>vertical splitfind <C-R>=expand('%:h').'/'<CR>
+nnoremap <Leader>fS :<C-U>sfind <C-R>=expand('%:h').'/'<CR>
+nnoremap <Leader>fV :<C-U>vertical sfind <C-R>=expand('%:h').'/'<CR>
 
 " Restore compatibility
 let &cpo = s:save_cpo
