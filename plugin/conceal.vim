@@ -11,7 +11,7 @@ set cpo&vim
 " Autocommands
 augroup CONCEAL
     autocmd!
-    autocmd BufReadPost * syntax match Ignore /\r$/ conceal
+    autocmd BufReadPost * keeppatterns syntax match Ignore /\r$/ conceal
 augroup END
 
 " Restore compatibility
