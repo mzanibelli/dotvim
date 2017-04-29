@@ -1,7 +1,13 @@
 let s:vars = {
             \ "fname": "expand('%')",
-            \ "fnamet": "fnamemodify(expand('%'), ':t')",
-            \ "fnametr": "fnamemodify(expand('%'), ':t:r')",
+            \ "fname-t": "fnamemodify(expand('%'), ':t')",
+            \ "fname-tr": "fnamemodify(expand('%'), ':t:r')",
+            \ "datetime": "strftime('%Y-%m-%d %H:%M:%S')",
+            \ "date": "strftime('%Y-%m-%d')",
+            \ "date-en": "strftime('%m/%d/%Y')",
+            \ "date-fr": "strftime('%d/%m/%Y')",
+            \ "time": "strftime('%H:%M:%S')",
+            \ "year": "strftime('%Y')",
         \}
 
 function! template#make(input)
