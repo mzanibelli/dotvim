@@ -39,5 +39,5 @@ function! php#funcregex()
 endfunction
 
 function! php#functions()
-    call search#ilist2qf('/'.php#funcregex().'/')
+    call qf#cload("vimgrep /".php#funcregex()."/ %")
 endfunction

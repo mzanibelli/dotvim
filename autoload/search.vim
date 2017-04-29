@@ -19,14 +19,6 @@ function! search#escape(string)
   return l:string
 endfunction
 
-function! search#ilist2qf(pattern)
-    redir => l:output
-        silent! execute "ilist ".a:pattern
-    redir END
-    let l:lines = split(l:output, '\n')
-    if l:lines[0] !~# '^Error detected'
-        let [l:filename, l:line_info] = [expand(l:lines[0]), l:lines[1:-1]]
-        let l:qf_entries = map(l:line_info, "{'filename': l:filename, 'lnum': split(v:val)[1], 'text': getline(split(v:val)[1]) }")
-        call setqflist(l:qf_entries)
-    endif
+function! search#toqf()
+    call qf#cload("vimgrep /".@/."/ %")
 endfunction

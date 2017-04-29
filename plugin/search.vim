@@ -9,8 +9,8 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 " Mappings
-nnoremap <Leader>* :<C-U>noh<CR>/<C-R>/\<Bar>
-nnoremap <Leader>/ :ilist //<Left>
+nnoremap <Leader>* :<C-U>call search#toqf()<CR>
+nnoremap <Leader>/ :<C-U>ilist //<Left>
 nnoremap <expr> <Leader>: search#replace(0)
 vnoremap <expr> <Leader>: search#replace(1)
 nnoremap <silent> <Leader><Leader> :<C-U>noh<CR>
