@@ -50,7 +50,6 @@ function! index#print()
         let l:msg = '[' . current . '/' . total . ']'
     endif
     echo l:msg
-    normal! zv
 endfunction
 
 function! index#count()

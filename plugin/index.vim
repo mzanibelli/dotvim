@@ -9,8 +9,8 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 " Mappings
-nnoremap <silent> n nzz:<C-U>call index#print()<CR>
-nnoremap <silent> N Nzz:<C-U>call index#print()<CR>
+nnoremap <silent> n nzzzv:<C-U>call index#print()<CR>
+nnoremap <silent> N Nzzzv:<C-U>call index#print()<CR>
 nnoremap <silent> g/ :<C-U>call index#print()<CR>
 
 " Restore compatibility
