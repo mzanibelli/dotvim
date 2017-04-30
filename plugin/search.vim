@@ -9,15 +9,13 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 " Mappings
+nnoremap / :<C-U>noh<CR>/
+nnoremap ? :<C-U>noh<CR>?
 nnoremap <Leader>* :<C-U>call search#toqf()<CR>
 nnoremap <Leader>/ :<C-U>ilist //<Left>
 nnoremap <expr> <Leader>: search#replace(0)
 vnoremap <expr> <Leader>: search#replace(1)
 nnoremap <silent> <Leader><Leader> :<C-U>noh<CR>
-nnoremap / :<C-U>noh<CR>/
-nnoremap ? :<C-U>noh<CR>?
-nnoremap n nzvzz
-nnoremap N Nzvzz
 nnoremap <silent> * :<C-U>let view = winsaveview()<CR>*:call winrestview(view)<CR>
 nnoremap <silent> # :<C-U>let view = winsaveview()<CR>#:call winrestview(view)<CR>
 vnoremap <silent> * :<C-U>call search#selection()<CR>//<CR><C-O>:set hlsearch<CR>
