@@ -8,6 +8,7 @@ endfunction
 
 function! make#make()
     call make#unplace()
+    update
     call qf#lload("lmake")
     silent! ll1
 endfunction

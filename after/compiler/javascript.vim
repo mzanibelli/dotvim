@@ -1,4 +1,4 @@
-if executable("jshint")
-    setlocal errorformat=%f:\ line\ %l\\,\ col\ %c\\,\ %m,%-G%.%#
-    setlocal makeprg=jshint\ --verbose\ %\ \\\|\ grep\ -E\ 'E[0-9]+.$'
+if executable("acorn")
+    setlocal errorformat=%m\ (%l:%c)
+    setlocal makeprg=acorn\ --silent\ %
 endif

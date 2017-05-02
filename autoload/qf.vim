@@ -43,7 +43,14 @@ function! qf#lload(command)
 endfunction
 
 function! qf#lfilter()
-    call setloclist(winnr(), filter(copy(getloclist(winnr())), "v:val.valid == 1"))
+    let l:content = []
+    for err in getloclist(winnr())
+        if err.valid
+            let err.bufnr = empty(err.bufnr) ? bufnr("%") : err.bufnr
+            call add(l:content, err)
+        endif
+    endfor
+    call setloclist(winnr(), l:content)
 endfunction
 
 function! qf#quick()
