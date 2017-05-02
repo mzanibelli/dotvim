@@ -9,7 +9,7 @@ function! doc#browse(search)
     elseif &ft == "sh"
         silent execute "!firefox http://explainshell.com/explain?cmd=".l:search
     else
-        silent execute "!firefox https://www.google.com/search?q=".&ft."+".l:search
+        silent execute "!firefox https://duckduckgo.com/?q=".&ft."+".l:search
     endif
     redraw!
 endfunction
