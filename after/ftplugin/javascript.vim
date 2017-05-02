@@ -8,6 +8,9 @@ let b:loaded_local_ftplugin_javascript = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
+" Compiler
+compiler javascript
+
 " Options
 setlocal foldmarker={,}
 setlocal foldmethod=marker
