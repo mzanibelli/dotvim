@@ -9,18 +9,6 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 " Mappings
-map      <ScrollWheelUp>      <NOP>
-map      <S-ScrollWheelUp>    <NOP>
-map      <C-ScrollWheelUp>    <NOP>
-map      <ScrollWheelDown>    <NOP>
-map      <S-ScrollWheelDown>  <NOP>
-map      <C-ScrollWheelDown>  <NOP>
-map      <ScrollWheelLeft>    <NOP>
-map      <S-ScrollWheelLeft>  <NOP>
-map      <C-ScrollWheelLeft>  <NOP>
-map      <ScrollWheelRight>   <NOP>
-map      <S-ScrollWheelRight> <NOP>
-map      <C-ScrollWheelRight> <NOP>
 nnoremap <Left>               <NOP>
 nnoremap <Right>              <NOP>
 nnoremap <Up>                 <NOP>
