@@ -9,18 +9,11 @@ function! ctags#go(...)
     endtry
 endfunction
 
-function! ctags#command()
-    if exists("b:ctagscommand")
-        return b:ctagscommand
-    else
-        let l:file = default#extra()."/ctags/".&ft
-        if file_readable(l:file)
-            return l:file
-        endif
-    endif
-    return 'ctags'
-endfunction
-
 function! ctags#generate()
-    call async#start(ctags#command(), "async#end")
+    let l:file = default#extra()."/ctags/".&ft
+    if file_readable(l:file)
+        call async#start(l:file, "async#end")
+    else
+        echom "Unknown file type"
+    endif
 endfunction
