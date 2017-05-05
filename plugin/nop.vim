@@ -46,7 +46,6 @@ vnoremap <C-Down>  <NOP>
 vnoremap <C-Left>  <NOP>
 vnoremap <C-Right> <NOP>
 nnoremap <C-]>     <NOP>
-nnoremap <C-T>     <NOP>
 nnoremap gh        <NOP>
 nnoremap gH        <NOP>
 nnoremap g<C-H>    <NOP>
