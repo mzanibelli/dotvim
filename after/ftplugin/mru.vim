@@ -20,7 +20,6 @@ setlocal readonly
 setlocal bufhidden=wipe
 setlocal nowrap
 setlocal nonumber
-setlocal statusline=[MRU]
 setlocal cursorline
 setlocal winfixheight
 
