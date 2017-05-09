@@ -14,11 +14,6 @@ command! -buffer -nargs=0 Minify call xml#minify()
 " Mappings
 inoremap <buffer> <silent> > ><C-R>=xml#close()<CR>
 
-" Options
-if executable("xmllint")
-    setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
-endif
-
 " Variables
 let b:autoclose = ['tag', 'quote']
 
