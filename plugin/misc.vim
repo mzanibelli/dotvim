@@ -15,8 +15,6 @@ noremap gj j
 noremap gk k
 noremap j gj
 noremap k gk
-nnoremap x "_x
-vnoremap x "_x
 
 " Restore compatibility
 let &cpo = s:save_cpo
