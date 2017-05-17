@@ -98,7 +98,7 @@ silent! set shiftwidth=4
 silent! set shortmess+=F
 silent! set shortmess=aoOTIcsA
 silent! set showmode
-silent! set showtabline=0
+silent! set showtabline=1
 silent! set sidescrolloff=10
 silent! set smartindent
 silent! set smarttab

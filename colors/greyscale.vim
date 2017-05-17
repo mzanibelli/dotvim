@@ -71,6 +71,9 @@ highlight StatusLineNC ctermfg=255 ctermbg=16 guifg=#eeeeee guibg=#000000
 highlight StorageClass ctermfg=255 ctermbg=none cterm=bold guifg=#eeeeee guibg=NONE gui=bold
 highlight String ctermfg=245 ctermbg=none guifg=#8a8a8a guibg=NONE
 highlight Structure ctermfg=255 ctermbg=none cterm=bold guifg=#eeeeee guibg=NONE gui=bold
+highlight TabLine ctermfg=255 ctermbg=none cterm=none guifg=#eeeeee guibg=NONE gui=NONE
+highlight TabLineSel ctermfg=255 ctermbg=none cterm=bold guifg=#eeeeee guibg=NONE gui=bold
+highlight TabLineFill ctermfg=16 ctermbg=255 guifg=#000000 guibg=#eeeeee
 highlight Tag ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
 highlight Title ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
 highlight Todo ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
