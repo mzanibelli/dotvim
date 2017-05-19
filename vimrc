@@ -277,7 +277,7 @@ let g:vdebug_options = {
             \ "timeout"            : 20,
             \ "server"             : '',
             \ "on_close"           : 'stop',
-            \ "break_on_open"      : 0,
+            \ "break_on_open"      : 1,
             \ "ide_key"            : '',
             \ "debug_window_level" : 0,
             \ "debug_file_level"   : 2,

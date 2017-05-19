@@ -18,6 +18,10 @@ highlight Cursor ctermfg=255 ctermbg=255 guifg=#000000 guibg=#eeeeee
 highlight CursorColumn ctermfg=255 ctermbg=255 guifg=#eeeeee guibg=#eeeeee
 highlight CursorLine cterm=none ctermbg=233 gui=NONE guibg=#121212
 highlight CursorLineNr ctermfg=255 cterm=bold guifg=#eeeeee gui=bold
+highlight DbgBreakptLine ctermfg=16 ctermbg=255 guifg=#000000 guibg=#eeeeee
+highlight DbgBreakptSign ctermfg=255 ctermbg=none guifg=#eeeeee guibg=#000000
+highlight DbgCurrentLine ctermfg=16 ctermbg=255 guifg=#000000 guibg=#eeeeee
+highlight DbgCurrentSign ctermfg=255 ctermbg=none guifg=#eeeeee guibg=#000000
 highlight Debug ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
 highlight Define ctermfg=255 ctermbg=none cterm=bold guifg=#eeeeee guibg=NONE gui=bold
 highlight Delimiter ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
@@ -45,8 +49,6 @@ highlight ModeMsg ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
 highlight MoreMsg ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
 highlight NonText ctermfg=240 ctermbg=none guifg=#585858 guibg=NONE
 highlight Normal ctermfg=255 ctermbg=none guifg=#eeeeee guibg=#000000
-highlight DbgCurrentSign ctermfg=255 ctermbg=none guifg=#eeeeee guibg=#000000
-highlight DbgBreakptSign ctermfg=255 ctermbg=none guifg=#eeeeee guibg=#000000
 highlight Number ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
 highlight Operator ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
 highlight Pmenu ctermfg=255 ctermbg=240 guifg=#eeeeee guibg=#585858
@@ -74,8 +76,8 @@ highlight StorageClass ctermfg=255 ctermbg=none cterm=bold guifg=#eeeeee guibg=N
 highlight String ctermfg=245 ctermbg=none guifg=#8a8a8a guibg=NONE
 highlight Structure ctermfg=255 ctermbg=none cterm=bold guifg=#eeeeee guibg=NONE gui=bold
 highlight TabLine ctermfg=255 ctermbg=none cterm=none guifg=#eeeeee guibg=NONE gui=NONE
-highlight TabLineSel ctermfg=255 ctermbg=none cterm=bold guifg=#eeeeee guibg=NONE gui=bold
 highlight TabLineFill ctermfg=16 ctermbg=255 guifg=#000000 guibg=#eeeeee
+highlight TabLineSel ctermfg=255 ctermbg=none cterm=bold guifg=#eeeeee guibg=NONE gui=bold
 highlight Tag ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
 highlight Title ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
 highlight Todo ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
