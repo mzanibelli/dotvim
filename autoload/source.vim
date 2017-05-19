@@ -1,16 +1,5 @@
 let s:source_types = ["git","svn"]
 
-function! source#exec(command)
-    if exists("g:sourcetype") && executable(g:sourcetype)
-        let l:file = expand("%")
-        if a:command =~# '\v^_' || (l:file !=# "" && eval(g:sourcetype."#tracked('".l:file."')") == 1)
-            execute "call ".g:sourcetype."#".substitute(a:command, '_', '', '')."()"
-            return
-        endif
-    endif
-    echom "VCS control not available"
-endfunction
-
 function! source#init()
     let l:oldcwd = getcwd()
     let l:path = l:oldcwd
