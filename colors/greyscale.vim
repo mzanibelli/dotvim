@@ -45,6 +45,8 @@ highlight ModeMsg ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
 highlight MoreMsg ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
 highlight NonText ctermfg=240 ctermbg=none guifg=#585858 guibg=NONE
 highlight Normal ctermfg=255 ctermbg=none guifg=#eeeeee guibg=#000000
+highlight DbgCurrentSign ctermfg=255 ctermbg=none guifg=#eeeeee guibg=#000000
+highlight DbgBreakptSign ctermfg=255 ctermbg=none guifg=#eeeeee guibg=#000000
 highlight Number ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
 highlight Operator ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
 highlight Pmenu ctermfg=255 ctermbg=240 guifg=#eeeeee guibg=#585858
