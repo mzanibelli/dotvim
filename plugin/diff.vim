@@ -11,9 +11,7 @@ set cpo&vim
 " Commands
 command! -nargs=0 NextConflict normal! /\v^[<>=]{4,7}<CR>
 command! -nargs=0 PrevConflict normal! ?\v^[<>=]{4,7}<CR>
-
-" Mappings
-nnoremap <silent> <Leader>df :<C-U>call diff#toggle()<CR>
+command! -nargs=0 Diff call diff#toggle()
 
 " Autocommands
 augroup DIFF
