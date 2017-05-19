@@ -14,7 +14,7 @@ command! -nargs=* Make call make#make()
 " Autocommands
 augroup MAKE
     autocmd!
-    autocmd BufWritePost * silent call make#auto()
+    autocmd BufWritePost * call make#auto()
 augroup END
 
 " Restore compatibility
