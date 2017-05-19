@@ -258,7 +258,7 @@ let g:rubycomplete_buffer_loading=1
 let g:rubycomplete_classes_in_global=1
 let g:rubycomplete_rails=1
 
-let g:vdebug_keymap_defaults = {
+let g:vdebug_keymap = {
             \ "run"               : "<Leader>dr",
             \ "run_to_cursor"     : "<Leader>dw",
             \ "step_over"         : "<Leader>do",
@@ -272,7 +272,7 @@ let g:vdebug_keymap_defaults = {
             \ "eval_visual"       : "<Leader>dv"
             \}
 
-let g:vdebug_options_defaults = {
+let g:vdebug_options = {
             \ "port"               : 9000,
             \ "timeout"            : 20,
             \ "server"             : '',
