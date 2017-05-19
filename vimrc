@@ -283,7 +283,7 @@ let g:vdebug_options = {
             \ "debug_file_level"   : 2,
             \ "debug_file"         : "/tmp/vdebug.log",
             \ "path_maps"          : {},
-            \ "watch_window_style" : 'expanded',
+            \ "watch_window_style" : 'compact',
             \ "marker_default"     : '⬦',
             \ "marker_closed_tree" : '▸',
             \ "marker_open_tree"   : '▾',
