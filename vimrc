@@ -7,6 +7,9 @@ let mapleader="\<Space>"
 let &showbreak='› '
 let $TMPDIR=$HOME."/.vim/tmp"
 
+packadd fugitive
+packadd vdebug
+
 silent! set autoindent
 silent! set autoread
 silent! set backspace=indent,eol,start
@@ -254,3 +257,35 @@ let g:ruby_space_errors=0
 let g:rubycomplete_buffer_loading=1
 let g:rubycomplete_classes_in_global=1
 let g:rubycomplete_rails=1
+
+let g:vdebug_keymap_defaults = {
+            \ "run"               : "<Leader>dr",
+            \ "run_to_cursor"     : "<Leader>dw",
+            \ "step_over"         : "<Leader>do",
+            \ "step_into"         : "<Leader>di",
+            \ "step_out"          : "<Leader>du",
+            \ "close"             : "<Leader>dc",
+            \ "detach"            : "<Leader>dd",
+            \ "set_breakpoint"    : "<Leader>db",
+            \ "get_context"       : "<Leader>dx",
+            \ "eval_under_cursor" : "<Leader>de",
+            \ "eval_visual"       : "<Leader>dv"
+            \}
+
+let g:vdebug_options_defaults = {
+            \ "port"               : 9000,
+            \ "timeout"            : 20,
+            \ "server"             : '',
+            \ "on_close"           : 'stop',
+            \ "break_on_open"      : 0,
+            \ "ide_key"            : '',
+            \ "debug_window_level" : 0,
+            \ "debug_file_level"   : 2,
+            \ "debug_file"         : "/tmp/vdebug.log",
+            \ "path_maps"          : {},
+            \ "watch_window_style" : 'expanded',
+            \ "marker_default"     : '⬦',
+            \ "marker_closed_tree" : '▸',
+            \ "marker_open_tree"   : '▾',
+            \ "continuous_mode"    : 0
+            \}
