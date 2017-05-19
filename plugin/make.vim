@@ -14,10 +14,7 @@ command! -nargs=* Make call make#make()
 " Autocommands
 augroup MAKE
     autocmd!
-    autocmd CursorHold * silent call make#auto()
-    autocmd BufEnter * let b:textchanged = b:changedtick
-    autocmd BufLeave * unlet! b:textchanged
-    autocmd VimEnter * sign define MakeprgError text=>> texthl=Normal
+    autocmd BufWritePost * silent call make#auto()
 augroup END
 
 " Restore compatibility
