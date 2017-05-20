@@ -11,7 +11,7 @@ set cpo&vim
 " Autocommands
 augroup GIT
     autocmd!
-    autocmd BufReadPost fugitive://* set bufhidden=delete
+    autocmd BufReadPost fugitive://* set bufhidden=wipe
 augroup END
 
 " Restore compatibility
