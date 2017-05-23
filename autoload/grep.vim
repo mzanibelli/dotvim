@@ -7,7 +7,7 @@ function! grep#command(args, type)
 endfunction
 
 function! grep#qf(channel)
-    let l:command = printf("silent cgetfile %s", g:bgoutput)
+    let l:command = printf("cgetfile %s", g:bgoutput)
     call default#save('errorformat', shellescape(&grepformat), l:command)
     call async#end(a:channel)
 endfunction
