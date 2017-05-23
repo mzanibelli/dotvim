@@ -4,16 +4,11 @@ function! make#auto()
     endif
 endfunction
 
-function! make#make()
-    silent execute lmake
-    silent! ll1
-endfunction
-
 function! make#command()
     return substitute(&makeprg, "%", expand("%"), "")." 2>&1"
 endfunction
 
 function! make#qf(channel)
-    silent execute "lgetfile ".g:bgoutput
+    execute "lgetfile ".g:bgoutput
     call async#end(a:channel)
 endfunction

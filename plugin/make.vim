@@ -8,9 +8,6 @@ let g:loaded_local_plugin_make = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
-" Commands
-command! -nargs=* Make call make#make()
-
 " Autocommands
 augroup MAKE
     autocmd!
