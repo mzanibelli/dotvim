@@ -5,7 +5,6 @@ function! make#auto()
 endfunction
 
 function! make#make()
-    update
     silent execute lmake
     silent! ll1
 endfunction
