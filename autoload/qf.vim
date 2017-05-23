@@ -10,16 +10,14 @@ function! qf#cfirst()
     endif
 endfunction
 
-function! qf#cload(command)
-    call qf#cclear()
-    silent execute a:command
-    call qf#cfilter()
+function! qf#cpost()
+    call setqflist(filter(copy(getqflist()), "v:val.valid == 1"))
     botright cwindow
     redraw!
 endfunction
 
-function! qf#cfilter()
-    call setqflist(filter(copy(getqflist()), "v:val.valid == 1"))
+function! qf#cload(command)
+    silent execute a:command
 endfunction
 
 function! qf#lclear()
@@ -34,12 +32,14 @@ function! qf#lfirst()
     endif
 endfunction
 
-function! qf#lload(command)
-    call qf#lclear()
-    silent execute a:command
+function! qf#lpost()
     call qf#lfilter()
     lwindow
     redraw!
+endfunction
+
+function! qf#lload(command)
+    silent execute a:command
 endfunction
 
 function! qf#lfilter()
