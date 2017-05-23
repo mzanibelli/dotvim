@@ -13,7 +13,7 @@ compiler php
 
 " Commands
 command! -buffer -nargs=0 Format call php#format()
-command! -buffer -nargs=0 Functions call qf#cload('call php#functions()')
+command! -buffer -nargs=0 Functions silent call php#functions()
 
 " Mappings
 execute 'nnoremap <buffer> <silent> [[ :<C-U>let search = @/<CR>?' . escape(php#funcregex(), '|') . '?<CR>:let @/ = search<CR>'

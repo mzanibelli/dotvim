@@ -24,13 +24,7 @@ function! source#move(way)
     else
         let l:cmd = a:way > 0 ? "next" : "prev"
         let l:prefix = empty(getloclist(winnr())) ? "c" : "l"
-        try
-            execute l:prefix."open"
-            execute l:prefix.l:cmd
-            normal! zzzv
-        catch
-            execute l:prefix."close"
-            echom "No errors"
-        endtry
+        silent! execute l:prefix.l:cmd
+        normal! zzzv
     endif
 endfunction

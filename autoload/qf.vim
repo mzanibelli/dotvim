@@ -10,16 +10,6 @@ function! qf#cfirst()
     endif
 endfunction
 
-function! qf#cpost()
-    call setqflist(filter(copy(getqflist()), "v:val.valid == 1"))
-    botright cwindow
-    redraw!
-endfunction
-
-function! qf#cload(command)
-    silent execute a:command
-endfunction
-
 function! qf#lclear()
     lexpr []
     lclose
@@ -30,27 +20,6 @@ function! qf#lfirst()
         ll! 1
         call qf#lclear()
     endif
-endfunction
-
-function! qf#lpost()
-    call qf#lfilter()
-    lwindow
-    redraw!
-endfunction
-
-function! qf#lload(command)
-    silent execute a:command
-endfunction
-
-function! qf#lfilter()
-    let l:content = []
-    for err in getloclist(winnr())
-        if err.valid
-            let err.bufnr = empty(err.bufnr) ? bufnr("%") : err.bufnr
-            call add(l:content, err)
-        endif
-    endfor
-    call setloclist(winnr(), l:content)
 endfunction
 
 function! qf#quick()

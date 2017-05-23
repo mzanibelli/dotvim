@@ -30,7 +30,7 @@ function! cscope#go(char)
     let l:search = expand("<cword>")
     if cscope_connection() && l:search !=# ""
         try
-            call qf#cload("cs find ".a:char." ".l:search)
+            silent execute "cs find ".a:char." ".l:search
             call qf#cfirst()
             echom printf(s:messages[a:char], l:search)
         catch

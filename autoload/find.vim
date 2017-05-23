@@ -13,7 +13,7 @@ function! find#bgstart(filename)
 endfunction
 
 function! find#qf(channel)
-    let l:command = printf('call qf#cload("cgetfile %s")', g:bgoutput)
+    let l:command = printf("silent cgetfile %s", g:bgoutput)
     call default#save('errorformat', shellescape('%f'), l:command)
     call qf#cfirst()
     call async#end(a:channel)

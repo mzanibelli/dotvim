@@ -1,7 +1,7 @@
 function! ctags#go(...)
     let l:tag = a:0 > 0 ? a:1 : expand("<cword>")
     try
-        call qf#lload("ltag ".l:tag)
+        silent execute "ltag ".l:tag
         call qf#lfirst()
         echom "Found tag '".l:tag."'"
     catch

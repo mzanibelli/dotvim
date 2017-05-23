@@ -20,5 +20,5 @@ function! search#escape(string)
 endfunction
 
 function! search#toqf()
-    call qf#cload("vimgrep /".@/."/ %")
+    silent execute "vimgrep /".@/."/ %"
 endfunction

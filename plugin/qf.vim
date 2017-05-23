@@ -16,10 +16,8 @@ nnoremap <silent> L :<C-U>call qf#lclear()<CR>
 augroup QF
     autocmd!
     autocmd QuitPre * if &ft != 'qf' | call qf#lclear() | endif
-    autocmd QuickFixCmdPre [^l]* noautocmd call qf#cclear()
-    autocmd QuickFixCmdPost [^l]* noautocmd call qf#cpost()
-    autocmd QuickFixCmdPre l* noautocmd call qf#lclear()
-    autocmd QuickFixCmdPost l* noautocmd call qf#lpost()
+    autocmd QuickFixCmdPost [^l]* botright cwindow | redraw!
+    autocmd QuickFixCmdPost l* lwindow | redraw!
 augroup END
 
 " Restore compatibility

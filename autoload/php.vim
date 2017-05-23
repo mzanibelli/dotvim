@@ -39,5 +39,5 @@ function! php#funcregex()
 endfunction
 
 function! php#functions()
-    call qf#cload("vimgrep /".php#funcregex()."/ %")
+    silent execute "vimgrep /".php#funcregex()."/ %"
 endfunction

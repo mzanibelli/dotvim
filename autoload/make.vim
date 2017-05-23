@@ -6,7 +6,7 @@ endfunction
 
 function! make#make()
     update
-    call qf#lload("lmake")
+    silent execute lmake
     silent! ll1
 endfunction
 
@@ -15,6 +15,6 @@ function! make#command()
 endfunction
 
 function! make#qf(channel)
-    call qf#lload("lgetfile ".g:bgoutput)
+    silent execute "lgetfile ".g:bgoutput
     call async#end(a:channel)
 endfunction
