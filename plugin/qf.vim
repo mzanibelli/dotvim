@@ -9,7 +9,7 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 " Mappings
-nnoremap <silent> Q :<C-U>call qf#cclear()<CR>
+nnoremap <silent> Q :<C-U>call qf#ctoggle()<CR>
 nnoremap <silent> L :<C-U>call qf#lclear()<CR>
 
 " Autocommands
