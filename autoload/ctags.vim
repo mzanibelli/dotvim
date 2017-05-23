@@ -1,9 +1,12 @@
 function! ctags#go(...)
     let l:tag = a:0 > 0 ? a:1 : expand("<cword>")
     try
-        silent execute "ltag ".l:tag
-        call qf#lfirst()
-        echom "Found tag '".l:tag."'"
+        execute "ltag! ".l:tag
+        lwindow
+        lfirst!
+        if len(getloclist(winnr())) == 1
+            call qf#lclear()
+        endif
     catch
         echom "Tag '".l:tag."' not found"
     endtry

@@ -1,5 +1,5 @@
 function! qf#cclear()
-    cexpr []
+    noautocmd cexpr []
     cclose
 endfunction
 
@@ -11,15 +11,8 @@ function! qf#cfirst()
 endfunction
 
 function! qf#lclear()
-    lexpr []
+    noautocmd lexpr []
     lclose
-endfunction
-
-function! qf#lfirst()
-    if len(getloclist(winnr())) == 1
-        ll! 1
-        call qf#lclear()
-    endif
 endfunction
 
 function! qf#quick()
