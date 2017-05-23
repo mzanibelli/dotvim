@@ -18,6 +18,7 @@ augroup DIFF
     autocmd!
     autocmd BufWritePost * if &diff | diffupdate | endif
     autocmd FilterWritePost * if &diff | setlocal wrap | endif
+    autocmd BufHidden,BufWipeout * if &diff && len(getwininfo()) == 2 | diffoff! | endif
 augroup END
 
 " Restore compatibility

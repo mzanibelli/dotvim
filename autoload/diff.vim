@@ -1,8 +1,7 @@
 function! diff#toggle()
     cclose
     lclose
-    let l:count = 0
-    windo let l:count = l:count + 1
+    let l:count = len(getwininfo())
     if l:count == 1
         call diff#diffdisk()
     elseif l:count == 2
@@ -14,12 +13,11 @@ endfunction
 
 function! diff#diffdisk()
     if &diff
-        diffoff
+        diffoff!
     else
         let l:source_ft = &ft
         vnew
-        read #
-        normal! ggdd
+        execute "0read #"
         setlocal nomodifiable nomodified readonly buftype=nofile bufhidden=wipe
         let &ft = l:source_ft
         call diff#diffwin()
@@ -28,7 +26,7 @@ endfunction
 
 function! diff#diffwin()
     if &diff
-        windo diffoff
+        diffoff!
     else
         windo diffthis
         normal! gg
