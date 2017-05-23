@@ -37,3 +37,13 @@ function! qf#type()
     endif
     return 0
 endfunction
+
+function! qf#filter(pat, bang)
+    let l:op = a:bang == 0 ? "=~" : "!~"
+    let l:cond = a:bang == 0 ? "||" : "&&"
+    if qf#type() == 2
+        call setloclist(0, filter(getloclist(0), "bufname(v:val['bufnr']) " . l:op . " a:pat " . l:cond . " v:val['text'] " . l:op . " a:pat"), "r")
+    elseif qf#type() == 1
+        call setqflist(filter(getqflist(), "bufname(v:val['bufnr']) " . l:op . " a:pat " . l:cond . " v:val['text'] " . l:op . " a:pat"), "r")
+    endif
+endfunction

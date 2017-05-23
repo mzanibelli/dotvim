@@ -19,6 +19,9 @@ setlocal nowrap
 " Variables
 unlet b:undo_ftplugin
 
+" Commands
+command! -buffer -nargs=1 -bang Filter call qf#filter(<q-args>, expand("<bang>") == "!" ? 1 : 0)
+
 " Restore compatibility
 let &cpo = s:save_cpo
 unlet s:save_cpo
