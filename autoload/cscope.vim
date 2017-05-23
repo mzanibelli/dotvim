@@ -26,9 +26,17 @@ function! cscope#init()
     endif
 endfunction
 
+function! cscope#check()
+    if !cscope_connection()
+        echom "Cscope initialization required"
+        return 0
+    endif
+    return 1
+endfunction
+
 function! cscope#go(char)
     let l:search = expand("<cword>")
-    if cscope_connection() && l:search !=# ""
+    if cscope#check() && l:search !=# ""
         try
             silent execute "cs find ".a:char." ".l:search
             call qf#cfirst()
