@@ -18,5 +18,5 @@ function! mru#files()
     silent 0put =v:oldfiles
     normal! Gddgg
     setlocal filetype=mru
-    file MRU
+    silent file MRU
 endfunction
