@@ -38,7 +38,6 @@ set statusline+=\ %l/%L:%c/%{&textwidth}
 set statusline+=\ %p%{'%'}
 set statusline+=\ %y
 set statusline+=[%{strlen(&fenc)?&fenc:'none'}]
-set statusline+=[%{&ff}]
 set statusline+=%{&ignorecase?'[i]':''}
 set statusline+=%{&wrap?'[w]':''}
 set statusline+=%{&paste?'[p]':''}
