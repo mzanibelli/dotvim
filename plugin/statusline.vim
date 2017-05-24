@@ -9,7 +9,7 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 " Variables
-let g:currentmode={
+let g:currentmode = {
             \ 'n'  : 'NORMAL',
             \ 'v'  : 'VISUAL',
             \ 'V'  : 'VISUAL',
@@ -30,8 +30,8 @@ let g:currentmode={
             \}
 
 " Options
-set statusline=(%n)
-set statusline+=\ %{g:currentmode[mode()]}
+set statusline=\ %{g:currentmode[mode()]}
+set statusline+=\ #%n
 set statusline+=\ %t
 set statusline+=\ %{file#size()}
 set statusline+=\ %l/%L:%c/%{&textwidth}
@@ -48,7 +48,7 @@ set statusline+=%m
 set statusline+=%{format#alerts(1)?'[!]':''}
 set statusline+=%{exists('b:largefile')?'[xxl]':''}
 set statusline+=%{scp#statusline()}
-set statusline+=%{fugitive#statusline()}
+set statusline+=%{exists('b:git_dir')?'['.fugitive#head(7).']':''}
 set statusline+=%{exists('g:bgoutput')?'[*]':''}
 set statusline+=%<
 
