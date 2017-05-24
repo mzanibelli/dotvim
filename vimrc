@@ -81,6 +81,7 @@ silent! set nomodeline
 silent! set nomore
 silent! set nopaste
 silent! set noshowcmd
+silent! set noshowmode
 silent! set nospell
 silent! set notimeout
 silent! set nowrap
@@ -100,7 +101,6 @@ silent! set shellcmdflag=-c
 silent! set shiftwidth=4
 silent! set shortmess+=F
 silent! set shortmess=aoOTIcsA
-silent! set showmode
 silent! set showtabline=1
 silent! set sidescrolloff=10
 silent! set smartindent

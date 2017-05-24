@@ -8,8 +8,30 @@ let g:loaded_local_plugin_statusline = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
+" Variables
+let g:currentmode={
+            \ 'n'  : 'NORMAL',
+            \ 'v'  : 'VISUAL',
+            \ 'V'  : 'VISUAL',
+            \ '' : 'VISUAL',
+            \ 's'  : 'SELECT',
+            \ 'S'  : 'SELECT',
+            \ '' : 'SELECT',
+            \ 'i'  : 'INSERT',
+            \ 'R'  : 'REPLACE',
+            \ 'Rv' : 'REPLACE',
+            \ 'c'  : 'NORMAL',
+            \ 'cv' : 'NORMAL',
+            \ 'ce' : 'NORMAL',
+            \ 'r'  : 'NORMAL',
+            \ 'rm' : 'NORMAL',
+            \ 'r?' : 'NORMAL',
+            \ '!'  : 'NORMAL',
+            \}
+
 " Options
 set statusline=(%n)
+set statusline+=\ %{g:currentmode[mode()]}
 set statusline+=\ %t
 set statusline+=\ %{file#size()}
 set statusline+=\ %l/%L:%c/%{&textwidth}
