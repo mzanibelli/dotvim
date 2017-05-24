@@ -30,7 +30,7 @@ let g:currentmode = {
             \}
 
 " Options
-set statusline=\ %{g:currentmode[mode()]}
+set statusline=[%{g:currentmode[mode()]}]
 set statusline+=\ #%n
 set statusline+=\ %t
 set statusline+=\ %{file#size()}
