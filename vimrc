@@ -115,7 +115,7 @@ silent! set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind
 silent! set swapfile
 silent! set swapsync=
 silent! set switchbuf=useopen
-silent! set synmaxcol=800
+silent! set synmaxcol=256
 silent! set t_Co=256
 silent! set t_ut=
 silent! set t_vb=
