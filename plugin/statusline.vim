@@ -37,17 +37,17 @@ set statusline+=\ %{file#size()}
 set statusline+=\ %l/%L:%c/%{&textwidth}
 set statusline+=\ %p%{'%'}
 set statusline+=\ %y
-set statusline+=[%{strlen(&fenc)?&fenc:'none'}]
+set statusline+=%{strlen(&fenc)&&&fenc!=#'utf-8'?'['.&fenc.']':''}
+set statusline+=%{&spelllang!=#'en'?'['.&spelllang.']':''}
+set statusline+=%{exists('b:largefile')?'[xxl]':''}
+set statusline+=%{exists('b:git_dir')?'['.fugitive#head(7).']':''}
+set statusline+=%{scp#statusline()}
 set statusline+=%{&ignorecase?'[i]':''}
 set statusline+=%{&wrap?'[w]':''}
 set statusline+=%{&paste?'[p]':''}
-set statusline+=[%{&spelllang}]
+set statusline+=%{format#alerts(1)?'[!]':''}
 set statusline+=%r
 set statusline+=%m
-set statusline+=%{format#alerts(1)?'[!]':''}
-set statusline+=%{exists('b:largefile')?'[xxl]':''}
-set statusline+=%{scp#statusline()}
-set statusline+=%{exists('b:git_dir')?'['.fugitive#head(7).']':''}
 set statusline+=%{exists('g:bgoutput')?'[*]':''}
 set statusline+=%<
 
