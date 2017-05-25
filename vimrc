@@ -9,6 +9,7 @@ let $TMPDIR=$HOME."/.vim/tmp"
 
 packadd fugitive
 packadd vdebug
+packadd targets
 
 silent! set autoindent
 silent! set autoread
