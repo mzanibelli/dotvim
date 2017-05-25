@@ -1,12 +1,15 @@
 scriptencoding utf-8
+
 filetype plugin indent on
-runtime! macros/matchit.vim
+
 syntax on
 colorscheme greyscale
+
 let mapleader="\<Space>"
 let &showbreak='› '
 let $TMPDIR=$HOME."/.vim/tmp"
 
+runtime! macros/matchit.vim
 packadd fugitive
 packadd vdebug
 packadd targets
