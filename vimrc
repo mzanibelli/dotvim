@@ -104,8 +104,8 @@ silent! set shortmess+=F
 silent! set shortmess=aoOTIcsA
 silent! set showtabline=1
 silent! set sidescrolloff=10
-silent! set smartindent
-silent! set smarttab
+silent! set nosmartindent
+silent! set nosmarttab
 silent! set softtabstop=4
 silent! set spellcapcheck=
 silent! set spelllang=en
