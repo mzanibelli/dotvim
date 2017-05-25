@@ -22,6 +22,7 @@ setlocal nowrap
 setlocal nonumber
 setlocal cursorline
 setlocal winfixheight
+setlocal noswapfile
 
 " Restore compatibility
 let &cpo = s:save_cpo
