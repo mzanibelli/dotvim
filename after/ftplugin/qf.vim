@@ -15,7 +15,6 @@ nnoremap <buffer> <silent> <Leader><Leader> :<C-U>call qf#quick()<CR>
 " Options
 setlocal statusline=%f\ %L\ lines
 setlocal nowrap
-setlocal winfixheight
 
 " Variables
 unlet b:undo_ftplugin
