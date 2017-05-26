@@ -9,148 +9,151 @@ let mapleader="\<Space>"
 let &showbreak='› '
 let $TMPDIR=$HOME."/.vim/tmp"
 
-runtime! macros/matchit.vim
-packadd fugitive
-packadd vdebug
-packadd targets
+augroup PLUGINS
+    autocmd!
+    autocmd User DeferPost runtime! macros/matchit.vim
+    autocmd User DeferPost packadd fugitive
+    autocmd User DeferPost packadd vdebug
+    autocmd User DeferPost packadd targets
+augroup END
 
-silent! set autoindent
-silent! set autoread
-silent! set backspace=indent,eol,start
-silent! set backup
-silent! set backupcopy=auto
-silent! set backupdir=$HOME/.vim/backup
-silent! set belloff=all
-silent! set breakindent
-silent! set breakindentopt=shift:2
-silent! set clipboard=
-silent! set cmdheight=1
-silent! set cmdwinheight=30
-silent! set complete=.,w,b,u
-silent! set completeopt=menuone
-silent! set concealcursor=nvic
-silent! set conceallevel=3
-silent! set cpoptions=BceFs
-silent! set cryptmethod=blowfish2
-silent! set cscopequickfix=s-,c-,d-,i-,t-,e-,a-,g-
-silent! set cscopetagorder=0
-silent! set cscopeverbose
-silent! set diffexpr=
-silent! set diffopt=iwhite,filler,vertical
-silent! set directory=$HOME/.vim/swap//
-silent! set encoding=utf-8
-silent! set endofline
-silent! set equalalways
-silent! set expandtab
-silent! set fileencoding=utf-8
-silent! set fileencodings=utf-8
-silent! set fileformats=unix,dos,mac
-silent! set fillchars=
-silent! set foldclose=
-silent! set foldexpr=fold#method(v:lnum)
-silent! set foldlevel=1
-silent! set foldmethod=expr
-silent! set foldminlines=0
-silent! set foldnestmax=3
-silent! set foldopen=search,insert,quickfix,tag,undo
-silent! set formatoptions=cqrj
-silent! set guicursor=a:block-Cursor,a:blinkon0
-silent! set guifont=Source\ Code\ Pro\ Regular\ 13
-silent! set guioptions=i
-silent! set hidden
-silent! set history=1000
-silent! set hlsearch
-silent! set incsearch
-silent! set laststatus=2
-silent! set lazyredraw
-silent! set linebreak
-silent! set listchars=tab:▸\ ,eol:¬,extends:»,precedes:«,nbsp:○,space:·
-silent! set magic
-silent! set menuitems=10
-silent! set mouse=
-silent! set noautowrite
-silent! set noautowriteall
-silent! set nobomb
-silent! set nocindent
-silent! set noconfirm
-silent! set noerrorbells
-silent! set noexrc
-silent! set nofoldenable
-silent! set nofsync
-silent! set nogdefault
-silent! set noignorecase
-silent! set nojoinspaces
-silent! set nolist
-silent! set nomodeline
-silent! set nomore
-silent! set nopaste
-silent! set noshowcmd
-silent! set noshowmode
-silent! set nospell
-silent! set notimeout
-silent! set nowrap
-silent! set nowritebackup
-silent! set nrformats=
-silent! set number
-silent! set path=.,**
-silent! set previewheight=12
-silent! set pumheight=10
-silent! set regexpengine=1
-silent! set report=0
-silent! set scrolloff=5
-silent! set selectmode=
-silent! set sessionoptions=blank,buffers,winsize
-silent! set shell=/bin/bash
-silent! set shellcmdflag=-c
-silent! set shiftwidth=4
-silent! set shortmess+=F
-silent! set shortmess=aoOTIcsA
-silent! set showtabline=1
-silent! set sidescrolloff=10
-silent! set nosmartindent
-silent! set nosmarttab
-silent! set softtabstop=4
-silent! set spellcapcheck=
-silent! set spelllang=en
-silent! set splitbelow
-silent! set splitright
-silent! set startofline
-silent! set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.png,.jpg
-silent! set swapfile
-silent! set swapsync=
-silent! set switchbuf=useopen
-silent! set synmaxcol=256
-silent! set t_Co=256
-silent! set t_ut=
-silent! set t_vb=
-silent! set tabstop=4
-silent! set tagbsearch
-silent! set tagcase=followic
-silent! set tagrelative
-silent! set tags=./tags;/
-silent! set termencoding=utf-8
-silent! set textwidth=72
-silent! set title
-silent! set ttimeout
-silent! set ttimeoutlen=5
-silent! set ttyfast
-silent! set undodir=$HOME/.vim/undo//
-silent! set undofile
-silent! set undolevels=5000
-silent! set updatecount=10
-silent! set updatetime=500
-silent! set viewoptions=folds,options,cursor,slash,unix
-silent! set viminfo='30,<50,s10,h
-silent! set virtualedit=block
-silent! set visualbell
-silent! set warn
-silent! set wildignore=*/.svn/**/*,*/.git/**/*,*/.hg/**/*,tags,cscope.out,*%*
-silent! set wildignorecase
-silent! set wildmenu
-silent! set wildmode=longest:full,full
-silent! set winminheight=0
-silent! set winminwidth=0
-silent! set wrapscan
+set autoindent
+set autoread
+set backspace=indent,eol,start
+set backup
+set backupcopy=auto
+set backupdir=$HOME/.vim/backup
+set belloff=all
+set breakindent
+set breakindentopt=shift:2
+set clipboard=
+set cmdheight=1
+set cmdwinheight=30
+set complete=.,w,b,u
+set completeopt=menuone
+set concealcursor=nvic
+set conceallevel=3
+set cpoptions=BceFs
+set cryptmethod=blowfish2
+set cscopequickfix=s-,c-,d-,i-,t-,e-,a-,g-
+set cscopetagorder=0
+set cscopeverbose
+set diffexpr=
+set diffopt=iwhite,filler,vertical
+set directory=$HOME/.vim/swap//
+set encoding=utf-8
+set endofline
+set equalalways
+set expandtab
+set fileencoding=utf-8
+set fileencodings=utf-8
+set fileformats=unix,dos,mac
+set fillchars=
+set foldclose=
+set foldexpr=fold#method(v:lnum)
+set foldlevel=1
+set foldmethod=expr
+set foldminlines=0
+set foldnestmax=3
+set foldopen=search,insert,quickfix,tag,undo
+set formatoptions=cqrj
+set guicursor=a:block-Cursor,a:blinkon0
+set guifont=Source\ Code\ Pro\ Regular\ 13
+set guioptions=i
+set hidden
+set history=1000
+set hlsearch
+set incsearch
+set laststatus=2
+set lazyredraw
+set linebreak
+set listchars=tab:▸\ ,eol:¬,extends:»,precedes:«,nbsp:○,space:·
+set magic
+set menuitems=10
+set mouse=
+set noautowrite
+set noautowriteall
+set nobomb
+set nocindent
+set noconfirm
+set noerrorbells
+set noexrc
+set nofoldenable
+set nofsync
+set nogdefault
+set noignorecase
+set nojoinspaces
+set nolist
+set nomodeline
+set nomore
+set nopaste
+set noshowcmd
+set noshowmode
+set nospell
+set notimeout
+set nowrap
+set nowritebackup
+set nrformats=
+set number
+set path=.,**
+set previewheight=12
+set pumheight=10
+set regexpengine=1
+set report=0
+set scrolloff=5
+set selectmode=
+set sessionoptions=blank,buffers,winsize
+set shell=/bin/bash
+set shellcmdflag=-c
+set shiftwidth=4
+set shortmess+=F
+set shortmess=aoOTIcsA
+set showtabline=1
+set sidescrolloff=10
+set nosmartindent
+set nosmarttab
+set softtabstop=4
+set spellcapcheck=
+set spelllang=en
+set splitbelow
+set splitright
+set startofline
+set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.png,.jpg
+set swapfile
+set swapsync=
+set switchbuf=useopen
+set synmaxcol=256
+set t_Co=256
+set t_ut=
+set t_vb=
+set tabstop=4
+set tagbsearch
+set tagcase=followic
+set tagrelative
+set tags=./tags;/
+set termencoding=utf-8
+set textwidth=72
+set title
+set ttimeout
+set ttimeoutlen=5
+set ttyfast
+set undodir=$HOME/.vim/undo//
+set undofile
+set undolevels=5000
+set updatecount=10
+set updatetime=1000
+set viewoptions=folds,options,cursor,slash,unix
+set viminfo='30,<50,s10,h
+set virtualedit=block
+set visualbell
+set warn
+set wildignore=*/.svn/**/*,*/.git/**/*,*/.hg/**/*,tags,cscope.out,*%*
+set wildignorecase
+set wildmenu
+set wildmode=longest:full,full
+set winminheight=0
+set winminwidth=0
+set wrapscan
 
 let g:html_indent_script1="inc"
 let g:html_indent_style1="inc"
