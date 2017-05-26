@@ -36,7 +36,7 @@ set statusline+=\ %t
 set statusline+=\ %{file#size()}
 set statusline+=\ %l/%L:%c/%{&textwidth}
 set statusline+=\ %p%{'%'}
-set statusline+=\ %y
+set statusline+=\ %{empty(&ft)?'[none]':'['.&ft.']'}
 set statusline+=%{strlen(&fenc)&&&fenc!=#'utf-8'?'['.&fenc.']':''}
 set statusline+=%{&spelllang!=#'en'?'['.&spelllang.']':''}
 set statusline+=%{exists('b:largefile')?'[xxl]':''}

@@ -12,7 +12,7 @@ let $TMPDIR=$HOME."/.vim/tmp"
 augroup PLUGINS
     autocmd!
     autocmd User DeferPost runtime! macros/matchit.vim
-    autocmd User DeferPost packadd fugitive
+    autocmd User DeferPost packadd fugitive | call fugitive#detect(getcwd())
     autocmd User DeferPost packadd vdebug
     autocmd User DeferPost packadd targets
 augroup END
