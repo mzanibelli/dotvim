@@ -15,7 +15,7 @@ nnoremap <silent> <C-N> :<C-U>call source#move(1)<CR>
 " Autocommands
 augroup SOURCE
     autocmd!
-    autocmd VimEnter * call source#init()
+    autocmd User DeferPost call source#init()
 augroup END
 
 " Restore compatibility

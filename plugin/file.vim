@@ -17,10 +17,10 @@ augroup FILE
     autocmd BufFilePost * filetype detect
     autocmd BufWritePre * call file#mkdir(expand("<afile>"), +expand("<abuf>"))
     autocmd BufWritePre * call file#backupext()
-    autocmd VimEnter * silent! call mkdir(&undodir, "p")
-    autocmd VimEnter * silent! call mkdir(&backupdir, "p")
-    autocmd VimEnter * silent! call mkdir(&directory, "p")
-    autocmd VimEnter * silent! call mkdir($TMPDIR, "p")
+    autocmd User DeferPost silent! call mkdir(&undodir, "p")
+    autocmd User DeferPost silent! call mkdir(&backupdir, "p")
+    autocmd User DeferPost silent! call mkdir(&directory, "p")
+    autocmd User DeferPost silent! call mkdir($TMPDIR, "p")
 augroup END
 
 " Restore compatibility

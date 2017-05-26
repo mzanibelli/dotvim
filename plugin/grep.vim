@@ -20,7 +20,7 @@ vnoremap <silent> <Leader>g :<C-U>Grep <C-R>=visual#gettext()<CR><CR>
 " Autocommands
 augroup GREP
     autocmd!
-    autocmd VimEnter * call grep#configure()
+    autocmd User DeferPost call grep#configure()
 augroup END
 
 " Restore compatibility
