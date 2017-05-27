@@ -8,12 +8,10 @@ let g:loaded_local_plugin_buffers = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
-" Commands
-command! -nargs=0 BufferKill call buffers#killall()
-
 " Mappings
-nnoremap <silent> gb :bn<CR>
-nnoremap <silent> gB :bp<CR>
+nnoremap <silent> gb :<C-U>bn<CR>
+nnoremap <silent> gB :<C-U>bp<CR>
+nnoremap <silent> go :<C-U>%bd \| setlocal bufhidden=wipe \| e#<CR>
 nmap <Leader>l :<C-U>ls<CR>
 
 " Autocommands
