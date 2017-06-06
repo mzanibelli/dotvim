@@ -1,5 +1,13 @@
 function! grep#grep(args, type)
+    let s:regrep_args = a:args
+    let s:regrep_type = a:type
     call async#start(grep#command(a:args, a:type), 'grep#qf')
+endfunction
+
+function! grep#regrep()
+    if exists("s:regrep_args") && exists("s:regrep_type")
+        call grep#grep(s:regrep_args, s:regrep_type)
+    endif
 endfunction
 
 function! grep#command(args, type)

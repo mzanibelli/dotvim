@@ -10,6 +10,7 @@ set cpo&vim
 
 " Commands
 command! -nargs=* -complete=file Find call find#find(<q-args>)
+command! -nargs=0 Refind call find#refind()
 
 " Mappings
 nnoremap <Leader>e :<C-U>Find<Space>

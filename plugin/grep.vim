@@ -12,6 +12,7 @@ set cpo&vim
 command! -nargs=* Grep call grep#grep(<q-args>, 'fixed')
 command! -nargs=* Fgrep call grep#grep(<q-args>, 'fixed')
 command! -nargs=* Egrep call grep#grep(<q-args>, 'regex')
+command! -nargs=0 Regrep call grep#regrep()
 
 " Mappings
 nnoremap <silent> <Leader>g :<C-U>Grep <C-R><C-W><CR>
