@@ -1,1 +1,1 @@
-syntax match Ignore /\r$/ conceal
+keeppatterns syntax match Ignore /\r$/ conceal
