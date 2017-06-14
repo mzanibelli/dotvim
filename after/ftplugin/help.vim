@@ -14,7 +14,6 @@ nnoremap <silent> <buffer> gt :<C-U>Help <C-R><C-W><CR>
 
 " Options
 setlocal bufhidden=wipe
-setlocal spelllang=en
 
 " Restore compatibility
 let &cpo = s:save_cpo

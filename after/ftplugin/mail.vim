@@ -10,7 +10,6 @@ set cpo&vim
 
 " Options
 setlocal formatoptions+=w
-setlocal spelllang=fr
 setlocal nonumber
 setlocal textwidth=0
 setlocal spell

@@ -114,7 +114,7 @@ set nosmartindent
 set nosmarttab
 set softtabstop=4
 set spellcapcheck=
-set spelllang=en
+set spelllang=en,fr
 set splitbelow
 set splitright
 set startofline

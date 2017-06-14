@@ -38,7 +38,6 @@ set statusline+=\ %l/%L:%c/%{&textwidth}
 set statusline+=\ %p%{'%'}
 set statusline+=\ %{empty(&ft)?'[none]':'['.&ft.']'}
 set statusline+=%{strlen(&fenc)&&&fenc!=#'utf-8'?'['.&fenc.']':''}
-set statusline+=%{&spelllang!=#'en'?'['.&spelllang.']':''}
 set statusline+=%{exists('b:largefile')?'[xxl]':''}
 set statusline+=%{exists('*fugitive#head')&&exists('b:git_dir')?'['.fugitive#head(7).']':''}
 set statusline+=%{scp#statusline()}
