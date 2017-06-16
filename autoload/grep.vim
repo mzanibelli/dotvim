@@ -22,7 +22,7 @@ endfunction
 
 function! grep#configure()
     if executable("rg")
-        let &grepprg="/usr/bin/rg --color=never --vimgrep --threads ".default#units()
+        let &grepprg="/usr/bin/rg --no-ignore-parent --color=never --vimgrep --threads ".default#units()
         let &grepformat='%f:%l:%c:%m,%f:%l:%m'
         let s:grepmodes = {'regex': '-e', 'fixed': '-Fe'}
     else
