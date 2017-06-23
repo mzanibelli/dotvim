@@ -11,7 +11,7 @@ set cpo&vim
 " Options
 setlocal formatoptions+=w
 setlocal nonumber
-setlocal textwidth=0
+setlocal textwidth=60
 setlocal spell
 
 " Variables
