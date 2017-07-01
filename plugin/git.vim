@@ -12,6 +12,9 @@ set cpo&vim
 augroup GIT
     autocmd!
     autocmd BufReadPost fugitive://* set bufhidden=wipe
+    autocmd CursorHold * if exists("g:deferred") && g:deferred == 1 && !exists("b:git_dir")
+                \ | call fugitive#detect(expand("%:p"))
+                \ | endif
 augroup END
 
 " Restore compatibility
