@@ -17,9 +17,10 @@ nmap <Leader>l :<C-U>ls<CR>
 " Autocommands
 augroup BUFFERS
     autocmd!
+    autocmd StdinReadPre * let g:reading_stdin = 1
     autocmd StdinReadPost * setlocal buftype=nofile
     autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * silent! checktime
-    autocmd VimEnter * if bufname("%") == "" | call mru#files() | endif
+    autocmd VimEnter * if bufname("%") == "" && !exists("g:reading_stdin") | call mru#files() | endif
 augroup END
 
 " Restore compatibility
