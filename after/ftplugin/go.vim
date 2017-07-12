@@ -15,12 +15,12 @@ compiler go
 setlocal foldenable
 if executable("gofmt")
     setlocal formatprg=gofmt\ -s
+    let b:autoformat = 1
 endif
 
 " Variables
 let b:autoclose = ['curly', 'square', 'quote']
 let b:autocompile = 1
-let b:autoformat = 1
 
 " Restore compatibility
 let &cpo = s:save_cpo

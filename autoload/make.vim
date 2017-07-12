@@ -5,7 +5,11 @@ function! make#auto()
 endfunction
 
 function! make#command()
-    return substitute(&makeprg, "%", expand("%"), "")." 2>&1"
+    return make#fixpipe(substitute(&makeprg, "%", expand("%"), "")." 2>&1")
+endfunction
+
+function! make#fixpipe(str)
+    return substitute(a:str, '\\|', '\|', '')
 endfunction
 
 function! make#qf(channel)

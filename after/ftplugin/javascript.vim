@@ -22,6 +22,9 @@ let b:autocompile = 1
 let b:ftsnippets = {"clog": "console.log(%);"}
 let b:filemark = "J"
 
+" Commands
+command! -buffer -nargs=0 Format call javascript#format()
+
 " Restore compatibility
 let &cpo = s:save_cpo
 unlet s:save_cpo
