@@ -1,0 +1,4 @@
+$writer = new \Zend\Log\Writer\Stream(BP.'/var/log/debug.log');
+$logger = new \Zend\Log\Logger();
+$logger->addWriter($writer);
+$logger->info('Your text message');
