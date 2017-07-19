@@ -12,12 +12,6 @@ set cpo&vim
 nnoremap <silent> <C-P> :<C-U>call source#move(0)<CR>
 nnoremap <silent> <C-N> :<C-U>call source#move(1)<CR>
 
-" Autocommands
-augroup SOURCE
-    autocmd!
-    autocmd User DeferPost call source#init()
-augroup END
-
 " Restore compatibility
 let &cpo = s:save_cpo
 unlet s:save_cpo

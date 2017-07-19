@@ -1,22 +1,3 @@
-let s:source_types = ["git","svn"]
-
-function! source#init()
-    let l:oldcwd = getcwd()
-    let l:path = l:oldcwd
-    while l:path !=# "/"
-        for type in s:source_types
-            if isdirectory(l:path."/.".type)
-                let g:sourcetype = type
-                doautocmd User SourceDetectPost
-                return
-            endif
-        endfor
-        execute "cd ".fnameescape(l:path)."/.."
-        let l:path = getcwd()
-    endwhile
-    execute "cd ".fnameescape(l:oldcwd)
-endfunction
-
 function! source#move(way)
     if &diff
         let l:cmd = a:way > 0 ? "]c" : "[c"
