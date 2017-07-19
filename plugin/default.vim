@@ -9,13 +9,7 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 " Mappings
-nnoremap <Leader>q :<C-U>quitall<CR>
-
-" Autocommands
-augroup DEFAULT
-    autocmd!
-    autocmd User SourceDetectPost if filereadable('.vimrc') | source .vimrc | endif
-augroup END
+nnoremap <silent> <Leader>q :<C-U>quitall<CR>
 
 " Restore compatibility
 let &cpo = s:save_cpo
