@@ -1,6 +1,6 @@
 function! scratch#new(ft)
     silent enew
-    setlocal buftype=nofile
+"     setlocal buftype=nofile
     setlocal bufhidden=hide
     setlocal noswapfile
     setlocal buflisted
