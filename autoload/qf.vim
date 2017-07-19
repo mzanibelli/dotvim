@@ -34,13 +34,15 @@ endfunction
 function! qf#filter(pat, bang)
     let l:op = a:bang == 0 ? "=~" : "!~"
     let l:cond = a:bang == 0 ? "||" : "&&"
+    let l:callback = "bufname(v:val['bufnr']) ".l:op." a:pat ".l:cond." v:val['text'] ".l:op." a:pat"
     if qf#type() == 2
-        call setloclist(winnr(), filter(getloclist(winnr()), "bufname(v:val['bufnr']) ".l:op." a:pat ".l:cond." v:val['text'] ".l:op." a:pat"), "r")
+        call setloclist(winnr(), filter(getloclist(winnr()), l:callback), "r")
     elseif qf#type() == 1
-        call setqflist(filter(getqflist(), "bufname(v:val['bufnr']) ".l:op." a:pat ".l:cond." v:val['text'] ".l:op." a:pat"), "r")
+        call setqflist(filter(getqflist(), l:callback), "r")
     endif
 endfunction
 
 function! qf#ctoggle()
-    execute len(filter(getwininfo(), "v:val.quickfix == 1 && v:val.loclist == 0")) == 1 ? "cclose" : "cwindow"
+    let l:callback = "v:val.quickfix == 1 && v:val.loclist == 0"
+    execute len(filter(getwininfo(), l:callback)) == 1 ? "cclose" : "cwindow"
 endfunction
