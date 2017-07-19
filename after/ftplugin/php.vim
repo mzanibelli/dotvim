@@ -33,7 +33,7 @@ let b:headerstring = '#!/usr/bin/php'
 let b:autoclose = ['curly', 'square', 'quote']
 let b:autocompile = 1
 let b:funcsnippets = 1
-let b:ftsnippets = {"elog": "error_log(print_r(%, true));", "vdump": "var_dump(%);"}
+let b:ftsnippets = {"elog": "error_log();", "vdump": "var_dump(%);", "printr": "print_r(%, true)"}
 let b:filemark = "P"
 
 " Restore compatibility
