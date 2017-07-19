@@ -3,11 +3,7 @@ function! help#help(topic)
     if &ft !=# "help" && l:current !=# ""
         let @# = l:current
     endif
-    try
-        execute "keepalt help ".a:topic
-    catch
-        echom "Help not found"
-    endtry
+    execute "keepalt help ".a:topic
 endfunction
 
 function! help#back()
