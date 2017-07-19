@@ -10,11 +10,11 @@ set cpo&vim
 
 " Commands
 command! -nargs=1 -complete=tag Tag call ctags#go(<q-args>)
+command! -nargs=1 -complete=customlist,ctags#complete Gentags call ctags#generate(<q-args>)
 
 " Mappings
 nnoremap gt :<C-U>call ctags#go()<CR>
 nnoremap gT <C-T>
-nnoremap <silent> <Leader>! :<C-U>call ctags#generate()<CR>
 
 " Restore compatibility
 let &cpo = s:save_cpo

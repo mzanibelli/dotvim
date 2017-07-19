@@ -21,14 +21,7 @@ function! template#make(input)
 endfunction
 
 function! template#complete(a, l, p)
-    let l:matches = []
-    for file in split(glob(template#dir()."/*"), "\n")
-        let l:tail = fnamemodify(file, ':t')
-        if l:tail =~# '^'.a:a
-            let l:matches = add(l:matches, l:tail)
-        endif
-    endfor
-    return l:matches
+    return default#dirmatches(template#dir(), a:a)
 endfunction
 
 function! template#content(input)

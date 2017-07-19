@@ -27,3 +27,15 @@ endfunction
 function! default#extra()
     return fnamemodify(expand(resolve($MYVIMRC)), ":h")."/extra"
 endfunction
+
+function! default#dirmatches(dir, a)
+    let l:matches = []
+    for file in split(glob(a:dir."/*"), "\n")
+        let l:tail = fnamemodify(file, ':t')
+        if l:tail =~# '^'.a:a
+            let l:matches = add(l:matches, l:tail)
+        endif
+    endfor
+    return l:matches
+endfunction
+

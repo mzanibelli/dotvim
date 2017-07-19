@@ -12,11 +12,19 @@ function! ctags#go(...)
     endtry
 endfunction
 
-function! ctags#generate()
-    let l:file = default#extra()."/ctags/".&ft
+function! ctags#generate(ft)
+    let l:file = ctags#dir()."/".a:ft
     if file_readable(l:file)
         call async#start(l:file, "async#end")
     else
         echom "Unknown file type"
     endif
+endfunction
+
+function! ctags#dir()
+    return default#extra()."/ctags"
+endfunction
+
+function! ctags#complete(a, l, p)
+    return default#dirmatches(ctags#dir(), a:a)
 endfunction
