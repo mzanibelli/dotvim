@@ -103,6 +103,7 @@ set pumheight=10
 set regexpengine=1
 set report=0
 set scrolloff=5
+set secure
 set selectmode=
 set sessionoptions=blank,buffers,winsize
 set shell=/bin/bash
