@@ -45,6 +45,7 @@ set encoding=utf-8
 set endofline
 set equalalways
 set expandtab
+set exrc
 set fileencoding=utf-8
 set fileencodings=utf-8
 set fileformats=unix,dos,mac
@@ -77,7 +78,6 @@ set nobomb
 set nocindent
 set noconfirm
 set noerrorbells
-set noexrc
 set nofoldenable
 set nofsync
 set nogdefault
@@ -89,6 +89,8 @@ set nomore
 set nopaste
 set noshowcmd
 set noshowmode
+set nosmartindent
+set nosmarttab
 set nospell
 set notimeout
 set nowrap
@@ -110,8 +112,6 @@ set shortmess+=F
 set shortmess=aoOTIcsA
 set showtabline=1
 set sidescrolloff=10
-set nosmartindent
-set nosmarttab
 set softtabstop=4
 set spellcapcheck=
 set spelllang=en,fr
