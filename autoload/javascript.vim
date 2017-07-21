@@ -5,5 +5,4 @@ endfunction
 function! javascript#reload(channel)
     checktime
     call async#end(a:channel)
-    call make#auto()
 endfunction
