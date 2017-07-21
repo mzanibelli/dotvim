@@ -1,6 +1,14 @@
 function! make#auto()
     if exists("b:autocompile") && b:autocompile == 1
-        silent lmake
-        redraw!
+        call async#start(make#command(), 'make#qf')
     endif
+endfunction
+
+function! make#command()
+    return substitute(&makeprg, "%", expand("%"), "")." 2>&1"
+endfunction
+
+function! make#qf(channel)
+    execute "lgetfile ".g:bgoutput
+    call async#end(a:channel)
 endfunction
