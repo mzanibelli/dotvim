@@ -1,3 +1,5 @@
 #!/bin/bash
-ctags --JavaScript-kinds=fcmpv --languages=JavaScript "${PWD}"
+ctags --languages=js "${PWD}"
+sed -i -E '/^(if|switch|function|module\.exports|it|describe)	.+language:js$/d' "${PWD}/tags"
+sed -i -E '/var[ 	]+[a-zA-Z0-9_$]+[ 	]+=[ 	]+require\(.+language:js$/d' "${PWD}/tags"
 exit 0
