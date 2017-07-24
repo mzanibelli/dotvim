@@ -16,6 +16,8 @@ nnoremap <silent> L :<C-U>call qf#lclear()<CR>
 augroup QF
     autocmd!
     autocmd QuitPre * if &ft != 'qf' | call qf#lclear() | endif
+    autocmd QuickFixCmdPre [^l]* call qf#cclear()
+    autocmd QuickFixCmdPre l* call qf#lclear()
     autocmd QuickFixCmdPost [^l]* call qf#cpost()
     autocmd QuickFixCmdPost l* call qf#lpost()
 augroup END
