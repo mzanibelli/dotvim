@@ -16,7 +16,7 @@ highlight Condtional ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
 highlight Constant ctermfg=252 ctermbg=none guifg=#d0d0d0 guibg=NONE
 highlight Cursor ctermfg=255 ctermbg=255 guifg=#000000 guibg=#eeeeee
 highlight CursorColumn ctermfg=255 ctermbg=255 guifg=#eeeeee guibg=#eeeeee
-highlight CursorLine cterm=none ctermbg=233 gui=NONE guibg=#121212
+highlight CursorLine cterm=none ctermbg=234 gui=NONE guibg=#1c1c1c
 highlight CursorLineNr ctermfg=255 cterm=bold guifg=#eeeeee gui=bold
 highlight DbgBreakptLine ctermfg=16 ctermbg=255 guifg=#000000 guibg=#eeeeee
 highlight DbgBreakptSign ctermfg=255 ctermbg=none guifg=#eeeeee guibg=#000000
