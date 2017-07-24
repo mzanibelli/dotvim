@@ -1,0 +1,3 @@
+#!/bin/bash
+ctags --JavaScript-kinds=fcmpv --languages=JavaScript $PWD
+exit 0
