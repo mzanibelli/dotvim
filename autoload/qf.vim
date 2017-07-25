@@ -50,11 +50,15 @@ endfunction
 function! qf#cpost()
     call setqflist(filter(getqflist(), "v:val.valid == 1"))
     botright cwindow
-    wincmd p
+    if qf#type() > 0
+        wincmd p
+    endif
 endfunction
 
 function! qf#lpost()
     call setloclist(winnr(), filter(getloclist(winnr()), "v:val.valid == 1"))
     lwindow
-    wincmd p
+    if qf#type() > 0
+        wincmd p
+    endif
 endfunction
