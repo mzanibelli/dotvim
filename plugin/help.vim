@@ -14,7 +14,7 @@ command! -nargs=* -complete=help Help call help#help(<q-args>)
 " Autocommands
 augroup HELP
     autocmd!
-    autocmd FileType help only
+    autocmd BufEnter *.txt if &buftype == "help" | only | endif
 augroup END
 
 " Restore compatibility
