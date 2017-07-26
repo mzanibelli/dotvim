@@ -13,7 +13,6 @@ augroup PLUGINS
     autocmd!
     autocmd User DeferPost packadd matchit
     autocmd User DeferPost packadd fugitive
-    autocmd User DeferPost packadd vdebug
     autocmd User DeferPost packadd targets
 augroup END
 
