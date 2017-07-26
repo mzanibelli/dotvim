@@ -1,7 +1,3 @@
-[submodule "pack/local/opt/vdebug"]
-	path = pack/local/opt/vdebug
-	url = https://github.com/joonty/vdebug.git
-	branch = master
 [submodule "pack/local/opt/fugitive"]
 	path = pack/local/opt/fugitive
 	url = https://github.com/tpope/vim-fugitive.git
