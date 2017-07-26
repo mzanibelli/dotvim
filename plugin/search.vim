@@ -13,6 +13,7 @@ nnoremap / :<C-U>noh<CR>/
 nnoremap ? :<C-U>noh<CR>?
 nnoremap <Leader>* :<C-U>call search#toqf()<CR>
 nnoremap <Leader>/ :<C-U>ilist //<Left>
+nnoremap gs [I
 nnoremap <expr> <Leader>: search#replace(0)
 vnoremap <expr> <Leader>: search#replace(1)
 nnoremap <silent> <Leader><Leader> :<C-U>noh<CR>
