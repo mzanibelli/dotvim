@@ -1,3 +1,3 @@
 #!/bin/bash
-ctags --PHP-kinds=cdfit --languages=PHP "${PWD}"
+ctags --languages=PHP "${PWD}"
 exit 0
