@@ -11,14 +11,14 @@ set cpo&vim
 " Autocommands
 augroup OVERRIDE
     autocmd!
-    autocmd User DeferPost call cli#override("h", "Help")
-    autocmd User DeferPost call cli#override("help", "Help")
-    autocmd User DeferPost call cli#override("tag", "Tag")
-    autocmd User DeferPost call cli#override("grep", "Grep")
-    autocmd User DeferPost call cli#override("w!!", "SudoWrite")
-    autocmd User DeferPost call cli#override("w$", "w")
-    autocmd User DeferPost call cli#override("w<", "w")
-    autocmd User DeferPost call cli#override("qw", "wq")
+    autocmd VimEnter * call cli#override("h", "Help")
+    autocmd VimEnter * call cli#override("help", "Help")
+    autocmd VimEnter * call cli#override("tag", "Tag")
+    autocmd VimEnter * call cli#override("grep", "Grep")
+    autocmd VimEnter * call cli#override("w!!", "SudoWrite")
+    autocmd VimEnter * call cli#override("w$", "w")
+    autocmd VimEnter * call cli#override("w<", "w")
+    autocmd VimEnter * call cli#override("qw", "wq")
 augroup END
 
 " Restore compatibility
