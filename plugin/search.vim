@@ -11,9 +11,8 @@ set cpo&vim
 " Mappings
 nnoremap / :<C-U>noh<CR>/
 nnoremap ? :<C-U>noh<CR>?
-nnoremap <Leader>* :<C-U>call search#toqf()<CR>
-nnoremap <Leader>/ :<C-U>ilist //<Left>
 nnoremap gs [I
+nnoremap gS [D
 nnoremap <expr> <Leader>: search#replace(0)
 vnoremap <expr> <Leader>: search#replace(1)
 nnoremap <silent> <Leader><Leader> :<C-U>noh<CR>
@@ -21,6 +20,7 @@ nnoremap <silent> * :<C-U>let view = winsaveview()<CR>*:call winrestview(view)<C
 nnoremap <silent> # :<C-U>let view = winsaveview()<CR>#:call winrestview(view)<CR>
 vnoremap <silent> * :<C-U>call search#selection()<CR>//<CR><C-O>:set hlsearch<CR>
 vnoremap <silent> # :<C-U>call search#selection()<CR>??<CR><C-O>:set hlsearch<CR>
+nmap g* *:<C-U>call search#toqf()<CR>
 nmap c* *cgn
 nmap c# #cgn
 
