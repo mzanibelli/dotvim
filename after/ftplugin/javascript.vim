@@ -20,6 +20,7 @@ setlocal shiftwidth=2
 setlocal expandtab
 setlocal suffixesadd=.js
 setlocal include=^\\s*import\\s.*\\sfrom
+setlocal define=^\\s*const
 
 " Variables
 let b:commentprefix = '//'
