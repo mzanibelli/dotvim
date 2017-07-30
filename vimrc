@@ -70,6 +70,7 @@ set linebreak
 set listchars=tab:▸\ ,eol:¬,extends:»,precedes:«,nbsp:○,space:·
 set magic
 set menuitems=10
+set more
 set mouse=
 set noautowrite
 set noautowriteall
@@ -84,7 +85,6 @@ set noignorecase
 set nojoinspaces
 set nolist
 set nomodeline
-set nomore
 set nopaste
 set noshowcmd
 set noshowmode
