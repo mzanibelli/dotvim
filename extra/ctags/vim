@@ -1,0 +1,3 @@
+#!/bin/bash
+ctags --languages=Vim "${PWD}"
+exit 0
