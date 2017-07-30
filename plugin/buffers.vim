@@ -12,6 +12,7 @@ set cpo&vim
 nnoremap <silent> gb :<C-U>bn<CR>
 nnoremap <silent> gB :<C-U>bp<CR>
 nnoremap <silent> go :<C-U>%bd \| setlocal bufhidden=wipe \| e#<CR>
+nnoremap <silent> gh :<C-U>edit <C-R>=expand('%:h')<CR><CR>
 nmap <Leader>l :<C-U>ls<CR>
 
 " Autocommands
