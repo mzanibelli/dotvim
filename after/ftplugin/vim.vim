@@ -9,7 +9,7 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 " Mappings
-nnoremap <buffer> <silent> <Leader>x :<C-U>source %<CR>
+nnoremap <buffer> <Leader>x :<C-U>source %<CR>:echom 'Sourced '.expand('%')<CR>
 nnoremap <buffer> <silent> K :<C-U>Help <C-R><C-W><CR>
 
 " Options
