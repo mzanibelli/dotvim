@@ -8,7 +8,7 @@ function! ctags#go(...)
             call qf#lclear()
         endif
     catch
-        echom "Tag '".l:tag."' not found"
+        echo v:exception
     endtry
 endfunction
 

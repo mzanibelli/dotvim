@@ -15,7 +15,7 @@ function! file#mkdir(file, buf)
                 try
                     call mkdir(l:dir, "p")
                 catch
-                    echom "Can't create '".l:dir."'"
+                    echo v:exception
                 endtry
             endif
         endif
