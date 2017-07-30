@@ -17,6 +17,7 @@ setlocal foldenable
 setlocal foldlevel=0
 setlocal foldmethod=marker
 setlocal foldnestmax=1
+setlocal iskeyword=@,48-57,_,192-255
 
 " Variables
 let b:completiontype = "\<C-X>\<C-V>"
