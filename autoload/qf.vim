@@ -1,5 +1,5 @@
 function! qf#cclear()
-    noautocmd cexpr []
+    call setqflist([])
     cclose
 endfunction
 
@@ -11,7 +11,7 @@ function! qf#cfirst()
 endfunction
 
 function! qf#lclear()
-    noautocmd lexpr []
+    call setloclist(winnr(), [])
     lclose
 endfunction
 
@@ -48,7 +48,6 @@ function! qf#ctoggle()
 endfunction
 
 function! qf#cpost()
-    call setqflist(filter(getqflist(), "v:val.valid == 1"))
     botright cwindow
     if qf#type() == 1
         wincmd p
@@ -56,7 +55,6 @@ function! qf#cpost()
 endfunction
 
 function! qf#lpost()
-    call setloclist(winnr(), filter(getloclist(winnr()), "v:val.valid == 1"))
     lwindow
     if qf#type() == 2
         wincmd p
