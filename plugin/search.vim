@@ -11,6 +11,8 @@ set cpo&vim
 " Mappings
 nnoremap / :<C-U>noh<CR>/
 nnoremap ? :<C-U>noh<CR>?
+nnoremap n nzzzv
+nnoremap N Nzzzv
 nnoremap gs [I
 nnoremap gS [D
 nnoremap <expr> <Leader>: search#replace(0)
