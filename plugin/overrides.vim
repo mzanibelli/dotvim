@@ -11,7 +11,6 @@ set cpo&vim
 " Autocommands
 augroup OVERRIDE
     autocmd!
-    autocmd VimEnter * call cli#override("grep", "Grep")
     autocmd VimEnter * call cli#override("w$", "w")
     autocmd VimEnter * call cli#override("w<", "w")
     autocmd VimEnter * call cli#override("qw", "wq")
