@@ -4,7 +4,7 @@ function! git#dir()
             let l:file = findfile(".git", ".;", 1)
             let b:gitdir = strlen(l:file) ? git#parse(l:file) : finddir(".git", ".;", 1)
         endif
-        return fnamemodify(b:gitdir, ':p')
+        return b:gitdir
     catch
         return ''
     endtry
