@@ -12,7 +12,6 @@ let $TMPDIR=$HOME."/.vim/tmp"
 augroup PLUGINS
     autocmd!
     autocmd VimEnter * packadd matchit
-    autocmd User DeferPost packadd fugitive
     autocmd User DeferPost packadd targets
 augroup END
 
