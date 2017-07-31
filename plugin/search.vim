@@ -20,7 +20,7 @@ nnoremap <silent> * :<C-U>let view = winsaveview()<CR>*:call winrestview(view)<C
 nnoremap <silent> # :<C-U>let view = winsaveview()<CR>#:call winrestview(view)<CR>
 vnoremap <silent> * :<C-U>call search#selection()<CR>//<CR><C-O>:set hlsearch<CR>
 vnoremap <silent> # :<C-U>call search#selection()<CR>??<CR><C-O>:set hlsearch<CR>
-nmap g* *:<C-U>call search#toqf()<CR>
+nnoremap <silent> g* :<C-U>call search#toqf()<CR>
 nmap c* *cgn
 nmap c# #cgn
 
