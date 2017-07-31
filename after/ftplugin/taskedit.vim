@@ -10,7 +10,6 @@ set cpo&vim
 
 " Variables
 let b:norestore = 1
-let b:nosession = 1
 
 " Restore compatibility
 let &cpo = s:save_cpo

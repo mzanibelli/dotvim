@@ -18,7 +18,6 @@ setlocal spell
 let b:textformat = 1
 let b:completiontype = "\<C-X>\<C-K>"
 let b:autoclose = ['quote']
-let b:nosession = 1
 
 " Restore compatibility
 let &cpo = s:save_cpo
