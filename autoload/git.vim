@@ -1,9 +1,13 @@
 function! git#dir()
-    if !exists("b:gitdir") || empty(b:gitdir)
-        let l:file = findfile(".git", ".;", 1)
-        let b:gitdir = strlen(l:file) ? git#parse(l:file) : finddir(".git", ".;", 1)
-    endif
-    return b:gitdir
+    try
+        if !exists("b:gitdir") || empty(b:gitdir)
+            let l:file = findfile(".git", ".;", 1)
+            let b:gitdir = strlen(l:file) ? git#parse(l:file) : finddir(".git", ".;", 1)
+        endif
+        return b:gitdir
+    catch
+        return ''
+    endtry
 endfunction
 
 function! git#parse(file)
