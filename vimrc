@@ -104,7 +104,7 @@ set report=0
 set scrolloff=5
 set secure
 set selectmode=
-set sessionoptions=blank,buffers,winsize
+set sessionoptions=blank,buffers,winsize,tabpages
 set shell=/bin/bash
 set shellcmdflag=-c
 set shiftwidth=4
