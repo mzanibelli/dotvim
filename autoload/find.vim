@@ -15,13 +15,13 @@ endfunction
 
 function! find#bgstart(filename)
     let l:filename = printf("*%s*", a:filename)
-    let l:command = "find ".shellescape(getcwd())." -type f -ipath ".shellescape(l:filename)
+    let l:command = "find ".shellescape(getcwd())." -type f -ipath ".shellescape(l:filename)." -exec file -e soft {} +"
     call async#start(l:command, 'find#qf')
 endfunction
 
 function! find#qf(channel)
     let l:command = printf("cgetfile %s", g:bgoutput)
-    call default#save('errorformat', shellescape('%f'), l:command)
+    call default#save('errorformat', shellescape('%f: %m'), l:command)
     call qf#cfirst()
     call async#end(a:channel)
 endfunction
