@@ -1,8 +1,10 @@
 <?php
 
-class {fname-tr} {
+class {fname-tr}
+{
 
-    public function __construct() {
+    public function __construct()
+    {
 
     }
 }
