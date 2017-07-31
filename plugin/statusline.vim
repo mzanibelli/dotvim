@@ -39,7 +39,7 @@ set statusline+=\ %p%{'%'}
 set statusline+=\ %{empty(&ft)?'[none]':'['.&ft.']'}
 set statusline+=%{strlen(&fenc)&&&fenc!=#'utf-8'?'['.&fenc.']':''}
 set statusline+=%{exists('b:largefile')?'[xxl]':''}
-set statusline+=%{exists('*fugitive#head')&&exists('b:git_dir')?'['.fugitive#head(7).']':''}
+set statusline+=%{strlen(git#dir())?'['.git#branch().']':''}
 set statusline+=%{scp#statusline()}
 set statusline+=%{&ignorecase?'[i]':''}
 set statusline+=%{&wrap?'[w]':''}

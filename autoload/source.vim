@@ -1,22 +1,15 @@
 let s:source_types = ["git","svn"]
 
 function! source#root()
-    let l:oldcwd = getcwd()
-    let l:path = l:oldcwd
     let l:cmd = haslocaldir() ? "lcd" : "cd"
-    while l:path !=# "/"
-        for type in s:source_types
-            let l:file = l:path."/.".type
-            if filereadable(l:file) || isdirectory(l:file)
-                echom "Moved to ".l:path
-                return
-            endif
-        endfor
-        execute l:cmd fnameescape(l:path)."/.."
-        let l:path = getcwd()
-    endwhile
-    execute l:cmd fnameescape(l:oldcwd)
-    echom "Project root not found"
+    for type in s:source_types
+        let l:dir = finddir(".".type, ".;", 1)
+        if strlen(l:dir)
+            execute l:cmd fnamemodify(l:dir, ":h")
+            break
+        endif
+    endfor
+    echom getcwd()
 endfunction
 
 function! source#move(way)
