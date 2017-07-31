@@ -8,9 +8,6 @@ let b:loaded_local_ftplugin_xml = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
-" Commands
-command! -buffer -nargs=0 Minify call xml#minify()
-
 " Mappings
 inoremap <buffer> <silent> > ><C-R>=xml#close()<CR>
 
