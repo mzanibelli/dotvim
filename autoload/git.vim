@@ -4,7 +4,7 @@ function! git#dir()
             let l:file = findfile(".git", ".;", 1)
             let b:gitdir = strlen(l:file) ? git#parse(l:file) : finddir(".git", ".;", 1)
         endif
-        return b:gitdir
+        return fnamemodify(b:gitdir, ':p')
     catch
         return ''
     endtry
@@ -22,8 +22,8 @@ endfunction
 function! git#branch()
     let l:dir = git#dir()
     if strlen(l:dir)
-        let l:cmd = printf("git --git-dir=%s rev-parse --abbrev-ref HEAD 2>/dev/null", l:dir)
-        return systemlist(l:cmd)[0]
+        let l:cmd = printf("git --git-dir=%s rev-parse --abbrev-ref HEAD 2>/dev/null", shellescape(l:dir))
+        return get(systemlist(l:cmd), 0, '')
     endif
     return ''
 endfunction
