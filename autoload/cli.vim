@@ -3,17 +3,6 @@ function! cli#override(abb, exp, ...)
     execute 'cnoreabbr '.(l:buf ? "<buffer> " : "").a:abb.' <C-R>=getcmdpos() == 1 && getcmdtype() == ":" ? "'.a:exp.'" : "'.a:abb.'"<CR>'
 endfunction
 
-function! cli#stab()
-    if getcmdtype() == "/"
-        return "\<CR>/\<C-R>/\<CR>?\<C-R>/"
-    elseif getcmdtype() == "?"
-        return "\<CR>?\<C-R>/\<CR>/\<C-R>/"
-    elseif wildmenumode()
-        return "\<S-Tab>"
-    endif
-    return "\<C-\>esplit(getcmdline(), ' ')[0]\<CR>\<C-E>\<Space>"
-endfunction
-
 function! cli#cr()
     let l:cmdline = getcmdline()
     if l:cmdline =~# '\v\C^(ls|files|buffers)'

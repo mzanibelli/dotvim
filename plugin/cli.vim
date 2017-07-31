@@ -9,7 +9,6 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 " Mappings
-cnoremap <expr> <S-Tab> cli#stab()
 cnoremap <expr> <CR> cli#cr()
 
 " Restore compatibility
