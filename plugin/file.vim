@@ -20,7 +20,6 @@ augroup FILE
     autocmd User DeferPost silent! call mkdir(&undodir, "p")
     autocmd User DeferPost silent! call mkdir(&backupdir, "p")
     autocmd User DeferPost silent! call mkdir(&directory, "p")
-    autocmd User DeferPost silent! call mkdir($TMPDIR, "p")
 augroup END
 
 " Restore compatibility

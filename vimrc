@@ -7,7 +7,6 @@ colorscheme greyscale
 
 let mapleader="\<Space>"
 let &showbreak='› '
-let $TMPDIR=$HOME."/.vim/tmp"
 
 augroup PLUGINS
     autocmd!
