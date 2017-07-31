@@ -8,9 +8,6 @@ let g:loaded_local_plugin_help = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
-" Commands
-command! -nargs=* -complete=help Help call help#help(<q-args>)
-
 " Autocommands
 augroup HELP
     autocmd!
