@@ -10,10 +10,9 @@ set cpo&vim
 
 " Commands
 command! -nargs=0 SudoWrite call sudo#write()
-command! -nargs=0 SudoEdit call sudo#edit()
 
 " Mappings
-nnoremap <silent> <Leader>$ :<C-U>call sudo#edit()<CR>
+nnoremap <silent> <Leader>w :<C-U>call sudo#write()<CR>
 
 " Restore compatibility
 let &cpo = s:save_cpo

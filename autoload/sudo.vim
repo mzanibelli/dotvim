@@ -25,13 +25,3 @@ function! sudo#write()
     call sudo#setup(expand('%:p'))
     write!
 endfunction
-
-function! sudo#edit()
-    let l:file = expand('%:p')
-    call sudo#setup(l:file)
-    if &modified
-        setlocal noreadonly
-    else
-        execute "edit ".l:file
-    endif
-endfunction
