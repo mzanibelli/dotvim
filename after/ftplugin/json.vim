@@ -8,9 +8,6 @@ let b:loaded_local_ftplugin_json = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
-" Commands
-command! -buffer -nargs=0 Minify call json#minify()
-
 " Options
 setlocal conceallevel=0
 if executable("python")
