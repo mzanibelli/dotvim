@@ -12,14 +12,12 @@ set cpo&vim
 compiler php
 
 " Commands
-command! -buffer -nargs=0 Format call php#format()
 command! -buffer -nargs=0 Functions silent call php#functions()
 
 " Mappings
 execute 'nnoremap <buffer> <silent> [[ :<C-U>let search = @/<CR>?' . escape(php#funcregex(), '|') . '?<CR>:let @/ = search<CR>'
 execute 'nnoremap <buffer> <silent> ]] :<C-U>let search = @/<CR>/' . escape(php#funcregex(), '|') . '/<CR>:let @/ = search<CR>'
 inoremap <buffer> <silent> <expr> , default#mapdouble(',', "\<C-H> => ")
-vnoremap <buffer> <silent> <Leader>e :<C-U>call php#extract()<CR>
 if executable("php")
     nnoremap <buffer> <silent> <Leader>x :<C-U>call shell#run('php %')<CR>
 endif
@@ -33,7 +31,7 @@ let b:headerstring = '#!/usr/bin/php'
 let b:autoclose = ['curly', 'square', 'quote']
 let b:autocompile = 1
 let b:funcsnippets = 1
-let b:ftsnippets = {"elog": "error_log();", "vdump": "var_dump(%);", "printr": "print_r(%, true)"}
+let b:ftsnippets = {"elog": "error_log(%);", "vdump": "var_dump(%);", "printr": "print_r(%, true)"}
 let b:filemark = "P"
 
 " Restore compatibility

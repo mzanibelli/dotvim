@@ -1,12 +1,7 @@
 function! format#auto()
     if exists("b:autoformat") && b:autoformat == 1
-        call windows#preserve('normal! gggqG')
+        call format#reformat()
     endif
-endfunction
-
-function! format#format()
-    call format#fix()
-    call windows#preserve('%s/\n\{2,\}/\r\r/g')
 endfunction
 
 function! format#alerts(cache)
@@ -23,14 +18,30 @@ function! format#alerts(cache)
     return 0
 endfunction
 
-function! format#fix()
-    setlocal ff=unix
-    call windows#preserve("%retab!")
-    call format#trim()
+function! format#reindent()
+    call windows#preserve("normal! gg=G")
+endfunction
+
+function! format#reformat()
+    call windows#preserve("normal! gggqG")
 endfunction
 
 function! format#trim()
     call windows#preserve('%s/\s\+$//e')
+endfunction
+
+function! format#pack()
+    call windows#preserve('%s/\n\{2,\}/\r\r/g')
+endfunction
+
+function! format#retab()
+    call windows#preserve("%retab!")
+endfunction
+
+function! format#fix()
+    setlocal ff=unix
+    call format#retab()
+    call format#trim()
 endfunction
 
 function! format#forceoptions()
@@ -39,8 +50,4 @@ function! format#forceoptions()
     if exists("b:textformat") && b:textformat == 1
         setlocal formatoptions+=tn
     endif
-endfunction
-
-function! format#reindent()
-    call windows#preserve("normal! gg=G")
 endfunction

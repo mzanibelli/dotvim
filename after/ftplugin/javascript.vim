@@ -11,6 +11,9 @@ set cpo&vim
 " Compiler
 compiler javascript
 
+" Mappings
+inoremap <buffer> <silent> <expr> , default#mapdouble(',', "\<C-H> => ")
+
 " Options
 setlocal foldmarker={,}
 setlocal foldmethod=marker
