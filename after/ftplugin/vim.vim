@@ -10,7 +10,7 @@ set cpo&vim
 
 " Mappings
 nnoremap <buffer> <Leader>x :<C-U>source %<CR>:echom 'Sourced '.expand('%')<CR>
-nnoremap <buffer> <silent> K :<C-U>Help <C-R><C-W><CR>
+nnoremap <buffer> <silent> K :<C-U>help <C-R><C-W><CR>
 
 " Options
 setlocal foldenable
