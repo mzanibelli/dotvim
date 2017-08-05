@@ -25,3 +25,9 @@ endfunction
 function! file#backupext()
     execute "set backupext=.".strftime("%Y%m%d%H%M%S")
 endfunction
+
+function! file#path()
+    let l:path = expand("%:p")
+    call setreg("+", l:path)
+    echo l:path
+endfunction
