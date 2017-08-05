@@ -12,9 +12,10 @@ set cpo&vim
 command! -nargs=1 -complete=customlist,ctags#complete Gentags call ctags#generate(<q-args>)
 
 " Mappings
-nnoremap gt <C-]>
-vnoremap gt <C-]>
+nnoremap gt g<C-]>
+vnoremap gt g<C-]>
 nnoremap gT <C-T>
+vnoremap gT <C-T>
 
 " Restore compatibility
 let &cpo = s:save_cpo
