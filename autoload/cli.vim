@@ -20,7 +20,7 @@ function! cli#cr()
 endfunction
 
 function! cli#listpostcmd(cmdline)
-    let l:search = matchstr(a:cmdline, '/.*/')
+    let l:search = matchstr(a:cmdline, '/.*')
     let l:result = "\<CR>:" . a:cmdline[0] . "jump  " . l:search
     let l:i = 0
     while l:i <= strlen(l:search)
