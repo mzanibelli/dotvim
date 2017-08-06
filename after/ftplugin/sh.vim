@@ -12,7 +12,6 @@ set cpo&vim
 compiler sh
 
 " Variables
-let b:headerstring = '#!/bin/bash'
 let b:autoclose = ['quote', 'shell']
 let b:autocompile = 1
 

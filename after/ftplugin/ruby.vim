@@ -17,7 +17,6 @@ if executable("ruby")
 endif
 
 " Variables
-let b:headerstring = '#!/usr/bin/ruby'
 let b:autoclose = ['quote', 'square']
 let b:autocompile = 1
 

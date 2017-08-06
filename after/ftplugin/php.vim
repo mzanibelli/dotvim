@@ -27,7 +27,6 @@ setlocal foldenable
 
 " Variables
 let b:commentprefix = '//'
-let b:headerstring = '#!/usr/bin/php'
 let b:autoclose = ['curly', 'square', 'quote']
 let b:autocompile = 1
 let b:funcsnippets = 1
