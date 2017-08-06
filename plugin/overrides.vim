@@ -14,7 +14,7 @@ augroup OVERRIDE
     autocmd User DeferPost call cli#override("w$", "w")
     autocmd User DeferPost call cli#override("w<", "w")
     autocmd User DeferPost call cli#override("qw", "wq")
-    autocmd User DeferPost call cli#override("w!!", "silent write !sudo tee % > /dev/null")
+    autocmd User DeferPost call cli#override("w!!", "write !sudo tee % > /dev/null")
 augroup END
 
 " Restore compatibility
