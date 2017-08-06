@@ -24,10 +24,10 @@ function! grep#configure()
     if executable("rg")
         let &grepprg="/usr/bin/rg --no-ignore-parent --color=never --vimgrep --threads ".default#units()
         let &grepformat='%f:%l:%c:%m,%f:%l:%m'
-        let s:grepmodes = {'regex': '-e', 'fixed': '-Fe'}
+        let s:grepmodes = {'regex': '-e', 'fixed': '-Fe', 'word': '-Fwe', 'icase': '-Fie'}
     else
         let &grepprg="/usr/bin/grep --dereference-recursive --exclude-dir={.svn,.git} --exclude={cscope.out,tags} --color=never -n"
         let &grepformat='%f:%l:%m,%f:%l%m,%f  %l%m'
-        let s:grepmodes = {'regex': '-Ee', 'fixed': '-Fe'}
+        let s:grepmodes = {'regex': '-Ee', 'fixed': '-Fe', 'word': '-Fwe', 'icase': '-Fie'}
     endif
 endfunction
