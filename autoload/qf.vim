@@ -46,17 +46,3 @@ function! qf#ctoggle()
     let l:callback = "v:val.quickfix == 1 && v:val.loclist == 0"
     execute len(filter(getwininfo(), l:callback)) == 1 ? "cclose" : "cwindow"
 endfunction
-
-function! qf#cpost()
-    botright cwindow
-    if qf#type() == 1
-        wincmd p
-    endif
-endfunction
-
-function! qf#lpost()
-    lwindow
-    if qf#type() == 2
-        wincmd p
-    endif
-endfunction
