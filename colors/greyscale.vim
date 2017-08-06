@@ -81,7 +81,7 @@ highlight TabLineSel ctermfg=16 ctermbg=255 cterm=bold guifg=#000000 guibg=#eeee
 highlight Tag ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
 highlight Title ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
 highlight Todo ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
-highlight Type ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
+highlight Type ctermfg=255 ctermbg=none cterm=none guifg=#eeeeee guibg=NONE gui=NONE
 highlight Typedef ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
 highlight VertSplit ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
 highlight Visual ctermfg=16 ctermbg=255 guifg=#000000 guibg=#eeeeee
