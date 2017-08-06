@@ -19,7 +19,7 @@ augroup QF
     autocmd VimEnter * botright cwindow
     autocmd QuickFixCmdPost [^l]* botright cwindow
     autocmd QuickFixCmdPost l* lwindow
-    autocmd FileType qf call matchadd('Conceal', '|| $')
+    autocmd FileType qf call matchadd('Conceal', '|| $', 0)
 augroup END
 
 " Restore compatibility
