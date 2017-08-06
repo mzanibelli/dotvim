@@ -13,7 +13,6 @@ command! -nargs=* Fgrep call grep#grep(<q-args>, 'fixed')
 command! -nargs=* Egrep call grep#grep(<q-args>, 'regex')
 command! -nargs=* Wgrep call grep#grep(<q-args>, 'word')
 command! -nargs=* Igrep call grep#grep(<q-args>, 'icase')
-command! -nargs=0 Regrep call grep#regrep()
 
 " Mappings
 nnoremap <Leader>gf :<C-U>Fgrep<Space>
