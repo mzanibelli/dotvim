@@ -30,7 +30,6 @@ let b:commentprefix = '//'
 let b:autoclose = ['curly', 'square', 'quote']
 let b:autocompile = 1
 let b:ftsnippets = {"clog": "console.log(%);"}
-let b:filemark = "J"
 
 " Restore compatibility
 let &cpo = s:save_cpo

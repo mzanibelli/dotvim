@@ -15,7 +15,6 @@ setlocal iskeyword+=-
 
 " Variables
 let b:autoclose = ['quote', 'curly']
-let b:filemark = "C"
 
 " Restore compatibility
 let &cpo = s:save_cpo

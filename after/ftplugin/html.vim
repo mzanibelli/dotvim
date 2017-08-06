@@ -13,7 +13,6 @@ command! -buffer -range -nargs=0 Entities PreserveView call html#entities(<line1
 
 " Variables
 let b:autoclose = ['tag', 'quote', 'tpl']
-let b:filemark = "H"
 
 " Restore compatibility
 let &cpo = s:save_cpo
