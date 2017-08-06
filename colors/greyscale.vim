@@ -15,7 +15,7 @@ highlight Comment ctermfg=240 ctermbg=none guifg=#585858 guibg=NONE
 highlight Condtional ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
 highlight Constant ctermfg=252 ctermbg=none guifg=#d0d0d0 guibg=NONE
 highlight Cursor ctermfg=255 ctermbg=255 guifg=#000000 guibg=#eeeeee
-highlight CursorColumn ctermfg=255 ctermbg=255 guifg=#eeeeee guibg=#eeeeee
+highlight CursorColumn cterm=none ctermbg=234 gui=NONE guibg=#1c1c1c
 highlight CursorLine cterm=none ctermbg=234 gui=NONE guibg=#1c1c1c
 highlight CursorLineNr ctermfg=255 cterm=bold guifg=#eeeeee gui=bold
 highlight DbgBreakptLine ctermfg=16 ctermbg=255 guifg=#000000 guibg=#eeeeee
