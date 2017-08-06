@@ -20,6 +20,8 @@ augroup FILE
     autocmd User DeferPost silent! call mkdir(&undodir, "p")
     autocmd User DeferPost silent! call mkdir(&backupdir, "p")
     autocmd User DeferPost silent! call mkdir(&directory, "p")
+    autocmd FileChangedRO * setlocal noreadonly
+    autocmd FileChangedShell * let v:fcs_choice = "reload"
 augroup END
 
 " Restore compatibility

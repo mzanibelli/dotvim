@@ -11,9 +11,10 @@ set cpo&vim
 " Autocommands
 augroup OVERRIDE
     autocmd!
-    autocmd VimEnter * call cli#override("w$", "w")
-    autocmd VimEnter * call cli#override("w<", "w")
-    autocmd VimEnter * call cli#override("qw", "wq")
+    autocmd User DeferPost call cli#override("w$", "w")
+    autocmd User DeferPost call cli#override("w<", "w")
+    autocmd User DeferPost call cli#override("qw", "wq")
+    autocmd User DeferPost call cli#override("w!!", "silent write !sudo tee % > /dev/null")
 augroup END
 
 " Restore compatibility
