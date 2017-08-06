@@ -20,6 +20,7 @@ augroup QF
     autocmd QuickFixCmdPre l* call qf#lclear()
     autocmd QuickFixCmdPost [^l]* call qf#cpost()
     autocmd QuickFixCmdPost l* call qf#lpost()
+    autocmd FileType qf call matchadd('Conceal', '|| $')
 augroup END
 
 " Restore compatibility
