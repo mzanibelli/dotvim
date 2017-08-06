@@ -10,8 +10,5 @@ endfunction
 
 function! make#qf(channel)
     execute "lgetfile ".g:bgoutput
-    if exists("b:makefilter")
-        call setloclist(winnr(), filter(getloclist(winnr()), b:makefilter))
-    endif
     call async#end(a:channel)
 endfunction

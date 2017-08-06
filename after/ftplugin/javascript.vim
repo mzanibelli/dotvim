@@ -31,7 +31,6 @@ let b:autoclose = ['curly', 'square', 'quote']
 let b:autocompile = 1
 let b:ftsnippets = {"clog": "console.log(%);"}
 let b:filemark = "J"
-let b:makefilter = "v:val.valid == 1"
 
 " Restore compatibility
 let &cpo = s:save_cpo
