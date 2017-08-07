@@ -1,3 +1,15 @@
+function! grep#word()
+    call grep#grep(expand('<cword>'), 'word')
+endfunction
+
+function! grep#WORD()
+    call grep#grep(expand('<cWORD>'), 'fixed')
+endfunction
+
+function! grep#visual()
+    call grep#grep(visual#gettext(), 'fixed')
+endfunction
+
 function! grep#grep(args, type)
     call async#start(grep#command(a:args, a:type), 'grep#qf')
 endfunction
@@ -16,10 +28,10 @@ function! grep#configure()
     if executable("rg")
         let &grepprg="/usr/bin/rg --no-ignore-parent --color=never --vimgrep --threads ".default#units()
         let &grepformat='%f:%l:%c:%m,%f:%l:%m'
-        let s:grepmodes = {'regex': '-e', 'fixed': '-Fe', 'word': '-Fwe', 'icase': '-Fie'}
+        let s:grepmodes = {'word': '-wFe', 'fixed': '-Fe'}
     else
         let &grepprg="/usr/bin/grep --recursive --color=never -n"
         let &grepformat='%f:%l:%m,%f:%l%m,%f  %l%m'
-        let s:grepmodes = {'regex': '-Ee', 'fixed': '-Fe', 'word': '-Fwe', 'icase': '-Fie'}
+        let s:grepmodes = {'word': '-wFe', 'fixed': '-Fe'}
     endif
 endfunction
