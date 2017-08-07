@@ -11,6 +11,12 @@ set cpo&vim
 " Mappings
 cnoremap <expr> <CR> cli#cr()
 
+" Autocommands
+augroup CLI
+    autocmd!
+    autocmd CmdwinEnter * nnoremap <CR> <CR>
+augroup END
+
 " Restore compatibility
 let &cpo = s:save_cpo
 unlet s:save_cpo

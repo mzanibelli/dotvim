@@ -11,7 +11,7 @@ function! mru#open()
     if exists("b:mrusplit") && b:mrusplit == 1
         close
     endif
-    execute 'edit '.l:file
+    execute 'edit '.fnameescape(l:file)
 endfunction
 
 function! mru#files()

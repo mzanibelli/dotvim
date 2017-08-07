@@ -13,7 +13,6 @@ command! -nargs=* -complete=file Find call find#find(<q-args>)
 
 " Mappings
 nnoremap <Leader>e :<C-U>Find<Space>
-nnoremap <Leader>h :<C-U>edit <C-R>=expand('%:h').'/'<CR>
 nnoremap <Leader>ff :<C-U>find<Space>
 nnoremap <Leader>fs :<C-U>sfind<Space>
 nnoremap <Leader>fv :<C-U>vertical sfind<Space>
