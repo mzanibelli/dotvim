@@ -18,7 +18,7 @@ function! grep#configure()
         let &grepformat='%f:%l:%c:%m,%f:%l:%m'
         let s:grepmodes = {'regex': '-e', 'fixed': '-Fe', 'word': '-Fwe', 'icase': '-Fie'}
     else
-        let &grepprg="/usr/bin/grep --dereference-recursive --exclude-dir={.svn,.git} --exclude={cscope.out,tags} --color=never -n"
+        let &grepprg="/usr/bin/grep --recursive --color=never -n"
         let &grepformat='%f:%l:%m,%f:%l%m,%f  %l%m'
         let s:grepmodes = {'regex': '-Ee', 'fixed': '-Fe', 'word': '-Fwe', 'icase': '-Fie'}
     endif
