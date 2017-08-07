@@ -177,7 +177,6 @@ let g:netrw_mousemaps=0
 let g:netrw_winsize=0
 let g:netrw_nobeval=1
 let g:netrw_keepdir=1
-let g:netrw_hide=1
 
 let g:PHP_autoformatcomment=1
 let g:PHP_outdentphpescape=0
