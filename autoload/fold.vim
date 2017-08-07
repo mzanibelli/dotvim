@@ -19,7 +19,7 @@ function! fold#toggle()
         if foldclosed('.') != -1
             normal! zA
         else
-            silent normal! zc
+            silent! normal! zc
         endif
     else
         normal! zX
