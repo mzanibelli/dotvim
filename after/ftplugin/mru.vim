@@ -9,8 +9,13 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 " Mappings
-nnoremap <silent> <buffer> <CR> :<C-U>call mru#open()<CR>
-nnoremap <silent> <buffer> <Leader><Leader> :<C-U>call mru#open()<CR>
+nnoremap <silent> <buffer> <CR> :<C-U>call mru#open("edit")<CR>
+nnoremap <silent> <buffer> o :<C-U>call mru#open("split")<CR>
+nnoremap <silent> <buffer> v :<C-U>call mru#open("vsplit")<CR>
+nnoremap <silent> <buffer> t :<C-U>call mru#open("tabedit")<CR>
+nnoremap <silent> <buffer> p :<C-U>call mru#open("pedit")<CR>
+nnoremap <silent> <buffer> b :<C-U>call mru#open("badd")<CR>
+nnoremap <silent> <buffer> <Leader><Leader> :<C-U>call mru#open("edit")<CR>
 nnoremap <silent> <buffer> <Esc> :<C-U>close<CR>
 
 " Options

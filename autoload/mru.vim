@@ -6,12 +6,12 @@ function! mru#popup()
     endif
 endfunction
 
-function! mru#open()
+function! mru#open(command)
     let l:file = getline(".")
     if exists("b:mrusplit") && b:mrusplit == 1
         close
     endif
-    execute 'edit '.fnameescape(l:file)
+    execute a:command fnameescape(l:file)
 endfunction
 
 function! mru#files()
