@@ -8,6 +8,11 @@ let b:loaded_local_ftplugin_sql = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
+" Options
+if executable("sqlformat")
+    setlocal formatprg=sqlformat\ -k\ 'upper'\ -i\ 'lower'\ -r\ -
+endif
+
 " Mappings
 inoremap <buffer> ' '
 inoremap <buffer> <expr> '' sql#quote()
