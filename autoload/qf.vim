@@ -41,8 +41,3 @@ function! qf#filter(pat, bang)
         call setqflist(filter(getqflist(), l:callback), "r")
     endif
 endfunction
-
-function! qf#ctoggle()
-    let l:callback = "v:val.quickfix == 1 && v:val.loclist == 0"
-    execute len(filter(getwininfo(), l:callback)) == 1 ? "cclose" : "cwindow"
-endfunction
