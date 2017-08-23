@@ -27,6 +27,8 @@ setlocal nonumber
 setlocal cursorline
 setlocal winfixheight
 setlocal noswapfile
+setlocal statusline=[MRU]
+setlocal statusline+=\ %{strftime('%d\ %b\ %Y')}
 
 " Restore compatibility
 let &cpo = s:save_cpo
