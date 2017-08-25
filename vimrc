@@ -103,7 +103,7 @@ set number
 set path=.,**
 set previewheight=12
 set pumheight=10
-set regexpengine=1
+set regexpengine=0
 set report=0
 set scrolloff=5
 set secure
@@ -171,7 +171,7 @@ let g:netrw_altfile=1
 let g:netrw_silent=1
 let g:netrw_use_errorwindow=0
 let g:netrw_browse_split=0
-let g:netrw_browsex_viewer= "xdg-open"
+let g:netrw_browsex_viewer="xdg-open"
 let g:netrw_ftp_cmd="ftp -p"
 let g:netrw_mousemaps=0
 let g:netrw_winsize=0
@@ -194,3 +194,5 @@ let g:rubycomplete_classes_in_global=1
 let g:rubycomplete_rails=1
 
 let g:omni_sql_no_default_maps=1
+
+let g:yaml_schema="pyyaml"
