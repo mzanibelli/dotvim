@@ -20,6 +20,7 @@ let g:currentmode = {
             \ 'i'  : 'INSERT',
             \ 'R'  : 'REPLACE',
             \ 'Rv' : 'REPLACE',
+            \ 't' :  'TERMINAL',
             \ 'c'  : '-',
             \ 'cv' : '-',
             \ 'ce' : '-',
