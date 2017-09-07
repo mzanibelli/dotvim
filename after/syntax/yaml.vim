@@ -1,6 +1,3 @@
-if version < 600
-    syntax clear
-endif
 syntax clear
 
 syn match yamlBlock "[\[\]\{\}\|\>]"

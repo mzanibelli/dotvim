@@ -2,3 +2,6 @@
 	path = pack/local/opt/targets
 	url = https://github.com/wellle/targets.vim.git
 	branch = master
+[submodule "pack/local/opt/editorconfig"]
+	path = pack/local/opt/editorconfig
+	url = https://github.com/editorconfig/editorconfig-vim.git
