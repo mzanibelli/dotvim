@@ -71,7 +71,9 @@ highlight SpellLocal ctermfg=255 ctermbg=16 cterm=underline guifg=#eeeeee guibg=
 highlight SpellRare ctermfg=255 ctermbg=16 cterm=underline guifg=#eeeeee guibg=#000000 gui=underline
 highlight Statement cterm=bold ctermfg=255 ctermbg=none gui=bold guifg=#eeeeee guibg=NONE
 highlight StatusLine ctermfg=255 ctermbg=16 guifg=#eeeeee guibg=#000000
+highlight StatusLineTerm ctermfg=16 ctermbg=255 guifg=#000000 guibg=#eeeeee
 highlight StatusLineNC ctermfg=255 ctermbg=16 guifg=#eeeeee guibg=#000000
+highlight StatusLineTermNC ctermfg=16 ctermbg=255 guifg=#000000 guibg=#eeeeee
 highlight StorageClass ctermfg=255 ctermbg=none cterm=bold guifg=#eeeeee guibg=NONE gui=bold
 highlight String ctermfg=245 ctermbg=none guifg=#8a8a8a guibg=NONE
 highlight Structure ctermfg=255 ctermbg=none cterm=bold guifg=#eeeeee guibg=NONE gui=bold
