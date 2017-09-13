@@ -27,8 +27,7 @@ setlocal nonumber
 setlocal cursorline
 setlocal winfixheight
 setlocal noswapfile
-setlocal statusline=[MRU]
-setlocal statusline+=\[%{strftime('%m/%d/%Y')}]
+setlocal statusline=[%{strftime('%d/%m/%Y')}]
 setlocal statusline+=%{exists('g:bgoutput')?'[*]':''}
 
 " Restore compatibility
