@@ -152,7 +152,7 @@ set viminfo='30,<50,s10,h
 set virtualedit=block
 set visualbell
 set warn
-set wildignore=*/.svn/**/*,*/.git/**/*,*/.hg/**/*,tags,cscope.out,*%*
+set wildignore=*/.svn/**/*,*/.git/**/*,*/.hg/**/*,tags,cscope.out,*%*,**/*.retry
 set wildignorecase
 set wildmenu
 set wildmode=longest:full,full
