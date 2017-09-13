@@ -7,10 +7,7 @@ function! tabs#tabline()
         let l:str .= '%' . l:tab . 'T'
         let l:str .= l:tab == tabpagenr() ? '%#TabLineSel#' : '%#TabLine#'
         let l:str .= l:bufname != '' ? '['. fnamemodify(l:bufname, ':t') . '] ' : '[No Name] '
-        if getbufvar(l:bufnr, "&modified")
-            let l:str .= '[+] '
-        endif
     endfor
-    let l:str .= '%#TabLineFill#'
+    let l:str .= '%#TabLineFill#%T%=%<[%{getcwd()}]'
     return l:str
 endfunction
