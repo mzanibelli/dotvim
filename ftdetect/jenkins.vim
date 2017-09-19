@@ -1,1 +1,1 @@
-autocmd BufNewFile,BufRead Jenkinsfile setlocal filetype=groovy
+autocmd BufNewFile,BufRead Jenkinsfile* setlocal filetype=groovy
