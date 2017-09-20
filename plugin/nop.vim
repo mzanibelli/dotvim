@@ -45,6 +45,9 @@ vnoremap <C-Up>    <NOP>
 vnoremap <C-Down>  <NOP>
 vnoremap <C-Left>  <NOP>
 vnoremap <C-Right> <NOP>
+nnoremap <F1>      <NOP>
+inoremap <F1>      <NOP>
+vnoremap <F1>      <NOP>
 
 " Restore compatibility
 let &cpo = s:save_cpo
