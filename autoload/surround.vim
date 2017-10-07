@@ -20,7 +20,7 @@ function! surround#autoclose()
         if index(b:autoclose, 'shell') >= 0
             inoremap <buffer> [[]] [[<Space><Space>]]<Left><Left><Left>
         endif
-        if index(b:autoclose, 'bracket') >= 0
+        if index(b:autoclose, 'parenthesis') >= 0
             inoremap <buffer> () ()<Left>
         endif
     endif
