@@ -69,6 +69,7 @@ set hidden
 set history=1000
 set hlsearch
 set incsearch
+set keywordprg=:DevDocs
 set laststatus=2
 set lazyredraw
 set linebreak

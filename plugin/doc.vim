@@ -8,9 +8,8 @@ let g:loaded_local_plugin_doc = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
-" Mappings
-nnoremap <silent> K :<C-U>call doc#browse(expand("<cword>"))<CR>
-vnoremap <silent> K :<C-U>call doc#browse(visual#gettext())<CR>
+" Commands
+command! -nargs=1 DevDocs silent! call system("$BROWSER 'https://devdocs.io?q=".&ft." ".<q-args>."'")
 
 " Restore compatibility
 let &cpo = s:save_cpo
