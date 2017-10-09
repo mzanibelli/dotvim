@@ -10,7 +10,6 @@ set cpo&vim
 
 " Mappings
 nnoremap <silent> <Leader>g :<C-U>call grep#word()<CR>
-nnoremap <silent> <Leader>G :<C-U>call grep#WORD()<CR>
 vnoremap <silent> <Leader>g :<C-U>call grep#visual()<CR>
 
 " Autocommands

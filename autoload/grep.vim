@@ -2,10 +2,6 @@ function! grep#word()
     call grep#grep(expand('<cword>'), 'word')
 endfunction
 
-function! grep#WORD()
-    call grep#grep(expand('<cWORD>'), 'fixed')
-endfunction
-
 function! grep#visual()
     call grep#grep(visual#gettext(), 'fixed')
 endfunction
