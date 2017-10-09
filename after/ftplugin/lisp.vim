@@ -22,7 +22,7 @@ setlocal lisp
 
 " Variables
 let b:commentprefix = ';'
-let b:autoclose = ['quote', 'parenthesis']
+let b:autoclose = ['quote', 'parentheses']
 
 " Restore compatibility
 let &cpo = s:save_cpo

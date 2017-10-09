@@ -11,16 +11,16 @@ function! surround#autoclose()
             inoremap <buffer> <expr> " default#mapdouble('"', "\"\<Left>")
             inoremap <buffer> <expr> ' default#mapdouble("'", "'\<Left>")
         endif
-        if index(b:autoclose, 'tpl') >= 0
+        if index(b:autoclose, 'doublecurly') >= 0
             inoremap <buffer> {{}} {{<Space><Space>}}<Left><Left><Left>
         endif
         if index(b:autoclose, 'tag') >= 0
             inoremap <buffer> <silent> > ><C-R>=xml#close()<CR>
         endif
-        if index(b:autoclose, 'shell') >= 0
+        if index(b:autoclose, 'doublesquare') >= 0
             inoremap <buffer> [[]] [[<Space><Space>]]<Left><Left><Left>
         endif
-        if index(b:autoclose, 'parenthesis') >= 0
+        if index(b:autoclose, 'parentheses') >= 0
             inoremap <buffer> () ()<Left>
         endif
     endif

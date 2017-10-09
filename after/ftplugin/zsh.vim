@@ -9,7 +9,7 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 " Variables
-let b:autoclose = ['quote', 'shell']
+let b:autoclose = ['quote', 'doublesquare']
 
 " Mappings
 if executable("zsh")

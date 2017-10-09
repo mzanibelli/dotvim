@@ -12,7 +12,7 @@ set cpo&vim
 setlocal ts=2 sts=2 sw=2 expandtab
 
 " Variables
-let b:autoclose = ['tpl', 'quote']
+let b:autoclose = ['quote', 'doublecurly']
 
 " Restore compatibility
 let &cpo = s:save_cpo

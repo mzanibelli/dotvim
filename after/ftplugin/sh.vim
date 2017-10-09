@@ -12,7 +12,7 @@ set cpo&vim
 compiler sh
 
 " Variables
-let b:autoclose = ['quote', 'shell']
+let b:autoclose = ['quote', 'doublesquare']
 let b:autocompile = 1
 
 " Mappings
