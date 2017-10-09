@@ -39,3 +39,14 @@ function! default#dirmatches(dir, a)
     return l:matches
 endfunction
 
+function! default#gettext(start_pos, end_pos)
+    let [line_start, column_start] = getpos(a:start_pos)[1:2]
+    let [line_end, column_end] = getpos(a:end_pos)[1:2]
+    let l:lines = getline(line_start, line_end)
+    if len(l:lines) == 0
+        return ''
+    endif
+    let l:lines[-1] = l:lines[-1][: column_end - 1]
+    let l:lines[0] = l:lines[0][column_start - 1:]
+    return join(l:lines, "\n")
+endfunction
