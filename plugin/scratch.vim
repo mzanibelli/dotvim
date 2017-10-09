@@ -8,7 +8,7 @@ let g:loaded_local_plugin_scratch = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
-command! -nargs=1 Scratch call scratch#new(<q-args>)
+command! -nargs=? Scratch call scratch#new(<q-args>)
 
 " Restore compatibility
 let &cpo = s:save_cpo
