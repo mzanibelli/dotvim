@@ -9,8 +9,6 @@ endfunction
 
 function! async#end(channel)
     silent! checktime
-    silent doautocmd User AsyncPost
-    autocmd! User AsyncPost
     call delete(g:bgoutput)
     unlet g:bgoutput
     redrawstatus!
