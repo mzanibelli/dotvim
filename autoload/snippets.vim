@@ -8,7 +8,7 @@ let s:matches = {
     \}
 
 function! snippets#snippet(abb, exp)
-    execute 'inoreabbrev <buffer> <silent> '.a:abb.' '.a:exp.'<Esc>F%s<C-O>:call getchar()<CR>'
+    execute 'inoreabbrev <buffer> <silent> '.a:abb.' '.a:exp.'<Esc>F%"_s<C-O>:call getchar()<CR>'
 endfunction
 
 function! snippets#functions()
