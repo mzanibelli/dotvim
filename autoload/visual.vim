@@ -36,12 +36,15 @@ function! visual#duplicate()
 endfunction
 
 function! visual#gettext()
-  let l:reg = getreg('"')
-  let l:type = getregtype('"')
-  silent normal! gv""y
-  let l:select = getreg('"')
-  call setreg('"', l:reg, l:type)
-  return l:select
+    let [line_start, column_start] = getpos("'<")[1:2]
+    let [line_end, column_end] = getpos("'>")[1:2]
+    let l:lines = getline(line_start, line_end)
+    if len(l:lines) == 0
+        return ''
+    endif
+    let l:lines[-1] = l:lines[-1][: column_end - (&selection == 'inclusive' ? 1 : 2)]
+    let l:lines[0] = l:lines[0][column_start - 1:]
+    return join(l:lines, "\n")
 endfunction
 
 function! visual#copy(dir)
@@ -55,7 +58,7 @@ function! visual#copy(dir)
     endif
 endfunction
 
-function! visual#function(way)
+function! visual#curly(way)
     let l:line = line(".")
     if a:way == 1
         if getline(l:line) =~# '\v\{\s*$'
