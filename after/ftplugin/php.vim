@@ -32,6 +32,10 @@ let b:autocompile = 1
 let b:funcsnippets = 1
 let b:ftsnippets = {"elog": "error_log(%)", "vdump": "var_dump(%)", "printr": "print_r(%, true)"}
 
+if executable("php-cs-fixer")
+    setlocal formatexpr=php#format()
+endif
+
 " Restore compatibility
 let &cpo = s:save_cpo
 unlet s:save_cpo
