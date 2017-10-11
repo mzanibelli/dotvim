@@ -15,7 +15,6 @@ compiler go
 setlocal foldenable
 if executable("gofmt")
     setlocal formatprg=gofmt\ -s
-    let b:autoformat = 1
 endif
 
 " Variables

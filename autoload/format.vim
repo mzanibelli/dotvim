@@ -1,9 +1,3 @@
-function! format#auto()
-    if exists("b:autoformat") && b:autoformat == 1
-        call format#reformat()
-    endif
-endfunction
-
 function! format#alerts(cache)
     if &modifiable && !exists("b:largefile")
         if !exists("b:wrongformat") || !a:cache
