@@ -16,7 +16,6 @@ endif
 
 augroup PLUGINS
     autocmd!
-    autocmd VimEnter * packadd matchit
     autocmd User DeferPost packadd targets
     autocmd User DeferPost packadd editorconfig
 augroup END
