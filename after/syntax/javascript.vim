@@ -67,7 +67,6 @@ syn match javaScriptBraces       "[{}\[\]]"
 syn match javaScriptParens       "[()]"
 syn match javaScriptOpSymbols    "=\{1,3}\|!==\|!=\|<\|>\|>=\|<=\|++\|+=\|--\|-="
 syn match javaScriptEndColons    "[;,]"
-syn match javaScriptLogicSymbols "\(&&\)\|\(||\)"
 syn match  javaScriptTemplateDelim    "\${\|}" contained
 syn region javaScriptTemplateVar      start=+${+ end=+}+                        contains=javaScriptTemplateDelim keepend
 syn region javaScriptTemplateString   start=+`+  skip=+\\\(`\|$\)+  end=+`+     contains=javaScriptTemplateVar,javaScriptSpecial keepend
@@ -77,7 +76,6 @@ syn region jsInJsdocExample matchgroup=Snip start="^\s*\* @example" end="\(^\s*\
 
 hi link javaScriptEndColons             Operator
 hi link javaScriptOpSymbols             Operator
-hi link javaScriptLogicSymbols          Boolean
 hi link javaScriptBraces                Function
 hi link javaScriptParens                Operator
 hi link javaScriptTemplateDelim         Operator
