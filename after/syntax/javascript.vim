@@ -72,7 +72,6 @@ syn region javaScriptTemplateVar      start=+${+ end=+}+                        
 syn region javaScriptTemplateString   start=+`+  skip=+\\\(`\|$\)+  end=+`+     contains=javaScriptTemplateVar,javaScriptSpecial keepend
 syn cluster  htmlJavaScript contains=@javaScriptAll,javaScriptBracket,javaScriptParen,javaScriptBlock,javaScriptParenError
 syn cluster  javaScriptExpression contains=@javaScriptAll,javaScriptBracket,javaScriptParen,javaScriptBlock,javaScriptParenError,@htmlPreproc
-syn region jsInJsdocExample matchgroup=Snip start="^\s*\* @example" end="\(^\s*\* [^[:space:]]\)\@=" containedin=@javaScriptComment contains=@javaScriptAll
 
 hi link javaScriptEndColons             Operator
 hi link javaScriptOpSymbols             Operator
@@ -120,9 +119,6 @@ hi link javaScriptDomNodeConsts         Constant
 hi link javaScriptDomElemAttrs          Label
 hi link javaScriptDomElemFuncs          Type
 hi link javaScriptWebAPI                Type
-hi link javaScriptHtmlElemAttrs         Label
-hi link javaScriptHtmlElemFuncs         Type
-hi link javaScriptCssStyles             Type
 hi link javaScriptBrowserObjects        Constant
 hi link javaScriptDOMObjects            Constant
 hi link javaScriptDOMMethods            Type
@@ -140,4 +136,3 @@ hi link javaScriptHtmlEvents            Constant
 hi link javaScriptHtmlElemProperties    Label
 hi link javaScriptEventListenerKeywords Type
 hi link javaScriptPropietaryObjects     Constant
-hi link Snip                            SpecialComment
