@@ -9,6 +9,8 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 " Mappings
+nnoremap <silent> gp :<C-U>tabnext<CR>
+nnoremap <silent> gP :<C-U>tabprev<CR>
 nnoremap <silent> <Leader>tt :<C-U>tabnew<CR>
 nnoremap <silent> <Leader>to :<C-U>tabonly<CR>
 nnoremap <silent> <Leader>tn :<C-U>tabnext<CR>
