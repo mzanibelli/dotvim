@@ -9,7 +9,7 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 " Mappings
-nnoremap <silent> S :<C-U>call file#path()<CR>
+nnoremap <silent> <Leader>f :<C-U>call file#path()<CR>
 
 " Autocommands
 augroup FILE
