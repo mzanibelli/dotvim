@@ -1,0 +1,13 @@
+\documentclass{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\title{}
+\author{}
+
+\begin{document}
+
+\maketitle
+
+\end{document}
