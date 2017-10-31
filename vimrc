@@ -18,6 +18,7 @@ augroup PLUGINS
     autocmd!
     autocmd User DeferPost packadd targets
     autocmd User DeferPost packadd editorconfig
+    autocmd User DeferPost packadd vdebug
 augroup END
 
 set autoindent
@@ -223,7 +224,7 @@ let g:vdebug_options = {
             \ "debug_file_level"   : 2,
             \ "debug_file"         : "/tmp/vdebug.log",
             \ "path_maps"          : {},
-            \ "watch_window_style" : 'compact',
+            \ "watch_window_style" : 'expanded',
             \ "marker_default"     : '⬦',
             \ "marker_closed_tree" : '▸',
             \ "marker_open_tree"   : '▾',
