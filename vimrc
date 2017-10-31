@@ -197,3 +197,35 @@ let g:rubycomplete_rails=1
 let g:omni_sql_no_default_maps=1
 
 let g:yaml_schema="pyyaml"
+
+let g:vdebug_keymap = {
+            \ "run"               : "<Leader>dr",
+            \ "run_to_cursor"     : "<Leader>dw",
+            \ "step_over"         : "<Leader>do",
+            \ "step_into"         : "<Leader>di",
+            \ "step_out"          : "<Leader>du",
+            \ "close"             : "<Leader>dc",
+            \ "detach"            : "<Leader>dd",
+            \ "set_breakpoint"    : "<Leader>db",
+            \ "get_context"       : "<Leader>dx",
+            \ "eval_under_cursor" : "<Leader>de",
+            \ "eval_visual"       : "<Leader>dv"
+            \}
+
+let g:vdebug_options = {
+            \ "port"               : 9000,
+            \ "timeout"            : 20,
+            \ "server"             : '',
+            \ "on_close"           : 'stop',
+            \ "break_on_open"      : 1,
+            \ "ide_key"            : '',
+            \ "debug_window_level" : 0,
+            \ "debug_file_level"   : 2,
+            \ "debug_file"         : "/tmp/vdebug.log",
+            \ "path_maps"          : {},
+            \ "watch_window_style" : 'compact',
+            \ "marker_default"     : '⬦',
+            \ "marker_closed_tree" : '▸',
+            \ "marker_open_tree"   : '▾',
+            \ "continuous_mode"    : 0
+            \}
