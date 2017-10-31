@@ -199,34 +199,32 @@ let g:omni_sql_no_default_maps=1
 
 let g:yaml_schema="pyyaml"
 
-let g:vdebug_keymap = {
-            \ "run"               : "<Leader>dr",
-            \ "run_to_cursor"     : "<Leader>dw",
-            \ "step_over"         : "<Leader>do",
-            \ "step_into"         : "<Leader>di",
-            \ "step_out"          : "<Leader>du",
-            \ "close"             : "<Leader>dc",
-            \ "detach"            : "<Leader>dd",
-            \ "set_breakpoint"    : "<Leader>db",
-            \ "get_context"       : "<Leader>dx",
-            \ "eval_under_cursor" : "<Leader>de",
-            \ "eval_visual"       : "<Leader>dv"
-            \}
+let g:vdebug_keymap={}
+let g:vdebug_keymap["run"]="<Leader>dr"
+let g:vdebug_keymap["run_to_cursor"]="<Leader>dw"
+let g:vdebug_keymap["step_over"]="<Leader>do"
+let g:vdebug_keymap["step_into"]="<Leader>di"
+let g:vdebug_keymap["step_out"]="<Leader>du"
+let g:vdebug_keymap["close"]="<Leader>dc"
+let g:vdebug_keymap["detach"]="<Leader>dd"
+let g:vdebug_keymap["set_breakpoint"]="<Leader>db"
+let g:vdebug_keymap["get_context"]="<Leader>dx"
+let g:vdebug_keymap["eval_under_cursor"]="<Leader>de"
+let g:vdebug_keymap["eval_visual"]="<Leader>dv"
 
-let g:vdebug_options = {
-            \ "port"               : 9000,
-            \ "timeout"            : 20,
-            \ "server"             : '',
-            \ "on_close"           : 'stop',
-            \ "break_on_open"      : 1,
-            \ "ide_key"            : '',
-            \ "debug_window_level" : 0,
-            \ "debug_file_level"   : 2,
-            \ "debug_file"         : "/tmp/vdebug.log",
-            \ "path_maps"          : {},
-            \ "watch_window_style" : 'expanded',
-            \ "marker_default"     : '⬦',
-            \ "marker_closed_tree" : '▸',
-            \ "marker_open_tree"   : '▾',
-            \ "continuous_mode"    : 0
-            \}
+let g:vdebug_options={}
+let g:vdebug_options["port"]=9000
+let g:vdebug_options["timeout"]=30
+let g:vdebug_options["server"]=''
+let g:vdebug_options["on_close"]='stop'
+let g:vdebug_options["break_on_open"]=0
+let g:vdebug_options["ide_key"]=''
+let g:vdebug_options["debug_window_level"]=0
+let g:vdebug_options["debug_file_level"]=2
+let g:vdebug_options["debug_file"]="/tmp/vdebug.log"
+let g:vdebug_options["path_maps"]={}
+let g:vdebug_options["watch_window_style"]='expanded'
+let g:vdebug_options["marker_default"]='•'
+let g:vdebug_options["marker_closed_tree"]='▸'
+let g:vdebug_options["marker_open_tree"]='▾'
+let g:vdebug_options["continuous_mode"]=0
