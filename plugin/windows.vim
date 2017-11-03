@@ -12,7 +12,6 @@ set cpo&vim
 command! -nargs=* -complete=command PreserveView call windows#preserve(<q-args>)
 
 " Mappings
-nnoremap <silent> <Leader>q :<C-U>quitall<CR>
 nnoremap <Leader>v <C-W>v
 nnoremap <Leader>s <C-W>s
 nnoremap <Leader>o <C-W>o
