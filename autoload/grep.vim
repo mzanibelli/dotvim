@@ -11,7 +11,7 @@ function! grep#grep(args, type)
 endfunction
 
 function! grep#command(args, type)
-    return join([&grepprg, s:grepmodes[a:type], shellescape(a:args), getcwd()])
+    return join([&grepprg, s:grepmodes[a:type], shellescape(a:args), shellescape(getcwd())])
 endfunction
 
 function! grep#qf(channel)
