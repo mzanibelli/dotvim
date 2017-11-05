@@ -228,3 +228,5 @@ let g:vdebug_options["marker_default"]='•'
 let g:vdebug_options["marker_closed_tree"]='▸'
 let g:vdebug_options["marker_open_tree"]='▾'
 let g:vdebug_options["continuous_mode"]=0
+
+let g:tex_flavor="latex"
