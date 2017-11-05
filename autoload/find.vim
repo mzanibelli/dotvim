@@ -21,10 +21,10 @@ endfunction
 
 function find#configure()
     if executable("rg")
-        let g:findprg = "rg"
-        let g:findargs = printf("--threads %d --files -g", default#units())
+        let g:findprg = "/usr/bin/rg"
+        let g:findargs = printf("--no-ignore-parent --threads %d --files -g", default#units())
     else
-        let g:findprg = "find"
+        let g:findprg = "/usr/bin/find"
         let g:findargs = "-type f -ipath"
     endif
 endfunction
