@@ -8,7 +8,7 @@ endfunction
 
 function! find#bgstart(filename)
     let l:filename = printf("*%s*", a:filename)
-    let l:command = join([g:findprg, shellescape(getcwd()), g:findargs, shellescape(l:filename)])
+    let l:command = join([s:findprg, shellescape(getcwd()), s:findargs, shellescape(l:filename)])
     call async#start(l:command, 'find#qf')
 endfunction
 
@@ -21,10 +21,10 @@ endfunction
 
 function find#configure()
     if executable("rg")
-        let g:findprg = "/usr/bin/rg"
-        let g:findargs = printf("--no-ignore-parent --threads %d --files -g", default#units())
+        let s:findprg = "/usr/bin/rg"
+        let s:findargs = printf("--no-ignore-parent --threads %d --files -g", default#units())
     else
-        let g:findprg = "/usr/bin/find"
-        let g:findargs = "-type f -ipath"
+        let s:findprg = "/usr/bin/find"
+        let s:findargs = "-type f -path"
     endif
 endfunction
