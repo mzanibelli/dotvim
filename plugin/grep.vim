@@ -8,9 +8,11 @@ let g:loaded_local_plugin_grep = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
+" Commands
+command! -nargs=* Grep call grep#grep(<f-args>)
+
 " Mappings
-nnoremap <silent> <Leader>g :<C-U>call grep#word()<CR>
-vnoremap <silent> <Leader>g :<C-U>call grep#visual()<CR>
+nnoremap <Leader>g :<C-U>Grep<Space>
 
 " Autocommands
 augroup GREP
