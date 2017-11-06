@@ -1,3 +1,7 @@
+let &grepprg = "/usr/bin/grep --recursive --color=never -n"
+let &grepformat = '%f:%l:%m,%f:%l%m,%f  %l%m'
+let s:grepmodes = {'word': '-wFe', 'fixed': '-Fe'}
+
 function! grep#word()
     call grep#grep(expand('<cword>'), 'word')
 endfunction
@@ -22,12 +26,8 @@ endfunction
 
 function! grep#configure()
     if executable("rg")
-        let &grepprg="/usr/bin/rg --no-ignore-parent --color=never --vimgrep --threads ".default#units()
-        let &grepformat='%f:%l:%c:%m,%f:%l:%m'
-        let s:grepmodes = {'word': '-wFe', 'fixed': '-Fe'}
-    else
-        let &grepprg="/usr/bin/grep --recursive --color=never -n"
-        let &grepformat='%f:%l:%m,%f:%l%m,%f  %l%m'
+        let &grepprg = printf("/usr/bin/rg --no-ignore-parent --color=never --vimgrep --threads %d", default#units())
+        let &grepformat = '%f:%l:%c:%m,%f:%l:%m'
         let s:grepmodes = {'word': '-wFe', 'fixed': '-Fe'}
     endif
 endfunction

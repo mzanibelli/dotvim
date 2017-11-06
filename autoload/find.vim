@@ -1,3 +1,6 @@
+let s:findprg = "/usr/bin/find"
+let s:findargs = "-type f -path"
+
 function! find#find(filename)
     if filereadable(a:filename)
         execute "edit ".a:filename
@@ -23,8 +26,5 @@ function find#configure()
     if executable("rg")
         let s:findprg = "/usr/bin/rg"
         let s:findargs = printf("--no-ignore-parent --threads %d --files -g", default#units())
-    else
-        let s:findprg = "/usr/bin/find"
-        let s:findargs = "-type f -path"
     endif
 endfunction
