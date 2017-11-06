@@ -230,3 +230,14 @@ let g:vdebug_options["marker_open_tree"]='▾'
 let g:vdebug_options["continuous_mode"]=0
 
 let g:tex_flavor="latex"
+
+let g:loaded_2html_plugin=1
+let g:loaded_getscript=1
+let g:loaded_gzip=1
+let g:loaded_logiPat=1
+let g:loaded_rrhelper=1
+let g:loaded_sql_completion=1
+let g:loaded_syntax_completion=1
+let g:loaded_tar=1
+let g:loaded_vimball=1
+let g:loaded_zip=1
