@@ -1,9 +1,12 @@
 function! default#units()
-    let l:units = 1
-    if executable("nproc")
-        let l:units = system('nproc --all | xargs echo -n')
+    if !exists("g:units")
+        let l:units = 1
+        if executable("nproc")
+            let l:units = system('nproc --all | xargs echo -n')
+        endif
+        let g:units = l:units
     endif
-    return l:units
+    return g:units
 endfunction
 
 function! default#getchar(offset)
