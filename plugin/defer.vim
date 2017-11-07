@@ -11,7 +11,7 @@ set cpo&vim
 " Autocommands
 augroup DEFER
     autocmd!
-    autocmd VimEnter * call timer_start(1000, "defer#load")
+    autocmd VimEnter * call timer_start(500, "defer#load")
 augroup END
 
 " Restore compatibility
