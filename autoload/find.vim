@@ -1,5 +1,5 @@
 let s:findprg = "/usr/bin/find"
-let s:findargs = "-type f -path"
+let s:findargs = "-type f -ipath"
 
 function! find#find(filename)
     if filereadable(a:filename)
@@ -25,6 +25,6 @@ endfunction
 function find#configure()
     if executable("rg")
         let s:findprg = "/usr/bin/rg"
-        let s:findargs = printf("--no-ignore-parent --color=never --threads %d --files --glob", default#units())
+        let s:findargs = printf("--no-ignore-parent --color=never --threads %d --files --iglob", default#units())
     endif
 endfunction
