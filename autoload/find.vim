@@ -25,6 +25,6 @@ endfunction
 function find#configure()
     if executable("rg")
         let s:findprg = "/usr/bin/rg"
-        let s:findargs = printf("--no-ignore-parent --threads %d --files -g", default#units())
+        let s:findargs = printf("--no-ignore-parent --color=never --threads %d --files -g", default#units())
     endif
 endfunction
