@@ -19,7 +19,7 @@ command! -nargs=0 Fix silent! call format#fix()
 " Autocommands
 augroup FORMAT
     autocmd!
-    autocmd FileType * call format#forceoptions()
+    autocmd FileType * call format#init()
     autocmd CursorHold,BufWritePost * unlet! b:wrongformat
 augroup END
 

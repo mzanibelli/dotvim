@@ -24,15 +24,15 @@ setlocal expandtab
 setlocal suffixesadd=.js
 setlocal include=^\\s*[^\/]\\+\\(from\\\|require(['\"]\\)
 setlocal define=^\\s*const
-if executable('js-beautify')
-    let &l:formatprg = 'js-beautify -f - -s '.&shiftwidth.' 2>/dev/null'
-endif
 
 " Variables
 let b:commentprefix = '//'
 let b:autoclose = ['curly', 'square', 'quote']
 let b:autocompile = 1
 let b:ftsnippets = {"clog": "console.log(%)"}
+if executable('js-beautify')
+    let b:reformatprg = 'js-beautify -q -r -s '.&shiftwidth.' -f %s 2>/dev/null'
+endif
 
 " Restore compatibility
 let &cpo = s:save_cpo

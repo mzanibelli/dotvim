@@ -13,9 +13,6 @@ compiler php
 
 " Commands
 command! -buffer -nargs=0 Functions silent call php#functions()
-if executable("php-cs-fixer")
-    command! -buffer -nargs=0 Reformat silent call php#format()
-endif
 
 " Mappings
 execute 'nnoremap <buffer> <silent> [[ :<C-U>let search = @/<CR>?' . escape(php#funcregex(), '|') . '?<CR>:let @/ = search<CR>'
@@ -34,6 +31,9 @@ let b:autoclose = ['curly', 'square', 'quote']
 let b:autocompile = 1
 let b:funcsnippets = 1
 let b:ftsnippets = {"elog": "error_log(%)", "vdump": "var_dump(%)", "printr": "print_r(%, true)"}
+if executable("php-cs-fixer")
+    let b:reformatprg = "php-cs-fixer --quiet --no-interaction fix --using-cache=no %s"
+endif
 
 " Restore compatibility
 let &cpo = s:save_cpo

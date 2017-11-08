@@ -38,10 +38,19 @@ function! format#fix()
     call format#trim()
 endfunction
 
-function! format#forceoptions()
+function! format#init()
     setlocal matchpairs-=<:>
     setlocal formatoptions=crqj
     if exists("b:textformat") && b:textformat == 1
         setlocal formatoptions+=tn
     endif
+    if exists("b:reformatprg")
+        command! -buffer -nargs=0 Reformat silent call format#external()
+    endif
+endfunction
+
+function! format#external()
+    let l:command = printf(b:reformatprg, shellescape(expand("%:p")))
+    call system(l:command)
+    silent! checktime
 endfunction
