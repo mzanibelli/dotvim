@@ -11,6 +11,11 @@ set cpo&vim
 " Variables
 let b:autoclose = ['tag', 'quote', 'doublecurly']
 
+" Options
+if executable('html-beautify')
+    let &l:formatprg = 'html-beautify -f - -I -s '.&shiftwidth.' 2>/dev/null'
+endif
+
 " Restore compatibility
 let &cpo = s:save_cpo
 unlet s:save_cpo

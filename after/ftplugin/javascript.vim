@@ -24,6 +24,9 @@ setlocal expandtab
 setlocal suffixesadd=.js
 setlocal include=^\\s*[^\/]\\+\\(from\\\|require(['\"]\\)
 setlocal define=^\\s*const
+if executable('js-beautify')
+    let &l:formatprg = 'js-beautify -f - -s '.&shiftwidth.' 2>/dev/null'
+endif
 
 " Variables
 let b:commentprefix = '//'
