@@ -13,9 +13,10 @@ compiler go
 
 " Options
 setlocal foldenable
-if executable("gofmt")
-    setlocal formatprg=gofmt\ -s
-endif
+setlocal tabstop=4
+setlocal softtabstop=4
+setlocal shiftwidth=4
+setlocal noexpandtab
 
 " Variables
 let b:autoclose = ['curly', 'square', 'quote']
