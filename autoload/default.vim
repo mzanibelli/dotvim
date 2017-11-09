@@ -10,7 +10,9 @@ function! default#units()
 endfunction
 
 function! default#getchar(offset)
-    return strcharpart(getline('.'), virtcol('.') - (1 + a:offset), 1)
+    let l:prefix = printf('%.*s', a:offset, '..........')
+    let l:match = matchstr(getline('.'), l:prefix.'\%'.col('.').'c.')
+    return nr2char(strgetchar(l:match, 0))
 endfunction
 
 function! default#mapdouble(char, replace)
