@@ -10,9 +10,12 @@ function! default#units()
 endfunction
 
 function! default#getchar(offset)
-    let l:prefix = printf('%.*s', a:offset, '..........')
-    let l:match = matchstr(getline('.'), l:prefix.'\%'.col('.').'c.')
-    return nr2char(strgetchar(l:match, 0))
+    if a:offset > 0 && a:offset < 10
+        let l:prefix = printf('%.*s', a:offset, '.........')
+        let l:match = matchstr(getline('.'), l:prefix.'\%'.col('.').'c')
+        return nr2char(strgetchar(l:match, 0))
+    endif
+    return ""
 endfunction
 
 function! default#mapdouble(char, replace)
