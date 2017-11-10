@@ -32,6 +32,8 @@ vnoremap <C-J> <C-W>j
 augroup WINDOWS
     autocmd!
     autocmd VimResized * wincmd =
+    autocmd BufLeave * let b:winview = winsaveview()
+    autocmd BufEnter * if(exists("b:winview")) | call winrestview(b:winview) | endif
 augroup END
 
 " Restore compatibility
