@@ -9,7 +9,10 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 " Options
-setlocal ts=8 sts=8 sw=8 noexpandtab
+setlocal tabstop=4
+setlocal softtabstop=4
+setlocal shiftwidth=4
+setlocal noexpandtab
 
 " Variables
 let b:autoclose = ['quote']

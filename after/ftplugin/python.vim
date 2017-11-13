@@ -13,7 +13,10 @@ compiler python
 
 " Options
 setlocal foldenable
-setlocal sw=4 sts=4 ts=8 expandtab
+setlocal tabstop=4
+setlocal softtabstop=4
+setlocal shiftwidth=4
+setlocal noexpandtab
 
 " Variables
 let b:autoclose = ['quote', 'square']
