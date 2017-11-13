@@ -1,5 +1,7 @@
 function! completion#complete(reverse)
-    if pumvisible()
+    if col('.') == 1
+        return "\<Tab>"
+    elseif pumvisible()
         return a:reverse ? "\<C-P>" : "\<C-N>"
     elseif default#getchar(1) =~# '\K' || completion#method()
         if a:reverse && completion#hasdynamic()
