@@ -1,3 +1,4 @@
 #!/bin/bash
-ctags --options="${HOME}/.ctags" --languages=Vim "${PWD}"
+/usr/bin/rg --no-ignore-parent --color=never --type vim --files "${PWD}" |
+/usr/local/bin/ctags --options="${HOME}/.ctags" --languages=Vim -L -
 exit 0

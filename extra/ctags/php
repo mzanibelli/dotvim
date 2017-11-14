@@ -1,3 +1,4 @@
 #!/bin/bash
-ctags --options="${HOME}/.ctags" --languages=PHP "${PWD}"
+/usr/bin/rg --no-ignore-parent --color=never --type php --files "${PWD}" |
+/usr/local/bin/ctags --options="${HOME}/.ctags" --languages=PHP -L -
 exit 0
