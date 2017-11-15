@@ -157,7 +157,8 @@ set wildignore=*/.svn/**/*,*/.git/**/*,*/.hg/**/*,tags,cscope.out,*%*,**/*.retry
 set wildignorecase
 set wildmenu
 set wildmode=longest:full,full
-set winminheight=0
+set winheight=10
+set winminheight=10
 set winminwidth=0
 set wrapscan
 
