@@ -25,7 +25,6 @@ setlocal bufhidden=wipe
 setlocal nowrap
 setlocal nonumber
 setlocal cursorline
-setlocal winfixheight
 setlocal noswapfile
 setlocal statusline=[%{strftime('%d/%m/%Y')}]
 setlocal statusline+=%{exists('g:bgoutput')?'[*]':''}

@@ -2,6 +2,7 @@ function! mru#popup()
     if bufnr("MRU") == -1
         belowright 30new
         call mru#files()
+        setlocal winfixheight
         let b:mrusplit = 1
     endif
 endfunction
