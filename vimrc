@@ -18,7 +18,6 @@ augroup PLUGINS
     autocmd!
     autocmd User DeferPost packadd targets
     autocmd User DeferPost packadd editorconfig
-    autocmd User DeferPost packadd vdebug
 augroup END
 
 set autoindent
