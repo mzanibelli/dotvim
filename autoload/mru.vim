@@ -21,3 +21,7 @@ function! mru#files()
     setlocal filetype=mru
     silent file MRU
 endfunction
+
+function! mru#complete(a, l, p)
+    return map(filter(copy(v:oldfiles), "v:val =~# a:a"), "fnamemodify(v:val, ':.')")
+endfunction
