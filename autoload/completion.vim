@@ -3,7 +3,7 @@ function! completion#complete(reverse)
         return "\<Tab>"
     elseif pumvisible()
         return a:reverse ? "\<C-P>" : "\<C-N>"
-    elseif default#getchar(1) =~# '\K' || completion#method()
+    elseif default#getchar(1) =~# '\k' || completion#method()
         if a:reverse && completion#hasdynamic()
             return completion#dynamic(0)
         endif
