@@ -22,7 +22,6 @@ augroup FILE
     autocmd User DeferPost silent! call mkdir(&directory, "p")
     autocmd FileChangedRO * setlocal noreadonly
     autocmd FileChangedShell * let v:fcs_choice = "reload"
-    autocmd FileType netrw set hidden
 augroup END
 
 " Restore compatibility

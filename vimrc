@@ -165,23 +165,6 @@ set wrapscan
 let g:html_indent_script1="inc"
 let g:html_indent_style1="inc"
 
-let g:netrw_liststyle=0
-let g:netrw_banner=0
-let g:netrw_preview=0
-let g:netrw_alto=1
-let g:netrw_altv=1
-let g:netrw_altfile=1
-let g:netrw_silent=1
-let g:netrw_use_errorwindow=0
-let g:netrw_browse_split=0
-let g:netrw_browsex_viewer="xdg-open"
-let g:netrw_ftp_cmd="ftp -p"
-let g:netrw_mousemaps=0
-let g:netrw_winsize=0
-let g:netrw_nobeval=1
-let g:netrw_keepdir=1
-let g:netrw_dirhistmax=0
-
 let g:PHP_autoformatcomment=1
 let g:PHP_outdentphpescape=0
 let g:PHP_removeCRwhenUnix=1
@@ -213,3 +196,4 @@ let g:loaded_syntax_completion=1
 let g:loaded_tar=1
 let g:loaded_vimball=1
 let g:loaded_zip=1
+let g:loaded_netrw=1
