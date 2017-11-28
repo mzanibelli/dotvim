@@ -9,8 +9,8 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 " Mappings
-nnoremap g; g;zvzz
-nnoremap g, g,zvzz
+nnoremap g; g;zv
+nnoremap g, g,zv
 noremap gj j
 noremap gk k
 noremap j gj

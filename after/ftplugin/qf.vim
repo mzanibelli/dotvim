@@ -9,7 +9,7 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 " Mappings
-nnoremap <buffer> <CR> <CR>zzzv
+nnoremap <buffer> <CR> <CR>zv
 nnoremap <buffer> <silent> <Leader><Leader> :<C-U>call qf#quick()<CR>
 
 " Options
