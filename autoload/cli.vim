@@ -4,9 +4,6 @@ function! cli#override(abb, exp, ...)
 endfunction
 
 function! cli#cr()
-    if wildmenumode()
-        return "\<C-]>"
-    endif
     let l:cmdline = getcmdline()
     if l:cmdline =~# '\v\C^(ls|files|buffers)'
         return "\<CR>:buffer "

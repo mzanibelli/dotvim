@@ -45,7 +45,7 @@ function! format#init()
         setlocal formatoptions+=tn
     endif
     if exists("b:reformatprg")
-        command! -buffer -nargs=0 Reformat silent call format#external()
+        command! -buffer -nargs=0 Lint silent call format#external()
     endif
 endfunction
 

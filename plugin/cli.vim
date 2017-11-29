@@ -10,6 +10,7 @@ set cpo&vim
 
 " Mappings
 cnoremap <expr> <CR> cli#cr()
+cnoremap <expr> <C-Y> wildmenumode() ? "\<C-]>" : "\<C-Y>"
 
 " Autocommands
 augroup CLI
