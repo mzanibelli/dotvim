@@ -11,6 +11,10 @@ set cpo&vim
 " Mappings
 nnoremap <silent> <Leader>f :<C-U>call file#path()<CR>
 
+" Commands
+command! -nargs=1 -complete=file Rename call file#rename(<q-args>)
+command! -nargs=0 Delete call file#delete()
+
 " Autocommands
 augroup FILE
     autocmd!

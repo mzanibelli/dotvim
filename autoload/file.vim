@@ -31,3 +31,21 @@ function! file#path()
     call setreg("+", l:path)
     echo l:path
 endfunction
+
+function! file#rename(name) abort
+    let l:old = expand("%:p")
+    setlocal modified
+    silent execute "saveas!" a:name
+    silent execute printf("%dbwipe!", bufnr("$"))
+    if l:old !=# expand("%:p") && filewritable(l:old)
+        call delete(l:old)
+    endif
+endfunction
+
+function! file#delete() abort
+    let l:path = expand("%:p")
+    if filewritable(l:path)
+        call delete(l:path)
+        bwipe!
+    endif
+endfunction
