@@ -9,7 +9,7 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 " Mappings
-cnoremap <expr> <CR> cli#cr()
+cnoremap <CR> <C-]><CR>
 cnoremap <expr> <C-Y> wildmenumode() ? "\<C-]>" : "\<C-Y>"
 
 " Autocommands
