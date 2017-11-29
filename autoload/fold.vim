@@ -36,10 +36,3 @@ function! fold#method(line)
     endif
     return '2'
 endfunction
-
-function! fold#bypass(command)
-    call default#save('foldenable', 0, a:command)
-    if foldclosed('.') != -1
-        normal! zA
-    endif
-endfunction
