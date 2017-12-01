@@ -16,8 +16,9 @@ function! mru#open(command)
 endfunction
 
 function! mru#files()
-    silent 0put =v:oldfiles
-    normal! Gddgg
+    call append(0, v:oldfiles)
+    silent execute line('$') 'delete' '_'
+    call cursor(1, 1)
     setlocal filetype=mru
     silent file MRU
 endfunction
