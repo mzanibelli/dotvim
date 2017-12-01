@@ -23,5 +23,5 @@ function! mru#files()
 endfunction
 
 function! mru#complete(a, l, p)
-    return map(filter(copy(v:oldfiles), "v:val =~# a:a"), "fnamemodify(v:val, ':.')")
+    return map(filter(copy(v:oldfiles), "v:val =~? a:a"), "fnamemodify(v:val, ':.')")
 endfunction
