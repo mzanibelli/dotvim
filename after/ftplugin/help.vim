@@ -10,6 +10,7 @@ set cpo&vim
 
 " Options
 setlocal bufhidden=wipe
+setlocal nobuflisted
 
 " Restore compatibility
 let &cpo = s:save_cpo

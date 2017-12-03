@@ -22,6 +22,7 @@ setlocal nomodifiable
 setlocal nomodified
 setlocal readonly
 setlocal bufhidden=wipe
+setlocal nobuflisted
 setlocal nowrap
 setlocal nonumber
 setlocal cursorline
