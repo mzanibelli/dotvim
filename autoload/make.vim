@@ -9,6 +9,7 @@ function! make#command(file)
 endfunction
 
 function! make#qf(channel)
+    silent! checktime
     execute "lgetfile" g:bgoutput
     call async#end(a:channel)
 endfunction
