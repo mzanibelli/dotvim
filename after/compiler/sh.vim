@@ -1,3 +1,3 @@
 if executable("shellcheck")
-    setlocal makeprg=shellcheck\ -f\ gcc\ %
+    setlocal makeprg=shellcheck\ -f\ gcc
 endif

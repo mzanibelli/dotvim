@@ -1,3 +1,3 @@
 if executable("ruby")
-    setlocal makeprg=ruby\ -c\ %
+    setlocal makeprg=ruby\ -c
 endif
