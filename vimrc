@@ -75,7 +75,6 @@ set linebreak
 set listchars=tab:▸\ ,eol:¬,extends:»,precedes:«,nbsp:○,space:·
 set magic
 set menuitems=10
-set more
 set mouse=
 set noautowrite
 set noautowriteall
@@ -90,6 +89,7 @@ set noignorecase
 set nojoinspaces
 set nolist
 set nomodeline
+set nomore
 set nopaste
 set noshowcmd
 set noshowmode
@@ -157,9 +157,9 @@ set wildignorecase
 set wildmenu
 set wildmode=longest:full,full
 set winheight=1
-set winwidth=1
 set winminheight=0
 set winminwidth=0
+set winwidth=1
 set wrapscan
 
 let g:html_indent_script1="inc"
