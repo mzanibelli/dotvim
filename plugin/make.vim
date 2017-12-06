@@ -11,7 +11,7 @@ set cpo&vim
 " Autocommands
 augroup MAKE
     autocmd!
-    autocmd BufWritePost * call make#auto()
+    autocmd BufWritePost * call make#auto(expand("<afile>"))
 augroup END
 
 " Restore compatibility
