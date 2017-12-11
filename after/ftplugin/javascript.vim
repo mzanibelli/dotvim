@@ -27,7 +27,7 @@ setlocal define=^\\s*const
 
 " Variables
 let b:commentprefix = '//'
-let b:autoclose = ['curly', 'square', 'quote']
+let b:autoclose = ['expansion', 'square', 'quote']
 let b:autocompile = 1
 let b:ftsnippets = {"clog": "console.log(%)"}
 if executable('js-beautify')

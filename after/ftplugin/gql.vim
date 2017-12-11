@@ -20,7 +20,7 @@ setlocal commentstring=#\ %s
 
 " Variables
 let b:commentprefix = '#'
-let b:autoclose = ['curly', 'quote']
+let b:autoclose = ['expansion', 'quote']
 
 " Restore compatibility
 let &cpo = s:save_cpo

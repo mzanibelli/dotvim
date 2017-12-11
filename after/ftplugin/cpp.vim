@@ -10,7 +10,7 @@ set cpo&vim
 
 " Variables
 let b:commentprefix = '//'
-let b:autoclose = ['curly', 'square', 'quote']
+let b:autoclose = ['expansion', 'square', 'quote']
 
 " Restore compatibility
 let &cpo = s:save_cpo
