@@ -1,1 +1,1 @@
-autocmd BufNewFile,BufRead *.phtml,*.xhtml,*.tpl setlocal filetype=html
+autocmd BufNewFile,BufRead *.xhtml,*.tpl setlocal filetype=html
