@@ -1,7 +1,7 @@
 let s:bufname = "Files"
 
 function! ranger#command(out, dir)
-    return ["/usr/bin/ranger", "--clean", "--choosefiles", a:out, "--cmd", "set colorscheme snow", "--", a:dir]
+    return ["/usr/bin/ranger", "--clean", "--choosefile", a:out, "--cmd", "set colorscheme snow", "--", a:dir]
 endfunction
 
 function! ranger#options(args)
@@ -21,26 +21,26 @@ function! ranger#open(dir, ...)
     if !isdirectory(a:dir)
         return
     endif
-    if exists("t:fileselector")
+    if exists("g:fileselector")
         execute "keepalt" "buffer" s:bufname
         return
     endif
-    let t:fileselector = tempname()
-    let l:cmd = ranger#command(t:fileselector, a:dir)
+    let g:fileselector = tempname()
+    let l:cmd = ranger#command(g:fileselector, a:dir)
     let l:opt = ranger#options(a:000)
     keepalt call term_start(l:cmd, l:opt)
 endfunction
 
 function! ranger#callback(channel)
     try
-        let l:content = readfile(t:fileselector)
+        let l:content = readfile(g:fileselector)
         execute "keepalt" "edit" l:content[0]
         call feedkeys("\<C-L>", "n")
     catch
         quit
     finally
-        call delete(t:fileselector)
-        unlet t:fileselector
+        call delete(g:fileselector)
+        unlet g:fileselector
     endtry
 endfunction
 

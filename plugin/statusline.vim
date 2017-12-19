@@ -45,6 +45,7 @@ set statusline+=%{&paste?'[p]':''}
 set statusline+=%{format#alerts(1)?'[!]':''}
 set statusline+=%r
 set statusline+=%m
+set statusline+=%{exists('g:fileselector')?'[=]':''}
 set statusline+=%{exists('g:bgoutput')?'[*]':''}
 set statusline+=%<
 
