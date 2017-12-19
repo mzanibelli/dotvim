@@ -14,7 +14,7 @@ function! ranger#open(dir, ...)
                 let l:opt[a:1] = 1
             endif
         endif
-        call term_start(l:cmd, l:opt)
+        keepalt call term_start(l:cmd, l:opt)
     endif
 endfunction
 
