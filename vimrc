@@ -89,7 +89,7 @@ set noignorecase
 set nojoinspaces
 set nolist
 set nomodeline
-" set nomore
+set nomore
 set nopaste
 set noshowcmd
 set noshowmode
