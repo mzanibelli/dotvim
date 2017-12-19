@@ -1,32 +1,39 @@
-function! ranger#options()
-    let l:opt = {}
-    let l:opt["term_name"] = "Files"
-    let l:opt["err_io"] = "null"
-    let l:opt["close_cb"] = "ranger#callback"
-    let l:opt["stoponexit"] = "kill"
-    return l:opt
-endfunction
+let s:bufname = "Files"
 
 function! ranger#command(out, dir)
     return ["/usr/bin/ranger", "--clean", "--choosefiles", a:out, "--cmd", "set colorscheme snow", "--", a:dir]
 endfunction
 
-function! ranger#open(dir, ...)
-    if !exists("t:fileselector") && isdirectory(a:dir)
-        let t:fileselector = tempname()
-        let l:opt = ranger#options()
-        if get(a:000, 0, "") =~# '\v^(curwin|vertical)$'
-            let l:opt[a:1] = v:true
-        endif
-        let l:cmd = ranger#command(t:fileselector, a:dir)
-        keepalt call term_start(l:cmd, l:opt)
+function! ranger#options(args)
+    let l:opt = {}
+    let l:opt["term_name"] = s:bufname
+    let l:opt["err_io"] = "null"
+    let l:opt["close_cb"] = "ranger#callback"
+    let l:opt["stoponexit"] = "kill"
+    let l:extra = get(a:args, 0, "")
+    if l:extra =~# '\v^(curwin|vertical)$'
+        let l:opt[l:extra] = v:true
     endif
+    return l:opt
+endfunction
+
+function! ranger#open(dir, ...)
+    if !isdirectory(a:dir)
+        return
+    endif
+    if exists("t:fileselector")
+        execute "keepalt" "buffer" s:bufname
+        return
+    endif
+    let t:fileselector = tempname()
+    let l:cmd = ranger#command(t:fileselector, a:dir)
+    let l:opt = ranger#options(a:000)
+    keepalt call term_start(l:cmd, l:opt)
 endfunction
 
 function! ranger#callback(channel)
     try
         let l:content = readfile(t:fileselector)
-        execute "argadd" join(l:content)
         execute "keepalt" "edit" l:content[0]
         call feedkeys("\<C-L>", "n")
     catch
@@ -38,7 +45,12 @@ function! ranger#callback(channel)
 endfunction
 
 function! ranger#onstart()
-    if argc() == 1 && isdirectory(argv()[0]) && !exists("g:reading_stdin")
-        call ranger#open(argv()[0], "curwin")
+    if exists("g:reading_stdin")
+        return
     endif
+    call ranger#open(get(argv(), 0, ""), "curwin")
+endfunction
+
+function! ranger#onenter(dir)
+    call ranger#open(a:dir, "curwin")
 endfunction

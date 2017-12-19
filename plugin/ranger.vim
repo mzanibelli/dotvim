@@ -11,9 +11,8 @@ set cpo&vim
 " Autocommands
 augroup RANGER
     autocmd!
-    autocmd VimEnter * silent! autocmd! FileExplorer *
     autocmd VimEnter * call ranger#onstart()
-    autocmd BufEnter * call ranger#open(expand("<amatch>"), "curwin")
+    autocmd BufEnter * call ranger#onenter(expand("<afile>"))
 augroup END
 
 " Commands
