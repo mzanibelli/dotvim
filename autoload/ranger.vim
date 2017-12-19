@@ -1,19 +1,24 @@
+function! ranger#options()
+    let l:opt = {}
+    let l:opt["term_name"] = "Files"
+    let l:opt["err_io"] = "null"
+    let l:opt["close_cb"] = "ranger#callback"
+    let l:opt["stoponexit"] = "kill"
+    return l:opt
+endfunction
+
+function! ranger#command(out, dir)
+    return ["/usr/bin/ranger", "--clean", "--choosefiles", a:out, "--cmd", "set colorscheme snow", "--", a:dir]
+endfunction
+
 function! ranger#open(dir, ...)
-    if isdirectory(a:dir) && !exists("t:fileselector")
+    if !exists("t:fileselector") && isdirectory(a:dir)
         let t:fileselector = tempname()
-        let l:cmd = ["ranger", "--choosefiles", t:fileselector, "--clean", "--cmd", "set colorscheme snow", a:dir]
-        let l:opt = {}
-        let l:opt["term_name"] = "File Manager"
-        let l:opt["close_cb"] = "ranger#callback"
-        let l:opt["stoponexit"] = "kill"
-        if a:0 > 0
-            if a:1 !=# "curwin"
-                let l:opt["term_finish"] = "close"
-            endif
-            if a:1 ==# "curwin" || a:1 ==# "vertical"
-                let l:opt[a:1] = 1
-            endif
+        let l:opt = ranger#options()
+        if get(a:000, 0, "") =~# '\v^(curwin|vertical)$'
+            let l:opt[a:1] = v:true
         endif
+        let l:cmd = ranger#command(t:fileselector, a:dir)
         keepalt call term_start(l:cmd, l:opt)
     endif
 endfunction
@@ -27,7 +32,7 @@ function! ranger#callback(channel)
     catch
         quit
     finally
-        call delete (t:fileselector)
+        call delete(t:fileselector)
         unlet t:fileselector
     endtry
 endfunction
