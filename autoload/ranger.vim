@@ -27,12 +27,13 @@ function! ranger#callback(channel)
     catch
         quit
     finally
+        call delete (t:fileselector)
         unlet t:fileselector
     endtry
 endfunction
 
 function! ranger#onstart()
     if argc() == 1 && isdirectory(argv()[0]) && !exists("g:reading_stdin")
-        call ranger#open(argv()[0])
+        call ranger#open(argv()[0], "curwin")
     endif
 endfunction
