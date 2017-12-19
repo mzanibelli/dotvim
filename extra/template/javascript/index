@@ -1,0 +1,3 @@
+import {fname-ht} from "./{fname-ht}";
+
+export default {fname-ht};

@@ -2,6 +2,7 @@ let s:vars = {
             \ "fname": "expand('%')",
             \ "fname-t": "fnamemodify(expand('%'), ':t')",
             \ "fname-tr": "fnamemodify(expand('%'), ':t:r')",
+            \ "fname-ht": "fnamemodify(expand('%'), ':h:t')",
             \ "datetime": "strftime('%Y-%m-%d %H:%M:%S')",
             \ "date": "strftime('%Y-%m-%d')",
             \ "date-en": "strftime('%m/%d/%Y')",
@@ -57,7 +58,7 @@ function! template#replacevars(line)
 endfunction
 
 function! template#substitute(line, var, expr)
-    return substitute(a:line, template#match(a:var), template#replace(a:expr), "")
+    return substitute(a:line, template#match(a:var), template#replace(a:expr), "g")
 endfunction
 
 function! template#match(var)
