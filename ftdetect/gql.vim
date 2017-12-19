@@ -1,1 +1,1 @@
-autocmd BufNewFile,BufRead *.scss setlocal filetype=css
+autocmd BufNewFile,BufRead *.gql setlocal filetype=css
