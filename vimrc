@@ -89,7 +89,7 @@ set noignorecase
 set nojoinspaces
 set nolist
 set nomodeline
-set nomore
+" set nomore
 set nopaste
 set noshowcmd
 set noshowmode
@@ -197,3 +197,6 @@ let g:loaded_tar=1
 let g:loaded_vimball=1
 let g:loaded_zip=1
 let g:loaded_netrw=1
+let g:loaded_netrwPlugin=1
+let g:loaded_netrwSettings=1
+let g:loaded_netrwFileHandlers=1
