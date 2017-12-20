@@ -25,19 +25,18 @@ function! ranger#cleanup()
     unlet g:fileselector
 endfunction
 
-function! ranger#isopen()
+function! ranger#window()
     for win in getwininfo()
         if win.bufnr == bufnr(s:bufname)
+            execute "tabnext" win.tabnr
+            execute printf("%dwincmd", win.winnr) "w"
             return 1
         endif
     endfor
     return 0
 endfunction
 
-function! ranger#focus()
-    if ranger#isopen()
-        return 1
-    endif
+function! ranger#buffer()
     try
         let l:cmd = []
         if bufnr("#") == bufnr(s:bufname)
@@ -53,8 +52,15 @@ function! ranger#focus()
     return 0
 endfunction
 
+function! ranger#focus()
+    if ranger#window()
+        return 1
+    endif
+    return ranger#buffer()
+endfunction
+
 function! ranger#open(dir)
-    if !isdirectory(a:dir) || ranger#focus() == 1
+    if !isdirectory(a:dir) || ranger#focus()
         return
     endif
     let g:fileselector = tempname()
