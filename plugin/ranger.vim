@@ -8,12 +8,6 @@ let g:loaded_local_plugin_ranger = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
-" Autocommands
-augroup RANGER
-    autocmd!
-    autocmd VimEnter * if !exists("g:reading_stdin") | setlocal bufhidden=wipe | call ranger#open(get(argv(), 0, "")) | endif
-augroup END
-
 " Mappings
 nnoremap <Leader>r :<C-U>Ranger<Space>
 
