@@ -13,7 +13,7 @@ function! ranger#open(...)
 endfunction
 
 function! ranger#command(out, dir)
-    return ["/usr/bin/ranger", "--clean", "--choosefile", a:out, "--cmd", "set colorscheme snow", "--", a:dir]
+    return ["/usr/bin/ranger", "--choosefile", a:out, "--", a:dir]
 endfunction
 
 function! ranger#options()
