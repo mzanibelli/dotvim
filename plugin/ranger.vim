@@ -11,15 +11,14 @@ set cpo&vim
 " Autocommands
 augroup RANGER
     autocmd!
-    autocmd VimEnter * call ranger#onstart()
-    autocmd BufEnter * call ranger#onenter(expand("<afile>"))
+    autocmd VimEnter * if !exists("g:reading_stdin") | setlocal bufhidden=wipe | call ranger#open(get(argv(), 0, "")) | endif
 augroup END
 
 " Mappings
-nnoremap <silent> <Leader>r :<C-U>call ranger#open(getcwd())<CR>
+nnoremap <Leader>r :<C-U>Ranger<Space>
 
 " Commands
-command! -nargs=1 -complete=file Open call ranger#open(<q-args>)
+command! -nargs=? -complete=file Ranger call ranger#open(<f-args>)
 
 " Restore compatibility
 let &cpo = s:save_cpo
