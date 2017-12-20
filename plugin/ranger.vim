@@ -15,10 +15,11 @@ augroup RANGER
     autocmd BufEnter * call ranger#onenter(expand("<afile>"))
 augroup END
 
+" Mappings
+nnoremap <silent> <Leader>r :<C-U>call ranger#open(getcwd())<CR>
+
 " Commands
-command! -nargs=1 -complete=file Open call ranger#open(<q-args>, "curwin")
-command! -nargs=1 -complete=file Sopen call ranger#open(<q-args>)
-command! -nargs=1 -complete=file Vopen call ranger#open(<q-args>, "vertical")
+command! -nargs=1 -complete=file Open call ranger#open(<q-args>)
 
 " Restore compatibility
 let &cpo = s:save_cpo

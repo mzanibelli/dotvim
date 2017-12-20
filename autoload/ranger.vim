@@ -4,30 +4,62 @@ function! ranger#command(out, dir)
     return ["/usr/bin/ranger", "--clean", "--choosefile", a:out, "--cmd", "set colorscheme snow", "--", a:dir]
 endfunction
 
-function! ranger#options(args)
+function! ranger#options()
     let l:opt = {}
     let l:opt["term_name"] = s:bufname
     let l:opt["err_io"] = "null"
     let l:opt["close_cb"] = "ranger#callback"
     let l:opt["stoponexit"] = "kill"
-    let l:extra = get(a:args, 0, "")
-    if l:extra =~# '\v^(curwin|vertical)$'
-        let l:opt[l:extra] = v:true
-    endif
+    let l:opt["env"] = {"EDITOR": "gvim"}
+    let l:opt["curwin"] = v:true
     return l:opt
 endfunction
 
-function! ranger#open(dir, ...)
-    if !isdirectory(a:dir)
+function! ranger#cleanup()
+    if !exists("g:fileselector")
         return
     endif
-    if exists("g:fileselector")
-        execute "keepalt" "buffer" s:bufname
+    if filereadable(g:fileselector)
+        call delete(g:fileselector)
+    endif
+    unlet g:fileselector
+endfunction
+
+function! ranger#isopen()
+    for win in getwininfo()
+        if win.bufnr == bufnr(s:bufname)
+            return 1
+        endif
+    endfor
+    return 0
+endfunction
+
+function! ranger#focus()
+    if ranger#isopen()
+        return 1
+    endif
+    try
+        let l:cmd = []
+        if bufnr("#") == bufnr(s:bufname)
+            call add(l:cmd, "keepalt")
+        endif
+        call add(l:cmd, "buffer")
+        call add(l:cmd, s:bufname)
+        execute join(l:cmd)
+        return 1
+    catch
+        call ranger#cleanup()
+    endtry
+    return 0
+endfunction
+
+function! ranger#open(dir)
+    if !isdirectory(a:dir) || ranger#focus() == 1
         return
     endif
     let g:fileselector = tempname()
     let l:cmd = ranger#command(g:fileselector, a:dir)
-    let l:opt = ranger#options(a:000)
+    let l:opt = ranger#options()
     keepalt call term_start(l:cmd, l:opt)
 endfunction
 
@@ -39,8 +71,7 @@ function! ranger#callback(channel)
     catch
         quit
     finally
-        call delete(g:fileselector)
-        unlet g:fileselector
+        call ranger#cleanup()
     endtry
 endfunction
 
@@ -48,9 +79,9 @@ function! ranger#onstart()
     if exists("g:reading_stdin")
         return
     endif
-    call ranger#open(get(argv(), 0, ""), "curwin")
+    call ranger#open(get(argv(), 0, ""))
 endfunction
 
 function! ranger#onenter(dir)
-    call ranger#open(a:dir, "curwin")
+    call ranger#open(a:dir)
 endfunction
