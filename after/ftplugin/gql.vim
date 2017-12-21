@@ -8,9 +8,6 @@ let b:loaded_local_ftplugin_gql = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
-" Compiler
-compiler javascript
-
 " Options
 setlocal tabstop=2
 setlocal softtabstop=2
