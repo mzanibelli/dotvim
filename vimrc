@@ -191,6 +191,7 @@ let g:tex_flavor="latex"
 
 let g:loaded_2html_plugin=1
 let g:loaded_getscript=1
+let g:loaded_getscriptPlugin=1
 let g:loaded_gzip=1
 let g:loaded_logiPat=1
 let g:loaded_rrhelper=1
