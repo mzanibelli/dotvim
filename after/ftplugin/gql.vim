@@ -15,8 +15,12 @@ setlocal shiftwidth=2
 setlocal expandtab
 setlocal commentstring=#\ %s
 
+" Compiler
+compiler prettier
+
 " Variables
 let b:commentprefix = '#'
+let b:autocompile = 1
 let b:autoclose = ['expansion', 'quote']
 
 " Restore compatibility
