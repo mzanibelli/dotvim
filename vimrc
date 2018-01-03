@@ -77,6 +77,7 @@ set lazyredraw
 set linebreak
 set listchars=tab:▸\ ,eol:¬,extends:»,precedes:«,nbsp:○,space:·
 set magic
+set matchtime=3
 set menuitems=10
 set mouse=
 set noautowrite
@@ -95,6 +96,7 @@ set nomodeline
 set nomore
 set nopaste
 set noshowcmd
+set noshowmatch
 set noshowmode
 set nosmartindent
 set nosmarttab
@@ -206,3 +208,4 @@ let g:loaded_netrw=1
 let g:loaded_netrwPlugin=1
 let g:loaded_netrwSettings=1
 let g:loaded_netrwFileHandlers=1
+let g:loaded_matchparen=1
