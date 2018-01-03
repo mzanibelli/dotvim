@@ -1,15 +1,40 @@
 let s:bufname = "Files"
 
+function! ranger#auto(file)
+    if  !exists("g:reading_stdin") && isdirectory(a:file)
+        keepalt bwipeout
+        call ranger#open(a:file)
+    endif
+endfunction
+
 function! ranger#open(...)
     if a:0 == 0
         call ranger#open(getcwd())
         return
     endif
-    if !isdirectory(a:1) || ranger#focus()
+    if !isdirectory(a:1) || ranger#focus(a:1)
         return
     endif
     let g:ranger = tempname()
     call term_start(ranger#command(g:ranger, a:1), ranger#options())
+endfunction
+
+function! ranger#toggle()
+    if exists("g:ranger")
+        call ranger#focus()
+    else
+        call ranger#open()
+    endif
+endfunction
+
+function! ranger#focus(...)
+    if ranger#window() || ranger#buffer()
+        if a:0 > 0
+            call feedkeys(printf(":cd %s\<CR>", a:1), "n")
+        endif
+        return 1
+    endif
+    return 0
 endfunction
 
 function! ranger#command(out, dir)
@@ -23,6 +48,7 @@ function! ranger#options()
     let l:opt["close_cb"] = "ranger#callback"
     let l:opt["stoponexit"] = "kill"
     let l:opt["curwin"] = v:true
+    let l:opt["term_finish"] = "close"
     return l:opt
 endfunction
 
@@ -57,25 +83,14 @@ function! ranger#buffer()
     return 0
 endfunction
 
-function! ranger#focus()
-    return ranger#window() || ranger#buffer()
-endfunction
-
 function! ranger#callback(channel)
     try
         let l:content = readfile(g:ranger)
         execute "edit" l:content[0]
         call feedkeys("\<C-L>", "n")
     catch
-        quit
+        redraw!
     finally
         call ranger#cleanup()
     endtry
-endfunction
-
-function! ranger#auto(file)
-    if  !exists("g:reading_stdin") && isdirectory(a:file)
-        keepalt bwipeout
-        call ranger#open(a:file)
-    endif
 endfunction

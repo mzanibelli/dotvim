@@ -9,17 +9,15 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 " Mappings
-nnoremap <Leader>r :<C-U>Ranger<Space>
-nnoremap <silent> gh :<C-U>Ranger <C-R>=expand("%:h")<CR><CR>
-
-" Commands
-command! -nargs=? -complete=file Ranger call ranger#open(<f-args>)
+nnoremap <silent> <Leader>r :<C-U>call ranger#toggle()<CR>
+nnoremap <silent> gh :<C-U>call ranger#open(expand("%:h"))<CR>
 
 " Autocommands
 augroup RANGER
     autocmd!
     autocmd VimEnter * silent! autocmd! FileExplorer
     autocmd BufEnter * call ranger#auto(expand("<afile>"))
+    autocmd BufEnter * filetype detect
 augroup END
 
 " Restore compatibility
