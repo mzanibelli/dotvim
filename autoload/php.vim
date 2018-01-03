@@ -5,3 +5,8 @@ endfunction
 function! php#functions()
     silent execute "vimgrep /".php#funcregex()."/ %"
 endfunction
+
+function! php#includeexpr(file)
+    let l:file = substitute(a:file, '\\', '/', 'g')
+    return substitute(l:file, '^/', '', '')
+endfunction
