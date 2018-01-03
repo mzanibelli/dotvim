@@ -72,3 +72,10 @@ function! ranger#callback(channel)
         call ranger#cleanup()
     endtry
 endfunction
+
+function! ranger#auto(file)
+    if  !exists("g:reading_stdin") && isdirectory(a:file)
+        keepalt bwipeout
+        call ranger#open(a:file)
+    endif
+endfunction
