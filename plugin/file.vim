@@ -8,12 +8,10 @@ let g:loaded_local_plugin_file = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
-" Mappings
-nnoremap <silent> <Leader>f :<C-U>call file#path()<CR>
-
 " Commands
 command! -nargs=1 -complete=file Rename call file#rename(<q-args>)
 command! -nargs=0 Delete call file#delete()
+command! -nargs=0 Path call file#path()
 
 " Autocommands
 augroup FILE

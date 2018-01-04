@@ -17,7 +17,6 @@ augroup RANGER
     autocmd!
     autocmd VimEnter * silent! autocmd! FileExplorer
     autocmd BufEnter * call ranger#auto(expand("<afile>"))
-    autocmd BufEnter * filetype detect
 augroup END
 
 " Restore compatibility
