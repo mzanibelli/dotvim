@@ -30,7 +30,7 @@ endfunction
 function! ranger#focus(...)
     if ranger#window() || ranger#buffer()
         if a:0 > 0
-            call feedkeys(printf(":cd %s\<CR>", a:1), "n")
+            call feedkeys(printf("\<C-U>:cd %s\<CR>", a:1), "n")
         endif
         return 1
     endif

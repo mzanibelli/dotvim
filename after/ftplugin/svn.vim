@@ -15,6 +15,7 @@ command! -buffer -nargs=0 Abort execute "normal! ggdG:\<C-U>x\<CR>"
 setlocal nonumber
 setlocal textwidth=60
 setlocal spell
+setlocal nobuflisted
 
 " Variables
 let b:norestore = 1

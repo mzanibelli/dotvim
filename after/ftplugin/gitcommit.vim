@@ -22,6 +22,7 @@ setlocal comments+=fb:-
 setlocal nonumber
 setlocal textwidth=60
 setlocal spell
+setlocal nobuflisted
 
 " Restore compatibility
 let &cpo = s:save_cpo
