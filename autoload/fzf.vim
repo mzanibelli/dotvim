@@ -22,15 +22,13 @@ function! fzf#options(output)
 endfunction
 
 function! fzf#callback(channel)
-    try
+    if filereadable(g:fzf["out"])
         let l:content = readfile(g:fzf["out"])
-        execute printf("%dwindo", g:fzf["win"]) "edit" l:content[0]
-        call feedkeys("\<C-L>", "n")
-    catch
-        redraw!
-    finally
-        call fzf#cleanup()
-    endtry
+        if len(l:content) > 0
+            execute printf("%dwindo", g:fzf["win"]) "edit" l:content[0]
+        endif
+    endif
+    call fzf#cleanup()
 endfunction
 
 function! fzf#cleanup()
