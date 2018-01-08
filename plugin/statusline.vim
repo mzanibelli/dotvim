@@ -39,12 +39,11 @@ set statusline+=\ %p%{'%'}
 set statusline+=\ %{empty(&ft)?'[none]':'['.&ft.']'}
 set statusline+=%{strlen(&fenc)&&&fenc!=#'utf-8'?'['.&fenc.']':''}
 set statusline+=%{exists('b:largefile')?'[xxl]':''}
+set statusline+=%{file#readonly()?'[-]':''}
 set statusline+=%{&ignorecase?'[i]':''}
 set statusline+=%{&wrap?'[w]':''}
 set statusline+=%{&paste?'[p]':''}
 set statusline+=%{format#alerts(1)?'[!]':''}
-set statusline+=%r
-set statusline+=%m
 set statusline+=%{exists('g:bgoutput')?'[*]':''}
 set statusline+=%<
 

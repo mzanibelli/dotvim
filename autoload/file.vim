@@ -49,3 +49,7 @@ function! file#delete() abort
         bwipe!
     endif
 endfunction
+
+function! file#readonly()
+    return &readonly || !&modifiable
+endfunction
