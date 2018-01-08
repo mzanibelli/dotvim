@@ -44,6 +44,7 @@ set statusline+=%{&ignorecase?'[i]':''}
 set statusline+=%{&wrap?'[w]':''}
 set statusline+=%{&paste?'[p]':''}
 set statusline+=%{format#alerts(1)?'[!]':''}
+set statusline+=%{&modified?'[+]':''}
 set statusline+=%{exists('g:bgoutput')?'[*]':''}
 set statusline+=%<
 
