@@ -15,12 +15,6 @@ tnoremap <C-J> <C-W>j
 tnoremap <C-K> <C-W>k
 tnoremap <C-L> <C-W>l
 
-" Autocommands
-augroup TERMINAL
-    autocmd!
-    autocmd BufEnter * filetype detect
-augroup END
-
 " Restore compatibility
 let &cpo = s:save_cpo
 unlet s:save_cpo

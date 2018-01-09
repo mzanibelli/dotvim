@@ -16,7 +16,7 @@ command! -nargs=0 Path call file#path()
 " Autocommands
 augroup FILE
     autocmd!
-    autocmd BufFilePost * filetype detect
+    autocmd BufEnter * filetype detect
     autocmd BufWritePre * call file#mkdir(expand("<afile>"), +expand("<abuf>"))
     autocmd BufWritePre * call file#backupext()
     autocmd User DeferPost silent! call mkdir(&undodir, "p")
