@@ -15,7 +15,12 @@ endfunction
 
 
 function! async#end(channel)
-    call delete(g:bgoutput)
+    if !exists("g:bgoutput")
+        return
+    endif
+    if filereadable(g:bgoutput)
+        call delete(g:bgoutput)
+    endif
     unlet g:bgoutput
     redrawstatus!
 endfunction
