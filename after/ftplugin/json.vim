@@ -10,8 +10,8 @@ set cpo&vim
 
 " Options
 setlocal conceallevel=0
-if executable("python")
-    setlocal formatprg=python\ -m\ json.tool
+if executable("jq")
+    setlocal formatprg=jq\ .
 endif
 
 " Variables
