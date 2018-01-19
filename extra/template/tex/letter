@@ -1,0 +1,28 @@
+\documentclass[12pt]{lettre}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8x]{inputenc}
+\usepackage[french]{babel}
+
+\begin{document}
+
+\begin{letter}{Nom du destinataire\\Adresse du destinataire\\Code postal - ville}
+
+    \date{La date}
+    \name{Nom de l'expéditeur}
+    \address{Adresse de l'expéditeur\\Code postal - ville}
+    \telephone{Numéro de téléphone}
+    \email{Adresse e-mail}
+
+    \nofax
+    \nolieu
+
+    \conc{Objet}
+
+    \opening{Apostrophe}
+        Corps du texte
+    \closing{Formule de politesse}
+
+\end{letter}
+
+\end{document}
