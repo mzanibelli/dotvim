@@ -19,7 +19,7 @@ setlocal shiftwidth=4
 setlocal noexpandtab
 
 " Variables
-let b:autoclose = ['quote', 'square']
+let b:autoclose = ['quote', 'square', 'args']
 let b:autocompile = 1
 
 " Restore compatibility

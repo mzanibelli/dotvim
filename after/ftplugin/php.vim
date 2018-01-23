@@ -30,7 +30,7 @@ setlocal isfname+=\
 
 " Variables
 let b:commentprefix = '//'
-let b:autoclose = ['expansion', 'square', 'quote']
+let b:autoclose = ['expansion', 'square', 'quote', 'args']
 let b:autocompile = 1
 let b:funcsnippets = 1
 let b:ftsnippets = {"elog": "error_log(%)", "vdump": "var_dump(%)", "printr": "print_r(%, true)"}

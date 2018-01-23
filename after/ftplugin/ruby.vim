@@ -17,7 +17,7 @@ if executable("ruby")
 endif
 
 " Variables
-let b:autoclose = ['quote', 'square']
+let b:autoclose = ['quote', 'square', 'args']
 let b:autocompile = 1
 
 " Restore compatibility

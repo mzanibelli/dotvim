@@ -22,7 +22,7 @@ setlocal keywordprg=:help
 " Variables
 let b:completiontype = "\<C-X>\<C-V>"
 let b:commentprefix = '"'
-let b:autoclose = ['quote', 'square']
+let b:autoclose = ['quote', 'square', 'args']
 
 " Restore compatibility
 let &cpo = s:save_cpo
