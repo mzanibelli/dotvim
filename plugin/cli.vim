@@ -12,6 +12,9 @@ set cpo&vim
 cnoremap <CR> <C-]><CR>
 cnoremap <expr> <C-Y> wildmenumode() ? "\<C-]>" : "\<C-Y>"
 
+" Commands
+command! -nargs=* Git <mods> terminal ++close git <args>
+
 " Autocommands
 augroup CLI
     autocmd!
