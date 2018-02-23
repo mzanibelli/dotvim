@@ -9,7 +9,7 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 " Commands
-command! -nargs=0 Status <mods> terminal ++close git -p status
+command! -nargs=0 Status <mods> terminal ++close git -p status --show-stash
 command! -nargs=+ -complete=file Diff <mods> terminal ++close git -p diff -- <args>
 command! -nargs=+ -complete=file Log <mods> terminal ++close git -p log -- <args>
 
