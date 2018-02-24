@@ -1,10 +1,6 @@
 function! default#units()
     if !exists("g:units")
-        let l:units = 1
-        if executable("nproc")
-            let l:units = system('nproc --all | xargs echo -n')
-        endif
-        let g:units = l:units
+        let g:units = executable("nproc") ? system('nproc --all | xargs echo -n') : 1
     endif
     return g:units
 endfunction

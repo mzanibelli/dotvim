@@ -15,9 +15,6 @@ compiler sh
 let b:autoclose = ['quote', 'doublesquare']
 let b:autocompile = 1
 
-" Mappings
-nnoremap <buffer> <silent> <Leader>x :<C-U>call shell#run('bash %')<CR>
-
 " Restore compatibility
 let &cpo = s:save_cpo
 unlet s:save_cpo

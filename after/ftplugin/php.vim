@@ -18,9 +18,6 @@ command! -buffer -nargs=0 Functions silent call php#functions()
 execute 'nnoremap <buffer> <silent> [[ :<C-U>let search = @/<CR>?' . escape(php#funcregex(), '|') . '?<CR>:let @/ = search<CR>'
 execute 'nnoremap <buffer> <silent> ]] :<C-U>let search = @/<CR>/' . escape(php#funcregex(), '|') . '/<CR>:let @/ = search<CR>'
 inoremap <buffer> <silent> <expr> , default#mapdouble(',', "\<C-H> => ")
-if executable("php")
-    nnoremap <buffer> <silent> <Leader>x :<C-U>call shell#run('php %')<CR>
-endif
 
 " Options
 setlocal foldenable

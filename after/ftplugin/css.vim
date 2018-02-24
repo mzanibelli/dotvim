@@ -19,9 +19,6 @@ compiler prettier
 " Variables
 let b:autoclose = ['quote', 'expansion']
 let b:autocompile = 1
-if executable('css-beautify')
-    let b:reformatprg = 'css-beautify -q -r -s '.&shiftwidth.' -f %s 2>/dev/null'
-endif
 
 " Restore compatibility
 let &cpo = s:save_cpo

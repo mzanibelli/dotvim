@@ -8,11 +8,6 @@ let b:loaded_local_ftplugin_lisp = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
-" Mappings
-if executable("clisp")
-    nnoremap <buffer> <silent> <Leader>x :<C-U>call shell#run("clisp %")<CR>
-endif
-
 " Options
 setlocal tabstop=2
 setlocal softtabstop=2
