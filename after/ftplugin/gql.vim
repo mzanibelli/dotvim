@@ -14,6 +14,7 @@ setlocal softtabstop=2
 setlocal shiftwidth=2
 setlocal expandtab
 setlocal commentstring=#\ %s
+setlocal formatoptions=crqj
 
 " Compiler
 compiler prettier

@@ -11,6 +11,9 @@ set cpo&vim
 " Compiler
 compiler ruby
 
+" Options
+setlocal formatoptions=crqj
+
 " Variables
 let b:autoclose = ['quote', 'square', 'args']
 let b:autocompile = 1

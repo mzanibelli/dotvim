@@ -14,6 +14,7 @@ setlocal foldlevel=0
 setlocal foldmethod=marker
 setlocal foldnestmax=1
 setlocal keywordprg=:help
+setlocal formatoptions=crqj
 
 " Variables
 let b:completiontype = "\<C-X>\<C-V>"

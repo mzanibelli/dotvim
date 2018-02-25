@@ -8,6 +8,9 @@ let b:loaded_local_ftplugin_cpp = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
+" Options
+setlocal formatoptions=crqj
+
 " Variables
 let b:commentprefix = '//'
 let b:autoclose = ['expansion', 'square', 'quote', 'args']

@@ -37,7 +37,3 @@ function! format#fix()
     call format#retab()
     call format#trim()
 endfunction
-
-function! format#init()
-    setlocal formatoptions=crqj
-endfunction

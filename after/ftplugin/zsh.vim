@@ -8,6 +8,9 @@ let b:loaded_local_ftplugin_zsh = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
+" Options
+setlocal formatoptions=crqj
+
 " Variables
 let b:autoclose = ['quote', 'doublesquare']
 

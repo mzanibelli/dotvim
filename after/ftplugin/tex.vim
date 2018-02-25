@@ -11,6 +11,7 @@ set cpo&vim
 " Options
 setlocal spell
 setlocal conceallevel=0
+setlocal formatoptions=crqj
 
 " Compiler
 compiler tex

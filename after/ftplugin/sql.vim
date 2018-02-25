@@ -9,6 +9,7 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 " Options
+setlocal formatoptions=crqj
 if executable("sqlformat")
     setlocal formatprg=sqlformat\ -k\ 'upper'\ -i\ 'lower'\ -r\ -
 endif

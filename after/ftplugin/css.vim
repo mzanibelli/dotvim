@@ -12,6 +12,7 @@ set cpo&vim
 setlocal foldmarker={,}
 setlocal foldmethod=marker
 setlocal iskeyword+=-
+setlocal formatoptions=crqj
 
 " Compiler
 compiler prettier

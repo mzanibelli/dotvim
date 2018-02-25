@@ -11,6 +11,9 @@ set cpo&vim
 " Compiler
 compiler sh
 
+" Options
+setlocal formatoptions=crqj
+
 " Variables
 let b:autoclose = ['quote', 'doublesquare']
 let b:autocompile = 1

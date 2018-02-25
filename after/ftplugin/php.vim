@@ -26,6 +26,7 @@ setlocal includeexpr=php#includeexpr(v:fname)
 setlocal suffixesadd=.php
 setlocal isfname+=\
 setlocal matchpairs-=<:>
+setlocal formatoptions=crqj
 
 " Variables
 let b:commentprefix = '//'
