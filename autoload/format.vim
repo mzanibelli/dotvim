@@ -41,24 +41,6 @@ endfunction
 function! format#init()
     setlocal matchpairs-=<:>
     setlocal formatoptions=crqj
-    if exists("b:textformat") && b:textformat == 1
-        setlocal formatoptions+=tn
-        setlocal formatlistpat=^\\s*
-        setlocal formatlistpat+=[
-        setlocal formatlistpat+=\\[({]\\?
-        setlocal formatlistpat+=\\(
-        setlocal formatlistpat+=[0-9]\\+
-        setlocal formatlistpat+=\\\|[iIvVxXlLcCdDmM]\\+
-        setlocal formatlistpat+=\\\|[a-zA-Z]
-        setlocal formatlistpat+=\\)
-        setlocal formatlistpat+=[\\]:.)}
-        setlocal formatlistpat+=]
-        setlocal formatlistpat+=\\s\\+
-        setlocal formatlistpat+=\\\|^\\s*[-–+o*]\\s\\+
-    endif
-    if exists("b:mailformat") && b:mailformat == 1
-        setlocal formatoptions+=w
-    endif
     if exists("b:lintprg")
         command! -buffer -nargs=0 Lint silent call format#external()
     endif
