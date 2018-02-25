@@ -1,8 +1,8 @@
-function! format#alerts(cache)
+function! format#alerts()
     if &modifiable && !exists("b:largefile")
-        if !exists("b:wrongformat") || !a:cache
+        if !exists("b:wrongformat")
             let l:type = &ff !=# "unix"
-            let l:trail = search('\s\+$', 'nw') != 0
+            let l:trail = &ft != "mail" && search('\s\+$', 'nw') != 0
             let l:tabs = search('^\t', 'nw') != 0
             let l:spaces = search('^ ', 'nw') != 0
             let b:wrongformat = l:type || l:trail || (l:tabs && l:spaces) || (&et && l:tabs) || (!&et && l:spaces)
