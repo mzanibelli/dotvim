@@ -16,6 +16,7 @@ setlocal comments=
 
 " Variables
 let b:textformat = 1
+let b:mailformat = 1
 let b:completiontype = "\<C-X>\<C-K>"
 let b:autoclose = ['quote']
 
