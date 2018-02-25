@@ -9,7 +9,6 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 " Options
-setlocal formatoptions+=w
 setlocal nonumber
 setlocal textwidth=60
 setlocal spell
