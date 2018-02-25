@@ -11,6 +11,11 @@ set cpo&vim
 " Compiler
 compiler html
 
+" Options
+if executable("html-beautify")
+    setlocal formatprg=html-beautify\ -qI\ -s\ 4\ -f\ -
+endif
+
 " Variables
 let b:autoclose = ['tag', 'quote', 'doublecurly']
 let b:autocompile = 1

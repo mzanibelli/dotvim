@@ -15,7 +15,9 @@ compiler xml
 inoremap <buffer> <silent> > ><C-R>=xml#close()<CR>
 
 " Options
-setlocal formatprg=xmllint\ --format\ -
+if executable("xmllint")
+    setlocal formatprg=xmllint\ --format\ -
+endif
 
 " Variables
 let b:autoclose = ['tag', 'quote']

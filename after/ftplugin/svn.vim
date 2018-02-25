@@ -16,6 +16,7 @@ setlocal nonumber
 setlocal textwidth=60
 setlocal spell
 setlocal nobuflisted
+setlocal comments=
 
 " Variables
 let b:norestore = 1

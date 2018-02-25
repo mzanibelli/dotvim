@@ -30,9 +30,6 @@ let b:commentprefix = '//'
 let b:autoclose = ['expansion', 'square', 'quote', 'args']
 let b:autocompile = 1
 let b:ftsnippets = {"clog": "console.log(%)"}
-if executable('js-beautify')
-    let b:reformatprg = 'js-beautify -q -r -s '.&shiftwidth.' -f %s 2>/dev/null'
-endif
 
 " Restore compatibility
 let &cpo = s:save_cpo

@@ -13,6 +13,7 @@ setlocal formatoptions+=w
 setlocal nonumber
 setlocal textwidth=60
 setlocal spell
+setlocal comments=
 
 " Variables
 let b:textformat = 1
