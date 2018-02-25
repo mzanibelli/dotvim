@@ -39,15 +39,5 @@ function! format#fix()
 endfunction
 
 function! format#init()
-    setlocal matchpairs-=<:>
     setlocal formatoptions=crqj
-    if exists("b:lintprg")
-        command! -buffer -nargs=0 Lint silent call format#external()
-    endif
-endfunction
-
-function! format#external()
-    let l:command = printf(b:lintprg, shellescape(expand("%:p")))
-    call system(l:command)
-    silent! checktime
 endfunction
