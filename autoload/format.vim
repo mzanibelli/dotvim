@@ -59,13 +59,13 @@ function! format#init()
     if exists("b:mailformat") && b:mailformat == 1
         setlocal formatoptions+=w
     endif
-    if exists("b:reformatprg")
+    if exists("b:lintprg")
         command! -buffer -nargs=0 Lint silent call format#external()
     endif
 endfunction
 
 function! format#external()
-    let l:command = printf(b:reformatprg, shellescape(expand("%:p")))
+    let l:command = printf(b:lintprg, shellescape(expand("%:p")))
     call system(l:command)
     silent! checktime
 endfunction

@@ -32,7 +32,7 @@ let b:autocompile = 1
 let b:funcsnippets = 1
 let b:ftsnippets = {"elog": "error_log(%)", "vdump": "var_dump(%)", "printr": "print_r(%, true)"}
 if executable("php-cs-fixer")
-    let b:reformatprg = "php-cs-fixer --quiet --no-interaction fix --using-cache=no %s"
+    let b:lintprg = "php-cs-fixer --quiet --no-interaction fix --using-cache=no %s"
 endif
 
 " Restore compatibility
