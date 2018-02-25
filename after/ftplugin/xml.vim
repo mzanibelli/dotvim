@@ -15,6 +15,7 @@ compiler xml
 inoremap <buffer> <silent> > ><C-R>=xml#close()<CR>
 
 " Options
+setlocal matchpairs-=<:>
 if executable("xmllint")
     setlocal formatprg=xmllint\ --format\ -
 endif

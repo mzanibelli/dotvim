@@ -24,6 +24,7 @@ setlocal expandtab
 setlocal suffixesadd=.js
 setlocal include=^\\s*[^\/]\\+\\(from\\\|require(['\"]\\)
 setlocal define=^\\s*const
+setlocal matchpairs-=<:>
 
 " Variables
 let b:commentprefix = '//'

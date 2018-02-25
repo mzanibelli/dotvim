@@ -24,6 +24,7 @@ setlocal foldenable
 setlocal includeexpr=php#includeexpr(v:fname)
 setlocal suffixesadd=.php
 setlocal isfname+=\
+setlocal matchpairs-=<:>
 
 " Variables
 let b:commentprefix = '//'

@@ -12,6 +12,7 @@ set cpo&vim
 compiler html
 
 " Options
+setlocal matchpairs-=<:>
 if executable("html-beautify")
     setlocal formatprg=html-beautify\ -qI\ -s\ 4\ -f\ -
 endif
