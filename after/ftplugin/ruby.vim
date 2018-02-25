@@ -11,11 +11,6 @@ set cpo&vim
 " Compiler
 compiler ruby
 
-" Mappings
-if executable("ruby")
-    nnoremap <buffer> <silent> <Leader>x :<C-U>call shell#run('ruby %')<CR>
-endif
-
 " Variables
 let b:autoclose = ['quote', 'square', 'args']
 let b:autocompile = 1
