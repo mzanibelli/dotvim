@@ -222,8 +222,10 @@ let g:loaded_tarPlugin=1
 let g:loaded_vimball=1
 let g:loaded_vimballPlugin=1
 let g:loaded_zip=1
+let g:loaded_zipPlugin=1
 let g:loaded_netrwFileHandlers=1
 let g:loaded_matchparen=1
 let g:loaded_fzf=1
+let g:loaded_spellfile_plugin=1
 
 let g:vim_indent_cont = &shiftwidth

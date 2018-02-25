@@ -1,5 +1,5 @@
 function! format#alerts()
-    if &modifiable && !exists("b:largefile")
+    if &modifiable
         if !exists("b:wrongformat")
             let l:type = &ff !=# "unix"
             let l:trail = &ft != "mail" && search('\s\+$', 'nw') != 0
