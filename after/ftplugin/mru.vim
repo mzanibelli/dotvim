@@ -30,6 +30,9 @@ setlocal noswapfile
 setlocal statusline=[%{strftime('%d/%m/%Y')}]
 setlocal statusline+=%{exists('g:bgoutput')?'[*]':''}
 
+" Variables
+let b:noformatalerts = 1
+
 " Restore compatibility
 let &cpo = s:save_cpo
 unlet s:save_cpo

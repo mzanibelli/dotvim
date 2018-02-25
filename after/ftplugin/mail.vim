@@ -30,6 +30,7 @@ setlocal formatlistpat+=\\\|^\\s*[-–+o*]\\s\\+
 " Variables
 let b:completiontype = "\<C-X>\<C-K>"
 let b:autoclose = ['quote']
+let b:noformatalerts = 1
 
 " Restore compatibility
 let &cpo = s:save_cpo

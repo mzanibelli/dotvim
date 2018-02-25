@@ -10,6 +10,7 @@ set cpo&vim
 
 " Variables
 let b:norestore = 1
+let b:noformatalerts = 1
 
 " Options
 setlocal nobuflisted

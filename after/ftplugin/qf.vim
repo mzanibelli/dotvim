@@ -19,6 +19,7 @@ setlocal cursorline
 
 " Variables
 unlet b:undo_ftplugin
+let b:noformatalerts = 1
 
 " Commands
 command! -buffer -nargs=1 -bang Filter call qf#filter(<q-args>, expand("<bang>") == "!" ? 1 : 0)

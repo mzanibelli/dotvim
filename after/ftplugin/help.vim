@@ -14,6 +14,9 @@ setlocal nobuflisted
 setlocal nomodifiable
 setlocal nomodified
 
+" Variables
+let b:noformatalerts = 1
+
 " Restore compatibility
 let &cpo = s:save_cpo
 unlet s:save_cpo
