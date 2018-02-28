@@ -19,7 +19,6 @@ endif
 " Options
 setlocal conceallevel=0
 setlocal formatoptions=crqjtn
-setlocal colorcolumn=0
 
 " Variables
 let b:autoclose = ['quote']
