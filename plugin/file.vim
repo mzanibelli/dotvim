@@ -9,7 +9,7 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 " Commands
-command! -nargs=1 -complete=file Rename call file#rename(<q-args>)
+command! -nargs=1 -complete=file Move call file#move(<q-args>)
 command! -nargs=0 Delete call file#delete()
 command! -nargs=0 Path call file#path()
 

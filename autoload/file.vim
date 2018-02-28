@@ -32,7 +32,7 @@ function! file#path()
     echo l:path
 endfunction
 
-function! file#rename(name) abort
+function! file#move(name) abort
     let l:old = expand("%:p")
     setlocal modified
     silent execute "saveas!" a:name
