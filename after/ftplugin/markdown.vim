@@ -12,8 +12,8 @@ set cpo&vim
 compiler prettier
 
 " Commands
-if executable("md.sh")
-    command! -buffer -nargs=0 Preview vertical terminal ++close md.sh %
+if executable("pandoc") && executable("w3m")
+    command! -buffer -nargs=0 Preview <mods> terminal ++close sh -c "pandoc -f markdown -t html % | w3m -o auto_image=TRUE -T text/html -dump | $PAGER"
 endif
 
 " Options
