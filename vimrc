@@ -20,7 +20,7 @@ endif
 augroup PLUGINS
     autocmd!
     autocmd User DeferPost packadd targets
-    autocmd User DeferPost packadd editorconfig
+    autocmd User DeferPost packadd editorconfig | EditorConfigReload
 augroup END
 
 set autoindent
