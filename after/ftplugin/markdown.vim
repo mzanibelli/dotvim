@@ -18,6 +18,7 @@ setlocal formatoptions=crqjtn
 " Variables
 let b:autoclose = ['quote']
 let b:autocompile = 1
+let b:completiontype = "\<C-X>\<C-K>"
 
 " Restore compatibility
 let &cpo = s:save_cpo
