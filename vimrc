@@ -136,7 +136,7 @@ set t_Co=256
 set t_ut=
 set t_vb=
 set tabline=%!tabs#tabline()
-set tabstop=4
+set tabstop=8
 set tagbsearch
 set tagcase=followic
 set tagrelative
