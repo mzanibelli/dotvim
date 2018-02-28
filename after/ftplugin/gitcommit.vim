@@ -22,7 +22,7 @@ setlocal nonumber
 setlocal textwidth=60
 setlocal spell
 setlocal nobuflisted
-setlocal formatoptions=crqjtn
+setlocal formatoptions=crqjtnl
 setlocal formatlistpat=^\\s*
 setlocal formatlistpat+=[
 setlocal formatlistpat+=\\[({]\\?
