@@ -11,6 +11,11 @@ set cpo&vim
 " Compiler
 compiler prettier
 
+" Commands
+if executable("md.sh")
+    command! -buffer -nargs=0 Preview vertical terminal ++close md.sh %
+endif
+
 " Options
 setlocal conceallevel=0
 setlocal formatoptions=crqjtn

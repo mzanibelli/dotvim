@@ -8,9 +8,6 @@ let g:loaded_local_plugin_windows = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
-" Commands
-command! -nargs=* -complete=command PreserveView call windows#preserve(<q-args>)
-
 " Mappings
 nnoremap <Leader>v <C-W>v
 nnoremap <Leader>s <C-W>s
