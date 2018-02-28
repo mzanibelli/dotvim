@@ -8,6 +8,9 @@ let g:loaded_local_plugin_make = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
+" Commands
+command! -nargs=0 ToggleCompiler call make#toggle()
+
 " Autocommands
 augroup MAKE
     autocmd!
