@@ -10,4 +10,6 @@ elseif executable("prettier")
 elseif executable("acorn")
     setlocal errorformat=%m\ (%l:%c)
     setlocal makeprg=acorn\ --silent
+else
+    echoerr "No suitable compiler found"
 endif
