@@ -13,7 +13,7 @@ compiler prettier
 
 " Options
 setlocal conceallevel=0
-setlocal formatoptions=crqj
+setlocal formatoptions=crqjtn
 
 " Variables
 let b:autoclose = ['quote']
