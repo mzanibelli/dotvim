@@ -12,8 +12,8 @@ set cpo&vim
 compiler prettier
 
 " Commands
-if executable("pandoc") && executable("w3m")
-    command! -buffer -nargs=0 Preview <mods> terminal ++close sh -c "pandoc -f markdown -t html % | w3m -graph -F -X -cols 120 -T text/html -dump | $PAGER"
+if executable("pandoc")
+    command! -buffer -nargs=0 Preview <mods> terminal ++close sh -c "pandoc -f markdown -t plain % | $PAGER"
 endif
 
 " Options
