@@ -27,6 +27,7 @@ setlocal suffixesadd=.php
 setlocal isfname+=\
 setlocal matchpairs-=<:>
 setlocal formatoptions=crqj
+setlocal formatprg=
 
 " Variables
 let b:commentprefix = '//'
