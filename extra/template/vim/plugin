@@ -3,11 +3,3 @@ if exists('g:loaded_local_plugin_{fname-tr}')
     finish
 endif
 let g:loaded_local_plugin_{fname-tr} = 1
-
-" Force incompatibility
-let s:save_cpo = &cpo
-set cpo&vim
-
-" Restore compatibility
-let &cpo = s:save_cpo
-unlet s:save_cpo

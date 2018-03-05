@@ -4,10 +4,6 @@ if exists('g:loaded_local_plugin_format')
 endif
 let g:loaded_local_plugin_format = 1
 
-" Force incompatibility
-let s:save_cpo = &cpo
-set cpo&vim
-
 " Commands
 command! -nargs=0 Reindent silent! call format#reindent()
 command! -nargs=0 Reformat silent! call format#reformat()
@@ -21,7 +17,3 @@ augroup FORMAT
     autocmd!
     autocmd CursorHold,BufWritePost * unlet! b:wrongformat
 augroup END
-
-" Restore compatibility
-let &cpo = s:save_cpo
-unlet s:save_cpo

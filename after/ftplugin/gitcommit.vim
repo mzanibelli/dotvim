@@ -4,10 +4,6 @@ if exists('b:loaded_local_ftplugin_gitcommit')
 endif
 let b:loaded_local_ftplugin_gitcommit = 1
 
-" Force incompatibility
-let s:save_cpo = &cpo
-set cpo&vim
-
 " Commands
 command! -buffer -nargs=0 Abort execute "normal! ggdG:\<C-U>x\<CR>"
 
@@ -35,7 +31,3 @@ setlocal formatlistpat+=[\\]:.)}
 setlocal formatlistpat+=]
 setlocal formatlistpat+=\\s\\+
 setlocal formatlistpat+=\\\|^\\s*[-–+o*]\\s\\+
-
-" Restore compatibility
-let &cpo = s:save_cpo
-unlet s:save_cpo

@@ -4,10 +4,6 @@ if exists('g:loaded_local_plugin_buffers')
 endif
 let g:loaded_local_plugin_buffers = 1
 
-" Force incompatibility
-let s:save_cpo = &cpo
-set cpo&vim
-
 " Mappings
 nnoremap <silent> gb :<C-U>bn<CR>
 nnoremap <silent> gB :<C-U>bp<CR>
@@ -23,7 +19,3 @@ augroup BUFFERS
     autocmd BufEnter * silent! checktime
     autocmd VimEnter * if bufname("%") == "" && !exists("g:reading_stdin") | call mru#files() | endif
 augroup END
-
-" Restore compatibility
-let &cpo = s:save_cpo
-unlet s:save_cpo

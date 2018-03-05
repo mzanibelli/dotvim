@@ -4,10 +4,6 @@ if exists('g:loaded_local_plugin_qf')
 endif
 let g:loaded_local_plugin_qf = 1
 
-" Force incompatibility
-let s:save_cpo = &cpo
-set cpo&vim
-
 " Mappings
 nnoremap <silent> Q :<C-U>call qf#cclear()<CR>
 nnoremap <silent> L :<C-U>call qf#lclear()<CR>
@@ -21,7 +17,3 @@ augroup QF
     autocmd QuickFixCmdPost l* lwindow
     autocmd FileType qf call matchadd('Conceal', '|| $', 0)
 augroup END
-
-" Restore compatibility
-let &cpo = s:save_cpo
-unlet s:save_cpo

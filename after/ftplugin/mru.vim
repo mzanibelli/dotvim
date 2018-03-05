@@ -4,10 +4,6 @@ if exists('b:loaded_local_ftplugin_mru')
 endif
 let b:loaded_local_ftplugin_mru = 1
 
-" Force incompatibility
-let s:save_cpo = &cpo
-set cpo&vim
-
 " Mappings
 nnoremap <silent> <buffer> <CR> :<C-U>call mru#open("edit")<CR>
 nnoremap <silent> <buffer> e :<C-U>call mru#open("edit")<CR>
@@ -32,7 +28,3 @@ setlocal statusline+=%{exists('g:bgoutput')?'[*]':''}
 
 " Variables
 let b:noformatalerts = 1
-
-" Restore compatibility
-let &cpo = s:save_cpo
-unlet s:save_cpo

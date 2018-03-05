@@ -4,10 +4,6 @@ if exists('g:loaded_local_plugin_search')
 endif
 let g:loaded_local_plugin_search = 1
 
-" Force incompatibility
-let s:save_cpo = &cpo
-set cpo&vim
-
 " Mappings
 nnoremap gs [I
 nnoremap gS [D
@@ -21,7 +17,3 @@ vnoremap <silent> # :<C-U>call search#selection()<CR>??<CR><C-O>:set hlsearch<CR
 nnoremap <silent> g* :<C-U>call search#toqf()<CR>
 nmap c* *cgn
 nmap c# #cgn
-
-" Restore compatibility
-let &cpo = s:save_cpo
-unlet s:save_cpo

@@ -4,10 +4,6 @@ if exists('g:loaded_local_plugin_overrides')
 endif
 let g:loaded_local_plugin_overrides = 1
 
-" Force incompatibility
-let s:save_cpo = &cpo
-set cpo&vim
-
 " Autocommands
 augroup OVERRIDE
     autocmd!
@@ -17,7 +13,3 @@ augroup OVERRIDE
     autocmd User DeferPost call cli#override("aq", "qa")
     autocmd User DeferPost call cli#override("w!!", "write !sudo tee % > /dev/null")
 augroup END
-
-" Restore compatibility
-let &cpo = s:save_cpo
-unlet s:save_cpo

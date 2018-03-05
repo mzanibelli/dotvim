@@ -4,10 +4,6 @@ if exists('b:loaded_local_ftplugin_make')
 endif
 let b:loaded_local_ftplugin_make = 1
 
-" Force incompatibility
-let s:save_cpo = &cpo
-set cpo&vim
-
 " Options
 setlocal tabstop=4
 setlocal softtabstop=4
@@ -17,7 +13,3 @@ setlocal formatoptions=crqj
 
 " Variables
 let b:autoclose = ['quote']
-
-" Restore compatibility
-let &cpo = s:save_cpo
-unlet s:save_cpo

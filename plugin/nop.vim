@@ -4,10 +4,6 @@ if exists('g:loaded_local_plugin_nop')
 endif
 let g:loaded_local_plugin_nop = 1
 
-" Force incompatibility
-let s:save_cpo = &cpo
-set cpo&vim
-
 " Mappings
 nnoremap <Left>    <NOP>
 nnoremap <Right>   <NOP>
@@ -48,7 +44,3 @@ vnoremap <C-Right> <NOP>
 nnoremap <F1>      <NOP>
 inoremap <F1>      <NOP>
 vnoremap <F1>      <NOP>
-
-" Restore compatibility
-let &cpo = s:save_cpo
-unlet s:save_cpo

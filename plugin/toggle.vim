@@ -4,10 +4,6 @@ if exists('g:loaded_local_plugin_toggle')
 endif
 let g:loaded_local_plugin_toggle = 1
 
-" Force incompatibility
-let s:save_cpo = &cpo
-set cpo&vim
-
 " Options
 set pastetoggle=<F9>
 
@@ -24,7 +20,3 @@ augroup TOGGLE
     autocmd User DeferPost call toggle#map("<F7>", "list")
     autocmd User DeferPost call toggle#map("<F8>", "number")
 augroup END
-
-" Restore compatibility
-let &cpo = s:save_cpo
-unlet s:save_cpo

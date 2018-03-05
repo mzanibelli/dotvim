@@ -4,10 +4,6 @@ if exists('g:loaded_local_plugin_windows')
 endif
 let g:loaded_local_plugin_windows = 1
 
-" Force incompatibility
-let s:save_cpo = &cpo
-set cpo&vim
-
 " Mappings
 nnoremap <Leader>v <C-W>v
 nnoremap <Leader>s <C-W>s
@@ -32,7 +28,3 @@ augroup WINDOWS
     autocmd BufLeave * let b:winview = winsaveview()
     autocmd BufEnter * if exists("b:winview") && !&diff | call winrestview(b:winview) | endif
 augroup END
-
-" Restore compatibility
-let &cpo = s:save_cpo
-unlet s:save_cpo

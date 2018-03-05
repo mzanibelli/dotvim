@@ -4,10 +4,6 @@ if exists('b:loaded_local_ftplugin_xml')
 endif
 let b:loaded_local_ftplugin_xml = 1
 
-" Force incompatibility
-let s:save_cpo = &cpo
-set cpo&vim
-
 " Compiler
 compiler xml
 
@@ -23,7 +19,3 @@ endif
 " Variables
 let b:autoclose = ['tag', 'quote']
 let b:autocompile = 1
-
-" Restore compatibility
-let &cpo = s:save_cpo
-unlet s:save_cpo
