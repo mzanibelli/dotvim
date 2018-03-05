@@ -6,25 +6,25 @@ let g:loaded_local_plugin_statusline = 1
 
 " Variables
 let g:currentmode = {
-            \ 'n'  : 'NORMAL',
-            \ 'v'  : 'VISUAL',
-            \ 'V'  : 'VISUAL',
-            \ '' : 'VISUAL',
-            \ 's'  : 'VISUAL',
-            \ 'S'  : 'VISUAL',
-            \ '' : 'VISUAL',
-            \ 'i'  : 'INSERT',
-            \ 'R'  : 'REPLACE',
-            \ 'Rv' : 'REPLACE',
-            \ 't' :  'TERMINAL',
-            \ 'c'  : '-',
-            \ 'cv' : '-',
-            \ 'ce' : '-',
-            \ 'r'  : '-',
-            \ 'rm' : '-',
-            \ 'r?' : '-',
-            \ '!'  : '-',
-            \}
+    \ 'n'  : 'NORMAL',
+    \ 'v'  : 'VISUAL',
+    \ 'V'  : 'VISUAL',
+    \ '' : 'VISUAL',
+    \ 's'  : 'VISUAL',
+    \ 'S'  : 'VISUAL',
+    \ '' : 'VISUAL',
+    \ 'i'  : 'INSERT',
+    \ 'R'  : 'REPLACE',
+    \ 'Rv' : 'REPLACE',
+    \ 't' :  'TERMINAL',
+    \ 'c'  : '-',
+    \ 'cv' : '-',
+    \ 'ce' : '-',
+    \ 'r'  : '-',
+    \ 'rm' : '-',
+    \ 'r?' : '-',
+    \ '!'  : '-',
+    \}
 
 " Options
 set statusline=[%{g:currentmode[mode()]}]

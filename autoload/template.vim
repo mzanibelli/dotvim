@@ -1,15 +1,15 @@
 let s:vars = {
-            \ "fname": "expand('%')",
-            \ "fname-t": "fnamemodify(expand('%'), ':t')",
-            \ "fname-tr": "fnamemodify(expand('%'), ':t:r')",
-            \ "fname-ht": "fnamemodify(expand('%'), ':h:t')",
-            \ "datetime": "strftime('%Y-%m-%d %H:%M:%S')",
-            \ "date": "strftime('%Y-%m-%d')",
-            \ "date-en": "strftime('%m/%d/%Y')",
-            \ "date-fr": "strftime('%d/%m/%Y')",
-            \ "time": "strftime('%H:%M:%S')",
-            \ "year": "strftime('%Y')",
-        \}
+    \ "fname": "expand('%')",
+    \ "fname-t": "fnamemodify(expand('%'), ':t')",
+    \ "fname-tr": "fnamemodify(expand('%'), ':t:r')",
+    \ "fname-ht": "fnamemodify(expand('%'), ':h:t')",
+    \ "datetime": "strftime('%Y-%m-%d %H:%M:%S')",
+    \ "date": "strftime('%Y-%m-%d')",
+    \ "date-en": "strftime('%m/%d/%Y')",
+    \ "date-fr": "strftime('%d/%m/%Y')",
+    \ "time": "strftime('%H:%M:%S')",
+    \ "year": "strftime('%Y')",
+    \}
 
 function! template#make(input)
     let l:code = template#content(a:input)

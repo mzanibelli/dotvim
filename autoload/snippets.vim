@@ -1,10 +1,10 @@
 let s:matches = {
-        \ "abs" : "abstract ",
-        \ "fin" : "final ",
-        \ "pub" : "public ",
-        \ "pri" : "private ",
-        \ "pro" : "protected ",
-        \ "sta" : "static ",
+    \ "abs" : "abstract ",
+    \ "fin" : "final ",
+    \ "pub" : "public ",
+    \ "pri" : "private ",
+    \ "pro" : "protected ",
+    \ "sta" : "static ",
     \}
 
 function! snippets#snippet(abb, exp)
