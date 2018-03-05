@@ -19,6 +19,7 @@ endif
 " Options
 setlocal conceallevel=0
 setlocal formatoptions=crqjtn
+setlocal foldenable
 
 " Variables
 let b:autoclose = ['quote']

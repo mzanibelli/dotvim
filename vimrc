@@ -170,7 +170,7 @@ set wrapscan
 let g:html_indent_script1="inc"
 let g:html_indent_style1="inc"
 
-let g:PHP_autoformatcomment=1
+let g:PHP_autoformatcomment=0
 let g:PHP_outdentphpescape=0
 let g:PHP_removeCRwhenUnix=1
 let g:PHP_vintage_case_default_indent=1
@@ -229,3 +229,5 @@ let g:loaded_fzf=1
 let g:loaded_spellfile_plugin=1
 
 let g:vim_indent_cont = &shiftwidth
+
+let g:markdown_folding=1

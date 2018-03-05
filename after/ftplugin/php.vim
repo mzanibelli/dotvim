@@ -27,6 +27,7 @@ setlocal suffixesadd=.php
 setlocal isfname+=\
 setlocal matchpairs-=<:>
 setlocal formatoptions=crqj
+setlocal comments=s1:/*,mb:*,ex:*/,://,:#
 setlocal formatprg=
 
 " Variables
