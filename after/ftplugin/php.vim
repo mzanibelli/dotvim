@@ -15,6 +15,7 @@ command! -buffer -nargs=0 Lint silent call php#cs()
 execute 'nnoremap <buffer> <silent> [[ :<C-U>let search = @/<CR>?' . escape(php#funcregex(), '|') . '?<CR>:let @/ = search<CR>'
 execute 'nnoremap <buffer> <silent> ]] :<C-U>let search = @/<CR>/' . escape(php#funcregex(), '|') . '/<CR>:let @/ = search<CR>'
 inoremap <buffer> <silent> <expr> , default#mapdouble(',', "\<C-H> => ")
+inoremap <C-X><C-H> <C-R>=expand("%:p:h")<CR><C-O>:<C-U>s/\//\\/g<CR>
 
 " Options
 setlocal foldenable

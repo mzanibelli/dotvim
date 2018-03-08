@@ -9,6 +9,10 @@ command! -nargs=1 -complete=file Move call file#move(<q-args>)
 command! -nargs=0 Delete call file#delete()
 command! -nargs=0 Path call file#path()
 
+" Mappings
+inoremap <C-X><C-T> <C-R>=expand("%:t:r")<CR>
+inoremap <C-X><C-H> <C-R>=expand("%:p:h")<CR>
+
 " Autocommands
 augroup FILE
     autocmd!
