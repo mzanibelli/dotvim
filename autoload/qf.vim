@@ -3,13 +3,6 @@ function! qf#cclear()
     cclose
 endfunction
 
-function! qf#cfirst()
-    if len(getqflist()) == 1
-        cc! 1
-        call qf#cclear()
-    endif
-endfunction
-
 function! qf#lclear()
     call setloclist(winnr(), [])
     lclose

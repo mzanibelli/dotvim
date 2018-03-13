@@ -9,6 +9,7 @@ function! async#start(command, callback)
     let l:options["out_io"] = "file"
     let l:options["out_name"] = g:bgoutput
     let l:options["stoponexit"] = "kill"
+    let l:options["cwd"] = getcwd()
     call job_start(l:command, l:options)
     redrawstatus!
 endfunction

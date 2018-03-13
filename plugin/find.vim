@@ -5,7 +5,7 @@ endif
 let g:loaded_local_plugin_find = 1
 
 " Commands
-command! -nargs=* -complete=file Find call find#find(<q-args>)
+command! -nargs=* Find call find#find(<f-args>)
 
 " Autocommands
 augroup FIND
@@ -14,4 +14,4 @@ augroup FIND
 augroup END
 
 " Mappings
-nnoremap <Leader>e :<C-U>Find<Space>
+nnoremap <Leader>f :<C-U>Find<Space>
