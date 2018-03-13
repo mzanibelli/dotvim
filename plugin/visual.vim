@@ -5,7 +5,6 @@ endif
 let g:loaded_local_plugin_visual = 1
 
 " Mappings
-vnoremap $ g_
 nnoremap gV `[V`]
 vnoremap < <gv
 vnoremap > >gv
