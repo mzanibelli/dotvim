@@ -9,7 +9,7 @@ nnoremap gs [I
 nnoremap gS [D
 nnoremap <expr> <Leader>: search#replace(0)
 vnoremap <expr> <Leader>: search#replace(1)
-nnoremap <silent> <Leader><Leader> :<C-U>noh<CR>
+nnoremap <silent> <Leader><Leader> :<C-U>nohlsearch<Bar>diffupdate<Bar>syntax sync fromstart<CR>
 nnoremap <silent> * :<C-U>let view = winsaveview()<CR>*:call winrestview(view)<CR>
 nnoremap <silent> # :<C-U>let view = winsaveview()<CR>#:call winrestview(view)<CR>
 vnoremap <silent> * :<C-U>call search#selection()<CR>//<CR><C-O>:set hlsearch<CR>
