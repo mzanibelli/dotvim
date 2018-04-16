@@ -11,7 +11,7 @@ setlocal iskeyword+=-
 setlocal formatoptions=crqj
 
 " Compiler
-compiler prettier
+compiler css
 
 " Variables
 let b:autoclose = ['quote', 'expansion']

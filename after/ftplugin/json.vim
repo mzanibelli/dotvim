@@ -5,7 +5,7 @@ endif
 let b:loaded_local_ftplugin_json = 1
 
 " Compiler
-compiler prettier
+compiler json
 
 " Options
 setlocal conceallevel=0

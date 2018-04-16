@@ -14,7 +14,7 @@ setlocal expandtab
 setlocal formatoptions=crqj
 
 " Compiler
-compiler prettier
+compiler scss
 
 " Variables
 let b:autoclose = ['quote', 'expansion']

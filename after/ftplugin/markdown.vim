@@ -5,7 +5,7 @@ endif
 let b:loaded_local_ftplugin_markdown = 1
 
 " Compiler
-compiler prettier
+compiler markdown
 
 " Commands
 if executable("pandoc")

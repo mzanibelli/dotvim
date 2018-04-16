@@ -12,7 +12,7 @@ setlocal commentstring=#\ %s
 setlocal formatoptions=crqj
 
 " Compiler
-compiler prettier
+compiler gql
 
 " Variables
 let b:commentprefix = '#'
