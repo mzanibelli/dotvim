@@ -1,8 +1,0 @@
-{
-  "extends": ["eslint:recommended", "react-app"],
-  "plugins": ["prettier", "security"],
-  "rules": {
-    "no-console": ["error", { "allow": ["warn", "error"] }],
-    "prettier/prettier": "error"
-  }
-}
