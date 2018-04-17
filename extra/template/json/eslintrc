@@ -1,6 +1,6 @@
 {
   "extends": ["eslint:recommended"],
-  "plugins": ["prettier", "security"],
+  "plugins": ["prettier"],
   "parserOptions": {
     "ecmaVersion": 6
   },
@@ -8,7 +8,7 @@
     "node": true
   },
   "rules": {
-    "no-console": false,
+    "no-console": "off",
     "prettier/prettier": "error"
   }
 }
