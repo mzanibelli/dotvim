@@ -1,8 +1,14 @@
 {
-  "extends": ["eslint:recommended", "react-app"],
+  "extends": ["eslint:recommended"],
   "plugins": ["prettier", "security"],
+  "parserOptions": {
+    "ecmaVersion": 6
+  },
+  "env": {
+    "node": true
+  },
   "rules": {
-    "no-console": ["error", { "allow": ["warn", "error"] }],
+    "no-console": false,
     "prettier/prettier": "error"
   }
 }
