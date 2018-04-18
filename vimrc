@@ -110,7 +110,7 @@ set path=.,**
 set previewheight=12
 set pumheight=10
 set regexpengine=0
-set report=0
+set report=2
 set scrolloff=5
 set secure
 set selectmode=
