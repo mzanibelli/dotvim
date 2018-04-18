@@ -115,7 +115,7 @@ set scrolloff=5
 set secure
 set selectmode=
 set sessionoptions=blank,buffers,winsize,tabpages
-set shell=/bin/bash
+set shell=/bin/sh
 set shellcmdflag=-c
 set shiftwidth=4
 set shortmess=atTIcsAWF
