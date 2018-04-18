@@ -13,6 +13,6 @@ endfunction
 
 function find#configure()
     if executable("fd")
-        let s:findprg = printf("/usr/bin/fd --color never --threads %d", default#units())
+        let s:findprg = printf("/usr/bin/fd --color never --threads %d --hidden --no-ignore", default#units())
     endif
 endfunction
