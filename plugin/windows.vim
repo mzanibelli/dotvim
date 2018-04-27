@@ -12,14 +12,14 @@ nnoremap <Leader>c <C-W>c
 nnoremap <Leader>= <C-W>=
 nnoremap <Leader>_ <C-W>_
 nnoremap <Leader>- <C-W>\|
-nnoremap <C-H> <C-W>h
-nnoremap <C-L> <C-W>l
-nnoremap <C-K> <C-W>k
-nnoremap <C-J> <C-W>j
-vnoremap <C-H> <C-W>h
-vnoremap <C-L> <C-W>l
-vnoremap <C-K> <C-W>k
-vnoremap <C-J> <C-W>j
+nnoremap <silent> <C-H> :<C-U>call windows#move('h')<CR>
+nnoremap <silent> <C-L> :<C-U>call windows#move('l')<CR>
+nnoremap <silent> <C-K> :<C-U>call windows#move('k')<CR>
+nnoremap <silent> <C-J> :<C-U>call windows#move('j')<CR>
+vnoremap <silent> <C-H> :<C-U>call windows#move('h')<CR>
+vnoremap <silent> <C-L> :<C-U>call windows#move('l')<CR>
+vnoremap <silent> <C-K> :<C-U>call windows#move('k')<CR>
+vnoremap <silent> <C-J> :<C-U>call windows#move('j')<CR>
 
 " Autocommands
 augroup WINDOWS
