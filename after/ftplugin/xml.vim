@@ -17,5 +17,5 @@ if executable("xmllint")
 endif
 
 " Variables
-let b:autoclose = ['tag', 'quote']
+let b:autoclose = ['quote']
 let b:autocompile = 1

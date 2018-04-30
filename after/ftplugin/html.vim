@@ -14,5 +14,5 @@ if executable("html-beautify")
 endif
 
 " Variables
-let b:autoclose = ['tag', 'quote', 'doublecurly']
+let b:autoclose = ['quote', 'doublecurly']
 let b:autocompile = 1

@@ -20,9 +20,6 @@ function! surround#autoclose()
         if index(b:autoclose, 'doublecurly') >= 0
             inoremap <buffer> {{}} {{<Space><Space>}}<Left><Left><Left>
         endif
-        if index(b:autoclose, 'tag') >= 0
-            inoremap <buffer> <silent> > ><C-R>=xml#close()<CR>
-        endif
         if index(b:autoclose, 'doublesquare') >= 0
             inoremap <buffer> [[]] [[<Space><Space>]]<Left><Left><Left>
         endif
