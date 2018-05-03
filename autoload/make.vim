@@ -18,9 +18,9 @@ function! make#qf(channel)
 endfunction
 
 function! make#toggle()
-    if !exists("g:nocompile")
-        let g:nocompile = 1
-    else
+    if exists("g:nocompile")
         let g:nocompile = 1 - g:nocompile
+    else
+        let g:nocompile = 1
     endif
 endfunction
