@@ -10,10 +10,6 @@ if executable("sqlformat")
     setlocal formatprg=sqlformat\ -k\ 'upper'\ -i\ 'lower'\ -r\ -
 endif
 
-" Mappings
-inoremap <buffer> ' '
-inoremap <buffer> <expr> '' sql#quote()
-
 " Variables
 let b:commentprefix = '--'
 let b:autoclose = ['quote']
