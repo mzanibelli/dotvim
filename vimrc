@@ -2,10 +2,6 @@ scriptencoding utf-8
 
 filetype plugin indent on
 
-if !exists("g:syntax_on")
-    syntax enable
-endif
-
 colorscheme greyscale
 
 let mapleader="\<Space>"
