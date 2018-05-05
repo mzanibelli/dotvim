@@ -8,7 +8,7 @@ endif
 
 let g:colors_name = "greyscale"
 
-highlight Boolean ctermfg=255 ctermbg=none cterm=bold guifg=#eeeeee guibg=NONE gui=bold
+highlight Boolean ctermfg=255 ctermbg=none cterm=none guifg=#eeeeee guibg=NONE gui=none
 highlight Character ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
 highlight ColorColumn ctermfg=16 ctermbg=255 guifg=#000000 guibg=#eeeeee
 highlight Comment ctermfg=240 ctermbg=none guifg=#585858 guibg=NONE
@@ -23,7 +23,7 @@ highlight DbgBreakptSign ctermfg=255 ctermbg=none guifg=#eeeeee guibg=#000000
 highlight DbgCurrentLine ctermfg=16 ctermbg=255 guifg=#000000 guibg=#eeeeee
 highlight DbgCurrentSign ctermfg=255 ctermbg=none guifg=#eeeeee guibg=#000000
 highlight Debug ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
-highlight Define ctermfg=255 ctermbg=none cterm=bold guifg=#eeeeee guibg=NONE gui=bold
+highlight Define ctermfg=255 ctermbg=none cterm=none guifg=#eeeeee guibg=NONE gui=none
 highlight Delimiter ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
 highlight DiffAdd ctermbg=none ctermfg=Green guibg=NONE guifg=Green
 highlight DiffChange ctermbg=none ctermfg=White guibg=NONE guifg=White
@@ -32,15 +32,15 @@ highlight DiffText ctermbg=none ctermfg=Yellow guibg=NONE guifg=Yellow
 highlight Directory ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
 highlight Error ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
 highlight ErrorMsg ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
-highlight Exception ctermfg=255 ctermbg=none cterm=bold guifg=#eeeeee guibg=NONE gui=bold
+highlight Exception ctermfg=255 ctermbg=none cterm=none guifg=#eeeeee guibg=NONE gui=none
 highlight Float ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
 highlight FoldColumn ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
 highlight Folded ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
 highlight Function ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
-highlight Identifier cterm=bold ctermfg=255 ctermbg=none gui=bold guifg=#eeeeee guibg=NONE
+highlight Identifier cterm=none ctermfg=255 ctermbg=none gui=none guifg=#eeeeee guibg=NONE
 highlight IncSearch ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
-highlight Include ctermfg=255 ctermbg=none cterm=bold guifg=#eeeeee guibg=NONE gui=bold
-highlight Keyword cterm=bold ctermfg=255 ctermbg=none gui=bold guifg=#eeeeee guibg=NONE
+highlight Include ctermfg=255 ctermbg=none cterm=none guifg=#eeeeee guibg=NONE gui=none
+highlight Keyword cterm=none ctermfg=255 ctermbg=none gui=none guifg=#eeeeee guibg=NONE
 highlight Label ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
 highlight LineNr ctermfg=240 ctermbg=none guifg=#585858 guibg=NONE
 highlight Macro ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
@@ -56,9 +56,9 @@ highlight PmenuSbar ctermfg=16 ctermbg=255 guifg=#000000 guibg=#eeeeee
 highlight PmenuSel ctermfg=16 ctermbg=255 guifg=#000000 guibg=#eeeeee
 highlight PmenuThumb ctermfg=255 ctermbg=240 guifg=#eeeeee guibg=#585858
 highlight PreCondit ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
-highlight PreProc cterm=bold ctermfg=255 ctermbg=none gui=bold guifg=#eeeeee guibg=NONE
+highlight PreProc cterm=none ctermfg=255 ctermbg=none gui=none guifg=#eeeeee guibg=NONE
 highlight Question ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
-highlight Repeat ctermfg=255 ctermbg=none cterm=bold guifg=#eeeeee guibg=NONE gui=bold
+highlight Repeat ctermfg=255 ctermbg=none cterm=none guifg=#eeeeee guibg=NONE gui=none
 highlight Search ctermfg=none ctermbg=none cterm=underline guifg=NONE guibg=NONE gui=underline
 highlight SignColumn ctermfg=255 ctermbg=none guifg=#eeeeee guibg=#000000
 highlight Special ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
@@ -69,14 +69,14 @@ highlight SpellBad ctermfg=255 ctermbg=16 cterm=underline guifg=#eeeeee guibg=#0
 highlight SpellCap ctermfg=255 ctermbg=16 cterm=underline guifg=#eeeeee guibg=#000000 gui=underline
 highlight SpellLocal ctermfg=255 ctermbg=16 cterm=underline guifg=#eeeeee guibg=#000000 gui=underline
 highlight SpellRare ctermfg=255 ctermbg=16 cterm=underline guifg=#eeeeee guibg=#000000 gui=underline
-highlight Statement cterm=bold ctermfg=255 ctermbg=none gui=bold guifg=#eeeeee guibg=NONE
+highlight Statement cterm=none ctermfg=255 ctermbg=none gui=none guifg=#eeeeee guibg=NONE
 highlight StatusLine ctermfg=255 ctermbg=16 guifg=#eeeeee guibg=#000000
 highlight StatusLineTerm ctermfg=16 ctermbg=255 guifg=#000000 guibg=#eeeeee
 highlight StatusLineNC ctermfg=255 ctermbg=16 guifg=#eeeeee guibg=#000000
 highlight StatusLineTermNC ctermfg=16 ctermbg=255 guifg=#000000 guibg=#eeeeee
-highlight StorageClass ctermfg=255 ctermbg=none cterm=bold guifg=#eeeeee guibg=NONE gui=bold
-highlight String ctermfg=245 ctermbg=none guifg=#8a8a8a guibg=NONE
-highlight Structure ctermfg=255 ctermbg=none cterm=bold guifg=#eeeeee guibg=NONE gui=bold
+highlight StorageClass ctermfg=255 ctermbg=none cterm=none guifg=#eeeeee guibg=NONE gui=none
+highlight String ctermfg=240 ctermbg=none guifg=#585858 guibg=NONE
+highlight Structure ctermfg=255 ctermbg=none cterm=none guifg=#eeeeee guibg=NONE gui=none
 highlight TabLine ctermfg=16 ctermbg=255 cterm=none guifg=#000000 guibg=#eeeeee gui=NONE
 highlight TabLineFill ctermfg=255 ctermbg=16 guifg=#eeeeee guibg=#000000
 highlight TabLineSel ctermfg=16 ctermbg=255 cterm=bold guifg=#000000 guibg=#eeeeee gui=bold
@@ -90,6 +90,5 @@ highlight Visual ctermfg=16 ctermbg=255 guifg=#000000 guibg=#eeeeee
 highlight VisualNOS ctermfg=16 ctermbg=255 guifg=#000000 guibg=#eeeeee
 highlight WarningMsg ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
 highlight WildMenu ctermfg=255 ctermbg=16 cterm=bold guifg=#eeeeee guibg=#000000 gui=bold
-highlight phpMemberSelector ctermfg=255 ctermbg=none cterm=none guifg=#eeeeee guibg=NONE gui=NONE
-highlight qfFileName cterm=bold gui=bold
+highlight qfFileName cterm=none gui=none
 highlight qfLineNr ctermfg=255 guifg=#eeeeee
