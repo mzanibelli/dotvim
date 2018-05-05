@@ -4,8 +4,9 @@ if exists('b:loaded_local_ftplugin_gitcommit')
 endif
 let b:loaded_local_ftplugin_gitcommit = 1
 
-" Commands
-command! -buffer -nargs=0 Abort execute "normal! ggdG:\<C-U>x\<CR>"
+" Mappings
+nnoremap <buffer> <silent> <C-N> :<C-U>call search('^@@')<CR>
+nnoremap <buffer> <silent> <C-P> :<C-U>call search('^@@', 'b')<CR>
 
 " Variables
 let b:norestore = 1
