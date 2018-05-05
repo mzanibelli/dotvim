@@ -4,9 +4,6 @@ if exists('b:loaded_local_ftplugin_svn')
 endif
 let b:loaded_local_ftplugin_svn = 1
 
-" Commands
-command! -buffer -nargs=0 Abort execute "normal! ggdG:\<C-U>x\<CR>"
-
 " Options
 setlocal nonumber
 setlocal textwidth=60
