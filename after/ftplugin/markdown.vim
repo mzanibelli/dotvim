@@ -17,6 +17,10 @@ setlocal conceallevel=0
 setlocal formatoptions=crqjtn
 setlocal foldenable
 setlocal formatprg=
+setlocal softtabstop=2
+setlocal shiftwidth=2
+setlocal expandtab
+setlocal spell
 
 " Variables
 let b:autoclose = ['quote']
