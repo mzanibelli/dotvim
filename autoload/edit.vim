@@ -32,13 +32,14 @@ function! edit#options(output)
 endfunction
 
 function! edit#callback(channel)
-    if !exists("g:edit") || !filereadable(g:edit["out"])
+    let l:edit = deepcopy(g:edit)
+    unlet g:edit
+    if !exists("l:edit") || !filereadable(l:edit["out"])
         return
     endif
-    let l:target = get(readfile(g:edit["out"]), 0, v:false)
+    let l:target = get(readfile(l:edit["out"]), 0, v:false)
     if filereadable(l:target)
-        execute printf("%dwindo edit %s", g:edit["win"], l:target)
+        execute printf("%dwindo edit %s", l:edit["win"], l:target)
     endif
-    call delete(g:edit["out"])
-    unlet g:edit
+    call delete(l:edit["out"])
 endfunction
