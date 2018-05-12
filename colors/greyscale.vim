@@ -75,7 +75,7 @@ highlight StatusLineTerm ctermfg=16 ctermbg=255 guifg=#000000 guibg=#eeeeee
 highlight StatusLineNC ctermfg=255 ctermbg=16 guifg=#eeeeee guibg=#000000
 highlight StatusLineTermNC ctermfg=16 ctermbg=255 guifg=#000000 guibg=#eeeeee
 highlight StorageClass ctermfg=255 ctermbg=none cterm=none guifg=#eeeeee guibg=NONE gui=none
-highlight String ctermfg=240 ctermbg=none guifg=#585858 guibg=NONE
+highlight String ctermfg=245 ctermbg=none guifg=#8a8a8a guibg=NONE
 highlight Structure ctermfg=255 ctermbg=none cterm=none guifg=#eeeeee guibg=NONE gui=none
 highlight TabLine ctermfg=16 ctermbg=255 cterm=none guifg=#000000 guibg=#eeeeee gui=NONE
 highlight TabLineFill ctermfg=255 ctermbg=16 guifg=#eeeeee guibg=#000000
