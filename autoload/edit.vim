@@ -10,6 +10,9 @@ function! edit#command(output)
     let l:commands = {}
     let l:commands["fzf"] = ["/usr/bin/fzf"]
     let l:commands["ranger"] = ["/usr/bin/ranger", "--choosefile", a:output]
+    if filereadable(expand('%'))
+        call extend(l:commands["ranger"], ["--selectfile", expand("%")])
+    endif
     return l:commands
 endfunction
 
