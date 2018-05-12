@@ -14,5 +14,5 @@ tnoremap <C-L> <C-W>l
 " Autocommands
 augroup TERMINAL
     autocmd!
-    autocmd BufWinEnter * if &buftype ==# 'terminal' | setlocal statusline=[TERMINAL] | endif
+    autocmd TerminalOpen * if &buftype ==# 'terminal' | setlocal statusline=[TERMINAL] | endif
 augroup END
