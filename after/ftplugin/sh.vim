@@ -11,6 +11,6 @@ compiler sh
 setlocal formatoptions=crqj
 
 " Variables
-let b:autoclose = ['quote', 'doublesquare']
+let b:autoclose = ['quote', 'doublesquare', 'expansion']
 let b:autocompile = 1
 let b:ftsnippets = {"shellcheck": "# shellcheck disable=% #"}
