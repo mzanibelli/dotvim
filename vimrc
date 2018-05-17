@@ -1,6 +1,6 @@
 scriptencoding utf-8
 
-filetype plugin indent on
+filetype plugin on
 
 colorscheme greyscale
 

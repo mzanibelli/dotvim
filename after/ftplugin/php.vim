@@ -24,7 +24,7 @@ setlocal isfname+=\
 setlocal matchpairs-=<:>
 setlocal formatoptions=crqj
 setlocal comments=s1:/*,mb:*,ex:*/,://,:#
-setlocal formatprg=
+setlocal smartindent
 
 " Variables
 let b:commentprefix = '//'
