@@ -1,9 +1,9 @@
 function! surround#autoclose()
     if exists("b:autoclose")
         if index(b:autoclose, 'expansion') >= 0
-            inoremap <buffer> {<CR> {<CR><BS>}<Esc>O
-            inoremap <buffer> [<CR> [<CR><BS>]<Esc>O
-            inoremap <buffer> (<CR> (<CR><BS>)<Esc>O
+            inoremap <buffer> {<CR> {<CR>}<Esc>O<Tab>
+            inoremap <buffer> [<CR> [<CR>]<Esc>O<Tab>
+            inoremap <buffer> (<CR> (<CR>)<Esc>O<Tab>
         endif
         if index(b:autoclose, 'square') >= 0
             inoremap <buffer> ["" [""]<Left><Left>
