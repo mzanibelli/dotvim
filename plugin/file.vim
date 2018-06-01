@@ -8,7 +8,6 @@ let g:loaded_local_plugin_file = 1
 command! -nargs=1 -complete=file Move call file#move(<q-args>)
 command! -nargs=0 Delete call file#delete()
 command! -nargs=0 Path call file#path()
-command! -nargs=1 -complete=filetype Filetype setlocal filetype=<args>
 
 " Mappings
 inoremap <C-X><C-T> <C-R>=expand("%:t:r")<CR>
