@@ -37,3 +37,15 @@ function! format#fix()
     call format#retab()
     call format#trim()
 endfunction
+
+function! format#indentexpr(lnum)
+    let l:indent = indent(a:lnum)
+    let l:offset = l:indent % &shiftwidth
+    if l:offset == 0
+        return -1
+    endif
+    if l:offset < (&shiftwidth / 2)
+        return l:indent - l:offset
+    endif
+    return l:indent + (&shiftwidth - l:offset)
+endfunction
