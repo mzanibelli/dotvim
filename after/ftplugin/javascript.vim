@@ -16,8 +16,9 @@ setlocal foldmethod=marker
 setlocal softtabstop=2
 setlocal shiftwidth=2
 setlocal expandtab
-setlocal suffixesadd=.js
-setlocal include=^\\s*[^\/]\\+\\(from\\\|require(['\"]\\)
+setlocal suffixesadd=.js,/package.json
+setlocal include=\\%(\\<require\\s*(\\s*\\\|\\<import\\>[^;\"']*\\)[\"']\\zs[^\"']*
+setlocal includeexpr=javascript#includeexpr(v:fname,@%)
 setlocal define=^\\s*const
 setlocal matchpairs-=<:>
 setlocal formatoptions=crqj
