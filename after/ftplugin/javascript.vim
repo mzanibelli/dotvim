@@ -15,7 +15,6 @@ let b:commentprefix = '//'
 let b:autoclose = ['expansion', 'square', 'quote', 'args']
 let b:autocompile = 1
 let b:ftsnippets = {"clog": "console.log(%)"}
-let b:nodemodules = finddir('node_modules', fnamemodify(resolve(@%), ':p:h').';', -1)
 
 " Options
 setlocal foldmarker={,}
@@ -29,8 +28,3 @@ setlocal includeexpr=javascript#includeexpr(v:fname,@%)
 setlocal define=^\\s*const
 setlocal matchpairs-=<:>
 setlocal formatoptions=crqj
-
-" Custom
-if !empty(b:nodemodules)
-    execute "setlocal" "path+=".join(b:nodemodules, ',')
-endif

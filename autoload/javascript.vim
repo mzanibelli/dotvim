@@ -1,15 +1,32 @@
 function! javascript#includeexpr(target, current) abort
-    let l:target = a:target
-    if l:target =~# '^\.\.\=/'
-        let l:target = simplify(fnamemodify(resolve(a:current), ':p:h') . '/' . l:target)
-    endif
-    let l:found = findfile(l:target)
-    if l:found =~# '[\/]package\.json$' && l:target !~# '[\/]package\.json$'
-        try
-            let l:package = json_decode(join(readfile(l:found)))
-            let l:target .= '/' . substitute(get(l:package, 'main', 'index'), '\.js$', '', '')
-        catch
-        endtry
-    endif
+    let l:modules = javascript#modules(a:current)
+    let l:target = javascript#resolve(a:target, a:current)
+    for dir in l:modules
+        let l:index = javascript#index(l:target, dir)
+        if l:index != v:false
+            return l:index
+        endif
+    endfor
     return l:target
+endfunction
+
+function! javascript#modules(base)
+    if !exists("b:nodemodules")
+        let b:nodemodules = finddir('node_modules', fnamemodify(resolve(a:base), ':p:h').';', -1)
+    endif
+    return b:nodemodules
+endfunction
+
+function! javascript#resolve(path, base)
+    return a:path =~# '^\.\.\=/' ? simplify(fnamemodify(resolve(a:base), ':p:h') . '/' . a:path) : a:path
+endfunction
+
+function! javascript#index(name, modules)
+    let l:package = a:modules . '/' . a:name . '/package.json'
+    try
+        let l:content = json_decode(join(readfile(l:package)))
+        return a:modules . '/' . a:name . '/' . substitute(get(l:content, 'main', 'index'), '\.js$', '', '')
+    catch
+        return v:false
+    endtry
 endfunction
