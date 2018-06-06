@@ -2,7 +2,6 @@ let s:findprg = "/usr/bin/find"
 
 function! find#find(...)
     let l:command = join([s:findprg, join(a:000)])
-    call setqflist([], 'f')
     call async#start(l:command, {'out_cb': 'find#qf'})
 endfunction
 
@@ -10,7 +9,7 @@ function! find#qf(channel, message)
     let l:efm = &errorformat
     try
         let &errorformat = '%f: %m'
-        caddexpr a:message
+        call qf#append(a:message)
     finally
         let &errorformat = l:efm
     endtry

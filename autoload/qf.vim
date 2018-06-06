@@ -1,10 +1,10 @@
 function! qf#cclear()
-    call setqflist([])
+    call setqflist([], 'f')
     cclose
 endfunction
 
 function! qf#lclear()
-    call setloclist(winnr(), [])
+    call setloclist(winnr(), [], 'f')
     lclose
 endfunction
 
@@ -33,4 +33,12 @@ function! qf#filter(pat, bang)
     elseif qf#type() == 1
         call setqflist(filter(getqflist(), l:callback), "r")
     endif
+endfunction
+
+function! qf#append(value, efm)
+    let l:options = {}
+    let l:options['efm'] = a:efm
+    let l:options['lines'] = a:value
+    let l:data = getqflist(l:options)
+    caddexpr l:data
 endfunction
