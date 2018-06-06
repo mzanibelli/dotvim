@@ -3,13 +3,13 @@ let &grepformat = '%f:%l:%m,%f:%l%m,%f  %l%m'
 
 function! grep#grep(...)
     let l:command = join([&grepprg, join(a:000), shellescape(getcwd())])
+    call setqflist([], 'f')
     call async#start(l:command, 'grep#qf')
 endfunction
 
-function! grep#qf(channel)
-    let l:command = printf("cgetfile %s", g:bgoutput)
+function! grep#qf(channel, message)
+    let l:command = printf('caddexpr "%s"', escape(a:message, '"'))
     call default#save('errorformat', shellescape(&grepformat), l:command)
-    call async#end(a:channel)
 endfunction
 
 function! grep#configure()

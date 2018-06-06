@@ -2,13 +2,13 @@ let s:findprg = "/usr/bin/find"
 
 function! find#find(...)
     let l:command = join([s:findprg, join(a:000)])
+    call setqflist([], 'f')
     call async#start(l:command, 'find#qf')
 endfunction
 
-function! find#qf(channel)
-    let l:command = printf("cgetfile %s", g:bgoutput)
+function! find#qf(channel, message)
+    let l:command = printf('caddexpr "%s"', escape(a:message, '"'))
     call default#save('errorformat', shellescape('%f'), l:command)
-    call async#end(a:channel)
 endfunction
 
 function find#configure()

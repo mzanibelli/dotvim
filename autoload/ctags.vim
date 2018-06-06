@@ -1,7 +1,7 @@
 function! ctags#generate(ft)
     let l:file = ctags#dir()."/".a:ft
     if file_readable(l:file)
-        call async#start(l:file, "async#end")
+        call async#start(l:file, v:false)
     else
         echom "Unknown file type"
     endif
