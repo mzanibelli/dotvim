@@ -1,10 +1,5 @@
 function! ctags#generate(ft)
-    let l:file = ctags#dir()."/".a:ft
-    if file_readable(l:file)
-        call async#start(l:file, v:false)
-    else
-        echom "Unknown file type"
-    endif
+    execute printf("!%s", ctags#dir()."/".a:ft)
 endfunction
 
 function! ctags#dir()
