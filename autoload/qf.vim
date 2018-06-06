@@ -1,10 +1,10 @@
 function! qf#cclear()
-    call setqflist([], 'f')
+    call setqflist([], 'r')
     cclose
 endfunction
 
 function! qf#lclear()
-    call setloclist(winnr(), [], 'f')
+    call setloclist(winnr(), [], 'r')
     lclose
 endfunction
 
@@ -38,7 +38,7 @@ endfunction
 function! qf#append(value, efm)
     let l:options = {}
     let l:options['efm'] = a:efm
-    let l:options['lines'] = a:value
-    let l:data = getqflist(l:options)
-    caddexpr l:data
+    let l:options['lines'] = [a:value]
+    call setqflist([], 'a', l:options)
+    doautocmd QuickFixCmdPost append
 endfunction
