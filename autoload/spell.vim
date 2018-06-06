@@ -1,3 +1,0 @@
-function! spell#correct()
-    call default#save('spell', 1, 'normal! [s1z=`]')
-endfunction

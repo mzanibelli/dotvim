@@ -16,13 +16,6 @@ function! default#mapdouble(char, replace)
     return a:char
 endfunction
 
-function! default#save(option, value, command)
-    execute "let l:value = &".a:option
-    execute "let &".a:option." = ".a:value
-    execute a:command
-    execute "let &".a:option." = l:value"
-endfunction
-
 function! default#extra()
     return fnamemodify(expand(resolve($MYVIMRC)), ":h")."/extra"
 endfunction
