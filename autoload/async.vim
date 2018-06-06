@@ -9,7 +9,7 @@ function! async#start(command, ...)
 endfunction
 
 function! async#end(channel, status)
-    call timer_start(5, "async#later")
+    call timer_start(12, "async#later")
 endfunction
 
 function! async#later(timer)
