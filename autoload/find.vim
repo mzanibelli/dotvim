@@ -9,7 +9,7 @@ endfunction
 function! find#qf(channel, message)
     let l:efm = &errorformat
     try
-        let &errorformat = '%f'
+        let &errorformat = '%f: %m'
         caddexpr a:message
     finally
         let &errorformat = l:efm
@@ -18,6 +18,6 @@ endfunction
 
 function find#configure()
     if executable("fd")
-        let s:findprg = printf("/usr/bin/fd --full-path --type f --color never --threads %d --hidden --no-ignore", default#units())
+        let s:findprg = printf("/usr/bin/fd --full-path --type f --color never --threads %d --hidden --no-ignore --exec file {} \;", default#units())
     endif
 endfunction
