@@ -37,3 +37,17 @@ endfunction
 
 function! async#stub(thread)
 endfunction
+
+function! async#kill(str)
+    if empty(a:str)
+        let l:jobs = job_info()
+    else
+        let l:jobs = filter(job_info(), "join(job_info(v:val).cmd) =~ a:str")
+    endif
+    call map(l:jobs, "job_stop(v:val)")
+endfunction
+
+function! async#complete(a, l, p)
+    let l:cmds = map(job_info(), "join(job_info(v:val).cmd)")
+    return filter(l:cmds, "v:val =~ a:a")
+endfunction
