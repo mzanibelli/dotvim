@@ -48,6 +48,6 @@ function! async#kill(str)
 endfunction
 
 function! async#complete(a, l, p)
-    let l:cmds = map(job_info(), "join(job_info(v:val).cmd)")
+    let l:cmds = map(job_info(), "join(split(join(job_info(v:val).cmd))[2:2])")
     return filter(l:cmds, "v:val =~ a:a")
 endfunction

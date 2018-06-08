@@ -12,7 +12,6 @@ endfunction
 
 function find#configure()
     if executable("fd")
-"         let s:findprg = printf("/usr/bin/fd --full-path --type f --color never --threads %d --hidden --no-ignore --exec file {} \\;", default#units())
-        let s:findprg = "/usr/bin/sleep infinity"
+        let s:findprg = printf("/usr/bin/fd --full-path --type f --color never --threads %d --hidden --no-ignore --exec file {} \\;", default#units())
     endif
 endfunction
