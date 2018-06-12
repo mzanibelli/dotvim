@@ -32,6 +32,7 @@ function! async#close(channel)
         call delete(get(l:thread, 'out_name', ''))
     endif
     call remove(g:threads, l:id)
+    silent checktime
     redrawstatus!
 endfunction
 
