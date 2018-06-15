@@ -19,3 +19,4 @@ compiler scss
 " Variables
 let b:autoclose = ['quote', 'expansion']
 let b:autocompile = 1
+let b:commentprefix = '//'
