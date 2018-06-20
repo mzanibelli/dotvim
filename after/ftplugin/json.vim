@@ -17,5 +17,5 @@ if executable("jq")
 endif
 
 " Variables
-let b:autoclose = ['quote']
+let b:autoclose = ['quote', 'expansion']
 let b:autocompile = 1
