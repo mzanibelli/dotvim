@@ -8,7 +8,7 @@ let b:loaded_local_ftplugin_javascript = 1
 compiler javascript
 
 " Mappings
-inoremap <buffer> <silent> <expr> , default#mapdouble(',', "\<C-H> => ")
+inoremap <buffer> <silent> <expr> , default#mapdouble(',', "<C-H> => ")
 
 " Variables
 let b:commentprefix = '//'
