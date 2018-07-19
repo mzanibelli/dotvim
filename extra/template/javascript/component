@@ -1,0 +1,9 @@
+import React from "react";
+import PropTypes from "prop-types";
+import Enhance{fname-tr} from "./Enhance{fname-tr}";
+
+const {fname-tr} = props => <div />;
+
+{fname-tr}.PropTypes = {};
+
+export default Enhance{fname-tr}()({fname-tr});

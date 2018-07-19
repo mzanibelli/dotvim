@@ -1,8 +1,8 @@
 let s:vars = {
-    \ "fname": "expand('%')",
-    \ "fname-t": "fnamemodify(expand('%'), ':t')",
-    \ "fname-tr": "fnamemodify(expand('%'), ':t:r')",
-    \ "fname-ht": "fnamemodify(expand('%'), ':h:t')",
+    \ "fname": "fnamemodify(expand('%'), ':p')",
+    \ "fname-t": "fnamemodify(expand('%'), ':p:t')",
+    \ "fname-tr": "fnamemodify(expand('%'), ':p:t:r')",
+    \ "fname-ht": "fnamemodify(expand('%'), ':p:h:t')",
     \ "datetime": "strftime('%Y-%m-%d %H:%M:%S')",
     \ "date": "strftime('%Y-%m-%d')",
     \ "date-en": "strftime('%m/%d/%Y')",
@@ -13,12 +13,7 @@ let s:vars = {
 
 function! template#make(input)
     let l:code = template#content(a:input)
-    if !empty(l:code)
-        let @" = join(l:code, "\n")
-        echom "Template loaded"
-        return
-    endif
-    echom "Template not found"
+    let @" = join(l:code, "\n")
 endfunction
 
 function! template#complete(a, l, p)
