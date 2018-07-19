@@ -2,7 +2,7 @@ let s:findprg = "/usr/bin/find"
 
 function! find#find(...)
     let l:command = join([s:findprg, join(a:000)])
-    call setqflist([], 'r')
+    call qf#cclear()
     call async#start(l:command, {'out_cb': 'find#qf'})
 endfunction
 
