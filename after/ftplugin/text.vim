@@ -14,15 +14,3 @@ setlocal textwidth=60
 setlocal spell
 setlocal comments=
 setlocal formatoptions=crqjtn
-setlocal formatlistpat=^\\s*
-setlocal formatlistpat+=[
-setlocal formatlistpat+=\\[({]\\?
-setlocal formatlistpat+=\\(
-setlocal formatlistpat+=[0-9]\\+
-setlocal formatlistpat+=\\\|[iIvVxXlLcCdDmM]\\+
-setlocal formatlistpat+=\\\|[a-zA-Z]
-setlocal formatlistpat+=\\)
-setlocal formatlistpat+=[\\]:.)}
-setlocal formatlistpat+=]
-setlocal formatlistpat+=\\s\\+
-setlocal formatlistpat+=\\\|^\\s*[-–+o*]\\s\\+
