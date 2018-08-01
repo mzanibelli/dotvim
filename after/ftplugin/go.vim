@@ -9,12 +9,13 @@ compiler go
 
 " Options
 setlocal foldenable
-setlocal tabstop=4
-setlocal softtabstop=4
-setlocal shiftwidth=4
+setlocal tabstop=2
+setlocal softtabstop=2
+setlocal shiftwidth=2
 setlocal noexpandtab
 setlocal formatoptions=crqj
 
 " Variables
 let b:autoclose = ['expansion', 'square', 'quote', 'args']
 let b:autocompile = 1
+let b:commentprefix = '//'
