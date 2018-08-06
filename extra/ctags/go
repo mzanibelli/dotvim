@@ -1,0 +1,4 @@
+#!/bin/bash
+/usr/bin/rg --no-ignore-parent --color=never --type go --files "${PWD}" |
+/usr/local/bin/ctags --options="${HOME}/.ctags" --languages=Go -L -
+exit 0
