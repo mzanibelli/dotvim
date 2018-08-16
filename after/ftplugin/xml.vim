@@ -7,9 +7,6 @@ let b:loaded_local_ftplugin_xml = 1
 " Compiler
 compiler xml
 
-" Mappings
-inoremap <buffer> <silent> > ><C-R>=xml#close()<CR>
-
 " Options
 setlocal matchpairs-=<:>
 if executable("xmllint")
