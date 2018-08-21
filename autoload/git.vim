@@ -1,3 +1,5 @@
+let s:commands = ["log", "show", "blame", "grep", "refs", "stash", "status"]
+
 function! git#log()
     let l:file = expand("%:p")
     if empty(l:file)
@@ -11,4 +13,13 @@ function! git#log()
     let l:options["cwd"] = l:dir
     let l:command = ["/usr/bin/tig", l:file]
     call term_start(l:command, l:options)
+endfunction
+
+function! git#complete(a, l, p)
+    for c in s:commands
+        if index(split(a:l), c) ==# 1
+            return []
+        endif
+    endfor
+    return filter(copy(s:commands), printf("v:val =~# '^%s'", a:a))
 endfunction
