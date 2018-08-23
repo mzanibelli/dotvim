@@ -24,10 +24,14 @@ function! make#qf(metadata)
     let l:win = a:metadata.win
     let l:out = a:metadata.out_name
     let l:efm = a:metadata.efm
-    if l:win > -1
-        call setloclist(l:win, [], 'r', {'lines': readfile(l:out), 'efm': l:efm})
-        execute printf("%dwindo", l:win) "lwindow"
+    if l:win == -1
+        return
     endif
+    if win_getid(l:win) == 0
+        return
+    endif
+    call setloclist(l:win, [], 'r', {'lines': readfile(l:out), 'efm': l:efm})
+    execute printf("%dwindo", l:win) "lwindow"
 endfunction
 
 function! make#toggle()
