@@ -9,7 +9,7 @@ endfunction
 function! async#makejob(command, options)
     let l:command = [&shell, &shellcmdflag, a:command]
     let l:options = a:options
-    let l:out = get(l:options, 'out_name', '')
+    let l:out = get(l:options, 'out_name', v:false)
     let Callback = get(a:options, 'close_cb', function('async#stub'))
     let l:options["close_cb"] = async#close(Callback, l:out)
     return job_start(l:command, l:options)

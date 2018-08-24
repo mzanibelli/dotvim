@@ -1,10 +1,11 @@
 function! mru#popup()
-    if bufnr("MRU") == -1
-        belowright 30new
-        call mru#files()
-        setlocal winfixheight
-        let b:mrusplit = 1
+    if bufnr("MRU") != -1
+        return
     endif
+    belowright 30new
+    call mru#files()
+    setlocal winfixheight
+    let b:mrusplit = 1
 endfunction
 
 function! mru#open(command)
