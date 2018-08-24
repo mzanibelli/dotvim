@@ -1,6 +1,3 @@
-let &grepprg = "/usr/bin/grep --recursive --color=never -n"
-let &grepformat = '%f:%l:%m,%f:%l%m,%f  %l%m'
-
 function! grep#grep(...)
     let l:command = join([&grepprg, join(a:000), shellescape(getcwd())])
     call qf#cclear()
