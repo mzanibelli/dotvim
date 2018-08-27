@@ -1,4 +1,4 @@
-function! edit#find(mode)
+function! edit#open(mode)
     let l:out = tempname()
     let l:win = winnr()
     let l:options = edit#options(l:out, l:win)
@@ -9,8 +9,9 @@ function! edit#command(output)
     let l:commands = {}
     let l:commands["fzf"] = ["/usr/bin/fzf"]
     let l:commands["ranger"] = ["/usr/bin/ranger", "--choosefile", a:output]
-    if filereadable(expand('%'))
-        call extend(l:commands["ranger"], ["--selectfile", expand("%")])
+    let l:file = expand("%")
+    if filereadable(l:file)
+        call extend(l:commands["ranger"], ["--selectfile", expand(l:file)])
     endif
     return l:commands
 endfunction
