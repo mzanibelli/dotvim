@@ -8,7 +8,7 @@ function! tabs#tabline()
         let l:str .= '%' . l:tab . 'T'
         let l:str .= l:selected ? '%#TabLineSel#' : '%#TabLine#'
         let l:file = fnamemodify(l:bufname, isdirectory(l:bufname) ? ":p:h:t" : ":p:t")
-        let l:str .= l:bufname != '' ? '['. l:file . '] ' : '[No Name] '
+        let l:str .= l:bufname != '' && !empty(l:file) ? '['. l:file . '] ' : '[No Name] '
     endfor
     let l:str .= '%#TabLineFill#%T%=%<[%{getcwd()}]'
     return l:str

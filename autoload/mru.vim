@@ -3,9 +3,26 @@ function! mru#popup()
         return
     endif
     belowright 30new
-    call mru#files(v:oldfiles)
+    call mru#oldfiles()
     setlocal winfixheight
     let b:mrusplit = 1
+endfunction
+
+function! mru#ls(dir)
+    let l:dir = expand(a:dir)
+    if !isdirectory(l:dir)
+        return
+    endif
+    let l:cwd = fnamemodify(l:dir, ':p')
+    let l:back = simplify(printf('%s/..', l:cwd))
+    let l:head = l:dir ==# '/' ? [l:cwd] : [l:back, l:cwd]
+    let l:files = globpath(l:dir, "*", 0, 1)
+    call mru#files(extend(l:head, l:files))
+endfunction
+
+function! mru#oldfiles()
+    call mru#files(v:oldfiles)
+    silent file MRU
 endfunction
 
 function! mru#open(command)
@@ -17,13 +34,24 @@ function! mru#open(command)
 endfunction
 
 function! mru#files(files)
-    call append(0, a:files)
-    silent execute line('$') 'delete' '_'
+    call mru#setcontent(a:files)
     call cursor(1, 1)
     setlocal filetype=mru
-    silent file MRU
+endfunction
+
+function! mru#setcontent(files)
+    if &ft ==# "mru"
+        setlocal modifiable
+    endif
+    silent call deletebufline('%', 1, '$')
+    call append(0, map(copy(a:files), 'fnamemodify(v:val, ":p")'))
+    silent call deletebufline('%', '$')
+    if &ft ==# "mru"
+        setlocal nomodifiable
+        setlocal nomodified
+    endif
 endfunction
 
 function! mru#complete(a, l, p)
-    return map(filter(copy(v:oldfiles), "v:val =~? a:a"), "fnamemodify(v:val, ':.')")
+    return map(filter(copy(v:oldfiles), "v:val =~? a:a"), "fnamemodify(v:val, ':p:.')")
 endfunction
