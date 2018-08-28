@@ -2,7 +2,7 @@ function! edit#open(mode)
     let l:out = tempname()
     let l:win = winnr()
     let l:options = edit#options(l:out, l:win)
-    call term_start(edit#command(l:out)[a:mode], l:options[a:mode])
+    call async#term(edit#command(l:out)[a:mode], l:options[a:mode])
 endfunction
 
 function! edit#command(output)
@@ -19,16 +19,11 @@ endfunction
 function! edit#options(out, win)
     let l:common = {}
     let l:common["term_name"] = "Edit"
-    let l:common["close_cb"] = {channel -> edit#callback(a:out, a:win)}
-    let l:common["stoponexit"] = "kill"
-    let l:common["term_finish"] = "close"
+    let l:common["close_cb"] = {-> edit#callback(a:out, a:win)}
     let l:fzf = {}
     let l:fzf["out_io"] = "file"
     let l:fzf["out_name"] = a:out
-    let l:result = {}
-    let l:result["ranger"] = deepcopy(l:common)
-    let l:result["fzf"] = extend(l:common, l:fzf)
-    return l:result
+    return {"ranger": deepcopy(l:common), "fzf": extend(l:common, l:fzf)}
 endfunction
 
 function! edit#callback(out, win)

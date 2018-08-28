@@ -1,18 +1,32 @@
-function! async#start(command, ...)
+function! async#term(command, ...)
+    let l:options = {}
+    let l:options["stoponexit"] = "kill"
+    let l:options["cwd"] = getcwd()
+    let l:options["term_kill"] = "kill"
+    let l:options["term_finish"] = "close"
+    call extend(l:options, get(a:000, 0, {}))
+    return async#makejob(a:command, l:options, "term")
+endfunction
+
+function! async#job(command, ...)
     let l:options = {}
     let l:options["stoponexit"] = "kill"
     let l:options["cwd"] = getcwd()
     call extend(l:options, get(a:000, 0, {}))
-    call async#makejob(a:command, l:options)
+    return async#makejob(a:command, l:options, "job")
 endfunction
 
-function! async#makejob(command, options)
-    let l:command = [&shell, &shellcmdflag, a:command]
+function! async#makejob(command, options, type)
     let l:options = a:options
-    let l:out = get(l:options, 'out_name', v:false)
-    let Callback = get(a:options, 'close_cb', {-> v:false})
-    let l:options["close_cb"] = async#close(Callback, l:out)
-    return job_start(l:command, l:options)
+    let l:options["close_cb"] = async#close(
+        \ get(l:options, 'close_cb', {-> v:false}),
+        \ get(l:options, 'out_name', v:false)
+        \ )
+    if a:type ==# "job"
+        let l:command = [&shell, &shellcmdflag, printf("exec %s", a:command)]
+        return job_start(l:command, l:options)
+    endif
+    return term_start(a:command, l:options)
 endfunction
 
 function! async#close(func, out)
@@ -28,11 +42,16 @@ function! async#cleanup(out)
 endfunction
 
 function! async#kill(str)
-    let l:jobs = empty(a:str) ? job_info() : filter(job_info(), "join(job_info(v:val).cmd) =~ a:str")
+    let l:filter = "join(job_info(v:val).cmd) =~ a:str"
+    let l:jobs = empty(a:str) ? async#jobs() : filter(async#jobs(), l:filter)
     call map(l:jobs, "job_stop(v:val)")
 endfunction
 
 function! async#complete(a, l, p)
     let l:cmds = map(job_info(), "join(split(join(job_info(v:val).cmd))[2:2])")
     return filter(l:cmds, "v:val =~ a:a")
+endfunction
+
+function! async#jobs()
+    return filter(job_info(), "job_status(v:val) !=# 'dead'")
 endfunction

@@ -41,5 +41,5 @@ set statusline+=%{&paste?'[p]':''}
 set statusline+=%{exists('g:nocompile')&&g:nocompile==1?'[#]':''}
 set statusline+=%{format#alerts()?'[!]':''}
 set statusline+=%{&modified?'[+]':''}
-set statusline+=%{!empty(job_info())?'[*]':''}
+set statusline+=%{!empty(async#jobs())?'[*]':''}
 set statusline+=%<

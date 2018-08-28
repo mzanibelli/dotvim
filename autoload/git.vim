@@ -8,12 +8,9 @@ function! git#log()
     let l:dir = fnamemodify(l:file, ":h")
     let l:options = {}
     let l:options["term_name"] = "Git"
-    let l:options["stoponexit"] = "kill"
-    let l:options["term_finish"] = "close"
     let l:options["cwd"] = l:dir
-    let l:options["err_io"] = "null"
     let l:command = ["/usr/bin/tig", l:file]
-    call term_start(l:command, l:options)
+    call async#term(l:command, l:options)
 endfunction
 
 function! git#complete(a, l, p)

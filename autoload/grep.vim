@@ -1,7 +1,7 @@
 function! grep#grep(...)
     let l:command = join([&grepprg, join(a:000), shellescape(getcwd())])
     call qf#cclear()
-    call async#start(l:command, {'out_cb': 'grep#qf'})
+    call async#job(l:command, {'out_cb': 'grep#qf'})
 endfunction
 
 function! grep#qf(channel, message)

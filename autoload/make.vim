@@ -10,7 +10,7 @@ function! make#auto(file)
     let l:options['out_io'] = 'file'
     let l:options['out_name'] = l:output
     let l:options['close_cb'] = {-> make#qf(bufwinnr(a:file), l:output, &errorformat)}
-    call async#start(make#command(a:file), l:options)
+    call async#job(make#command(a:file), l:options)
 endfunction
 
 function! make#command(file)

@@ -3,7 +3,7 @@ let s:findprg = printf("/usr/bin/fd --full-path --type f --color never --threads
 function! find#find(...)
     let l:command = join([s:findprg, join(a:000)])
     call qf#cclear()
-    call async#start(l:command, {'out_cb': 'find#qf'})
+    call async#job(l:command, {'out_cb': 'find#qf'})
 endfunction
 
 function! find#qf(channel, message)
