@@ -16,5 +16,5 @@ augroup BUFFERS
     autocmd StdinReadPre * let g:reading_stdin = 1
     autocmd StdinReadPost * setlocal buftype=nofile
     autocmd BufEnter * silent! checktime
-    autocmd VimEnter * if bufname("%") == "" && !exists("g:reading_stdin") | call mru#files() | endif
+    autocmd VimEnter * if bufname("%") == "" && !exists("g:reading_stdin") | call mru#files(v:oldfiles) | endif
 augroup END
