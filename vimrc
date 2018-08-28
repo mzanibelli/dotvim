@@ -150,7 +150,7 @@ set undolevels=5000
 set updatecount=10
 set updatetime=1000
 set viewoptions=folds,options,cursor,slash,unix
-set viminfo='30,<50,s10,h,%30
+set viminfo='30,<50,s10,h
 set virtualedit=block
 set visualbell
 set warn
