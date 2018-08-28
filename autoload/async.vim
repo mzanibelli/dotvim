@@ -23,7 +23,7 @@ function! async#makejob(command, options, type)
         \ get(l:options, 'out_name', v:false)
         \ )
     if a:type ==# "job"
-        let l:command = [&shell, &shellcmdflag, printf("exec %s", a:command)]
+        let l:command = [&shell, &shellcmdflag, a:command]
         return job_start(l:command, l:options)
     endif
     return term_start(a:command, l:options)
