@@ -13,11 +13,8 @@ function! mru#ls(dir)
     if !isdirectory(l:dir)
         return
     endif
-    let l:cwd = fnamemodify(l:dir, ':p')
-    let l:back = simplify(printf('%s/..', l:cwd))
-    let l:head = l:dir ==# '/' ? [l:cwd] : [l:back, l:cwd]
     let l:files = globpath(l:dir, "*", 0, 1)
-    call mru#files(extend(l:head, l:files))
+    call mru#files(l:files)
 endfunction
 
 function! mru#oldfiles()
@@ -44,7 +41,7 @@ function! mru#setcontent(files)
         setlocal modifiable
     endif
     silent call deletebufline('%', 1, '$')
-    call append(0, map(copy(a:files), 'fnamemodify(v:val, ":p")'))
+    call append(0, map(copy(a:files), 'fnamemodify(v:val, ":p:.")'))
     silent call deletebufline('%', '$')
     if &ft ==# "mru"
         setlocal nomodifiable
