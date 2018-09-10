@@ -10,6 +10,8 @@ let &showbreak='› '
 if has("termguicolors")
     set t_8f=[38;2;%lu;%lu;%lum
     set t_8b=[48;2;%lu;%lu;%lum
+    set t_ZH=[3m
+    set t_ZR=[23m
     set termguicolors
 endif
 
