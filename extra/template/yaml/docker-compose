@@ -1,0 +1,29 @@
+version: '3'
+services:
+  go:
+    network_mode: "bridge"
+    image: golang:alpine
+    volumes:
+      - .:/go
+    environment:
+      GOPATH: /go
+      GOBIN: /go/bin
+      GOARCH: amd64
+      GOOS: linux
+    working_dir: /go
+    entrypoint: go
+  doc:
+    network_mode: "bridge"
+    image: golang:alpine
+    volumes:
+      - .:/go
+    ports:
+      - 8080
+    environment:
+      GOPATH: /go
+      GOBIN: /go/bin
+    working_dir: /go
+    entrypoint: godoc -http=:8080
+volumes:
+  db-data:
+    driver: local
