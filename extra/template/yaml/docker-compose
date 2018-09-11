@@ -23,7 +23,7 @@ services:
       GOPATH: /go
       GOBIN: /go/bin
     working_dir: /go
-    entrypoint: godoc -http=:8080
+    entrypoint: godoc -http=:8080 -index
 volumes:
   db-data:
     driver: local
