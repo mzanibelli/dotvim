@@ -4,6 +4,9 @@ if exists('b:loaded_local_ftplugin_yaml')
 endif
 let b:loaded_local_ftplugin_yaml = 1
 
+" Compiler
+compiler yaml
+
 " Options
 setlocal softtabstop=2
 setlocal shiftwidth=2
@@ -13,3 +16,4 @@ setlocal cursorcolumn
 
 " Variables
 let b:autoclose = ['quote', 'doublecurly']
+let b:autocompile = 1
