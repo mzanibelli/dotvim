@@ -141,6 +141,7 @@ set tagcase=followic
 set tagrelative
 set tags=./tags;/
 set termencoding=utf-8
+set termwinkey=<C-^>
 set textwidth=72
 set title
 set ttimeout
