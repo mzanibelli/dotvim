@@ -17,3 +17,5 @@ vnoremap <silent> # :<C-U>call search#selection()<CR>??<CR><C-O>:set hlsearch<CR
 nnoremap <silent> g* :<C-U>call search#toqf()<CR>
 nmap c* *cgn
 nmap c# #cgn
+cnoremap <expr> <Tab>   getcmdtype() =~# '[\/?]' ? "<C-g>" : "<C-z>"
+cnoremap <expr> <S-Tab> getcmdtype() =~# '[\/?]' ? "<C-t>" : "<S-Tab>"
