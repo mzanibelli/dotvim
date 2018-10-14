@@ -55,8 +55,9 @@ set fileencodings=utf-8
 set fileformats=unix,dos,mac
 set fillchars=
 set foldclose=
+set foldenable
 set foldexpr=fold#method(v:lnum)
-set foldlevel=1
+set foldlevel=0
 set foldmethod=expr
 set foldminlines=0
 set foldnestmax=3
@@ -85,7 +86,6 @@ set nobomb
 set nocindent
 set noconfirm
 set noerrorbells
-set nofoldenable
 set nofsync
 set nogdefault
 set noignorecase

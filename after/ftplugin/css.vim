@@ -5,8 +5,6 @@ endif
 let b:loaded_local_ftplugin_css = 1
 
 " Options
-setlocal foldmarker={,}
-setlocal foldmethod=marker
 setlocal iskeyword+=-
 setlocal formatoptions=crqj
 

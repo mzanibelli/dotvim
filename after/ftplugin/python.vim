@@ -8,7 +8,6 @@ let b:loaded_local_ftplugin_python = 1
 compiler python
 
 " Options
-setlocal foldenable
 setlocal tabstop=4
 setlocal softtabstop=4
 setlocal shiftwidth=4

@@ -17,7 +17,7 @@ execute 'nnoremap <buffer> <silent> ]] :<C-U>let search = @/<CR>/' . escape(php#
 inoremap <buffer> <silent> <expr> , default#mapdouble(',', "\<C-H> => ")
 
 " Options
-setlocal foldenable
+setlocal foldlevel=1
 setlocal includeexpr=php#includeexpr(v:fname)
 setlocal suffixesadd=.php
 setlocal isfname+=\

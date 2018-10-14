@@ -17,8 +17,6 @@ let b:autocompile = 1
 let b:ftsnippets = {"clog": "console.log(%)"}
 
 " Options
-setlocal foldmarker={,}
-setlocal foldmethod=marker
 setlocal softtabstop=2
 setlocal shiftwidth=2
 setlocal expandtab

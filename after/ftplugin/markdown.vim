@@ -15,7 +15,6 @@ endif
 " Options
 setlocal conceallevel=0
 setlocal formatoptions=crqjtn
-setlocal foldenable
 setlocal formatprg=
 setlocal softtabstop=2
 setlocal shiftwidth=2

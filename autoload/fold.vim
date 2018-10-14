@@ -27,12 +27,13 @@ function! fold#toggle()
 endfunction
 
 function! fold#method(line)
+    let l:level = &l:foldlevel + 1
     if getline(a:line) =~# '\v^\s*$'
-        return '-1'
+        return -1
     endif
     let l:indent = indent(a:line) / &shiftwidth
-    if l:indent < 2
-        return '0'
+    if l:indent < l:level
+        return 0
     endif
-    return '2'
+    return l:level
 endfunction
