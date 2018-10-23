@@ -1,11 +1,3 @@
-function! fold#next()
-    let l:pos = getpos(".")
-    execute "normal! 1\<C-I>"
-    if getpos(".") == l:pos
-        execute "normal! zj"
-    endif
-endfunction
-
 function! fold#toggleall()
     if &foldenable
         normal! zi
