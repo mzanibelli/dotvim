@@ -8,9 +8,7 @@ let b:loaded_local_ftplugin_markdown = 1
 compiler markdown
 
 " Commands
-if executable("pandoc")
-    command! -buffer -nargs=0 Preview <mods> terminal ++close sh -c "pandoc -f markdown -t plain % | $PAGER"
-endif
+command! -buffer -nargs=0 Preview call preview#toggle()
 
 " Options
 setlocal conceallevel=0
