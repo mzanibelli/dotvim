@@ -167,6 +167,20 @@ set winminwidth=0
 set winwidth=1
 set wrapscan
 
+set formatlistpat=^\\s*
+set formatlistpat+=[
+set formatlistpat+=\\[({]\\?
+set formatlistpat+=\\(
+set formatlistpat+=[0-9]\\+
+set formatlistpat+=\\\|
+set formatlistpat+=[a-zA-Z]\\+
+set formatlistpat+=\\)
+set formatlistpat+=[\\]:.)}
+set formatlistpat+=]
+set formatlistpat+=\\s\\+
+set formatlistpat+=\\\|
+set formatlistpat+=^\\s*[-–+o*•]\\s\\+
+
 let g:html_indent_script1="inc"
 let g:html_indent_style1="inc"
 
