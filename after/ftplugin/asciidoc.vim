@@ -14,3 +14,4 @@ setlocal textwidth=60
 setlocal spell
 setlocal comments=
 setlocal formatoptions=crqjtn
+setlocal indentexpr=

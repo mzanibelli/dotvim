@@ -10,6 +10,7 @@ setlocal textwidth=60
 setlocal spell
 setlocal comments=
 setlocal formatoptions=crqjwtn
+setlocal indentexpr=
 
 " Variables
 let b:completiontype = "\<C-X>\<C-K>"

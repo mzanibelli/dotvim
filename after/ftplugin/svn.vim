@@ -11,6 +11,7 @@ setlocal spell
 setlocal nobuflisted
 setlocal comments=
 setlocal formatoptions=crqjtn
+setlocal indentexpr=
 
 " Variables
 let b:norestore = 1
