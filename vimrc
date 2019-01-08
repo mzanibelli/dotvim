@@ -105,7 +105,7 @@ set nowrap
 set nowritebackup
 set nrformats=
 set number
-set path=.,**
+set path=.,,
 set previewheight=12
 set pumheight=10
 set regexpengine=0
