@@ -14,11 +14,17 @@ endfunction
 
 function! edit#options(out, win, cwd)
     let l:options = {}
-    let l:options["term_name"] = "Edit"
     let l:options["close_cb"] = {-> edit#callback(a:out, a:win)}
+    let l:options["term_name"] = "Edit"
     let l:options["out_io"] = "file"
     let l:options["out_name"] = a:out
     let l:options["cwd"] = a:cwd
+    let l:options["env"] = {
+        \  "PAGER":   "/dev/null",
+        \  "EDITOR":  "/dev/null",
+        \  "VISUAL":  "/dev/null",
+        \  "SHELL":   "/dev/null"
+        \ }
     return l:options
 endfunction
 
