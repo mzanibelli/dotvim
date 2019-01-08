@@ -1,38 +1,32 @@
-function! edit#open(mode)
+function! edit#open(mode, cwd)
     let l:out = tempname()
     let l:win = winnr()
-    let l:options = edit#options(l:out, l:win)
-    call async#term(edit#command(l:out)[a:mode], l:options[a:mode])
+    let l:options = edit#options(l:out, l:win, a:cwd)
+    call async#term(edit#command(l:out)[a:mode], l:options)
 endfunction
 
 function! edit#command(output)
     let l:commands = {}
     let l:commands["fzf"] = ["/usr/bin/fzf"]
-    let l:commands["ranger"] = ["/usr/bin/ranger", "--choosefile", a:output]
-    let l:file = expand("%")
-    if isdirectory(l:file)
-        call extend(l:commands["ranger"], [l:file])
-    elseif filereadable(l:file)
-        call extend(l:commands["ranger"], ["--selectfile", l:file])
-    endif
+    let l:commands["nnn"] = ["/usr/bin/nnn", "-Cp", "-"]
     return l:commands
 endfunction
 
-function! edit#options(out, win)
-    let l:common = {}
-    let l:common["term_name"] = "Edit"
-    let l:common["close_cb"] = {-> edit#callback(a:out, a:win)}
-    let l:fzf = {}
-    let l:fzf["out_io"] = "file"
-    let l:fzf["out_name"] = a:out
-    return {"ranger": deepcopy(l:common), "fzf": extend(l:common, l:fzf)}
+function! edit#options(out, win, cwd)
+    let l:options = {}
+    let l:options["term_name"] = "Edit"
+    let l:options["close_cb"] = {-> edit#callback(a:out, a:win)}
+    let l:options["out_io"] = "file"
+    let l:options["out_name"] = a:out
+    let l:options["cwd"] = a:cwd
+    return l:options
 endfunction
 
 function! edit#callback(out, win)
     if !filereadable(a:out)
         return
     endif
-    let l:target = get(readfile(a:out), 0, v:false)
+    let l:target = get(readfile(a:out, '', 1), 0, v:false)
     if filereadable(l:target)
         execute printf("%dwindo edit %s", a:win, l:target)
     endif
