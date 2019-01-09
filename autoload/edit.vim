@@ -8,7 +8,7 @@ endfunction
 function! edit#command(output)
     let l:commands = {}
     let l:commands["fzf"] = ["/usr/bin/fzf"]
-    let l:commands["nnn"] = ["/usr/bin/nnn", "-Cp", "-"]
+    let l:commands["nnn"] = ["/usr/bin/noice"]
     return l:commands
 endfunction
 
@@ -19,12 +19,6 @@ function! edit#options(out, win, cwd)
     let l:options["out_io"] = "file"
     let l:options["out_name"] = a:out
     let l:options["cwd"] = a:cwd
-    let l:options["env"] = {
-        \  "PAGER":   "/dev/null",
-        \  "EDITOR":  "/dev/null",
-        \  "VISUAL":  "/dev/null",
-        \  "SHELL":   "/dev/null"
-        \ }
     return l:options
 endfunction
 
@@ -32,7 +26,7 @@ function! edit#callback(out, win)
     if !filereadable(a:out)
         return
     endif
-    let l:target = get(readfile(a:out, '', 1), 0, v:false)
+    let l:target = get(readfile(a:out), -1, v:false)
     if filereadable(l:target)
         execute printf("%dwindo edit %s", a:win, l:target)
     endif
