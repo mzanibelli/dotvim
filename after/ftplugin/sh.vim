@@ -9,6 +9,7 @@ compiler sh
 
 " Options
 setlocal formatoptions=crqj
+setlocal formatprg=shfmt\ -i\ 4\ -ci\ -kp
 
 " Variables
 let b:autoclose = ['quote', 'doublesquare', 'expansion']
