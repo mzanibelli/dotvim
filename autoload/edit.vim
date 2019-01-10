@@ -8,7 +8,7 @@ endfunction
 function! edit#command(output)
     let l:commands = {}
     let l:commands["fzf"] = ["/usr/bin/fzf"]
-    let l:commands["nnn"] = ["/usr/bin/noice"]
+    let l:commands["noice"] = ["/usr/bin/noicepick"]
     return l:commands
 endfunction
 
