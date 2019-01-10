@@ -7,13 +7,6 @@ colorscheme greyscale
 let mapleader="\<Space>"
 let &showbreak='› '
 
-if has("termguicolors")
-    set t_8f=[38;2;%lu;%lu;%lum
-    set t_8b=[48;2;%lu;%lu;%lum
-    set t_ZH=[3m
-    set t_ZR=[23m
-    set termguicolors
-endif
 
 augroup PLUGINS
     autocmd!
@@ -131,6 +124,8 @@ set swapfile
 set swapsync=
 set switchbuf=useopen
 set synmaxcol=256
+set t_8b=[48;2;%lu;%lu;%lum
+set t_8f=[38;2;%lu;%lu;%lum
 set t_Co=256
 set t_ut=
 set t_vb=
@@ -141,6 +136,7 @@ set tagcase=followic
 set tagrelative
 set tags=./tags;/
 set termencoding=utf-8
+set termguicolors
 set termwinkey=<C-^>
 set textwidth=72
 set title
@@ -229,6 +225,6 @@ let g:loaded_matchparen=1
 let g:loaded_fzf=1
 let g:loaded_spellfile_plugin=1
 
-let g:vim_indent_cont = &shiftwidth
+let g:vim_indent_cont=&shiftwidth
 
 let g:markdown_folding=1

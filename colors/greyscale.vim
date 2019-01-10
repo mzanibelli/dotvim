@@ -81,6 +81,7 @@ highlight TabLine ctermfg=16 ctermbg=255 cterm=none guifg=#000000 guibg=#eeeeee 
 highlight TabLineFill ctermfg=255 ctermbg=16 guifg=#eeeeee guibg=#000000
 highlight TabLineSel ctermfg=16 ctermbg=255 cterm=bold guifg=#000000 guibg=#eeeeee gui=bold
 highlight Tag ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
+highlight Terminal ctermfg=255 ctermbg=none guifg=#eeeeee guibg=#000000
 highlight Title ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
 highlight Todo ctermfg=255 ctermbg=none guifg=#eeeeee guibg=NONE
 highlight Type ctermfg=255 ctermbg=none cterm=none guifg=#eeeeee guibg=NONE gui=NONE
