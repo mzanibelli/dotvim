@@ -13,9 +13,7 @@ nnoremap <Leader>l :<C-U>ls<CR>:buffer<Space>
 " Autocommands
 augroup BUFFERS
     autocmd!
-    autocmd StdinReadPre * let g:reading_stdin = 1
     autocmd StdinReadPost * setlocal buftype=nofile
     autocmd BufEnter * silent! checktime
-    autocmd VimEnter * if bufname("%") == "" && !exists("g:reading_stdin") | call mru#oldfiles() | endif
     autocmd BufEnter * call mru#ls("%")
 augroup END

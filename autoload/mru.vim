@@ -3,7 +3,8 @@ function! mru#popup()
         return
     endif
     belowright 30new
-    call mru#oldfiles()
+    call mru#files(v:oldfiles)
+    silent file MRU
     setlocal winfixheight
     let b:mrusplit = 1
 endfunction
@@ -15,11 +16,6 @@ function! mru#ls(dir)
     endif
     let l:files = globpath(l:dir, "*", 0, 1)
     call mru#files(l:files)
-endfunction
-
-function! mru#oldfiles()
-    call mru#files(v:oldfiles)
-    silent file MRU
 endfunction
 
 function! mru#open(command)
