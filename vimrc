@@ -129,7 +129,6 @@ set tagbsearch
 set tagcase=followic
 set tagrelative
 set tags=./tags;/
-set term=xterm-256color
 set termencoding=utf-8
 set termwinkey=<C-^>
 set textwidth=72

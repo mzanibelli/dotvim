@@ -1,14 +1,3 @@
-function! mru#popup()
-    if bufnr("MRU") != -1
-        return
-    endif
-    belowright 30new
-    call mru#files(v:oldfiles)
-    silent file MRU
-    setlocal winfixheight
-    let b:mrusplit = 1
-endfunction
-
 function! mru#ls(dir)
     let l:dir = expand(a:dir)
     if !isdirectory(l:dir)
@@ -20,9 +9,6 @@ endfunction
 
 function! mru#open(command)
     let l:file = getline(".")
-    if exists("b:mrusplit") && b:mrusplit == 1
-        close
-    endif
     execute a:command fnameescape(l:file)
 endfunction
 
