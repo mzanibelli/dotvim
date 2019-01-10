@@ -7,7 +7,6 @@ colorscheme greyscale
 let mapleader="\<Space>"
 let &showbreak='› '
 
-
 augroup PLUGINS
     autocmd!
     autocmd User DeferPost packadd targets
@@ -124,19 +123,14 @@ set swapfile
 set swapsync=
 set switchbuf=useopen
 set synmaxcol=256
-set t_8b=[48;2;%lu;%lu;%lum
-set t_8f=[38;2;%lu;%lu;%lum
-set t_Co=256
-set t_ut=
-set t_vb=
 set tabline=%!tabs#tabline()
 set tabstop=8
 set tagbsearch
 set tagcase=followic
 set tagrelative
 set tags=./tags;/
+set term=xterm-256color
 set termencoding=utf-8
-set termguicolors
 set termwinkey=<C-^>
 set textwidth=72
 set title

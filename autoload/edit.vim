@@ -18,7 +18,9 @@ function! edit#options(out, win, cwd)
     let l:options["term_name"] = "Edit"
     let l:options["out_io"] = "file"
     let l:options["out_name"] = a:out
-    let l:options["cwd"] = a:cwd
+    if !empty(a:cwd)
+        let l:options["cwd"] = a:cwd
+    endif
     return l:options
 endfunction
 

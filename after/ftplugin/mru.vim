@@ -6,7 +6,6 @@ let b:loaded_local_ftplugin_mru = 1
 
 " Mappings
 nnoremap <silent> <buffer> <CR> :<C-U>call mru#open("edit")<CR>
-nnoremap <silent> <buffer> <Esc> :<C-U>close<CR>
 
 " Options
 setlocal nomodifiable
