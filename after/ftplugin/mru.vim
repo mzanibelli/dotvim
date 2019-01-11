@@ -17,7 +17,6 @@ setlocal nonumber
 setlocal cursorline
 setlocal noswapfile
 setlocal statusline=[%{strftime('%d/%m/%Y')}]
-setlocal statusline+=%{!empty(async#jobs())?'[*]':''}
 
 " Variables
 let b:noformatalerts = 1

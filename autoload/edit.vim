@@ -14,7 +14,7 @@ endfunction
 
 function! edit#options(out, win, cwd)
     let l:options = {}
-    let l:options["close_cb"] = {-> edit#callback(a:out, a:win)}
+    let l:options["exit_cb"] = {-> edit#callback(a:out, a:win)}
     let l:options["term_name"] = "Edit"
     let l:options["out_io"] = "file"
     let l:options["out_name"] = a:out

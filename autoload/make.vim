@@ -7,14 +7,15 @@ function! make#auto(file)
     endif
     let l:output = tempname()
     let l:options = {}
+    let l:options['err_io'] = 'out'
     let l:options['out_io'] = 'file'
     let l:options['out_name'] = l:output
-    let l:options['close_cb'] = {-> make#qf(bufwinnr(a:file), l:output, &errorformat)}
+    let l:options['exit_cb'] = {-> make#qf(bufwinnr(a:file), l:output, &errorformat)}
     call async#job(make#command(a:file), l:options)
 endfunction
 
 function! make#command(file)
-    return join([&makeprg, shellescape(fnamemodify(a:file, ":p")), "2>&1"])
+    return join([&makeprg, shellescape(fnamemodify(a:file, ":p"))])
 endfunction
 
 function! make#qf(win, out, efm)
@@ -26,6 +27,7 @@ function! make#qf(win, out, efm)
     endif
     call setloclist(a:win, [], 'r', {'lines': readfile(a:out), 'efm': a:efm})
     execute printf("%dwindo", a:win) "lwindow"
+    silent checktime
 endfunction
 
 function! make#toggle()
