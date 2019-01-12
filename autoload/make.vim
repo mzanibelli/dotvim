@@ -19,15 +19,12 @@ function! make#command(file)
 endfunction
 
 function! make#qf(win, out, efm)
-    if a:win == -1
-        return
-    endif
-    if win_getid(a:win) == 0
+    silent checktime
+    if a:win == -1 || win_getid(a:win) == 0
         return
     endif
     call setloclist(a:win, [], 'r', {'lines': readfile(a:out), 'efm': a:efm})
     execute printf("%dwindo", a:win) "lwindow"
-    silent checktime
 endfunction
 
 function! make#toggle()

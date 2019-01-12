@@ -26,3 +26,7 @@ function! async#complete(a, l, p)
     let l:cmds = map(job_info(), "join(split(join(job_info(v:val).cmd))[2:2])")
     return filter(l:cmds, "v:val =~ a:a")
 endfunction
+
+function! async#jobs()
+    return filter(job_info(), "job_status(v:val) !=# 'dead'")
+endfunction
