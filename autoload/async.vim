@@ -19,7 +19,7 @@ endfunction
 function! async#kill(pid)
     let l:jobs = job_info()
     let l:filter = "string(job_info(v:val).process) ==# a:pid"
-    call map(empty(a:pid) ? l:jobs : filter(l:jobs, l:filter), "job_stop(v:val, 'kill')")
+    call map(empty(a:pid) ? l:jobs : filter(l:jobs, l:filter), "job_stop(v:val)")
 endfunction
 
 function! async#complete(a, l, p)
