@@ -16,17 +16,26 @@ function! async#job(command, ...)
     return job_start([&shell, &shellcmdflag, a:command], l:options)
 endfunction
 
-function! async#kill(str)
-    let l:filter = "join(job_info(v:val).cmd) =~ a:str"
-    let l:jobs = empty(a:str) ? async#jobs() : filter(async#jobs(), l:filter)
-    call map(l:jobs, "job_stop(v:val)")
+function! async#kill(pid)
+    let l:jobs = job_info()
+    let l:filter = "string(job_info(v:val).process) ==# a:pid"
+    call map(empty(a:pid) ? l:jobs : filter(l:jobs, l:filter), "job_stop(v:val, 'kill')")
 endfunction
 
 function! async#complete(a, l, p)
-    let l:cmds = map(job_info(), "join(split(join(job_info(v:val).cmd))[2:2])")
+    let l:cmds = map(job_info(), "string(job_info(v:val).process)")
     return filter(l:cmds, "v:val =~ a:a")
 endfunction
 
-function! async#jobs()
-    return filter(job_info(), "job_status(v:val) !=# 'dead'")
+function! async#ls()
+    let l:jobs = job_info()
+    if empty(l:jobs)
+        echo "No jobs currently running"
+        return
+    endif
+    echo printf("%d job(s) found:", len(l:jobs))
+    for j in l:jobs
+        let l:info = job_info(j)
+        echo printf("[%s] %d %s", l:info.status, l:info.process, join(l:info.cmd))
+    endfor
 endfunction
