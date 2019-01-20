@@ -4,6 +4,12 @@ if exists('g:loaded_local_plugin_terminal')
 endif
 let g:loaded_local_plugin_terminal = 1
 
+" Mappings
+tnoremap <C-H> <C-W>h
+tnoremap <C-J> <C-W>j
+tnoremap <C-K> <C-W>k
+tnoremap <C-L> <C-W>l
+
 " Autocommands
 augroup TERMINAL
     autocmd!
