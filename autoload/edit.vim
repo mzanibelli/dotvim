@@ -32,5 +32,4 @@ function! edit#callback(out, win)
     if filereadable(l:target)
         execute printf("%dwindo edit %s", a:win, l:target)
     endif
-    call delete(a:out)
 endfunction
