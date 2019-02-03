@@ -4,6 +4,9 @@ if exists('b:loaded_local_ftplugin_go')
 endif
 let b:loaded_local_ftplugin_go = 1
 
+" Commands
+command -buffer -nargs=0 Test silent call go#test()
+
 " Compiler
 compiler go
 
