@@ -1,0 +1,5 @@
+FROM golang:alpine
+RUN apk add git
+RUN go get -u golang.org/x/tools/cmd/godoc
+RUN cp /go/bin/godoc /usr/local/go/bin/godoc
+WORKDIR /go
