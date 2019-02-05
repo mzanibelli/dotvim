@@ -2,10 +2,10 @@ function! edit#open(mode, cwd)
     let l:out = tempname()
     let l:win = winnr()
     let l:options = edit#options(l:out, l:win, a:cwd)
-    call async#term(edit#command(l:out)[a:mode], l:options)
+    call async#term(edit#command()[a:mode], l:options)
 endfunction
 
-function! edit#command(output)
+function! edit#command()
     let l:commands = {}
     let l:commands["fzf"] = ["/usr/bin/fzf"]
     let l:commands["noice"] = ["/usr/bin/noicepick"]
