@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 /usr/bin/rg --no-ignore-parent --color=never --type js --files "${PWD}" |
 /usr/local/bin/ctags --options="${HOME}/.ctags" --languages=JavaScript -L -
 exit 0
