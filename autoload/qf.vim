@@ -8,12 +8,6 @@ function! qf#lclear()
     lclose
 endfunction
 
-function! qf#quick()
-    let l:prefix = qf#type() == 2 ? "l" : "c"
-    execute "normal! \<CR>"
-    execute "call qf#".l:prefix."clear()"
-endfunction
-
 function! qf#type()
     redir => l:output | silent ls | redir END
     if match(l:output, '%a-  "\[Location List\]"') >= 0

@@ -6,7 +6,6 @@ let b:loaded_local_ftplugin_qf = 1
 
 " Mappings
 nnoremap <buffer> <CR> <CR>zv
-nnoremap <buffer> <silent> <Leader><Leader> :<C-U>call qf#quick()<CR>
 
 " Options
 setlocal statusline=%f\ %L\ lines
