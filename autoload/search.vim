@@ -18,7 +18,3 @@ function! search#escape(string)
   let l:string = substitute(l:string, '\n', '\\n', 'g')
   return l:string
 endfunction
-
-function! search#toqf()
-    silent execute "vimgrep /".@/."/ %"
-endfunction
