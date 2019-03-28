@@ -9,6 +9,9 @@ compiler html
 
 " Options
 setlocal matchpairs-=<:>
+setlocal shiftwidth=2
+setlocal tabstop=2
+setlocal softtabstop=2
 
 " Variables
 let b:autoclose = ['quote', 'doublecurly']
