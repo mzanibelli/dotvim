@@ -16,9 +16,6 @@ setlocal softtabstop=2
 setlocal shiftwidth=2
 setlocal noexpandtab
 setlocal formatoptions=crqj
-if executable("gocode")
-    setlocal omnifunc=gocomplete#complete
-endif
 
 " Variables
 let b:autoclose = ['expansion', 'square', 'quote', 'args']

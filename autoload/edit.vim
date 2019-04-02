@@ -26,6 +26,7 @@ endfunction
 
 function! edit#callback(out, win)
     for file in readfile(a:out)
-        execute printf("%dwindo argedit", a:win) fnameescape(file)
+        execute "$argadd" fnameescape(file)
     endfor
+    execute printf("%dwindo", a:win) "last"
 endfunction
