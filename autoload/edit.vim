@@ -25,11 +25,7 @@ function! edit#options(out, win, cwd)
 endfunction
 
 function! edit#callback(out, win)
-    if !filereadable(a:out)
-        return
-    endif
-    let l:target = get(readfile(a:out), -1, v:false)
-    if filereadable(l:target)
-        execute printf("%dwindo edit %s", a:win, l:target)
-    endif
+    for file in readfile(a:out)
+        execute printf("%dwindo argedit", a:win) fnameescape(file)
+    endfor
 endfunction
