@@ -6,7 +6,7 @@ elseif executable("eslint")
     setlocal makeprg=eslint\ --no-color\ -f\ compact\ --quiet\ --fix
 elseif executable("prettier")
     setlocal errorformat=%E,%C[error]\ %f:\ %m\ (%l:%c)%.%#,%-G%.%#
-    setlocal makeprg=prettier\ --no-color\ --loglevel\ error\ --write\ --parser\  javascript
+    setlocal makeprg=prettier\ --no-color\ --loglevel\ error\ --write
 elseif executable("acorn")
     setlocal errorformat=%m\ (%l:%c)
     setlocal makeprg=acorn\ --silent
