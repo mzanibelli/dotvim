@@ -26,6 +26,6 @@ endfunction
 
 function! edit#callback(out, win)
     for file in readfile(a:out)
-        execute printf("%dwindo", a:win) "argedit" fnameescape(file)
+        execute printf("%dwindo", a:win) "edit" fnameescape(file)
     endfor
 endfunction
