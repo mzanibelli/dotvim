@@ -13,6 +13,8 @@ command! -nargs=0 Resolve execute "file" resolve(expand("%"))
 " Mappings
 inoremap <C-X><C-T> <C-R>=expand("%:t:r")<CR>
 inoremap <C-X><C-H> <C-R>=expand("%:p:h")<CR>
+inoremap <C-F> <C-X><C-F>
+inoremap <expr> / pumvisible() ? '<C-Y><C-X><C-F>' : '/'
 
 " Autocommands
 augroup FILE
