@@ -35,7 +35,7 @@ set cscopequickfix=s-,c-,d-,i-,t-,e-,a-,g-
 set cscopetagorder=0
 set cscopeverbose
 set diffexpr=
-set diffopt=algorithm:patience,internal,indent-heuristic,iwhite,filler,vertical
+set diffopt=algorithm:patience,internal,indent-heuristic,iwhite,filler,vertical,hiddenoff
 set directory=$HOME/.vim/swap//
 set encoding=utf-8
 set endofline
