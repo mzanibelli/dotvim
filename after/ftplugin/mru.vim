@@ -14,7 +14,6 @@ setlocal readonly
 setlocal bufhidden=wipe
 setlocal nowrap
 setlocal nonumber
-setlocal cursorline
 setlocal noswapfile
 setlocal statusline=[%{strftime('%d/%m/%Y')}]
 
