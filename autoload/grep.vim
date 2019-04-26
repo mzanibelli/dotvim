@@ -1,16 +1,6 @@
+let &grepprg = '/usr/bin/rg --no-ignore-parent --color=never --vimgrep'
+let &grepformat = '%f:%l:%c:%m,%f:%l:%m'
+
 function! grep#grep(...)
-    let l:command = join([&grepprg, join(a:000), shellescape(getcwd())])
-    call qf#cclear()
-    call async#job(l:command, {'out_cb': 'grep#qf'})
-endfunction
-
-function! grep#qf(channel, message)
-    call qf#append(a:message, &grepformat)
-endfunction
-
-function! grep#configure()
-    if executable("rg")
-        let &grepprg = printf("/usr/bin/rg --no-ignore-parent --color=never --vimgrep --threads %d", default#units())
-        let &grepformat = '%f:%l:%c:%m,%f:%l:%m'
-    endif
+    call qf#system(join([&grepprg, join(a:000), shellescape(getcwd())]), &grepformat)
 endfunction

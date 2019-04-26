@@ -10,5 +10,5 @@ command! -nargs=0 ToggleCompiler call make#toggle()
 " Autocommands
 augroup MAKE
     autocmd!
-    autocmd BufWritePost * call make#auto(expand("<afile>"))
+    autocmd BufWritePost * silent call make#auto(expand("<afile>"))
 augroup END

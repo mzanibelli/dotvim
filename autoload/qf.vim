@@ -29,10 +29,10 @@ function! qf#filter(pat, bang)
     endif
 endfunction
 
-function! qf#append(value, efm)
+function! qf#system(cmd, efm)
     let l:options = {}
     let l:options['efm'] = a:efm
-    let l:options['lines'] = [a:value]
-    call setqflist([], 'a', l:options)
-    doautocmd QuickFixCmdPost append
+    let l:options['lines'] = systemlist(a:cmd)
+    call setqflist([], 'r', l:options)
+    doautocmd QuickFixCmdPost system
 endfunction

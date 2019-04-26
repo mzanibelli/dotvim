@@ -9,9 +9,3 @@ command! -nargs=* Grep call grep#grep(<f-args>)
 
 " Mappings
 nnoremap <Leader>g :<C-U>Grep<Space>
-
-" Autocommands
-augroup GREP
-    autocmd!
-    autocmd User DeferPost call grep#configure()
-augroup END

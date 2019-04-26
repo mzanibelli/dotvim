@@ -10,7 +10,6 @@ nnoremap <buffer> <CR> <CR>zv
 " Options
 setlocal statusline=%f\ %L\ lines
 setlocal nowrap
-setlocal cursorline
 
 " Variables
 unlet b:undo_ftplugin

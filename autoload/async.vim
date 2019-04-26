@@ -15,15 +15,3 @@ function! async#job(command, ...)
     call extend(l:options, get(a:000, 0, {}))
     return job_start([&shell, &shellcmdflag, a:command], l:options)
 endfunction
-
-function! async#ls()
-    let l:jobs = job_info()
-    if empty(l:jobs)
-        echo "No jobs currently running"
-        return
-    endif
-    for j in l:jobs
-        let l:info = job_info(j)
-        echo printf("[%s] %d %s", l:info.status, l:info.process, join(l:info.cmd))
-    endfor
-endfunction

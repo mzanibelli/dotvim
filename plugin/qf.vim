@@ -11,9 +11,7 @@ nnoremap <silent> L :<C-U>call qf#lclear()<CR>
 " Autocommands
 augroup QF
     autocmd!
-    autocmd QuitPre * if &ft != 'qf' | call qf#lclear() | endif
     autocmd VimEnter * botright cwindow
     autocmd QuickFixCmdPost [^l]* botright cwindow
     autocmd QuickFixCmdPost l* lwindow
-    autocmd FileType qf call matchadd('Conceal', '|| $', 0)
 augroup END
