@@ -1,17 +1,3 @@
-function! format#alerts()
-    if &modifiable && !exists("b:noformatalerts")
-        if !exists("b:wrongformat")
-            let l:type = &ff !=# "unix"
-            let l:trail = search('\s\+$', 'nw') != 0
-            let l:tabs = search('^\t', 'nw') != 0
-            let l:spaces = search('^ ', 'nw') != 0
-            let b:wrongformat = l:type || l:trail || (l:tabs && l:spaces) || (&et && l:tabs) || (!&et && l:spaces)
-        endif
-        return b:wrongformat
-    endif
-    return 0
-endfunction
-
 function! format#reindent()
     call windows#preserve("normal! gg=G")
 endfunction

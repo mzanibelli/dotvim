@@ -19,11 +19,11 @@ inoremap <expr> / pumvisible() ? '<C-Y><C-X><C-F>' : '/'
 " Autocommands
 augroup FILE
     autocmd!
-    autocmd BufWritePre * call file#mkdir(expand("<afile>"), +expand("<abuf>"))
     autocmd BufWritePre * call file#backupext()
+    autocmd BufWritePre * call file#mkdir(expand("<afile>"), +expand("<abuf>"))
     autocmd User DeferPost silent! call mkdir(&undodir, "p")
     autocmd User DeferPost silent! call mkdir(&backupdir, "p")
     autocmd User DeferPost silent! call mkdir(&directory, "p")
-    autocmd FileChangedRO * setlocal noreadonly
     autocmd FileChangedShell * let v:fcs_choice = "reload"
+    autocmd FileChangedRO * setlocal noreadonly
 augroup END
