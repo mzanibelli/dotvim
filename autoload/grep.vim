@@ -1,4 +1,4 @@
-let &grepprg = '/usr/bin/rg --no-ignore-parent --color=never --vimgrep'
+let &grepprg = '/usr/bin/rg --no-ignore-parent --no-messages --color=never --vimgrep'
 let &grepformat = '%f:%l:%c:%m,%f:%l:%m'
 
 function! grep#grep(...)
