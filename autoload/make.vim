@@ -21,9 +21,5 @@ function! make#auto(file)
 endfunction
 
 function! make#toggle()
-    try
-        let g:nocompile = 1 - g:nocompile
-    catch
-        let g:nocompile = 1
-    endtry
+    let g:nocompile = 1 - g:nocompile
 endfunction

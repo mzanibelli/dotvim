@@ -223,3 +223,5 @@ let g:vim_indent_cont=&shiftwidth
 let g:markdown_folding=1
 
 let g:skip_defaults_vim = 1
+
+let g:nocompile = 0
