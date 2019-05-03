@@ -18,7 +18,7 @@ function! edit#options(out, win, cwd)
     let l:options["term_name"] = "Edit"
     let l:options["out_io"] = "file"
     let l:options["out_name"] = a:out
-    if !empty(a:cwd)
+    if isdirectory(a:cwd)
         let l:options["cwd"] = a:cwd
     endif
     return l:options
@@ -26,6 +26,6 @@ endfunction
 
 function! edit#callback(out, win)
     for file in readfile(a:out)
-        execute printf("%dwindo", a:win) "edit" fnameescape(file)
+        silent execute printf("%dwindo", a:win) "edit" fnameescape(file)
     endfor
 endfunction
