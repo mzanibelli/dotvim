@@ -10,11 +10,3 @@ function! php#includeexpr(file)
     let l:file = substitute(a:file, '\\', '/', 'g')
     return substitute(l:file, '^/', '', '')
 endfunction
-
-function! php#cs()
-    if executable("php-cs-fixer")
-        let l:command = printf("php-cs-fixer --quiet --no-interaction fix --using-cache=no %s", shellescape(expand("%:p")))
-        call system(l:command)
-        silent! checktime
-    endif
-endfunction

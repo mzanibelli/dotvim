@@ -9,7 +9,6 @@ compiler php
 
 " Commands
 command! -buffer -nargs=0 Functions silent call php#functions()
-command! -buffer -nargs=0 Lint silent call php#cs()
 
 " Mappings
 execute 'nnoremap <buffer> <silent> [[ :<C-U>let search = @/<CR>?' . escape(php#funcregex(), '|') . '?<CR>:let @/ = search<CR>'

@@ -29,7 +29,6 @@ let g:currentmode = {
 " Options
 set statusline=[%{g:currentmode[mode()]}]
 set statusline+=\ #%n
-set statusline+=\ %{file#size()}
 set statusline+=\ %l/%L:%c/%{&textwidth}
 set statusline+=\ %p%{'%'}
 set statusline+=\ %{empty(&ft)?'[none]':'['.&ft.']'}

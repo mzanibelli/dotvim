@@ -10,6 +10,6 @@ function! tabs#tabline()
         let l:file = fnamemodify(l:bufname, isdirectory(l:bufname) ? ":p:h:t" : ":p:t")
         let l:str .= l:bufname != '' && !empty(l:file) ? '['. l:file . '] ' : '[No Name] '
     endfor
-    let l:str .= '%#TabLineFill#%T%=%<[%{getcwd()}]'
+    let l:str .= '%#TabLineFill#%T%=%<'
     return l:str
 endfunction

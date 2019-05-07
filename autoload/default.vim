@@ -1,10 +1,3 @@
-function! default#units()
-    if !exists("g:units")
-        let g:units = executable("nproc") ? system('nproc --all | xargs echo -n') : 1
-    endif
-    return g:units
-endfunction
-
 function! default#getchar(offset)
     return nr2char(strgetchar(matchstr(getline('.'), repeat('.', a:offset).'\%'.col('.').'c'), 0))
 endfunction
