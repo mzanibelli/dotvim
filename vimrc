@@ -6,6 +6,7 @@ colorscheme greyscale
 
 let mapleader="\<Space>"
 let &showbreak='› '
+let &t_Co=8
 
 augroup PLUGINS
     autocmd!
