@@ -4,6 +4,7 @@ function! async#term(command, ...)
     let l:options["cwd"] = getcwd()
     let l:options["term_kill"] = "kill"
     let l:options["term_finish"] = "close"
+    let l:options["env"] = {"TERM": "vt100"}
     call extend(l:options, get(a:000, 0, {}))
     return term_start(a:command, l:options)
 endfunction
