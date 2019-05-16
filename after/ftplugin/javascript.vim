@@ -14,7 +14,7 @@ inoremap <buffer> <silent> <expr> , default#mapdouble(',', "<C-H> => ")
 let b:commentprefix = '//'
 let b:autoclose = ['expansion', 'square', 'quote', 'args']
 let b:autocompile = 1
-let b:ftsnippets = {"clog": "console.log(%)"}
+let b:ftsnippets = {"clog": "console.log(%)", "jstr": "JSON.stringify(%, null, 2)"}
 
 " Options
 setlocal softtabstop=2
