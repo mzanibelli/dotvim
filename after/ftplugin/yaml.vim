@@ -12,7 +12,6 @@ setlocal softtabstop=2
 setlocal shiftwidth=2
 setlocal expandtab
 setlocal formatoptions=crqj
-setlocal cursorcolumn
 
 " Variables
 let b:autoclose = ['quote', 'doublecurly']
