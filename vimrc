@@ -9,6 +9,7 @@ let &showbreak='› '
 
 augroup PLUGINS
     autocmd!
+    autocmd User DeferPost packadd cfilter
     autocmd User DeferPost packadd targets
     autocmd User DeferPost packadd editorconfig | EditorConfigReload
 augroup END
